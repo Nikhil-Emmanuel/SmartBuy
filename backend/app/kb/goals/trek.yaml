@@ -1,0 +1,254 @@
+# Base trekking knowledge base.
+#
+# winter_trek extends this and overrides by item key. Every `category` and
+# `subcategory` below must exist in the catalog vocabulary
+# (app/core/constants.py) -- scripts/validate_vocab.py enforces it, and
+# scripts/validate_coverage.py asserts >= 6 in-stock candidates per item.
+#
+# Owner: Member 4 (Requirements/Optimization).
+
+key: trek
+display_name: Trekking
+domain: outdoor
+aliases: [trekking, hiking, hike, trail, mountain trek]
+
+context_defaults:
+  region_type: mountain
+  temp_min_c: 8
+
+items:
+  # ---------------- FOOTWEAR ----------------
+  - key: trekking_shoes
+    item_name: Trekking Shoes
+    category: footwear
+    subcategory: trekking_shoes
+    priority: essential
+    quantity_rule: 1
+    reason: "Ankle support and grip on uneven trails; the single most injury-relevant item you carry."
+    search_terms: [waterproof trekking shoes, hiking boots, trek shoes, high ankle]
+    required_features: [anti_slip]
+    preferred_features: [waterproof, shock_absorbing, durable]
+    est_price_range: [1500, 6000]
+
+  # ---------------- CLOTHING ----------------
+  - key: trekking_pants
+    item_name: Trekking Pants
+    category: clothing
+    subcategory: pants
+    priority: essential
+    quantity_rule: "min(2, ceil(duration_days / 3))"
+    reason: "Quick-drying, stretchable trousers; denim holds water and chafes on long walks."
+    search_terms: [trekking pants, quick dry hiking pants, trek trousers]
+    required_features: []
+    preferred_features: [quick_dry, water_resistant, lightweight, breathable]
+    est_price_range: [900, 3000]
+
+  - key: trekking_socks
+    item_name: Trekking Socks
+    category: clothing
+    subcategory: socks
+    priority: essential
+    quantity_rule: "ceil(duration_days / 2)"
+    reason: "Cushioned, moisture-wicking socks prevent the blisters that end most first treks early."
+    search_terms: [trekking socks, hiking socks, woolen socks]
+    required_features: []
+    preferred_features: [moisture_wicking, quick_dry, durable]
+    est_price_range: [300, 1200]
+
+  # ---------------- EQUIPMENT ----------------
+  - key: backpack
+    item_name: Trekking Backpack
+    category: equipment
+    subcategory: backpack
+    priority: essential
+    quantity_rule: 1
+    reason: "A padded, hip-supported rucksack sized to your trek length."
+    search_terms: [trekking rucksack, hiking backpack, trek backpack]
+    required_features: []
+    preferred_features: [water_resistant, ergonomic, adjustable, durable]
+    est_price_range: [1500, 5000]
+
+  - key: trekking_poles
+    item_name: Trekking Poles
+    category: equipment
+    subcategory: trekking_poles
+    priority: recommended
+    quantity_rule: 1
+    reason: "Cuts knee load on descents by roughly a quarter and adds balance on loose ground."
+    # Promoted to essential for beginners and on longer treks -- see overrides.
+    search_terms: [trekking poles, hiking poles, anti shock trek pole]
+    required_features: [adjustable]
+    preferred_features: [shock_absorbing, lightweight, foldable]
+    est_price_range: [800, 2500]
+    promote_to_essential_when:
+      - "experience_level == 'beginner'"
+      - "duration_days >= 3"
+
+  # ---------------- HYDRATION ----------------
+  - key: water_bottle
+    item_name: Water Bottle
+    category: hydration
+    subcategory: bottle
+    priority: essential
+    quantity_rule: 1
+    reason: "Altitude accelerates dehydration; an insulated bottle also stops water freezing overnight."
+    search_terms: [insulated water bottle, trekking bottle, vacuum flask]
+    required_features: [leak_proof]
+    preferred_features: [insulating, durable, lightweight]
+    est_price_range: [400, 1500]
+
+  # ---------------- LIGHTING / NAVIGATION ----------------
+  - key: headlamp
+    item_name: Headlamp
+    category: navigation
+    subcategory: headlamp
+    priority: essential
+    quantity_rule: 1
+    reason: "Hands-free light for pre-dawn starts and camp after sunset."
+    search_terms: [rechargeable headlamp, head torch, led headlamp trekking]
+    required_features: []
+    preferred_features: [rechargeable, waterproof, lightweight]
+    est_price_range: [500, 2000]
+
+  # ---------------- SAFETY ----------------
+  - key: first_aid_kit
+    item_name: First-Aid Kit
+    category: safety
+    subcategory: first_aid
+    priority: essential
+    quantity_rule: 1
+    reason: "Blisters, sprains and cuts are routine; medical help on a trail is hours away."
+    search_terms: [trekking first aid kit, emergency medical kit]
+    required_features: [portable]
+    preferred_features: [compact, lightweight]
+    est_price_range: [400, 1500]
+
+  - key: sunscreen
+    item_name: Sunscreen SPF 50+
+    category: personal_care
+    subcategory: skincare
+    priority: recommended
+    quantity_rule: 1
+    reason: "UV intensity rises sharply with altitude, and snow reflects it back at you."
+    search_terms: [spf 50 sunscreen, sun protection cream]
+    required_features: [uv_protection]
+    preferred_features: [water_resistant]
+    est_price_range: [250, 900]
+
+  - key: sunglasses
+    item_name: UV Sunglasses
+    category: accessories
+    subcategory: eyewear
+    priority: recommended
+    quantity_rule: 1
+    reason: "Protects against glare and, at altitude, genuine snow-blindness risk."
+    search_terms: [uv400 sunglasses, polarised trekking sunglasses]
+    required_features: [uv_protection]
+    preferred_features: [lightweight, durable]
+    est_price_range: [500, 2500]
+
+  # ---------------- WEATHER ----------------
+  - key: rain_protection
+    item_name: Rain Poncho / Jacket
+    category: outerwear
+    subcategory: rainwear
+    priority: recommended
+    quantity_rule: 1
+    reason: "Mountain weather turns without warning; wet clothing at altitude is a safety problem."
+    search_terms: [rain poncho trekking, waterproof rain jacket, packable rain cover]
+    required_features: [waterproof]
+    preferred_features: [lightweight, compact, foldable]
+    est_price_range: [300, 1500]
+
+  # ---------------- ELECTRONICS ----------------
+  - key: power_bank
+    item_name: Power Bank
+    category: electronics
+    subcategory: power_bank
+    priority: recommended
+    quantity_rule: 1
+    reason: "No charging points on the trail, and cold drains phone batteries fast."
+    search_terms: [power bank 20000mah, rugged power bank, portable charger]
+    required_features: [rechargeable]
+    preferred_features: [portable, durable, compact]
+    est_price_range: [800, 2500]
+
+  # ---------------- CAMPING (conditional) ----------------
+  - key: sleeping_bag
+    item_name: Sleeping Bag
+    category: camping
+    subcategory: sleeping_bag
+    priority: essential
+    quantity_rule: 1
+    conditions:
+      - "camping == true"
+    reason: "Required for overnight camping; rated to the coldest night you expect."
+    search_terms: [sleeping bag trekking, mummy sleeping bag]
+    required_features: [insulated]
+    preferred_features: [lightweight, compact, water_resistant]
+    est_price_range: [1800, 6000]
+
+  - key: sleeping_mat
+    item_name: Sleeping Mat
+    category: camping
+    subcategory: sleeping_mat
+    priority: recommended
+    quantity_rule: 1
+    conditions:
+      - "camping == true"
+    reason: "Insulates you from ground cold, which is what actually ruins sleep in a tent."
+    search_terms: [sleeping pad camping, foam camping mat, inflatable mat]
+    required_features: []
+    preferred_features: [insulating, lightweight, compact]
+    est_price_range: [700, 2500]
+
+  - key: tent
+    item_name: Tent
+    category: camping
+    subcategory: tent
+    priority: essential
+    quantity_rule: "ceil(people_count / 2)"
+    conditions:
+      - "camping == true"
+    reason: "Shelter for overnight stays where no huts or homestays are available."
+    search_terms: [camping tent, backpacking tent, dome tent]
+    required_features: [waterproof]
+    preferred_features: [windproof, lightweight, compact]
+    est_price_range: [3000, 9000]
+
+  # ---------------- OPTIONAL ----------------
+  - key: dry_bag
+    item_name: Dry Bag / Rain Cover
+    category: storage
+    subcategory: dry_bag
+    priority: optional
+    quantity_rule: 1
+    reason: "Keeps spare clothes and electronics dry when the pack gets soaked."
+    search_terms: [waterproof dry bag, backpack rain cover]
+    required_features: [waterproof]
+    preferred_features: [lightweight, compact]
+    est_price_range: [300, 1200]
+
+  - key: multi_tool
+    item_name: Multi-Tool
+    category: equipment
+    subcategory: multi_tool
+    priority: optional
+    quantity_rule: 1
+    reason: "Handles gear repairs on the trail."
+    search_terms: [trekking multi tool, camping knife tool]
+    required_features: [portable]
+    preferred_features: [compact, durable]
+    est_price_range: [400, 1800]
+
+  - key: quick_dry_towel
+    item_name: Quick-Dry Towel
+    category: personal_care
+    subcategory: towel
+    priority: optional
+    quantity_rule: 1
+    reason: "Packs down small and dries between stops, unlike a cotton towel."
+    search_terms: [microfibre quick dry towel, travel towel]
+    required_features: [quick_dry]
+    preferred_features: [lightweight, compact]
+    est_price_range: [250, 900]

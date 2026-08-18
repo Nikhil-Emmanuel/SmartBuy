@@ -1,0 +1,175 @@
+# Winter trekking -- THE PRIMARY DEMO GOAL. This one must be flawless.
+#
+# Inherits every item from trek.yaml, overrides some by key, and adds the
+# cold-weather layer. Overrides merge field-by-field: anything not restated
+# keeps the parent's value.
+
+key: winter_trek
+extends: trek
+display_name: Winter Trekking
+domain: outdoor
+aliases:
+  - winter trek
+  - snow trek
+  - winter trekking
+  - cold weather trek
+  - himalayan trek
+  - manali trek
+
+context_defaults:
+  region_type: mountain
+  season: winter
+  temp_min_c: -5
+
+items:
+  # ---------------- OVERRIDES on inherited items ----------------
+  - key: trekking_socks
+    item_name: Thermal Woolen Socks
+    required_features: [thermal]
+    preferred_features: [moisture_wicking, quick_dry, anti_bacterial]
+    reason: "Wool retains warmth even when damp; cotton socks in the cold are how you get frostnip."
+    est_price_range: [350, 1400]
+
+  - key: trekking_shoes
+    item_name: Winter Trekking Shoes
+    preferred_features: [waterproof, anti_slip, insulated, shock_absorbing]
+    reason: "Waterproof, high-ankle boots with grip for snow and slush."
+    est_price_range: [2000, 7000]
+
+  - key: sleeping_bag
+    item_name: Sub-Zero Sleeping Bag
+    reason: "Nights in the Himalayas drop well below freezing; a summer bag is genuinely dangerous."
+    est_price_range: [2500, 8000]
+
+  - key: water_bottle
+    item_name: Insulated Water Bottle
+    required_features: [leak_proof]
+    preferred_features: [insulating, durable]
+    reason: "An insulated bottle stops your water freezing solid on the trail."
+
+  # ---------------- COLD-WEATHER LAYER ----------------
+  - key: thermal_base_layer
+    item_name: Thermal Base Layer
+    category: clothing
+    subcategory: thermals
+    priority: essential
+    quantity_rule: "ceil(duration_days / 2)"
+    conditions:
+      - "temp_min_c < 12"
+    reason: "The foundation of cold-weather layering: traps body heat and wicks sweat away from skin."
+    search_terms: [thermal base layer, winter thermals, merino base layer, heat retain innerwear]
+    required_features: [thermal]
+    preferred_features: [quick_dry, lightweight, moisture_wicking]
+    est_price_range: [800, 2500]
+
+  - key: insulated_jacket
+    item_name: Insulated Trekking Jacket
+    category: outerwear
+    subcategory: jacket
+    priority: essential
+    quantity_rule: 1
+    conditions:
+      - "temp_min_c < 10"
+    reason: "Your outer shell against wind and snow; the single largest warmth contributor you carry."
+    search_terms: [insulated trekking jacket, winter mountain jacket, windproof padded jacket]
+    required_features: [insulated]
+    preferred_features: [windproof, waterproof, breathable, lightweight]
+    est_price_range: [2500, 7000]
+
+  - key: fleece_midlayer
+    item_name: Fleece Mid-Layer
+    category: clothing
+    subcategory: fleece
+    priority: recommended
+    quantity_rule: 1
+    conditions:
+      - "temp_min_c < 10"
+    reason: "The middle layer that traps warm air between your base layer and shell."
+    search_terms: [polar fleece jacket, fleece pullover, mid layer fleece]
+    required_features: [insulated]
+    preferred_features: [lightweight, breathable, quick_dry]
+    est_price_range: [900, 2800]
+
+  - key: winter_gloves
+    item_name: Insulated Gloves
+    category: accessories
+    subcategory: gloves
+    priority: essential
+    quantity_rule: 1
+    conditions:
+      - "temp_min_c < 8"
+    reason: "Fingers lose heat first, and numb hands make everything from poles to zips difficult."
+    search_terms: [insulated trekking gloves, waterproof snow gloves, thermal gloves]
+    required_features: [insulated]
+    preferred_features: [waterproof, windproof, high_grip]
+    est_price_range: [500, 2000]
+
+  - key: winter_headwear
+    item_name: Woolen Cap / Beanie
+    category: accessories
+    subcategory: headwear
+    priority: essential
+    quantity_rule: 1
+    conditions:
+      - "temp_min_c < 10"
+    reason: "A large share of body heat escapes through an uncovered head."
+    search_terms: [fleece beanie, woolen trekking cap, balaclava]
+    required_features: [thermal]
+    preferred_features: [windproof, lightweight]
+    est_price_range: [300, 1200]
+
+  - key: neck_gaiter
+    item_name: Neck Gaiter / Buff
+    category: accessories
+    subcategory: neckwear
+    priority: recommended
+    quantity_rule: 1
+    conditions:
+      - "temp_min_c < 8"
+    reason: "Seals the gap between jacket and cap, and filters cold dry air before you breathe it."
+    search_terms: [thermal neck gaiter, buff scarf, fleece neck warmer]
+    required_features: []
+    preferred_features: [thermal, windproof, quick_dry]
+    est_price_range: [250, 900]
+
+  - key: thermos_flask
+    item_name: Thermos Flask
+    category: hydration
+    subcategory: flask
+    priority: recommended
+    quantity_rule: 1
+    conditions:
+      - "temp_min_c < 5"
+    reason: "A hot drink at a break is a real morale and core-temperature tool in the cold."
+    search_terms: [vacuum thermos flask, insulated coffee flask]
+    required_features: [insulating]
+    preferred_features: [leak_proof, durable]
+    est_price_range: [600, 2200]
+
+  - key: emergency_blanket
+    item_name: Emergency Thermal Blanket
+    category: safety
+    subcategory: emergency
+    priority: recommended
+    quantity_rule: 1
+    conditions:
+      - "temp_min_c < 5"
+    reason: "Weighs almost nothing and is the standard first response to hypothermia."
+    search_terms: [emergency thermal blanket, mylar survival blanket]
+    required_features: []
+    preferred_features: [thermal, lightweight, compact]
+    est_price_range: [150, 700]
+
+  - key: snow_gaiters
+    item_name: Snow Gaiters
+    category: accessories
+    subcategory: gaiters
+    priority: optional
+    quantity_rule: 1
+    conditions:
+      - "temp_min_c < 0"
+    reason: "Stops snow entering the top of your boots on deep sections."
+    search_terms: [snow gaiters, waterproof leg gaiters]
+    required_features: [waterproof]
+    preferred_features: [durable, adjustable]
+    est_price_range: [500, 1800]

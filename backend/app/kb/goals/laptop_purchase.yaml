@@ -1,0 +1,100 @@
+# Validates Mode A -- the user already knows the product.
+#
+# Deliberately shallow: one essential item and a few genuinely useful
+# companions. Turning "I need a laptop" into a 15-item shopping plan would be
+# exactly the over-reach this project is supposed to avoid. The accessories
+# stay `optional` so the bundle optimizer spends the budget on the laptop.
+
+key: laptop_purchase
+display_name: Laptop Purchase
+domain: electronics
+aliases:
+  - laptop
+  - buy a laptop
+  - new laptop
+  - laptop for programming
+  - laptop for college
+  - notebook computer
+
+context_defaults:
+  region_type: urban
+  people_count: 1
+
+items:
+  - key: laptop
+    item_name: Laptop
+    category: electronics
+    subcategory: laptop
+    priority: essential
+    quantity_rule: 1
+    reason: "The main purchase; everything else is secondary to getting this right."
+    search_terms: [laptop, programming laptop, thin and light laptop, notebook]
+    required_features: []
+    preferred_features: [lightweight, warranty_included, durable, portable]
+    est_price_range: [35000, 90000]
+
+  - key: laptop_bag
+    item_name: Laptop Bag
+    category: accessories
+    subcategory: laptop_bag
+    priority: recommended
+    quantity_rule: 1
+    reason: "Padded protection; a scratched lid is cheap to avoid and expensive to fix."
+    search_terms: [laptop backpack, laptop sleeve, laptop bag]
+    required_features: []
+    preferred_features: [water_resistant, shock_absorbing, durable]
+    est_price_range: [800, 2500]
+
+  - key: mouse
+    item_name: Mouse
+    category: electronics
+    subcategory: mouse
+    priority: recommended
+    quantity_rule: 1
+    reason: "A trackpad for eight hours a day is a wrist problem waiting to happen."
+    search_terms: [wireless mouse, ergonomic mouse]
+    required_features: []
+    preferred_features: [ergonomic, rechargeable, portable]
+    est_price_range: [500, 2500]
+
+  - key: external_ssd
+    item_name: External SSD
+    category: electronics
+    subcategory: storage
+    priority: optional
+    quantity_rule: 1
+    conditions:
+      - "budget_total >= 60000"
+    reason: "Backups, and headroom when the internal drive fills up."
+    search_terms: [portable ssd, external ssd usb-c]
+    required_features: [portable]
+    preferred_features: [shock_absorbing, compact]
+    est_price_range: [3000, 9000]
+
+  - key: monitor
+    item_name: External Monitor
+    category: electronics
+    subcategory: monitor
+    priority: optional
+    quantity_rule: 1
+    conditions:
+      - "budget_total >= 80000"
+    reason: "The single biggest productivity gain for anyone who writes code all day."
+    search_terms: [ips monitor, qhd monitor, productivity monitor]
+    required_features: []
+    preferred_features: [adjustable, ergonomic, energy_efficient]
+    est_price_range: [9000, 25000]
+
+  - key: keyboard
+    item_name: External Keyboard
+    category: electronics
+    subcategory: keyboard
+    priority: optional
+    quantity_rule: 1
+    conditions:
+      - "budget_total >= 80000"
+    reason: "Pairs with a monitor to make a laptop into a proper desk setup."
+    search_terms: [mechanical keyboard, wireless keyboard]
+    required_features: []
+    preferred_features: [ergonomic, durable]
+    est_price_range: [1500, 6000]

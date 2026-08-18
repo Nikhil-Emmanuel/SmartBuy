@@ -1,0 +1,262 @@
+key: apartment_setup
+display_name: First Apartment Setup
+domain: home
+aliases:
+  - apartment
+  - new apartment
+  - first apartment
+  - moving out
+  - setting up my flat
+  - new flat
+  - shifting to a new place
+  - hostel setup
+  - pg setup
+
+context_defaults:
+  region_type: urban
+  people_count: 1
+
+items:
+  # ---------------- SLEEP ----------------
+  - key: mattress
+    item_name: Mattress
+    category: bedding
+    subcategory: mattress
+    priority: essential
+    quantity_rule: "people_count"
+    reason: "The one item where a bad choice costs you every single night."
+    search_terms: [foam mattress, orthopedic mattress, single mattress]
+    required_features: []
+    preferred_features: [durable, ergonomic, warranty_included]
+    est_price_range: [4000, 15000]
+
+  - key: bedsheet
+    item_name: Bedsheet Set
+    category: bedding
+    subcategory: bedsheet
+    priority: essential
+    quantity_rule: 2
+    reason: "Two sets so one can be in the wash."
+    search_terms: [cotton bedsheet set, bedsheet with pillow covers]
+    required_features: [machine_washable]
+    preferred_features: [breathable, durable]
+    est_price_range: [500, 2000]
+
+  - key: pillow
+    item_name: Pillow
+    category: bedding
+    subcategory: pillow
+    priority: essential
+    quantity_rule: "max(2, people_count * 2)"
+    reason: "Two per person, so a wash day does not mean a bad night."
+    search_terms: [memory foam pillow, microfibre pillow]
+    required_features: []
+    preferred_features: [machine_washable, ergonomic, breathable]
+    est_price_range: [400, 1800]
+
+  - key: blanket
+    item_name: Blanket / Comforter
+    category: bedding
+    subcategory: blanket
+    priority: essential
+    quantity_rule: "people_count"
+    reason: "Weight chosen for your city's coldest month, not today's weather."
+    search_terms: [fleece blanket, comforter, woolen blanket]
+    required_features: []
+    preferred_features: [machine_washable, lightweight]
+    est_price_range: [700, 3000]
+
+  # ---------------- KITCHEN ----------------
+  - key: cookware
+    item_name: Cookware Set
+    category: kitchen
+    subcategory: cookware
+    priority: essential
+    quantity_rule: 1
+    reason: "A pan, a kadai and a pot cover almost every meal you will actually cook."
+    search_terms: [non stick cookware set, kadai set, cookware combo]
+    required_features: [durable]
+    preferred_features: [energy_efficient, ergonomic]
+    est_price_range: [1200, 4500]
+
+  - key: pressure_cooker
+    item_name: Pressure Cooker
+    category: kitchen
+    subcategory: cooker
+    priority: essential
+    quantity_rule: 1
+    reason: "Rice, dal and most Indian staples in a fraction of the gas."
+    search_terms: [pressure cooker, induction pressure cooker]
+    required_features: [durable]
+    preferred_features: [warranty_included, energy_efficient]
+    est_price_range: [1000, 3500]
+
+  - key: dinner_set
+    item_name: Dinner Set
+    category: kitchen
+    subcategory: tableware
+    priority: essential
+    quantity_rule: 1
+    reason: "Plates, bowls and glasses sized to how many people actually eat there."
+    search_terms: [dinner set, dinnerware set, melamine dinner set]
+    required_features: [machine_washable]
+    preferred_features: [durable, lightweight]
+    est_price_range: [700, 3000]
+
+  - key: induction_cooktop
+    item_name: Induction Cooktop
+    category: kitchen
+    subcategory: cooktop
+    priority: recommended
+    quantity_rule: 1
+    reason: "Faster than a gas connection to arrange, and safer in a rented kitchen."
+    search_terms: [induction cooktop, portable induction stove]
+    required_features: [energy_efficient]
+    preferred_features: [compact, portable, warranty_included]
+    est_price_range: [1500, 4500]
+
+  - key: water_purifier
+    item_name: Water Purifier
+    category: kitchen
+    subcategory: purifier
+    priority: recommended
+    quantity_rule: 1
+    reason: "Cheaper within two months than buying bottled water."
+    search_terms: [ro water purifier, gravity water filter]
+    required_features: []
+    preferred_features: [energy_efficient, warranty_included, compact]
+    est_price_range: [4000, 14000]
+
+  # ---------------- FURNITURE ----------------
+  - key: study_table
+    item_name: Study / Work Table
+    category: furniture
+    subcategory: table
+    priority: recommended
+    quantity_rule: 1
+    reason: "Working from a bed for a month is how back problems start."
+    search_terms: [study table, work desk, foldable table]
+    required_features: []
+    preferred_features: [foldable, durable, compact]
+    est_price_range: [2000, 7000]
+
+  - key: chair
+    item_name: Chair
+    category: furniture
+    subcategory: chair
+    priority: recommended
+    quantity_rule: 1
+    reason: "Adjustable height and lumbar support if you sit for more than an hour a day."
+    search_terms: [ergonomic office chair, study chair]
+    required_features: [ergonomic]
+    preferred_features: [adjustable, durable]
+    est_price_range: [2000, 8000]
+
+  - key: curtains
+    item_name: Curtains
+    category: furniture
+    subcategory: curtains
+    priority: recommended
+    quantity_rule: 2
+    reason: "Privacy first; blackout fabric also drops summer room temperature noticeably."
+    search_terms: [blackout curtains, door curtains, window curtains]
+    required_features: [machine_washable]
+    preferred_features: [uv_protection, durable]
+    est_price_range: [600, 2500]
+
+  # ---------------- STORAGE & UTILITY ----------------
+  - key: storage_rack
+    item_name: Storage Rack / Wardrobe
+    category: storage
+    subcategory: rack
+    priority: recommended
+    quantity_rule: 1
+    reason: "Most rentals come with far less built-in storage than you expect."
+    search_terms: [storage rack, foldable wardrobe, utility shelf]
+    required_features: []
+    preferred_features: [foldable, durable, portable]
+    est_price_range: [800, 3500]
+
+  - key: bucket_mug
+    item_name: Bucket & Mug
+    category: storage
+    subcategory: bathroom
+    priority: essential
+    quantity_rule: 1
+    reason: "Day-one bathroom basics."
+    search_terms: [bucket mug set, plastic bucket]
+    required_features: [durable]
+    preferred_features: [lightweight]
+    est_price_range: [200, 900]
+
+  - key: cleaning_kit
+    item_name: Cleaning Kit
+    category: personal_care
+    subcategory: cleaning
+    priority: essential
+    quantity_rule: 1
+    reason: "Broom, mop and wiper before the first week is out."
+    search_terms: [cleaning kit, mop with bucket, broom wiper combo]
+    required_features: []
+    preferred_features: [durable, ergonomic]
+    est_price_range: [400, 1800]
+
+  - key: extension_board
+    item_name: Extension Board
+    category: electronics
+    subcategory: power_strip
+    priority: essential
+    quantity_rule: 2
+    reason: "Rented flats never have a socket where you need one."
+    search_terms: [extension board, surge power strip, usb extension board]
+    required_features: []
+    preferred_features: [durable, warranty_included]
+    est_price_range: [300, 1200]
+
+  - key: desk_lamp
+    item_name: Desk Lamp
+    category: electronics
+    subcategory: lighting
+    priority: optional
+    quantity_rule: 1
+    reason: "Overhead tube light plus screen glare is a recipe for eye strain."
+    search_terms: [led desk lamp, study lamp, reading lamp]
+    required_features: []
+    preferred_features: [adjustable, energy_efficient]
+    est_price_range: [500, 2000]
+
+  - key: laundry_basket
+    item_name: Laundry Basket
+    category: storage
+    subcategory: laundry
+    priority: optional
+    quantity_rule: 1
+    reason: "Collapsible, so it disappears when guests come over."
+    search_terms: [laundry basket, foldable laundry hamper]
+    required_features: [foldable]
+    preferred_features: [lightweight, portable]
+    est_price_range: [300, 1200]
+
+  - key: door_mat
+    item_name: Door Mat
+    category: furniture
+    subcategory: mat
+    priority: optional
+    quantity_rule: 1
+    reason: "Keeps most of the street out of the house."
+    search_terms: [door mat, anti slip mat]
+    required_features: [anti_slip]
+    preferred_features: [machine_washable]
+    est_price_range: [200, 900]
+
+  - key: iron
+    item_name: Iron
+    category: personal_care
+    subcategory: iron
+    priority: optional
+    quantity_rule: 1
+    reason: "Needed the first time you have somewhere formal to be."
+    search_terms: [dry iron, steam iron]
+    required_features: []
+    preferred_features: [energy_efficient, warranty_included]
+    est_price_range: [600, 2200]

@@ -1,0 +1,142 @@
+key: camping
+display_name: Camping
+domain: outdoor
+aliases: [camp, camping trip, overnight camping, weekend camping]
+
+context_defaults:
+  region_type: forest
+  temp_min_c: 10
+  camping: true
+
+items:
+  - key: tent
+    item_name: Tent
+    category: camping
+    subcategory: tent
+    priority: essential
+    quantity_rule: "ceil(people_count / 2)"
+    reason: "Your shelter. Size it to the group, not to the cheapest listing."
+    search_terms: [camping tent, dome tent, backpacking tent]
+    required_features: [waterproof]
+    preferred_features: [windproof, lightweight, compact]
+    est_price_range: [3000, 10000]
+
+  - key: sleeping_bag
+    item_name: Sleeping Bag
+    category: camping
+    subcategory: sleeping_bag
+    priority: essential
+    quantity_rule: "people_count"
+    reason: "Rated to the coldest night you expect, not the daytime temperature."
+    search_terms: [sleeping bag, mummy sleeping bag, 3 season sleeping bag]
+    required_features: [insulated]
+    preferred_features: [lightweight, compact]
+    est_price_range: [1500, 5000]
+
+  - key: sleeping_mat
+    item_name: Sleeping Mat
+    category: camping
+    subcategory: sleeping_mat
+    priority: essential
+    quantity_rule: "people_count"
+    reason: "Ground cold, not air temperature, is what keeps campers awake."
+    search_terms: [sleeping pad, foam camping mat, inflatable sleeping pad]
+    required_features: []
+    preferred_features: [insulating, lightweight, compact]
+    est_price_range: [700, 2500]
+
+  - key: camp_stove
+    item_name: Camping Stove
+    category: camping
+    subcategory: stove
+    priority: essential
+    quantity_rule: 1
+    reason: "Hot food and boiled water; open fires are restricted in most campsites."
+    search_terms: [portable camping stove, backpacking stove, camp burner]
+    required_features: [portable]
+    preferred_features: [windproof, compact, lightweight]
+    est_price_range: [700, 3000]
+
+  - key: headlamp
+    item_name: Headlamp
+    category: navigation
+    subcategory: headlamp
+    priority: essential
+    quantity_rule: "people_count"
+    reason: "Hands-free light for pitching a tent and cooking after dark."
+    search_terms: [rechargeable headlamp, head torch, camping light]
+    required_features: []
+    preferred_features: [rechargeable, waterproof]
+    est_price_range: [400, 1800]
+
+  - key: first_aid_kit
+    item_name: First-Aid Kit
+    category: safety
+    subcategory: first_aid
+    priority: essential
+    quantity_rule: 1
+    reason: "Basic wound and burn care, well away from a pharmacy."
+    search_terms: [camping first aid kit, emergency medical kit]
+    required_features: [portable]
+    preferred_features: [compact]
+    est_price_range: [400, 1500]
+
+  - key: water_bottle
+    item_name: Water Bottle
+    category: hydration
+    subcategory: bottle
+    priority: essential
+    quantity_rule: "people_count"
+    reason: "Carrying capacity between water sources."
+    search_terms: [insulated water bottle, camping bottle]
+    required_features: [leak_proof]
+    preferred_features: [insulating, durable]
+    est_price_range: [400, 1500]
+
+  - key: backpack
+    item_name: Backpack
+    category: equipment
+    subcategory: backpack
+    priority: recommended
+    quantity_rule: 1
+    reason: "Carries the shared load to the campsite."
+    search_terms: [camping backpack, rucksack]
+    required_features: []
+    preferred_features: [water_resistant, ergonomic, durable]
+    est_price_range: [1200, 4500]
+
+  - key: power_bank
+    item_name: Power Bank
+    category: electronics
+    subcategory: power_bank
+    priority: recommended
+    quantity_rule: 1
+    reason: "No power at a campsite, and phones double as torches and maps."
+    search_terms: [power bank, portable charger, rugged power bank]
+    required_features: [rechargeable]
+    preferred_features: [portable, durable]
+    est_price_range: [800, 2500]
+
+  - key: multi_tool
+    item_name: Multi-Tool
+    category: equipment
+    subcategory: multi_tool
+    priority: optional
+    quantity_rule: 1
+    reason: "Tent repairs, food prep and a dozen small jobs."
+    search_terms: [camping multi tool, knife tool]
+    required_features: [portable]
+    preferred_features: [compact, durable]
+    est_price_range: [400, 1800]
+
+  - key: dry_bag
+    item_name: Dry Bag
+    category: storage
+    subcategory: dry_bag
+    priority: optional
+    quantity_rule: 1
+    reason: "Keeps sleeping gear and electronics dry through rain and dew."
+    search_terms: [waterproof dry bag, roll top dry sack]
+    required_features: [waterproof]
+    preferred_features: [lightweight, compact]
+    est_price_range: [300, 1200]

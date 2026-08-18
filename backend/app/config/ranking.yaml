@@ -1,0 +1,63 @@
+# Ranking weights -- docs/ARCHITECTURE.md section 5.
+#
+# These are a documented, tunable prior. They are NOT claimed to be
+# empirically optimal; nothing in this repo has validated them against
+# ground-truth relevance judgements. Tune them, re-run ml/evaluation, and
+# report what actually changed.
+#
+# Weights must sum to 1.0 -- asserted at load time.
+
+weights:
+  goal_suitability: 0.25   # does this product serve the stated goal/context
+  preference_match: 0.20   # brand/category/price affinity from user history
+  quality: 0.15            # rating, confidence-adjusted by review volume
+  feature_match: 0.15      # required + preferred features present
+  budget_fit: 0.10         # sits well inside the per-item budget envelope
+  review_strength: 0.05    # review volume as an independent trust signal
+  delivery: 0.05           # faster is better, saturating
+  deal_value: 0.05         # discount depth, capped to resist fake MRP inflation
+
+# Per-preset overrides applied by the bundle optimizer. Values here replace the
+# base weight, then the whole vector is renormalized to sum to 1.0.
+presets:
+  best_overall: {}
+  best_budget:
+    budget_fit: 0.28
+    deal_value: 0.14
+    quality: 0.10
+    preference_match: 0.12
+  premium:
+    quality: 0.28
+    feature_match: 0.24
+    budget_fit: 0.02
+    deal_value: 0.02
+
+# Budget cap multipliers per preset (fraction of the user's total budget).
+budget_multipliers:
+  best_budget: 0.70
+  best_overall: 1.00
+  premium: 1.25
+
+scoring:
+  # Wilson-style damping: a 5.0 from 3 reviews should not beat a 4.5 from 2800.
+  review_confidence_pivot: 150
+
+  # Deal value saturates -- a "70% off" on an inflated MRP is not 14x better
+  # than 5% off a fair price.
+  max_credited_discount_pct: 45
+
+  # Delivery score: 1.0 at <= fast_days, decaying to 0 at slow_days.
+  fast_delivery_days: 2
+  slow_delivery_days: 10
+
+  # budget_fit peaks when price sits at this fraction of the item's estimated
+  # price ceiling. Rewards value without pushing users to the cheapest item.
+  ideal_price_ratio: 0.75
+
+  out_of_stock_penalty: 0.35   # multiplier applied to the final score
+
+filters:
+  # Hard filters applied before scoring.
+  max_price_overshoot: 1.35    # drop candidates >135% of est_price_max
+  min_rating: 3.0
+  exclude_out_of_stock: false  # kept as candidates so substitution can explain

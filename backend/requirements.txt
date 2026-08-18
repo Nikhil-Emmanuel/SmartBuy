@@ -1,0 +1,29 @@
+# --- Web ---
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+python-multipart>=0.0.12
+
+# --- Config & validation ---
+pydantic>=2.9.0
+pydantic-settings>=2.6.0
+python-dotenv>=1.0.1
+PyYAML>=6.0.2
+
+# --- Database ---
+SQLAlchemy>=2.0.35
+psycopg[binary]>=3.2.0          # Postgres driver (prod only; SQLite needs nothing)
+
+# --- LLM ---
+google-genai>=1.0.0             # Gemini
+
+# --- ML / retrieval ---
+numpy>=1.26.0
+scikit-learn>=1.5.0
+pandas>=2.2.0
+rapidfuzz>=3.10.0               # existing-item fuzzy matching
+
+# --- Dev / test ---
+pytest>=8.3.0
+pytest-asyncio>=0.24.0
+httpx>=0.27.0
+ruff>=0.7.0

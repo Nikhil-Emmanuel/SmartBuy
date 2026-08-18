@@ -1,0 +1,93 @@
+# Slot policy -- which questions the agent is allowed to ask, and when.
+#
+# The agent asks ONLY when: criticality is CRITICAL or HIGH, the slot is empty,
+# and it cannot be inferred. Hard cap of MAX_FOLLOWUP_QUESTIONS (default 3).
+# Master prompt section 11: do not ask unnecessary questions.
+
+slots:
+  budget_total:
+    criticality: CRITICAL
+    inferable: false
+    question: "What's your approximate budget for this?"
+    chips: ["Under Rs 5,000", "Rs 5,000-15,000", "Rs 15,000-30,000", "Above Rs 30,000"]
+    applies_to: [GOAL_BASED_SHOPPING, BUDGET_OPTIMIZATION, SPECIFIC_PRODUCT_SEARCH]
+
+  duration_days:
+    criticality: CRITICAL
+    inferable: true
+    infer: "1 if the activity is a day activity, else ask"
+    question: "How many days will this be?"
+    chips: ["1-2 days", "3-4 days", "5-7 days", "More than a week"]
+    applies_to: [GOAL_BASED_SHOPPING]
+
+  location:
+    criticality: HIGH
+    inferable: false
+    question: "Where are you headed?"
+    chips: []
+    applies_to: [GOAL_BASED_SHOPPING]
+
+  camping:
+    criticality: HIGH
+    inferable: true
+    infer: "false when duration_days < 2"
+    question: "Are you camping overnight, or staying in guesthouses?"
+    chips: ["Camping overnight", "Guesthouses", "Not sure yet"]
+    applies_to: [GOAL_BASED_SHOPPING]
+    only_when: "activity in ['trek', 'winter_trek', 'camping', 'hiking']"
+
+  experience_level:
+    criticality: MEDIUM
+    inferable: true
+    infer: "beginner"
+    question: "Have you done this before, or is this your first time?"
+    chips: ["First time", "Done it a few times", "Experienced"]
+    applies_to: [GOAL_BASED_SHOPPING]
+
+  people_count:
+    criticality: LOW
+    inferable: true
+    infer: "1"
+    question: "How many people are you shopping for?"
+    chips: ["Just me", "2 people", "3-4 people"]
+    applies_to: [GOAL_BASED_SHOPPING]
+
+  # Never asked. Derived, then shown in the sidebar as a correctable assumption.
+  season:
+    criticality: LOW
+    inferable: true
+    infer: "from location + start_date, else current month"
+    never_ask: true
+
+  region_type:
+    criticality: LOW
+    inferable: true
+    infer: "from location lookup table"
+    never_ask: true
+
+# Order in which questions are asked when several are missing.
+ask_order:
+  - budget_total
+  - duration_days
+  - location
+  - camping
+  - experience_level
+  - people_count
+
+# Mode A (SPECIFIC_PRODUCT_SEARCH) is deliberately near-silent: if the user
+# already named a product and a price, we search immediately. Forcing a known
+# buyer through a planning interview is the failure mode this project exists
+# to avoid.
+intent_overrides:
+  SPECIFIC_PRODUCT_SEARCH:
+    max_questions: 1
+    required: [budget_total]
+  PRODUCT_COMPARISON:
+    max_questions: 0
+    required: []
+  FIND_BEST_DEAL:
+    max_questions: 0
+    required: []
+  FIND_ALTERNATIVE:
+    max_questions: 0
+    required: []
