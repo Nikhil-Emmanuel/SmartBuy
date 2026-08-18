@@ -26,17 +26,70 @@ presets:
     deal_value: 0.14
     quality: 0.10
     preference_match: 0.12
+  # Premium means "best gear", so quality and features must actually dominate.
+  # With only a mild shift the scorer keeps preferring the cheap well-rated
+  # item -- correct for value, wrong for a preset the user picked to spend more.
   premium:
-    quality: 0.28
-    feature_match: 0.24
-    budget_fit: 0.02
-    deal_value: 0.02
+    quality: 0.34
+    feature_match: 0.26
+    goal_suitability: 0.22
+    preference_match: 0.10
+    budget_fit: 0.01
+    review_strength: 0.05
+    delivery: 0.01
+    deal_value: 0.01
 
 # Budget cap multipliers per preset (fraction of the user's total budget).
+# Premium deliberately exceeds the stated budget -- it is a "stretch" option.
+# The API reports over_budget explicitly so the UI never shows a negative
+# remaining balance and never implies the user's limit was respected.
 budget_multipliers:
   best_budget: 0.70
   best_overall: 1.00
   premium: 1.25
+
+optimizer:
+  # How stage 2 chooses which upgrade to apply next.
+  #   ratio    -> best utility gain per rupee (value-seeking)
+  #   absolute -> largest utility gain that still fits (quality-seeking)
+  # Without this, "Premium" just buys more cheap optional items instead of
+  # better gear, because a Rs 250 neck gaiter always beats a Rs 7,400 jacket
+  # upgrade on a per-rupee basis.
+  upgrade_strategy:
+    best_overall: ratio
+    best_budget: ratio
+    premium: absolute
+
+  # Diminishing returns floor: an upgrade must deliver at least this much
+  # utility per Rs 1,000 spent. Without it the optimizer drains the budget to
+  # the last rupee chasing +0.005 improvements, which is not what "best value"
+  # means to a human.
+  min_upgrade_utility_per_1000:
+    best_overall: 0.020
+    best_budget: 0.035
+    premium: 0.004
+
+  # Optional/recommended items compete with essential upgrades for budget.
+  # Premium suppresses them so the money goes into better core gear first.
+  extras_weight_multiplier:
+    best_overall: 1.0
+    best_budget: 1.0
+    premium: 0.35
+
+  # Fraction of the cap held back. Spending a budget down to the last Rs 36 is
+  # not what "best value" means to a person -- they want headroom for delivery
+  # charges and the thing they forgot.
+  budget_reserve_pct:
+    best_overall: 0.10
+    best_budget: 0.05
+    premium: 0.0
+
+  # Add-ons face the same diminishing-returns test as upgrades, so a marginal
+  # optional item cannot quietly consume the reserve.
+  min_addon_utility_per_1000:
+    best_overall: 0.030
+    best_budget: 0.050
+    premium: 0.010
 
 scoring:
   # Wilson-style damping: a 5.0 from 3 reviews should not beat a 4.5 from 2800.

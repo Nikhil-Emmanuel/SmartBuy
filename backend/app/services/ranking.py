@@ -44,6 +44,10 @@ class RankingConfig:
     budget_multipliers: dict[str, float]
     scoring: dict
     filters: dict
+    optimizer: dict
+
+    def optimizer_setting(self, group: str, preset: str, default):
+        return (self.optimizer.get(group) or {}).get(preset, default)
 
     def weights_for(self, preset: str | None) -> dict[str, float]:
         """Preset overrides replace base weights, then everything is
@@ -77,6 +81,7 @@ def get_ranking_config() -> RankingConfig:
                             for k, v in (raw.get("budget_multipliers") or {}).items()},
         scoring=raw.get("scoring") or {},
         filters=raw.get("filters") or {},
+        optimizer=raw.get("optimizer") or {},
     )
 
 
