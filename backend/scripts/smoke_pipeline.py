@@ -13,17 +13,17 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.core.constants import BundlePreset  # noqa: E402
-from app.db.database import SessionLocal  # noqa: E402
-from app.services.bundle_optimizer import optimize_presets, requirement_coverage  # noqa: E402
-from app.services.product_search import get_search_service  # noqa: E402
-from app.services.recommendation import (  # noqa: E402
+from app.core.constants import BundlePreset
+from app.db.database import SessionLocal
+from app.services.bundle_optimizer import optimize_presets, requirement_coverage
+from app.services.product_search import get_search_service
+from app.services.recommendation import (
     assign_badges,
     build_scoring_context,
     candidate_builder,
     rank_requirement,
 )
-from app.services.requirement_planner import plan_requirements  # noqa: E402
+from app.services.requirement_planner import plan_requirements
 
 DEMO = {
     "goal_text": "4-day winter trek in Manali, beginner, budget Rs 15,000",

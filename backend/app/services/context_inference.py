@@ -11,6 +11,7 @@ Owner: Member 4 (Requirements) with Member 5 (Agent).
 
 from __future__ import annotations
 
+import contextlib
 from dataclasses import dataclass
 from datetime import date
 
@@ -121,10 +122,8 @@ def infer_context(context: dict, today: date | None = None) -> tuple[dict, list[
     start = ctx.get("start_date")
     when = today or date.today()
     if isinstance(start, str) and start:
-        try:
+        with contextlib.suppress(ValueError):
             when = date.fromisoformat(start[:10])
-        except ValueError:
-            pass
     elif isinstance(start, date):
         when = start
 

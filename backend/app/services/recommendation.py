@@ -23,6 +23,7 @@ from app.services.ranking import (
     derive_context_tags,
     score_product,
 )
+from app.services.requirement_planner import ADHOC_KEY
 
 log = logging.getLogger("smartbuy.recommend")
 
@@ -74,6 +75,8 @@ def to_spec(requirement) -> RequirementSpec:
         est_price_min=int(requirement.est_price_min or 0),
         est_price_max=int(requirement.est_price_max or 0),
         search_terms=list(requirement.search_terms or []),
+        # "under Rs 3,000" came from the user, not from our price bands.
+        hard_price_cap=getattr(requirement, "kb_item_key", "") == ADHOC_KEY,
     )
 
 
@@ -89,12 +92,12 @@ def build_reasons(product, breakdown: dict, spec: RequirementSpec, context: dict
         activity = (context.get("activity") or "your plan").replace("_", " ")
         reasons.append(f"Well suited to {activity}")
 
-    matched = set(f.lower() for f in (product.features or [])) & set(
+    matched = {f.lower() for f in (product.features or [])} & {
         f.lower() for f in spec.required_features
-    )
+    }
     if matched:
         pretty = ", ".join(sorted(m.replace("_", " ") for m in matched))
-        reasons.append(f"Has the {pretty} you need for this")
+        reasons.append(f"Matches your must-haves: {pretty}")
 
     if product.rating >= 4.2 and product.review_count >= 200:
         reasons.append(f"Rated {product.rating} across {product.review_count:,} reviews")

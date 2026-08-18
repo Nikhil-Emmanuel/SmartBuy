@@ -10,13 +10,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.kb.condition_dsl import (  # noqa: E402
+from app.kb.condition_dsl import (
     UnsafeExpression,
     evaluate_condition,
     evaluate_quantity,
 )
-from app.kb.loader import list_goals, resolve_goal_from_text  # noqa: E402
-from app.services.requirement_planner import (  # noqa: E402
+from app.kb.loader import list_goals, resolve_goal_from_text
+from app.services.requirement_planner import (
     plan_requirements,
     unmatched_existing_items,
 )
@@ -49,7 +49,7 @@ def test_dsl() -> None:
     for expr, expected in qty:
         got = evaluate_quantity(expr, ctx)
         flag = "ok " if got == expected else "FAIL"
-        print(f"  [{flag}] qty {str(expr):38} -> {got}")
+        print(f"  [{flag}] qty {expr!s:38} -> {got}")
         assert got == expected, f"{expr}: expected {expected}, got {got}"
 
     # The DSL must refuse anything outside its grammar.

@@ -14,7 +14,7 @@ from __future__ import annotations
 
 import logging
 import time
-from contextlib import contextmanager
+from contextlib import contextmanager, suppress
 
 from sqlalchemy.orm import Session
 
@@ -50,12 +50,10 @@ def record(db: Session | None, *, action: str, tool: str | None = None,
             status=status[:24],
         ))
         db.flush()
-    except Exception:  # noqa: BLE001 - auditing must not break the request
+    except Exception:
         log.exception("Failed to write audit row for action=%s", action)
-        try:
+        with suppress(Exception):
             db.rollback()
-        except Exception:  # noqa: BLE001
-            pass
 
 
 @contextmanager
@@ -73,7 +71,7 @@ def audited(db: Session | None, *, action: str, tool: str | None = None,
     started = time.perf_counter()
     try:
         yield entry
-    except Exception as exc:  # noqa: BLE001 - record then re-raise
+    except Exception as exc:
         entry["status"] = STATUS_ERROR
         entry["output_summary"] = f"{type(exc).__name__}: {exc}"
         raise

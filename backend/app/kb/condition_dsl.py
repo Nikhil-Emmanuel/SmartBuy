@@ -23,7 +23,7 @@ import ast
 import math
 from typing import Any
 
-__all__ = ["evaluate_condition", "evaluate_quantity", "UnsafeExpression", "MissingSlot"]
+__all__ = ["MissingSlot", "UnsafeExpression", "evaluate_condition", "evaluate_quantity"]
 
 
 class UnsafeExpression(ValueError):
@@ -117,7 +117,7 @@ def _eval(node: ast.AST, context: dict) -> Any:
 
     if isinstance(node, ast.Compare):
         left = _eval(node.left, context)
-        for op_node, comparator in zip(node.ops, node.comparators):
+        for op_node, comparator in zip(node.ops, node.comparators, strict=False):
             op = _COMPARISONS.get(type(op_node))
             if op is None:
                 raise UnsafeExpression(
@@ -189,6 +189,6 @@ def evaluate_quantity(expression: str | int | None, context: dict, *, default: i
     if value is None or isinstance(value, bool):
         return default
     try:
-        return max(1, int(math.ceil(float(value))))
+        return max(1, math.ceil(float(value)))
     except (TypeError, ValueError):
         return default

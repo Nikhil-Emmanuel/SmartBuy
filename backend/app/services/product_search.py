@@ -266,7 +266,7 @@ class ProductSearchService:
         if not ranked:
             return "", ""
 
-        weights = {pid: score for pid, score in ranked}
+        weights = dict(ranked)
         rows = db.execute(
             select(Product.id, Product.category, Product.subcategory)
             .where(Product.id.in_(list(weights)))
@@ -325,15 +325,21 @@ class ProductSearchService:
 
         # Price ceiling: the item's own estimate, tightened by the remaining
         # budget when one is supplied.
-        overshoot = float(cfg.filters.get("max_price_overshoot", 1.35))
+        overshoot = 1.0 if req.hard_price_cap else float(
+            cfg.filters.get("max_price_overshoot", 1.35))
         ceiling = int(req.est_price_max * overshoot) if req.est_price_max else None
         if budget_ceiling:
             ceiling = min(ceiling, budget_ceiling) if ceiling else budget_ceiling
         if ceiling:
             affordable = [p for p in rows if p.price <= ceiling]
-            # Never return an empty set purely on price -- the caller needs
-            # candidates in order to explain that everything is over budget.
-            rows = affordable or sorted(rows, key=lambda p: p.price)[:limit]
+            if req.hard_price_cap:
+                # The user named this figure. Showing them a Rs 3,400 product
+                # after they said "under Rs 3,000" is not a helpful suggestion.
+                rows = affordable
+            else:
+                # Never return an empty set purely on an estimated band -- the
+                # caller needs candidates to explain that everything is over.
+                rows = affordable or sorted(rows, key=lambda p: p.price)[:limit]
 
         query = " ".join(req.search_terms or [req.item_name])
         if query.strip():

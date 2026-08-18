@@ -121,6 +121,9 @@ class RequirementSpec:
     est_price_min: int = 0
     est_price_max: int = 0
     search_terms: list[str] = field(default_factory=list)
+    # True when est_price_max is a ceiling the user actually stated, rather
+    # than a knowledge-base estimate. Stated ceilings are not negotiable.
+    hard_price_cap: bool = False
 
 
 # Slot values -> catalog tag vocabulary. Keeps goal suitability grounded in
@@ -227,9 +230,7 @@ def score_preference_match(product, ctx: ScoringContext) -> float:
             score -= 0.05
 
     tags = {t.lower() for t in (product.tags or [])}
-    if ctx.price_bias == "value" and "value" in tags:
-        score += 0.10
-    elif ctx.price_bias == "premium" and "premium" in tags:
+    if (ctx.price_bias == "value" and "value" in tags) or (ctx.price_bias == "premium" and "premium" in tags):
         score += 0.10
 
     if ctx.delivery_bias == "fast" and product.delivery_days <= 3:

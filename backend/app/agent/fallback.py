@@ -166,7 +166,7 @@ def extract_people_count(message: str) -> int | None:
         match = pattern.search(message)
         if match:
             token = match.group(1).lower()
-            value = _WORD_NUMBERS.get(token, None) or (int(token) if token.isdigit() else None)
+            value = _WORD_NUMBERS.get(token) or (int(token) if token.isdigit() else None)
             if value and 1 <= value <= 50:
                 return value
     return None

@@ -121,7 +121,7 @@ def latest_plan(db: Session, session_id: str) -> ShoppingPlan | None:
 def session_slots(session: ChatSession) -> Slots:
     try:
         return Slots(**(session.slots or {}))
-    except Exception:  # noqa: BLE001 - a corrupt slot blob must not end the session
+    except Exception:
         log.exception("Could not load slots for session %s; starting clean", session.id)
         return Slots()
 
@@ -192,7 +192,7 @@ def understand(db: Session, session: ChatSession, message: str, current: Slots,
     started = time.perf_counter()
     try:
         payload = provider.generate_json(system, user_prompt, max_output_tokens=700)
-    except Exception as exc:  # noqa: BLE001 - any failure means fall back
+    except Exception as exc:
         audit.record(
             db, action="llm_call", tool="understand", session_id=session.id,
             input_summary=message, output_summary=str(exc),
@@ -238,7 +238,7 @@ def ask(db: Session, session: ChatSession, slot: str, template: str,
     started = time.perf_counter()
     try:
         payload = provider.generate_json(system, user_prompt, max_output_tokens=300)
-    except Exception as exc:  # noqa: BLE001
+    except Exception as exc:
         audit.record(
             db, action="llm_call", tool="ask", session_id=session.id,
             input_summary=slot, output_summary=str(exc),
@@ -410,7 +410,9 @@ def handle_message(db: Session, session: ChatSession, message: str,
                 session, slots, intent, question, final_chips,
                 next_action=NextAction.ANSWER_QUESTION,
                 degraded=degraded or ask_degraded,
-                asked=already_asked | {slot},
+                # The slot we are asking about right now is still missing --
+                # the sidebar highlights it while the user answers.
+                asked=already_asked,
             )
 
     # ----------------------------------------------------------- build a plan

@@ -14,16 +14,16 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.agent import orchestrator  # noqa: E402
-from app.agent.llm import get_llm_provider  # noqa: E402
-from app.api.deps import get_or_create_user  # noqa: E402
-from app.core.constants import AgentState, Intent, NextAction  # noqa: E402
-from app.db.database import SessionLocal, init_db  # noqa: E402
-from app.guardrails.privacy import minimal_slots, redact  # noqa: E402
-from app.guardrails.recommendation_checks import check_grounding  # noqa: E402
-from app.guardrails.validation import detect_injection, sanitize_message  # noqa: E402
-from app.services import plan_service  # noqa: E402
-from app.services.product_search import get_search_service  # noqa: E402
+from app.agent import orchestrator
+from app.agent.llm import get_llm_provider
+from app.api.deps import get_or_create_user
+from app.core.constants import AgentState, Intent, NextAction
+from app.db.database import SessionLocal, init_db
+from app.guardrails.privacy import minimal_slots, redact
+from app.guardrails.recommendation_checks import check_grounding
+from app.guardrails.validation import detect_injection, sanitize_message
+from app.services import plan_service
+from app.services.product_search import get_search_service
 
 DEMO_MESSAGE = (
     "I'm going for a 4-day winter trek in Manali, budget Rs 15,000, "
@@ -77,7 +77,7 @@ def test_guardrails() -> None:
     print(f"  [ok] grounding rejects fabrication ({reason})")
 
     bad, reason = check_grounding("Real-time price from Amazon.", evidence)
-    assert not bad and "marketplace" in reason or "real-time" in reason
+    assert (not bad and "marketplace" in reason) or "real-time" in reason
     print(f"  [ok] grounding rejects false data claims ({reason})")
 
 
@@ -158,7 +158,7 @@ def main() -> int:
         assert "tent" in keys and "sleeping_bag" in keys, sorted(keys)
         print("  [ok] ownership honoured, camping answer changed the requirement list")
 
-        recommendations = [r for r in plan.recommendations]
+        recommendations = list(plan.recommendations)
         badged = [r for r in recommendations if r.badge]
         assert recommendations, "no recommendations persisted"
         assert badged, "no comparison badges persisted"

@@ -97,7 +97,7 @@ def explain(
     started = time.perf_counter()
     try:
         payload = provider.generate_json(system, user_prompt, max_output_tokens=500)
-    except Exception as exc:  # noqa: BLE001 - any failure means fall back
+    except Exception as exc:
         audit.record(db, action="llm_call", tool="explain", session_id=session_id,
                      input_summary=product.name, output_summary=str(exc),
                      model_version=provider.model, status=audit.STATUS_FALLBACK,

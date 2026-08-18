@@ -44,8 +44,8 @@ async def lifespan(_app: FastAPI):
 
     # Warm the retrieval index so the first user request is not the slow one.
     try:
-        from app.services.product_search import get_search_service
         from app.db.database import SessionLocal
+        from app.services.product_search import get_search_service
 
         with SessionLocal() as db:
             size = get_search_service().warm(db)
@@ -103,7 +103,7 @@ async def validation_error_handler(_request: Request, exc: RequestValidationErro
 # --------------------------------------------------------------------------
 # Routers -- registered in the build order from docs/API_CONTRACT.md
 # --------------------------------------------------------------------------
-from app.api import (  # noqa: E402
+from app.api import (
     admin,
     bundles,
     chat,
@@ -118,6 +118,7 @@ from app.api import (  # noqa: E402
 
 app.include_router(health.router)
 app.include_router(products.router)
+app.include_router(products.offers_router)
 app.include_router(chat.router)
 app.include_router(requirements.router)
 app.include_router(recommendations.router)

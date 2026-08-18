@@ -283,6 +283,9 @@ def _detect_category(text: str) -> str:
     return ""
 
 
+ADHOC_KEY = "adhoc_search"
+
+
 def adhoc_requirement(query: str, price_max: int | None = None) -> PlannedRequirement:
     """Turn "find waterproof trekking shoes under Rs 3,000" into a requirement.
 
@@ -299,7 +302,7 @@ def adhoc_requirement(query: str, price_max: int | None = None) -> PlannedRequir
     features = _detect_features(query)
 
     return PlannedRequirement(
-        kb_item_key="adhoc_search",
+        kb_item_key=ADHOC_KEY,
         item_name=item_name.title() if item_name.islower() else item_name,
         category=_detect_category(query),
         subcategory="",

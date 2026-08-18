@@ -119,7 +119,7 @@ class GeminiProvider(LLMProvider):
                 payload = extract_json(response.text or "")
                 log.debug("Gemini ok in %.0fms (attempt %d)", elapsed, attempt + 1)
                 return payload
-            except Exception as exc:  # noqa: BLE001 - any failure means fall back
+            except Exception as exc:
                 last_error = exc
                 log.warning("Gemini attempt %d/%d failed: %s", attempt + 1, attempts, exc)
 

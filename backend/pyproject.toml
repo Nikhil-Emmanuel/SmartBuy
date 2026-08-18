@@ -1,0 +1,38 @@
+[project]
+name = "smartbuy-backend"
+version = "1.0.0"
+description = "AI-Powered Goal-Based Shopping & Deal Discovery Agent -- backend"
+requires-python = ">=3.12"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+exclude = [".venv", "__pycache__"]
+
+[tool.ruff.lint]
+select = [
+    "E", "W",    # pycodestyle
+    "F",         # pyflakes
+    "I",         # import sorting
+    "B",         # bugbear
+    "UP",        # pyupgrade
+    "SIM",       # simplify
+    "C4",        # comprehensions
+    "RUF",       # ruff-specific
+]
+ignore = [
+    "E501",      # line length is handled by the formatter, not enforced
+    "B008",      # FastAPI's Depends() in defaults is the documented idiom
+    "RUF012",    # ClassVar annotations on mutable defaults: noisy with Pydantic
+    "SIM108",    # ternaries are not always more readable
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Smoke tests deliberately import after sys.path manipulation.
+"scripts/*" = ["E402"]
+"app/main.py" = ["E402"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+filterwarnings = ["ignore::DeprecationWarning"]

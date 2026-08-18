@@ -15,17 +15,17 @@ import json
 import math
 import random
 import sys
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 from sqlalchemy import delete, func, select
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.core.config import settings  # noqa: E402
-from app.db.database import SessionLocal, init_db, new_id  # noqa: E402
-from app.models.product import Offer, Product, ProductInteraction  # noqa: E402
-from app.models.user import User, UserPreference  # noqa: E402
+from app.core.config import settings
+from app.db.database import SessionLocal, init_db, new_id
+from app.models.product import Offer, Product, ProductInteraction
+from app.models.user import User, UserPreference
 
 # Weighted so that "viewed" dominates, as it would in a real clickstream.
 INTERACTION_WEIGHTS = {
@@ -86,7 +86,7 @@ def seed_products(db, payload: dict, reset: bool) -> int:
             "image_url": p["image_url"],
             "product_group_key": p["product_group_key"],
             "is_simulated": p["is_simulated"],
-            "created_at": datetime.now(timezone.utc),
+            "created_at": datetime.now(UTC),
         })
     db.bulk_insert_mappings(Product, rows)
     db.commit()
@@ -150,7 +150,7 @@ def seed_interactions(db, count: int, seed: int) -> int:
     }
 
     n_users = max(50, count // 60)
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     user_rows, pref_rows, inter_rows = [], [], []
 
     for _ in range(n_users):

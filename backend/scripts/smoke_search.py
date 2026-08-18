@@ -13,9 +13,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.db.database import SessionLocal  # noqa: E402
-from app.services.product_search import SearchFilters, get_search_service  # noqa: E402
-from app.services.ranking import (  # noqa: E402
+from app.db.database import SessionLocal
+from app.services.product_search import SearchFilters, get_search_service
+from app.services.ranking import (
     RequirementSpec,
     ScoringContext,
     derive_context_tags,
@@ -111,7 +111,7 @@ def main() -> int:
                       f"{p.source}  {p.name[:44]}")
 
             if scored:
-                top, breakdown = scored[0]
+                _top, breakdown = scored[0]
                 pts = weighted_points(breakdown)
                 detail = "  ".join(f"{d['label'].split()[0]} {d['earned']:.1f}/{d['max']:.0f}"
                                    for d in pts)
