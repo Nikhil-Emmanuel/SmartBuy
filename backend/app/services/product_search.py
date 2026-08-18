@@ -251,6 +251,42 @@ class ProductSearchService:
             ],
         }
 
+    def infer_taxonomy(self, db: Session, query: str,
+                       top_k: int = 15) -> tuple[str, str]:
+        """Best-guess (category, subcategory) for a free-text product query.
+
+        Mode A has no knowledge-base entry to tell it what shelf to look on,
+        so it asks the index: whichever subcategory dominates the strongest
+        matches is the shelf. Without this, "waterproof trekking shoes"
+        happily returns waterproof trekking gaiters -- every word matches,
+        and it is still the wrong product.
+        """
+        self.ensure_index(db)
+        ranked = self.index.query(query, top_k=top_k)
+        if not ranked:
+            return "", ""
+
+        weights = {pid: score for pid, score in ranked}
+        rows = db.execute(
+            select(Product.id, Product.category, Product.subcategory)
+            .where(Product.id.in_(list(weights)))
+        ).all()
+
+        scores: dict[tuple[str, str], float] = {}
+        for pid, category, subcategory in rows:
+            key = (category, subcategory)
+            scores[key] = scores.get(key, 0.0) + weights.get(pid, 0.0)
+
+        if not scores:
+            return "", ""
+        best, best_score = max(scores.items(), key=lambda kv: kv[1])
+        total = sum(scores.values())
+        # A clear winner only. A flat distribution means the query is broad
+        # ("camping gear"), and narrowing it would hide good products.
+        if total <= 0 or best_score / total < 0.34:
+            return best[0], ""
+        return best
+
     # -- requirement-driven candidate retrieval ----------------------------
     def candidates_for_requirement(
         self,

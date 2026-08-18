@@ -228,6 +228,94 @@ def plan_requirements(
     return PlanResult(goal, goal.key, ctx, assumptions, requirements)
 
 
+# --------------------------------------------------------------------------
+# Mode A: a named product becomes a one-line requirement
+# --------------------------------------------------------------------------
+_QUERY_LEADIN = re.compile(
+    r"^\s*(?:can you\s+|please\s+)?"
+    r"(?:find(?:\s+me)?|looking for|look for|show me|i need|i want|i'?m looking for|"
+    r"search for|buy|get me|recommend|suggest)\s+(?:a|an|some|the)?\s*",
+    re.I,
+)
+_PRICE_CLAUSE = re.compile(
+    r"\b(?:under|below|less than|within|upto|up to|max(?:imum)?|around|about|budget of)\s*"
+    r"(?:rs\.?|inr|₹)?\s*[\d][\d,]*\s*(?:k|thousand|lakhs?)?\b",
+    re.I,
+)
+_TRAILING_JUNK = re.compile(r"\b(?:please|thanks|thank you)\b|[.!?]+\s*$", re.I)
+
+# Words users type that map onto the controlled feature vocabulary.
+FEATURE_SYNONYMS: dict[str, str] = {
+    "water proof": "waterproof", "water-proof": "waterproof",
+    "water resistant": "water_resistant", "water-resistant": "water_resistant",
+    "wind proof": "windproof", "wind-proof": "windproof",
+    "quick drying": "quick_dry", "quick-dry": "quick_dry", "fast drying": "quick_dry",
+    "non slip": "anti_slip", "non-slip": "anti_slip", "grippy": "high_grip",
+    "light weight": "lightweight", "light-weight": "lightweight", "light": "lightweight",
+    "warm": "thermal", "insulating": "insulated",
+    "rechargable": "rechargeable", "usb rechargeable": "rechargeable",
+    "spill proof": "leak_proof", "leak proof": "leak_proof",
+    "packable": "compact", "travel friendly": "portable", "foldable": "foldable",
+}
+
+
+def _detect_features(text: str) -> list[str]:
+    from app.core.constants import FEATURES
+
+    lowered = f" {text.lower()} "
+    found: list[str] = []
+    for feature in FEATURES:
+        if f" {feature.replace('_', ' ')} " in lowered or f" {feature} " in lowered:
+            found.append(feature)
+    for phrase, feature in FEATURE_SYNONYMS.items():
+        if f" {phrase} " in lowered and feature not in found:
+            found.append(feature)
+    return found
+
+
+def _detect_category(text: str) -> str:
+    from app.core.constants import CATEGORIES
+
+    lowered = f" {text.lower()} "
+    for category in CATEGORIES:
+        if f" {category.replace('_', ' ')} " in lowered:
+            return category
+    return ""
+
+
+def adhoc_requirement(query: str, price_max: int | None = None) -> PlannedRequirement:
+    """Turn "find waterproof trekking shoes under Rs 3,000" into a requirement.
+
+    Mode A reuses the entire Mode B pipeline -- retrieval, scoring, badges,
+    explanations -- by expressing the user's query as a single requirement.
+    One code path means one set of bugs.
+    """
+    cleaned = _QUERY_LEADIN.sub("", query.strip())
+    cleaned = _PRICE_CLAUSE.sub(" ", cleaned)
+    cleaned = _TRAILING_JUNK.sub(" ", cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip(" ,.-")
+
+    item_name = (cleaned or query.strip())[:120]
+    features = _detect_features(query)
+
+    return PlannedRequirement(
+        kb_item_key="adhoc_search",
+        item_name=item_name.title() if item_name.islower() else item_name,
+        category=_detect_category(query),
+        subcategory="",
+        priority=Priority.ESSENTIAL,
+        quantity=1,
+        reason="You asked for this specifically.",
+        est_price_min=0,
+        est_price_max=int(price_max) if price_max else 0,
+        search_terms=[item_name] if item_name else [query.strip()[:120]],
+        required_features=[],
+        # Stated features guide the ranking rather than hard-filtering, so a
+        # near-perfect product is never hidden because one tag is missing.
+        preferred_features=features,
+    )
+
+
 def unmatched_existing_items(result: PlanResult, existing_items: list[str]) -> list[str]:
     """Things the user says they own that no requirement claimed.
 
