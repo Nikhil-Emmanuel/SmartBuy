@@ -1,0 +1,72 @@
+{
+  "session_id": "61e0234c-5718-4ac0-9489-498d537291bd",
+  "state": "PRESENTED",
+  "intent": "GOAL_BASED_SHOPPING",
+  "slots": {
+    "goal_text": "I'm going for a 4-day winter trek in Manali, budget Rs 15,000, I'm a beginner, I already have trekking shoes and a backpack",
+    "activity": "winter_trek",
+    "location": "Manali",
+    "region_type": "mountain",
+    "season": "winter",
+    "start_date": null,
+    "duration_days": 4,
+    "people_count": null,
+    "experience_level": "beginner",
+    "budget_total": 15000,
+    "currency": "INR",
+    "camping": true,
+    "temp_min_c": -5,
+    "existing_items": [
+      "trekking shoes",
+      "backpack"
+    ],
+    "preferences": {
+      "brands": [],
+      "price_bias": "balanced",
+      "delivery_bias": "standard"
+    },
+    "constraints": {}
+  },
+  "assumptions": [],
+  "messages": [
+    {
+      "role": "user",
+      "content": "I'm going for a 4-day winter trek in Manali, budget Rs 15,000, I'm a beginner, I already have trekking shoes and a backpack",
+      "meta": {
+        "flagged": false
+      },
+      "created_at": "2026-08-18T16:38:00.041820"
+    },
+    {
+      "role": "assistant",
+      "content": "Are you camping overnight, or staying in guesthouses?",
+      "meta": {
+        "chips": [
+          "Camping overnight",
+          "Guesthouses",
+          "Not sure yet"
+        ],
+        "asked_slot": "camping"
+      },
+      "created_at": "2026-08-18T16:38:00.107801"
+    },
+    {
+      "role": "user",
+      "content": "Camping overnight",
+      "meta": {
+        "flagged": false
+      },
+      "created_at": "2026-08-18T16:38:00.291449"
+    },
+    {
+      "role": "assistant",
+      "content": "Here is what you need for winter trekking: 25 items, 12 of them essential. I have left out 2 item(s) you already have (trekking backpack, winter trekking shoes). The recommended basket comes to Rs 13,404, saving Rs 7,210 against list prices and leaving Rs 1,596 of your Rs 15,000 budget.",
+      "meta": {
+        "plan_id": "14bc95ab-fe30-4e83-9783-453d76fa8c71",
+        "degraded": true
+      },
+      "created_at": "2026-08-18T16:38:00.708874"
+    }
+  ],
+  "plan_id": "14bc95ab-fe30-4e83-9783-453d76fa8c71"
+}

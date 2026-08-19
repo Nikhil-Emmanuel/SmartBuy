@@ -1,0 +1,83 @@
+{
+  "product": {
+    "id": "c6a90fec-db1a-f712-63a5-538499b7cc5d",
+    "source": "MARKET_B",
+    "source_name": "Marketplace B",
+    "external_product_id": "B-trekking-jacket-050-4175d2",
+    "name": "Altura Gear Insulated Trekking Jacket Ultra",
+    "brand": "Altura Gear",
+    "category": "outerwear",
+    "subcategory": "jacket",
+    "description": "Altura Gear Insulated Trekking Jacket Ultra designed for winter, trekking, cold weather use. Features breathable fabric, insulated for cold conditions, fully waterproof construction. Specifications - fill: Down 600FP; temp rating c: -5. A dependable everyday choice.",
+    "price": 1599,
+    "original_price": 1999,
+    "discount_pct": 20,
+    "rating": 3.4,
+    "review_count": 2093,
+    "features": [
+      "breathable",
+      "insulated",
+      "waterproof"
+    ],
+    "specs": {
+      "fill": "Down 600FP",
+      "temp_rating_c": -5
+    },
+    "tags": [
+      "beginner",
+      "cold_weather",
+      "mid_range",
+      "snow",
+      "trekking",
+      "winter"
+    ],
+    "availability": "in_stock",
+    "delivery_days": 6,
+    "url": "https://example-market-b.test/p/B-trekking-jacket-050-4175d2",
+    "image_url": "",
+    "product_group_key": "4175d2cd9dfa9933",
+    "is_simulated": true
+  },
+  "offers": [],
+  "other_sources": [
+    {
+      "id": "28328664-3c07-b9e3-3e29-41c349423e7c",
+      "source": "MARKET_A",
+      "source_name": "Marketplace A",
+      "external_product_id": "A-trekking-jacket-050-4175d2",
+      "name": "Altura Gear Insulated Trekking Jacket Ultra",
+      "brand": "Altura Gear",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Altura Gear Insulated Trekking Jacket Ultra designed for winter, trekking, cold weather use. Features breathable fabric, insulated for cold conditions, fully waterproof construction. Specifications - fill: Down 600FP; temp rating c: -5. Suitable for beginners and regular users alike.",
+      "price": 1499,
+      "original_price": 2199,
+      "discount_pct": 32,
+      "rating": 3.4,
+      "review_count": 2093,
+      "features": [
+        "breathable",
+        "insulated",
+        "waterproof"
+      ],
+      "specs": {
+        "fill": "Down 600FP",
+        "temp_rating_c": -5
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "mid_range",
+        "snow",
+        "trekking",
+        "winter"
+      ],
+      "availability": "in_stock",
+      "delivery_days": 2,
+      "url": "https://example-market-a.test/p/A-trekking-jacket-050-4175d2",
+      "image_url": "",
+      "product_group_key": "4175d2cd9dfa9933",
+      "is_simulated": true
+    }
+  ]
+}

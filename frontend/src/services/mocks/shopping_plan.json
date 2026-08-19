@@ -1,0 +1,4218 @@
+{
+  "plan_id": "14bc95ab-fe30-4e83-9783-453d76fa8c71",
+  "goal": "I'm going for a 4-day winter trek in Manali, budget Rs 15,000, I'm a beginner, I already have trekking shoes and a backpack",
+  "goal_summary": "",
+  "status": "complete",
+  "is_stale": false,
+  "context": {
+    "region_type": "mountain",
+    "temp_min_c": -5,
+    "season": "winter",
+    "goal_text": "I'm going for a 4-day winter trek in Manali, budget Rs 15,000, I'm a beginner, I already have trekking shoes and a backpack",
+    "activity": "winter_trek",
+    "location": "Manali",
+    "duration_days": 4,
+    "experience_level": "beginner",
+    "budget_total": 15000,
+    "currency": "INR",
+    "camping": true,
+    "existing_items": [
+      "trekking shoes",
+      "backpack"
+    ],
+    "preferences": {
+      "brands": [],
+      "price_bias": "balanced",
+      "delivery_bias": "standard"
+    },
+    "constraints": {},
+    "people_count": 1
+  },
+  "requirements": {
+    "essential": [
+      {
+        "id": "27545fc2-5f92-4773-8f4b-4d868aca8928",
+        "kb_item_key": "first_aid_kit",
+        "item_name": "First-Aid Kit",
+        "category": "safety",
+        "subcategory": "first_aid",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "Blisters, sprains and cuts are routine; medical help on a trail is hours away.",
+        "est_price_min": 400,
+        "est_price_max": 1500,
+        "required_features": [
+          "portable"
+        ],
+        "preferred_features": [
+          "compact",
+          "lightweight"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "93db6762-706d-4900-b8e5-a8d665481ce3",
+        "kb_item_key": "headlamp",
+        "item_name": "Headlamp",
+        "category": "navigation",
+        "subcategory": "headlamp",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "Hands-free light for pre-dawn starts and camp after sunset.",
+        "est_price_min": 500,
+        "est_price_max": 2000,
+        "required_features": [],
+        "preferred_features": [
+          "rechargeable",
+          "waterproof",
+          "lightweight"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "44d8e732-dced-4362-9696-3a175fc1cb13",
+        "kb_item_key": "winter_gloves",
+        "item_name": "Insulated Gloves",
+        "category": "accessories",
+        "subcategory": "gloves",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "Fingers lose heat first, and numb hands make everything from poles to zips difficult.",
+        "est_price_min": 500,
+        "est_price_max": 2000,
+        "required_features": [
+          "insulated"
+        ],
+        "preferred_features": [
+          "waterproof",
+          "windproof",
+          "high_grip"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "8c78bc1e-67da-4a17-8fff-c9bab7a5e047",
+        "kb_item_key": "insulated_jacket",
+        "item_name": "Insulated Trekking Jacket",
+        "category": "outerwear",
+        "subcategory": "jacket",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "Your outer shell against wind and snow; the single largest warmth contributor you carry.",
+        "est_price_min": 2500,
+        "est_price_max": 7000,
+        "required_features": [
+          "insulated"
+        ],
+        "preferred_features": [
+          "windproof",
+          "waterproof",
+          "breathable",
+          "lightweight"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "6788e889-2120-4140-aa99-6fb8990f86f9",
+        "kb_item_key": "water_bottle",
+        "item_name": "Insulated Water Bottle",
+        "category": "hydration",
+        "subcategory": "bottle",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "An insulated bottle stops your water freezing solid on the trail.",
+        "est_price_min": 400,
+        "est_price_max": 1500,
+        "required_features": [
+          "leak_proof"
+        ],
+        "preferred_features": [
+          "insulating",
+          "durable"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "70442424-d192-4aaa-a217-db7872f5b485",
+        "kb_item_key": "sleeping_bag",
+        "item_name": "Sub-Zero Sleeping Bag",
+        "category": "camping",
+        "subcategory": "sleeping_bag",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "Nights in the Himalayas drop well below freezing; a summer bag is genuinely dangerous.",
+        "est_price_min": 2500,
+        "est_price_max": 8000,
+        "required_features": [
+          "insulated"
+        ],
+        "preferred_features": [
+          "lightweight",
+          "compact",
+          "water_resistant"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "8dccc2ea-6014-47f3-bf30-970d0c61dafa",
+        "kb_item_key": "tent",
+        "item_name": "Tent",
+        "category": "camping",
+        "subcategory": "tent",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "Shelter for overnight stays where no huts or homestays are available.",
+        "est_price_min": 3000,
+        "est_price_max": 9000,
+        "required_features": [
+          "waterproof"
+        ],
+        "preferred_features": [
+          "windproof",
+          "lightweight",
+          "compact"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "dfbca1ea-bdd6-4c6e-98ad-44b504d1ffe4",
+        "kb_item_key": "thermal_base_layer",
+        "item_name": "Thermal Base Layer",
+        "category": "clothing",
+        "subcategory": "thermals",
+        "priority": "essential",
+        "quantity": 2,
+        "reason": "The foundation of cold-weather layering: traps body heat and wicks sweat away from skin.",
+        "est_price_min": 800,
+        "est_price_max": 2500,
+        "required_features": [
+          "thermal"
+        ],
+        "preferred_features": [
+          "quick_dry",
+          "lightweight",
+          "moisture_wicking"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "6f6ae73c-9895-43cb-94d0-950f021668c7",
+        "kb_item_key": "trekking_socks",
+        "item_name": "Thermal Woolen Socks",
+        "category": "clothing",
+        "subcategory": "socks",
+        "priority": "essential",
+        "quantity": 2,
+        "reason": "Wool retains warmth even when damp; cotton socks in the cold are how you get frostnip.",
+        "est_price_min": 350,
+        "est_price_max": 1400,
+        "required_features": [
+          "thermal"
+        ],
+        "preferred_features": [
+          "moisture_wicking",
+          "quick_dry",
+          "anti_bacterial"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "935b2026-0bc6-4e21-bc15-ec02b286636f",
+        "kb_item_key": "backpack",
+        "item_name": "Trekking Backpack",
+        "category": "equipment",
+        "subcategory": "backpack",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "A padded, hip-supported rucksack sized to your trek length.",
+        "est_price_min": 1500,
+        "est_price_max": 5000,
+        "required_features": [],
+        "preferred_features": [
+          "water_resistant",
+          "ergonomic",
+          "adjustable",
+          "durable"
+        ],
+        "is_owned": true,
+        "fulfillment_status": "owned",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "2ea75432-c771-4b2d-88ff-23abd4fe264a",
+        "kb_item_key": "trekking_pants",
+        "item_name": "Trekking Pants",
+        "category": "clothing",
+        "subcategory": "pants",
+        "priority": "essential",
+        "quantity": 2,
+        "reason": "Quick-drying, stretchable trousers; denim holds water and chafes on long walks.",
+        "est_price_min": 900,
+        "est_price_max": 3000,
+        "required_features": [],
+        "preferred_features": [
+          "quick_dry",
+          "water_resistant",
+          "lightweight",
+          "breathable"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "7c882dd7-4dd0-439e-b484-4a0fcd48c16c",
+        "kb_item_key": "trekking_poles",
+        "item_name": "Trekking Poles",
+        "category": "equipment",
+        "subcategory": "trekking_poles",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "Cuts knee load on descents by roughly a quarter and adds balance on loose ground.",
+        "est_price_min": 800,
+        "est_price_max": 2500,
+        "required_features": [
+          "adjustable"
+        ],
+        "preferred_features": [
+          "shock_absorbing",
+          "lightweight",
+          "foldable"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "875d2de7-a767-4ca9-9b08-200d34dcac64",
+        "kb_item_key": "trekking_shoes",
+        "item_name": "Winter Trekking Shoes",
+        "category": "footwear",
+        "subcategory": "trekking_shoes",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "Waterproof, high-ankle boots with grip for snow and slush.",
+        "est_price_min": 2000,
+        "est_price_max": 7000,
+        "required_features": [
+          "anti_slip"
+        ],
+        "preferred_features": [
+          "waterproof",
+          "anti_slip",
+          "insulated",
+          "shock_absorbing"
+        ],
+        "is_owned": true,
+        "fulfillment_status": "owned",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "dc11b8a8-8975-4225-9a81-e9ef4cce94a2",
+        "kb_item_key": "winter_headwear",
+        "item_name": "Woolen Cap / Beanie",
+        "category": "accessories",
+        "subcategory": "headwear",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "A large share of body heat escapes through an uncovered head.",
+        "est_price_min": 300,
+        "est_price_max": 1200,
+        "required_features": [
+          "thermal"
+        ],
+        "preferred_features": [
+          "windproof",
+          "lightweight"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      }
+    ],
+    "recommended": [
+      {
+        "id": "2b825911-4b3b-4fec-b0b6-de1b3c8d3413",
+        "kb_item_key": "emergency_blanket",
+        "item_name": "Emergency Thermal Blanket",
+        "category": "safety",
+        "subcategory": "emergency",
+        "priority": "recommended",
+        "quantity": 1,
+        "reason": "Weighs almost nothing and is the standard first response to hypothermia.",
+        "est_price_min": 150,
+        "est_price_max": 700,
+        "required_features": [],
+        "preferred_features": [
+          "thermal",
+          "lightweight",
+          "compact"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "4b9c5ef2-891b-4ad3-84ed-58fe9e1ebccf",
+        "kb_item_key": "fleece_midlayer",
+        "item_name": "Fleece Mid-Layer",
+        "category": "clothing",
+        "subcategory": "fleece",
+        "priority": "recommended",
+        "quantity": 1,
+        "reason": "The middle layer that traps warm air between your base layer and shell.",
+        "est_price_min": 900,
+        "est_price_max": 2800,
+        "required_features": [
+          "insulated"
+        ],
+        "preferred_features": [
+          "lightweight",
+          "breathable",
+          "quick_dry"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "c24541ee-ffee-4a3a-b949-c285960b1238",
+        "kb_item_key": "neck_gaiter",
+        "item_name": "Neck Gaiter / Buff",
+        "category": "accessories",
+        "subcategory": "neckwear",
+        "priority": "recommended",
+        "quantity": 1,
+        "reason": "Seals the gap between jacket and cap, and filters cold dry air before you breathe it.",
+        "est_price_min": 250,
+        "est_price_max": 900,
+        "required_features": [],
+        "preferred_features": [
+          "thermal",
+          "windproof",
+          "quick_dry"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "20b70988-b6a8-4c14-8495-7254110fb286",
+        "kb_item_key": "power_bank",
+        "item_name": "Power Bank",
+        "category": "electronics",
+        "subcategory": "power_bank",
+        "priority": "recommended",
+        "quantity": 1,
+        "reason": "No charging points on the trail, and cold drains phone batteries fast.",
+        "est_price_min": 800,
+        "est_price_max": 2500,
+        "required_features": [
+          "rechargeable"
+        ],
+        "preferred_features": [
+          "portable",
+          "durable",
+          "compact"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "f27e3d95-7099-4854-b47e-362126436e57",
+        "kb_item_key": "rain_protection",
+        "item_name": "Rain Poncho / Jacket",
+        "category": "outerwear",
+        "subcategory": "rainwear",
+        "priority": "recommended",
+        "quantity": 1,
+        "reason": "Mountain weather turns without warning; wet clothing at altitude is a safety problem.",
+        "est_price_min": 300,
+        "est_price_max": 1500,
+        "required_features": [
+          "waterproof"
+        ],
+        "preferred_features": [
+          "lightweight",
+          "compact",
+          "foldable"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "947f4890-465d-4194-bcdc-9f4ec4f31166",
+        "kb_item_key": "sleeping_mat",
+        "item_name": "Sleeping Mat",
+        "category": "camping",
+        "subcategory": "sleeping_mat",
+        "priority": "recommended",
+        "quantity": 1,
+        "reason": "Insulates you from ground cold, which is what actually ruins sleep in a tent.",
+        "est_price_min": 700,
+        "est_price_max": 2500,
+        "required_features": [],
+        "preferred_features": [
+          "insulating",
+          "lightweight",
+          "compact"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "430a1a16-9433-4830-8561-3ce743aee38d",
+        "kb_item_key": "sunscreen",
+        "item_name": "Sunscreen SPF 50+",
+        "category": "personal_care",
+        "subcategory": "skincare",
+        "priority": "recommended",
+        "quantity": 1,
+        "reason": "UV intensity rises sharply with altitude, and snow reflects it back at you.",
+        "est_price_min": 250,
+        "est_price_max": 900,
+        "required_features": [
+          "uv_protection"
+        ],
+        "preferred_features": [
+          "water_resistant"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "d5db09e2-c441-4236-8fd5-ab023e50372c",
+        "kb_item_key": "thermos_flask",
+        "item_name": "Thermos Flask",
+        "category": "hydration",
+        "subcategory": "flask",
+        "priority": "recommended",
+        "quantity": 1,
+        "reason": "A hot drink at a break is a real morale and core-temperature tool in the cold.",
+        "est_price_min": 600,
+        "est_price_max": 2200,
+        "required_features": [
+          "insulating"
+        ],
+        "preferred_features": [
+          "leak_proof",
+          "durable"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "b802685e-059b-4c0c-be70-ed35ac73f683",
+        "kb_item_key": "sunglasses",
+        "item_name": "UV Sunglasses",
+        "category": "accessories",
+        "subcategory": "eyewear",
+        "priority": "recommended",
+        "quantity": 1,
+        "reason": "Protects against glare and, at altitude, genuine snow-blindness risk.",
+        "est_price_min": 500,
+        "est_price_max": 2500,
+        "required_features": [
+          "uv_protection"
+        ],
+        "preferred_features": [
+          "lightweight",
+          "durable"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      }
+    ],
+    "optional": [
+      {
+        "id": "8c2d6448-2a32-400d-986c-dc4a5309d399",
+        "kb_item_key": "dry_bag",
+        "item_name": "Dry Bag / Rain Cover",
+        "category": "storage",
+        "subcategory": "dry_bag",
+        "priority": "optional",
+        "quantity": 1,
+        "reason": "Keeps spare clothes and electronics dry when the pack gets soaked.",
+        "est_price_min": 300,
+        "est_price_max": 1200,
+        "required_features": [
+          "waterproof"
+        ],
+        "preferred_features": [
+          "lightweight",
+          "compact"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "0be2c430-11c9-452d-be8d-c357c1cc1e00",
+        "kb_item_key": "multi_tool",
+        "item_name": "Multi-Tool",
+        "category": "equipment",
+        "subcategory": "multi_tool",
+        "priority": "optional",
+        "quantity": 1,
+        "reason": "Handles gear repairs on the trail.",
+        "est_price_min": 400,
+        "est_price_max": 1800,
+        "required_features": [
+          "portable"
+        ],
+        "preferred_features": [
+          "compact",
+          "durable"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "9fc1daf4-14df-43c5-8b0b-2339b93a5180",
+        "kb_item_key": "quick_dry_towel",
+        "item_name": "Quick-Dry Towel",
+        "category": "personal_care",
+        "subcategory": "towel",
+        "priority": "optional",
+        "quantity": 1,
+        "reason": "Packs down small and dries between stops, unlike a cotton towel.",
+        "est_price_min": 250,
+        "est_price_max": 900,
+        "required_features": [
+          "quick_dry"
+        ],
+        "preferred_features": [
+          "lightweight",
+          "compact"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "5cc7b0f1-d511-4c54-8e4f-55a5bb01caa1",
+        "kb_item_key": "snow_gaiters",
+        "item_name": "Snow Gaiters",
+        "category": "accessories",
+        "subcategory": "gaiters",
+        "priority": "optional",
+        "quantity": 1,
+        "reason": "Stops snow entering the top of your boots on deep sections.",
+        "est_price_min": 500,
+        "est_price_max": 1800,
+        "required_features": [
+          "waterproof"
+        ],
+        "preferred_features": [
+          "durable",
+          "adjustable"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      }
+    ]
+  },
+  "already_owned": [
+    {
+      "item_name": "Trekking Backpack",
+      "matched_from": "backpack"
+    },
+    {
+      "item_name": "Winter Trekking Shoes",
+      "matched_from": "trekking shoes"
+    }
+  ],
+  "bundles": [
+    {
+      "preset": "best_budget",
+      "total_cost": 9955,
+      "total_savings": 5640,
+      "remaining_budget": 5045,
+      "over_budget": 0,
+      "utility_score": 0.6874,
+      "requirement_coverage": 1.0,
+      "is_selected": false,
+      "items": [
+        {
+          "requirement": {
+            "id": "27545fc2-5f92-4773-8f4b-4d868aca8928",
+            "kb_item_key": "first_aid_kit",
+            "item_name": "First-Aid Kit",
+            "category": "safety",
+            "subcategory": "first_aid",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Blisters, sprains and cuts are routine; medical help on a trail is hours away.",
+            "est_price_min": 400,
+            "est_price_max": 1500,
+            "required_features": [
+              "portable"
+            ],
+            "preferred_features": [
+              "compact",
+              "lightweight"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "7505eef5-5d46-91af-e8df-876737863043",
+            "source": "MARKET_B",
+            "source_name": "Marketplace B",
+            "external_product_id": "B-first-aid-kit-005-8f11dc",
+            "name": "Rukmini Outdoors Adventure First-Aid Pouch",
+            "brand": "Rukmini Outdoors",
+            "category": "safety",
+            "subcategory": "first_aid",
+            "description": "Rukmini Outdoors Adventure First-Aid Pouch designed for safety, trekking, camping use. Features compact form factor, lightweight build, easy to carry. Suitable for beginners and regular users alike.",
+            "price": 999,
+            "original_price": 1799,
+            "discount_pct": 44,
+            "rating": 3.8,
+            "review_count": 1609,
+            "features": [
+              "compact",
+              "lightweight",
+              "portable"
+            ],
+            "specs": {},
+            "tags": [
+              "camping",
+              "emergency",
+              "essentials",
+              "safety",
+              "trekking",
+              "value"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 5,
+            "url": "https://example-market-b.test/p/B-first-aid-kit-005-8f11dc",
+            "image_url": "",
+            "product_group_key": "8f11dc6c717b7af3",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 999,
+          "score": 0.7896,
+          "reasons": [
+            "Matches your must-haves: portable",
+            "44% off, saving Rs 800",
+            "Priced comfortably within your budget for this item"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "93db6762-706d-4900-b8e5-a8d665481ce3",
+            "kb_item_key": "headlamp",
+            "item_name": "Headlamp",
+            "category": "navigation",
+            "subcategory": "headlamp",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Hands-free light for pre-dawn starts and camp after sunset.",
+            "est_price_min": 500,
+            "est_price_max": 2000,
+            "required_features": [],
+            "preferred_features": [
+              "rechargeable",
+              "waterproof",
+              "lightweight"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "c071ab8e-c019-d779-9f14-c5f63f019b64",
+            "source": "MARKET_A",
+            "source_name": "Marketplace A",
+            "external_product_id": "A-headlamp-019-cf6a22",
+            "name": "Summit & Co High-Lumen Trekking Headlamp III",
+            "brand": "Summit & Co",
+            "category": "navigation",
+            "subcategory": "headlamp",
+            "description": "Summit & Co High-Lumen Trekking Headlamp III designed for trekking, camping, night use. Features adjustable fit, built for durability, lightweight build, USB rechargeable, fully waterproof construction. Specifications - lumens: 350; runtime h: 12. Balanced option across price and performance.",
+            "price": 1199,
+            "original_price": 1999,
+            "discount_pct": 40,
+            "rating": 3.9,
+            "review_count": 3871,
+            "features": [
+              "adjustable",
+              "durable",
+              "lightweight",
+              "rechargeable",
+              "waterproof"
+            ],
+            "specs": {
+              "lumens": 350,
+              "runtime_h": 12
+            },
+            "tags": [
+              "camping",
+              "essentials",
+              "mid_range",
+              "night",
+              "safety",
+              "trekking"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 2,
+            "url": "https://example-market-a.test/p/A-headlamp-019-cf6a22",
+            "image_url": "",
+            "product_group_key": "cf6a22c03334beed",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 1199,
+          "score": 0.7886,
+          "reasons": [
+            "40% off, saving Rs 800",
+            "Priced comfortably within your budget for this item",
+            "Arrives in 2 day(s)"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "44d8e732-dced-4362-9696-3a175fc1cb13",
+            "kb_item_key": "winter_gloves",
+            "item_name": "Insulated Gloves",
+            "category": "accessories",
+            "subcategory": "gloves",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Fingers lose heat first, and numb hands make everything from poles to zips difficult.",
+            "est_price_min": 500,
+            "est_price_max": 2000,
+            "required_features": [
+              "insulated"
+            ],
+            "preferred_features": [
+              "waterproof",
+              "windproof",
+              "high_grip"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "94611a0e-65b3-b526-1651-59a1f1e68b0e",
+            "source": "MARKET_A",
+            "source_name": "Marketplace A",
+            "external_product_id": "A-gloves-007-408b83",
+            "name": "Altura Gear Insulated Trekking Gloves Prime",
+            "brand": "Altura Gear",
+            "category": "accessories",
+            "subcategory": "gloves",
+            "description": "Altura Gear Insulated Trekking Gloves Prime designed for winter, trekking, snow use. Features high-grip surface, insulated for cold conditions, thermal heat retention, windproof outer shell. Suitable for beginners and regular users alike.",
+            "price": 259,
+            "original_price": 409,
+            "discount_pct": 37,
+            "rating": 3.6,
+            "review_count": 1722,
+            "features": [
+              "high_grip",
+              "insulated",
+              "thermal",
+              "windproof"
+            ],
+            "specs": {},
+            "tags": [
+              "cold_weather",
+              "mid_range",
+              "snow",
+              "trekking",
+              "winter"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 1,
+            "url": "https://example-market-a.test/p/A-gloves-007-408b83",
+            "image_url": "",
+            "product_group_key": "408b83908eb26eef",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 259,
+          "score": 0.6814,
+          "reasons": [
+            "Well suited to winter trek",
+            "Matches your must-haves: insulated",
+            "37% off, saving Rs 150",
+            "Arrives in 1 day(s)"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "8c78bc1e-67da-4a17-8fff-c9bab7a5e047",
+            "kb_item_key": "insulated_jacket",
+            "item_name": "Insulated Trekking Jacket",
+            "category": "outerwear",
+            "subcategory": "jacket",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Your outer shell against wind and snow; the single largest warmth contributor you carry.",
+            "est_price_min": 2500,
+            "est_price_max": 7000,
+            "required_features": [
+              "insulated"
+            ],
+            "preferred_features": [
+              "windproof",
+              "waterproof",
+              "breathable",
+              "lightweight"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "bd1cf081-0293-bad9-12bc-402183e866d8",
+            "source": "MARKET_A",
+            "source_name": "Marketplace A",
+            "external_product_id": "A-trekking-jacket-012-6c71f1",
+            "name": "Summit & Co Insulated Trekking Jacket II 650",
+            "brand": "Summit & Co",
+            "category": "outerwear",
+            "subcategory": "jacket",
+            "description": "Summit & Co Insulated Trekking Jacket II 650 designed for winter, trekking, cold weather use. Features adjustable fit, breathable fabric, insulated for cold conditions, lightweight build, windproof outer shell. Specifications - fill: Synthetic 200g; temp rating c: -15. Suitable for beginners and regular users alike.",
+            "price": 1599,
+            "original_price": 2299,
+            "discount_pct": 30,
+            "rating": 4.0,
+            "review_count": 2315,
+            "features": [
+              "adjustable",
+              "breathable",
+              "insulated",
+              "lightweight",
+              "windproof"
+            ],
+            "specs": {
+              "fill": "Synthetic 200g",
+              "temp_rating_c": -15
+            },
+            "tags": [
+              "beginner",
+              "cold_weather",
+              "mid_range",
+              "snow",
+              "trekking",
+              "winter"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 2,
+            "url": "https://example-market-a.test/p/A-trekking-jacket-012-6c71f1",
+            "image_url": "",
+            "product_group_key": "6c71f19ecdc4304d",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 1599,
+          "score": 0.729,
+          "reasons": [
+            "Well suited to winter trek",
+            "Matches your must-haves: insulated",
+            "Rated 4.0 by buyers",
+            "30% off, saving Rs 700",
+            "Arrives in 2 day(s)"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "6788e889-2120-4140-aa99-6fb8990f86f9",
+            "kb_item_key": "water_bottle",
+            "item_name": "Insulated Water Bottle",
+            "category": "hydration",
+            "subcategory": "bottle",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "An insulated bottle stops your water freezing solid on the trail.",
+            "est_price_min": 400,
+            "est_price_max": 1500,
+            "required_features": [
+              "leak_proof"
+            ],
+            "preferred_features": [
+              "insulating",
+              "durable"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "d0db9b48-d542-ba9a-a272-1e768a94819f",
+            "source": "MARKET_A",
+            "source_name": "Marketplace A",
+            "external_product_id": "A-water-bottle-035-e93f46",
+            "name": "Altura Gear Double-Wall Thermos Bottle",
+            "brand": "Altura Gear",
+            "category": "hydration",
+            "subcategory": "bottle",
+            "description": "Altura Gear Double-Wall Thermos Bottle designed for trekking, hydration, essentials use. Features built for durability, leak-proof seal, easy to carry. Specifications - capacity ml: 500. Tested for regular outdoor and travel use.",
+            "price": 419,
+            "original_price": 699,
+            "discount_pct": 40,
+            "rating": 4.1,
+            "review_count": 2307,
+            "features": [
+              "durable",
+              "leak_proof",
+              "portable"
+            ],
+            "specs": {
+              "capacity_ml": 500
+            },
+            "tags": [
+              "daily",
+              "essentials",
+              "hydration",
+              "mid_range",
+              "trekking"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 1,
+            "url": "https://example-market-a.test/p/A-water-bottle-035-e93f46",
+            "image_url": "",
+            "product_group_key": "e93f46ec52933d37",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 419,
+          "score": 0.6768,
+          "reasons": [
+            "Matches your must-haves: leak proof",
+            "Rated 4.1 by buyers",
+            "40% off, saving Rs 280",
+            "Arrives in 1 day(s)"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "70442424-d192-4aaa-a217-db7872f5b485",
+            "kb_item_key": "sleeping_bag",
+            "item_name": "Sub-Zero Sleeping Bag",
+            "category": "camping",
+            "subcategory": "sleeping_bag",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Nights in the Himalayas drop well below freezing; a summer bag is genuinely dangerous.",
+            "est_price_min": 2500,
+            "est_price_max": 8000,
+            "required_features": [
+              "insulated"
+            ],
+            "preferred_features": [
+              "lightweight",
+              "compact",
+              "water_resistant"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "7e46cb3c-1fc2-4174-ea27-b167dc50494c",
+            "source": "MARKET_B",
+            "source_name": "Marketplace B",
+            "external_product_id": "B-sleeping-bag-002-5d4d29",
+            "name": "Trekmate Compact Trek Sleeping Bag Max",
+            "brand": "Trekmate",
+            "category": "camping",
+            "subcategory": "sleeping_bag",
+            "description": "Trekmate Compact Trek Sleeping Bag Max designed for camping, winter, trekking use. Features built for durability, insulated for cold conditions, lightweight build, water-resistant finish. Specifications - temp rating c: 0; fill: Synthetic. A dependable everyday choice.",
+            "price": 799,
+            "original_price": 1499,
+            "discount_pct": 47,
+            "rating": 3.3,
+            "review_count": 235,
+            "features": [
+              "durable",
+              "insulated",
+              "lightweight",
+              "water_resistant"
+            ],
+            "specs": {
+              "temp_rating_c": 0,
+              "fill": "Synthetic"
+            },
+            "tags": [
+              "camping",
+              "overnight",
+              "trekking",
+              "value",
+              "winter"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 3,
+            "url": "https://example-market-b.test/p/B-sleeping-bag-002-5d4d29",
+            "image_url": "",
+            "product_group_key": "5d4d298dc0c22f5f",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 799,
+          "score": 0.6771,
+          "reasons": [
+            "Well suited to winter trek",
+            "Matches your must-haves: insulated",
+            "47% off, saving Rs 700"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "8dccc2ea-6014-47f3-bf30-970d0c61dafa",
+            "kb_item_key": "tent",
+            "item_name": "Tent",
+            "category": "camping",
+            "subcategory": "tent",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Shelter for overnight stays where no huts or homestays are available.",
+            "est_price_min": 3000,
+            "est_price_max": 9000,
+            "required_features": [
+              "waterproof"
+            ],
+            "preferred_features": [
+              "windproof",
+              "lightweight",
+              "compact"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "eef4539d-f464-8ed6-e1a3-5bf743b9d5d0",
+            "source": "MARKET_C",
+            "source_name": "Marketplace C",
+            "external_product_id": "C-tent-020-adefbc",
+            "name": "BaseCamp Basics 4-Person Camping Tent Pro",
+            "brand": "BaseCamp Basics",
+            "category": "camping",
+            "subcategory": "tent",
+            "description": "BaseCamp Basics 4-Person Camping Tent Pro designed for camping, overnight, trekking use. Features seam-sealed for weather protection, fully waterproof construction, windproof outer shell. Specifications - capacity persons: 4; season: 4-season. Popular pick for first-time buyers.",
+            "price": 999,
+            "original_price": 1699,
+            "discount_pct": 41,
+            "rating": 3.3,
+            "review_count": 70,
+            "features": [
+              "seam_sealed",
+              "waterproof",
+              "windproof"
+            ],
+            "specs": {
+              "capacity_persons": 4,
+              "season": "4-season"
+            },
+            "tags": [
+              "camping",
+              "overnight",
+              "trekking",
+              "value"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 11,
+            "url": "https://example-market-c.test/p/C-tent-020-adefbc",
+            "image_url": "",
+            "product_group_key": "adefbc3d4adff828",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 999,
+          "score": 0.588,
+          "reasons": [
+            "Matches your must-haves: waterproof",
+            "41% off, saving Rs 700"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "dfbca1ea-bdd6-4c6e-98ad-44b504d1ffe4",
+            "kb_item_key": "thermal_base_layer",
+            "item_name": "Thermal Base Layer",
+            "category": "clothing",
+            "subcategory": "thermals",
+            "priority": "essential",
+            "quantity": 2,
+            "reason": "The foundation of cold-weather layering: traps body heat and wicks sweat away from skin.",
+            "est_price_min": 800,
+            "est_price_max": 2500,
+            "required_features": [
+              "thermal"
+            ],
+            "preferred_features": [
+              "quick_dry",
+              "lightweight",
+              "moisture_wicking"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "8596f204-263b-ce9e-6312-9386e8e8c7e3",
+            "source": "MARKET_A",
+            "source_name": "Marketplace A",
+            "external_product_id": "A-thermals-006-601be8",
+            "name": "Rukmini Outdoors Heat-Retain Base Layer Ultra",
+            "brand": "Rukmini Outdoors",
+            "category": "clothing",
+            "subcategory": "thermals",
+            "description": "Rukmini Outdoors Heat-Retain Base Layer Ultra designed for winter, trekking, cold weather use. Features breathable fabric, lightweight build, machine washable, moisture-wicking, quick-drying material. Specifications - material: Merino blend; temp rating c: 5. Suitable for beginners and regular users alike.",
+            "price": 469,
+            "original_price": 699,
+            "discount_pct": 33,
+            "rating": 3.8,
+            "review_count": 2369,
+            "features": [
+              "breathable",
+              "lightweight",
+              "machine_washable",
+              "moisture_wicking",
+              "quick_dry",
+              "thermal"
+            ],
+            "specs": {
+              "material": "Merino blend",
+              "temp_rating_c": 5
+            },
+            "tags": [
+              "beginner",
+              "cold_weather",
+              "layering",
+              "trekking",
+              "value",
+              "winter"
+            ],
+            "availability": "low_stock",
+            "delivery_days": 2,
+            "url": "https://example-market-a.test/p/A-thermals-006-601be8",
+            "image_url": "",
+            "product_group_key": "601be8ddc76b1cb7",
+            "is_simulated": true
+          },
+          "quantity": 2,
+          "line_total": 938,
+          "score": 0.704,
+          "reasons": [
+            "Well suited to winter trek",
+            "Matches your must-haves: thermal",
+            "33% off, saving Rs 230",
+            "Arrives in 2 day(s)",
+            "Low stock at this price"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "6f6ae73c-9895-43cb-94d0-950f021668c7",
+            "kb_item_key": "trekking_socks",
+            "item_name": "Thermal Woolen Socks",
+            "category": "clothing",
+            "subcategory": "socks",
+            "priority": "essential",
+            "quantity": 2,
+            "reason": "Wool retains warmth even when damp; cotton socks in the cold are how you get frostnip.",
+            "est_price_min": 350,
+            "est_price_max": 1400,
+            "required_features": [
+              "thermal"
+            ],
+            "preferred_features": [
+              "moisture_wicking",
+              "quick_dry",
+              "anti_bacterial"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "68b9800d-0133-2d03-b612-35b652ee4bdc",
+            "source": "MARKET_B",
+            "source_name": "Marketplace B",
+            "external_product_id": "B-socks-013-9a4395",
+            "name": "Trailhawk Cushioned Hiking Socks Summit 400",
+            "brand": "Trailhawk",
+            "category": "clothing",
+            "subcategory": "socks",
+            "description": "Trailhawk Cushioned Hiking Socks Summit 400 designed for winter, trekking, cold weather use. Features anti-bacterial treatment, built for durability, moisture-wicking, quick-drying material, thermal heat retention. Tested for regular outdoor and travel use.",
+            "price": 249,
+            "original_price": 449,
+            "discount_pct": 45,
+            "rating": 3.3,
+            "review_count": 249,
+            "features": [
+              "anti_bacterial",
+              "durable",
+              "moisture_wicking",
+              "quick_dry",
+              "thermal"
+            ],
+            "specs": {},
+            "tags": [
+              "cold_weather",
+              "essentials",
+              "mid_range",
+              "trekking",
+              "winter"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 4,
+            "url": "https://example-market-b.test/p/B-socks-013-9a4395",
+            "image_url": "",
+            "product_group_key": "9a4395655f89d5c8",
+            "is_simulated": true
+          },
+          "quantity": 2,
+          "line_total": 498,
+          "score": 0.7015,
+          "reasons": [
+            "Well suited to winter trek",
+            "Matches your must-haves: thermal",
+            "45% off, saving Rs 200"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "2ea75432-c771-4b2d-88ff-23abd4fe264a",
+            "kb_item_key": "trekking_pants",
+            "item_name": "Trekking Pants",
+            "category": "clothing",
+            "subcategory": "pants",
+            "priority": "essential",
+            "quantity": 2,
+            "reason": "Quick-drying, stretchable trousers; denim holds water and chafes on long walks.",
+            "est_price_min": 900,
+            "est_price_max": 3000,
+            "required_features": [],
+            "preferred_features": [
+              "quick_dry",
+              "water_resistant",
+              "lightweight",
+              "breathable"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "dec1d9a7-15b9-22af-3184-1717679bb154",
+            "source": "MARKET_C",
+            "source_name": "Marketplace C",
+            "external_product_id": "C-trekking-pants-020-ed82ee",
+            "name": "Rukmini Outdoors Water-Resistant Trek Pants X",
+            "brand": "Rukmini Outdoors",
+            "category": "clothing",
+            "subcategory": "pants",
+            "description": "Rukmini Outdoors Water-Resistant Trek Pants X designed for trekking, hiking, outdoor use. Features adjustable fit, breathable fabric, built for durability, quick-drying material, water-resistant finish. Suitable for beginners and regular users alike.",
+            "price": 599,
+            "original_price": 699,
+            "discount_pct": 14,
+            "rating": 3.9,
+            "review_count": 878,
+            "features": [
+              "adjustable",
+              "breathable",
+              "durable",
+              "quick_dry",
+              "water_resistant"
+            ],
+            "specs": {},
+            "tags": [
+              "beginner",
+              "hiking",
+              "outdoor",
+              "trekking",
+              "value"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 9,
+            "url": "https://example-market-c.test/p/C-trekking-pants-020-ed82ee",
+            "image_url": "",
+            "product_group_key": "ed82ee90ad71b3de",
+            "is_simulated": true
+          },
+          "quantity": 2,
+          "line_total": 1198,
+          "score": 0.5767,
+          "reasons": []
+        },
+        {
+          "requirement": {
+            "id": "7c882dd7-4dd0-439e-b484-4a0fcd48c16c",
+            "kb_item_key": "trekking_poles",
+            "item_name": "Trekking Poles",
+            "category": "equipment",
+            "subcategory": "trekking_poles",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Cuts knee load on descents by roughly a quarter and adds balance on loose ground.",
+            "est_price_min": 800,
+            "est_price_max": 2500,
+            "required_features": [
+              "adjustable"
+            ],
+            "preferred_features": [
+              "shock_absorbing",
+              "lightweight",
+              "foldable"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "cecdfc2e-0ac0-8ab6-55d2-0b6b63955abb",
+            "source": "MARKET_A",
+            "source_name": "Marketplace A",
+            "external_product_id": "A-trekking-poles-030-b345a4",
+            "name": "Summit & Co Aluminium Trekking Poles (Pair) II",
+            "brand": "Summit & Co",
+            "category": "equipment",
+            "subcategory": "trekking_poles",
+            "description": "Summit & Co Aluminium Trekking Poles (Pair) II designed for trekking, hiking, beginner use. Features adjustable fit, built for durability, lightweight build. Specifications - material: Aluminium 7075; weight g: 260. Suitable for beginners and regular users alike.",
+            "price": 699,
+            "original_price": 999,
+            "discount_pct": 30,
+            "rating": 4.0,
+            "review_count": 2824,
+            "features": [
+              "adjustable",
+              "durable",
+              "lightweight"
+            ],
+            "specs": {
+              "material": "Aluminium 7075",
+              "weight_g": 260
+            },
+            "tags": [
+              "beginner",
+              "hiking",
+              "knee_support",
+              "mid_range",
+              "trekking"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 4,
+            "url": "https://example-market-a.test/p/A-trekking-poles-030-b345a4",
+            "image_url": "",
+            "product_group_key": "b345a44fe17b1a72",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 699,
+          "score": 0.6577,
+          "reasons": [
+            "Matches your must-haves: adjustable",
+            "Rated 4.0 by buyers",
+            "30% off, saving Rs 300"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "dc11b8a8-8975-4225-9a81-e9ef4cce94a2",
+            "kb_item_key": "winter_headwear",
+            "item_name": "Woolen Cap / Beanie",
+            "category": "accessories",
+            "subcategory": "headwear",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "A large share of body heat escapes through an uncovered head.",
+            "est_price_min": 300,
+            "est_price_max": 1200,
+            "required_features": [
+              "thermal"
+            ],
+            "preferred_features": [
+              "windproof",
+              "lightweight"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "5152fce1-7fcc-ac8c-1c40-994dea39f323",
+            "source": "MARKET_B",
+            "source_name": "Marketplace B",
+            "external_product_id": "B-beanie-022-d5d936",
+            "name": "Kailash Pro Fleece-Lined Beanie",
+            "brand": "Kailash Pro",
+            "category": "accessories",
+            "subcategory": "headwear",
+            "description": "Kailash Pro Fleece-Lined Beanie designed for winter, trekking, cold weather use. Features breathable fabric, lightweight build, thermal heat retention, windproof outer shell. Suitable for beginners and regular users alike.",
+            "price": 349,
+            "original_price": 499,
+            "discount_pct": 30,
+            "rating": 3.6,
+            "review_count": 2670,
+            "features": [
+              "breathable",
+              "lightweight",
+              "thermal",
+              "windproof"
+            ],
+            "specs": {},
+            "tags": [
+              "cold_weather",
+              "premium",
+              "trekking",
+              "winter"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 3,
+            "url": "https://example-market-b.test/p/B-beanie-022-d5d936",
+            "image_url": "",
+            "product_group_key": "d5d936d436ed45c2",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 349,
+          "score": 0.6783,
+          "reasons": [
+            "Matches your must-haves: thermal",
+            "30% off, saving Rs 150"
+          ]
+        }
+      ],
+      "excluded": [
+        {
+          "requirement_id": "2b825911-4b3b-4fec-b0b6-de1b3c8d3413",
+          "item_name": "Emergency Thermal Blanket",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "4b9c5ef2-891b-4ad3-84ed-58fe9e1ebccf",
+          "item_name": "Fleece Mid-Layer",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "c24541ee-ffee-4a3a-b949-c285960b1238",
+          "item_name": "Neck Gaiter / Buff",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "20b70988-b6a8-4c14-8495-7254110fb286",
+          "item_name": "Power Bank",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "f27e3d95-7099-4854-b47e-362126436e57",
+          "item_name": "Rain Poncho / Jacket",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "947f4890-465d-4194-bcdc-9f4ec4f31166",
+          "item_name": "Sleeping Mat",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "430a1a16-9433-4830-8561-3ce743aee38d",
+          "item_name": "Sunscreen SPF 50+",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "d5db09e2-c441-4236-8fd5-ab023e50372c",
+          "item_name": "Thermos Flask",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "b802685e-059b-4c0c-be70-ed35ac73f683",
+          "item_name": "UV Sunglasses",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "8c2d6448-2a32-400d-986c-dc4a5309d399",
+          "item_name": "Dry Bag / Rain Cover",
+          "reason": "budget_prioritized",
+          "detail": "Optional item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "0be2c430-11c9-452d-be8d-c357c1cc1e00",
+          "item_name": "Multi-Tool",
+          "reason": "budget_prioritized",
+          "detail": "Optional item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "9fc1daf4-14df-43c5-8b0b-2339b93a5180",
+          "item_name": "Quick-Dry Towel",
+          "reason": "budget_prioritized",
+          "detail": "Optional item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "5cc7b0f1-d511-4c54-8e4f-55a5bb01caa1",
+          "item_name": "Snow Gaiters",
+          "reason": "budget_prioritized",
+          "detail": "Optional item left out so the budget covers essentials."
+        }
+      ]
+    },
+    {
+      "preset": "best_overall",
+      "total_cost": 13404,
+      "total_savings": 7210,
+      "remaining_budget": 1596,
+      "over_budget": 0,
+      "utility_score": 0.6894,
+      "requirement_coverage": 1.0,
+      "is_selected": true,
+      "items": [
+        {
+          "requirement": {
+            "id": "27545fc2-5f92-4773-8f4b-4d868aca8928",
+            "kb_item_key": "first_aid_kit",
+            "item_name": "First-Aid Kit",
+            "category": "safety",
+            "subcategory": "first_aid",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Blisters, sprains and cuts are routine; medical help on a trail is hours away.",
+            "est_price_min": 400,
+            "est_price_max": 1500,
+            "required_features": [
+              "portable"
+            ],
+            "preferred_features": [
+              "compact",
+              "lightweight"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "337205e0-a4bb-0873-e3b7-9e33a0215448",
+            "source": "MARKET_B",
+            "source_name": "Marketplace B",
+            "external_product_id": "B-first-aid-kit-004-eea995",
+            "name": "Voyagr Adventure First-Aid Pouch Lite",
+            "brand": "Voyagr",
+            "category": "safety",
+            "subcategory": "first_aid",
+            "description": "Voyagr Adventure First-Aid Pouch Lite designed for safety, trekking, camping use. Features compact form factor, lightweight build, easy to carry, water-resistant finish. A dependable everyday choice.",
+            "price": 1199,
+            "original_price": 1999,
+            "discount_pct": 40,
+            "rating": 4.3,
+            "review_count": 890,
+            "features": [
+              "compact",
+              "lightweight",
+              "portable",
+              "water_resistant"
+            ],
+            "specs": {},
+            "tags": [
+              "camping",
+              "emergency",
+              "essentials",
+              "highly_rated",
+              "safety",
+              "trekking",
+              "value"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 3,
+            "url": "https://example-market-b.test/p/B-first-aid-kit-004-eea995",
+            "image_url": "",
+            "product_group_key": "eea995d7e11cc151",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 1199,
+          "score": 0.7405,
+          "reasons": [
+            "Matches your must-haves: portable",
+            "Rated 4.3 across 890 reviews",
+            "40% off, saving Rs 800",
+            "Priced comfortably within your budget for this item"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "93db6762-706d-4900-b8e5-a8d665481ce3",
+            "kb_item_key": "headlamp",
+            "item_name": "Headlamp",
+            "category": "navigation",
+            "subcategory": "headlamp",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Hands-free light for pre-dawn starts and camp after sunset.",
+            "est_price_min": 500,
+            "est_price_max": 2000,
+            "required_features": [],
+            "preferred_features": [
+              "rechargeable",
+              "waterproof",
+              "lightweight"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "c071ab8e-c019-d779-9f14-c5f63f019b64",
+            "source": "MARKET_A",
+            "source_name": "Marketplace A",
+            "external_product_id": "A-headlamp-019-cf6a22",
+            "name": "Summit & Co High-Lumen Trekking Headlamp III",
+            "brand": "Summit & Co",
+            "category": "navigation",
+            "subcategory": "headlamp",
+            "description": "Summit & Co High-Lumen Trekking Headlamp III designed for trekking, camping, night use. Features adjustable fit, built for durability, lightweight build, USB rechargeable, fully waterproof construction. Specifications - lumens: 350; runtime h: 12. Balanced option across price and performance.",
+            "price": 1199,
+            "original_price": 1999,
+            "discount_pct": 40,
+            "rating": 3.9,
+            "review_count": 3871,
+            "features": [
+              "adjustable",
+              "durable",
+              "lightweight",
+              "rechargeable",
+              "waterproof"
+            ],
+            "specs": {
+              "lumens": 350,
+              "runtime_h": 12
+            },
+            "tags": [
+              "camping",
+              "essentials",
+              "mid_range",
+              "night",
+              "safety",
+              "trekking"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 2,
+            "url": "https://example-market-a.test/p/A-headlamp-019-cf6a22",
+            "image_url": "",
+            "product_group_key": "cf6a22c03334beed",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 1199,
+          "score": 0.7304,
+          "reasons": [
+            "40% off, saving Rs 800",
+            "Priced comfortably within your budget for this item",
+            "Arrives in 2 day(s)"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "44d8e732-dced-4362-9696-3a175fc1cb13",
+            "kb_item_key": "winter_gloves",
+            "item_name": "Insulated Gloves",
+            "category": "accessories",
+            "subcategory": "gloves",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Fingers lose heat first, and numb hands make everything from poles to zips difficult.",
+            "est_price_min": 500,
+            "est_price_max": 2000,
+            "required_features": [
+              "insulated"
+            ],
+            "preferred_features": [
+              "waterproof",
+              "windproof",
+              "high_grip"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "94611a0e-65b3-b526-1651-59a1f1e68b0e",
+            "source": "MARKET_A",
+            "source_name": "Marketplace A",
+            "external_product_id": "A-gloves-007-408b83",
+            "name": "Altura Gear Insulated Trekking Gloves Prime",
+            "brand": "Altura Gear",
+            "category": "accessories",
+            "subcategory": "gloves",
+            "description": "Altura Gear Insulated Trekking Gloves Prime designed for winter, trekking, snow use. Features high-grip surface, insulated for cold conditions, thermal heat retention, windproof outer shell. Suitable for beginners and regular users alike.",
+            "price": 259,
+            "original_price": 409,
+            "discount_pct": 37,
+            "rating": 3.6,
+            "review_count": 1722,
+            "features": [
+              "high_grip",
+              "insulated",
+              "thermal",
+              "windproof"
+            ],
+            "specs": {},
+            "tags": [
+              "cold_weather",
+              "mid_range",
+              "snow",
+              "trekking",
+              "winter"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 1,
+            "url": "https://example-market-a.test/p/A-gloves-007-408b83",
+            "image_url": "",
+            "product_group_key": "408b83908eb26eef",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 259,
+          "score": 0.6818,
+          "reasons": [
+            "Well suited to winter trek",
+            "Matches your must-haves: insulated",
+            "37% off, saving Rs 150",
+            "Arrives in 1 day(s)"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "8c78bc1e-67da-4a17-8fff-c9bab7a5e047",
+            "kb_item_key": "insulated_jacket",
+            "item_name": "Insulated Trekking Jacket",
+            "category": "outerwear",
+            "subcategory": "jacket",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Your outer shell against wind and snow; the single largest warmth contributor you carry.",
+            "est_price_min": 2500,
+            "est_price_max": 7000,
+            "required_features": [
+              "insulated"
+            ],
+            "preferred_features": [
+              "windproof",
+              "waterproof",
+              "breathable",
+              "lightweight"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "bd1cf081-0293-bad9-12bc-402183e866d8",
+            "source": "MARKET_A",
+            "source_name": "Marketplace A",
+            "external_product_id": "A-trekking-jacket-012-6c71f1",
+            "name": "Summit & Co Insulated Trekking Jacket II 650",
+            "brand": "Summit & Co",
+            "category": "outerwear",
+            "subcategory": "jacket",
+            "description": "Summit & Co Insulated Trekking Jacket II 650 designed for winter, trekking, cold weather use. Features adjustable fit, breathable fabric, insulated for cold conditions, lightweight build, windproof outer shell. Specifications - fill: Synthetic 200g; temp rating c: -15. Suitable for beginners and regular users alike.",
+            "price": 1599,
+            "original_price": 2299,
+            "discount_pct": 30,
+            "rating": 4.0,
+            "review_count": 2315,
+            "features": [
+              "adjustable",
+              "breathable",
+              "insulated",
+              "lightweight",
+              "windproof"
+            ],
+            "specs": {
+              "fill": "Synthetic 200g",
+              "temp_rating_c": -15
+            },
+            "tags": [
+              "beginner",
+              "cold_weather",
+              "mid_range",
+              "snow",
+              "trekking",
+              "winter"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 2,
+            "url": "https://example-market-a.test/p/A-trekking-jacket-012-6c71f1",
+            "image_url": "",
+            "product_group_key": "6c71f19ecdc4304d",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 1599,
+          "score": 0.7421,
+          "reasons": [
+            "Well suited to winter trek",
+            "Matches your must-haves: insulated",
+            "Rated 4.0 by buyers",
+            "30% off, saving Rs 700",
+            "Arrives in 2 day(s)"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "6788e889-2120-4140-aa99-6fb8990f86f9",
+            "kb_item_key": "water_bottle",
+            "item_name": "Insulated Water Bottle",
+            "category": "hydration",
+            "subcategory": "bottle",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "An insulated bottle stops your water freezing solid on the trail.",
+            "est_price_min": 400,
+            "est_price_max": 1500,
+            "required_features": [
+              "leak_proof"
+            ],
+            "preferred_features": [
+              "insulating",
+              "durable"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "d0db9b48-d542-ba9a-a272-1e768a94819f",
+            "source": "MARKET_A",
+            "source_name": "Marketplace A",
+            "external_product_id": "A-water-bottle-035-e93f46",
+            "name": "Altura Gear Double-Wall Thermos Bottle",
+            "brand": "Altura Gear",
+            "category": "hydration",
+            "subcategory": "bottle",
+            "description": "Altura Gear Double-Wall Thermos Bottle designed for trekking, hydration, essentials use. Features built for durability, leak-proof seal, easy to carry. Specifications - capacity ml: 500. Tested for regular outdoor and travel use.",
+            "price": 419,
+            "original_price": 699,
+            "discount_pct": 40,
+            "rating": 4.1,
+            "review_count": 2307,
+            "features": [
+              "durable",
+              "leak_proof",
+              "portable"
+            ],
+            "specs": {
+              "capacity_ml": 500
+            },
+            "tags": [
+              "daily",
+              "essentials",
+              "hydration",
+              "mid_range",
+              "trekking"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 1,
+            "url": "https://example-market-a.test/p/A-water-bottle-035-e93f46",
+            "image_url": "",
+            "product_group_key": "e93f46ec52933d37",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 419,
+          "score": 0.6565,
+          "reasons": [
+            "Matches your must-haves: leak proof",
+            "Rated 4.1 by buyers",
+            "40% off, saving Rs 280",
+            "Arrives in 1 day(s)"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "70442424-d192-4aaa-a217-db7872f5b485",
+            "kb_item_key": "sleeping_bag",
+            "item_name": "Sub-Zero Sleeping Bag",
+            "category": "camping",
+            "subcategory": "sleeping_bag",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Nights in the Himalayas drop well below freezing; a summer bag is genuinely dangerous.",
+            "est_price_min": 2500,
+            "est_price_max": 8000,
+            "required_features": [
+              "insulated"
+            ],
+            "preferred_features": [
+              "lightweight",
+              "compact",
+              "water_resistant"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "7e46cb3c-1fc2-4174-ea27-b167dc50494c",
+            "source": "MARKET_B",
+            "source_name": "Marketplace B",
+            "external_product_id": "B-sleeping-bag-002-5d4d29",
+            "name": "Trekmate Compact Trek Sleeping Bag Max",
+            "brand": "Trekmate",
+            "category": "camping",
+            "subcategory": "sleeping_bag",
+            "description": "Trekmate Compact Trek Sleeping Bag Max designed for camping, winter, trekking use. Features built for durability, insulated for cold conditions, lightweight build, water-resistant finish. Specifications - temp rating c: 0; fill: Synthetic. A dependable everyday choice.",
+            "price": 799,
+            "original_price": 1499,
+            "discount_pct": 47,
+            "rating": 3.3,
+            "review_count": 235,
+            "features": [
+              "durable",
+              "insulated",
+              "lightweight",
+              "water_resistant"
+            ],
+            "specs": {
+              "temp_rating_c": 0,
+              "fill": "Synthetic"
+            },
+            "tags": [
+              "camping",
+              "overnight",
+              "trekking",
+              "value",
+              "winter"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 3,
+            "url": "https://example-market-b.test/p/B-sleeping-bag-002-5d4d29",
+            "image_url": "",
+            "product_group_key": "5d4d298dc0c22f5f",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 799,
+          "score": 0.6629,
+          "reasons": [
+            "Well suited to winter trek",
+            "Matches your must-haves: insulated",
+            "47% off, saving Rs 700"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "8dccc2ea-6014-47f3-bf30-970d0c61dafa",
+            "kb_item_key": "tent",
+            "item_name": "Tent",
+            "category": "camping",
+            "subcategory": "tent",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Shelter for overnight stays where no huts or homestays are available.",
+            "est_price_min": 3000,
+            "est_price_max": 9000,
+            "required_features": [
+              "waterproof"
+            ],
+            "preferred_features": [
+              "windproof",
+              "lightweight",
+              "compact"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "eef4539d-f464-8ed6-e1a3-5bf743b9d5d0",
+            "source": "MARKET_C",
+            "source_name": "Marketplace C",
+            "external_product_id": "C-tent-020-adefbc",
+            "name": "BaseCamp Basics 4-Person Camping Tent Pro",
+            "brand": "BaseCamp Basics",
+            "category": "camping",
+            "subcategory": "tent",
+            "description": "BaseCamp Basics 4-Person Camping Tent Pro designed for camping, overnight, trekking use. Features seam-sealed for weather protection, fully waterproof construction, windproof outer shell. Specifications - capacity persons: 4; season: 4-season. Popular pick for first-time buyers.",
+            "price": 999,
+            "original_price": 1699,
+            "discount_pct": 41,
+            "rating": 3.3,
+            "review_count": 70,
+            "features": [
+              "seam_sealed",
+              "waterproof",
+              "windproof"
+            ],
+            "specs": {
+              "capacity_persons": 4,
+              "season": "4-season"
+            },
+            "tags": [
+              "camping",
+              "overnight",
+              "trekking",
+              "value"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 11,
+            "url": "https://example-market-c.test/p/C-tent-020-adefbc",
+            "image_url": "",
+            "product_group_key": "adefbc3d4adff828",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 999,
+          "score": 0.5702,
+          "reasons": [
+            "Matches your must-haves: waterproof",
+            "41% off, saving Rs 700"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "dfbca1ea-bdd6-4c6e-98ad-44b504d1ffe4",
+            "kb_item_key": "thermal_base_layer",
+            "item_name": "Thermal Base Layer",
+            "category": "clothing",
+            "subcategory": "thermals",
+            "priority": "essential",
+            "quantity": 2,
+            "reason": "The foundation of cold-weather layering: traps body heat and wicks sweat away from skin.",
+            "est_price_min": 800,
+            "est_price_max": 2500,
+            "required_features": [
+              "thermal"
+            ],
+            "preferred_features": [
+              "quick_dry",
+              "lightweight",
+              "moisture_wicking"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "8596f204-263b-ce9e-6312-9386e8e8c7e3",
+            "source": "MARKET_A",
+            "source_name": "Marketplace A",
+            "external_product_id": "A-thermals-006-601be8",
+            "name": "Rukmini Outdoors Heat-Retain Base Layer Ultra",
+            "brand": "Rukmini Outdoors",
+            "category": "clothing",
+            "subcategory": "thermals",
+            "description": "Rukmini Outdoors Heat-Retain Base Layer Ultra designed for winter, trekking, cold weather use. Features breathable fabric, lightweight build, machine washable, moisture-wicking, quick-drying material. Specifications - material: Merino blend; temp rating c: 5. Suitable for beginners and regular users alike.",
+            "price": 469,
+            "original_price": 699,
+            "discount_pct": 33,
+            "rating": 3.8,
+            "review_count": 2369,
+            "features": [
+              "breathable",
+              "lightweight",
+              "machine_washable",
+              "moisture_wicking",
+              "quick_dry",
+              "thermal"
+            ],
+            "specs": {
+              "material": "Merino blend",
+              "temp_rating_c": 5
+            },
+            "tags": [
+              "beginner",
+              "cold_weather",
+              "layering",
+              "trekking",
+              "value",
+              "winter"
+            ],
+            "availability": "low_stock",
+            "delivery_days": 2,
+            "url": "https://example-market-a.test/p/A-thermals-006-601be8",
+            "image_url": "",
+            "product_group_key": "601be8ddc76b1cb7",
+            "is_simulated": true
+          },
+          "quantity": 2,
+          "line_total": 938,
+          "score": 0.7102,
+          "reasons": [
+            "Well suited to winter trek",
+            "Matches your must-haves: thermal",
+            "33% off, saving Rs 230",
+            "Arrives in 2 day(s)",
+            "Low stock at this price"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "6f6ae73c-9895-43cb-94d0-950f021668c7",
+            "kb_item_key": "trekking_socks",
+            "item_name": "Thermal Woolen Socks",
+            "category": "clothing",
+            "subcategory": "socks",
+            "priority": "essential",
+            "quantity": 2,
+            "reason": "Wool retains warmth even when damp; cotton socks in the cold are how you get frostnip.",
+            "est_price_min": 350,
+            "est_price_max": 1400,
+            "required_features": [
+              "thermal"
+            ],
+            "preferred_features": [
+              "moisture_wicking",
+              "quick_dry",
+              "anti_bacterial"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "101584f5-3333-9b5c-de64-92ee8254195b",
+            "source": "MARKET_C",
+            "source_name": "Marketplace C",
+            "external_product_id": "C-socks-014-1f773c",
+            "name": "Nordkapp Thermal Woolen Socks (3 Pair)",
+            "brand": "Nordkapp",
+            "category": "clothing",
+            "subcategory": "socks",
+            "description": "Nordkapp Thermal Woolen Socks (3 Pair) designed for winter, trekking, cold weather use. Features anti-bacterial treatment, built for durability, moisture-wicking, quick-drying material, thermal heat retention. A dependable everyday choice.",
+            "price": 599,
+            "original_price": 799,
+            "discount_pct": 25,
+            "rating": 3.9,
+            "review_count": 1971,
+            "features": [
+              "anti_bacterial",
+              "durable",
+              "moisture_wicking",
+              "quick_dry",
+              "thermal"
+            ],
+            "specs": {},
+            "tags": [
+              "cold_weather",
+              "essentials",
+              "mid_range",
+              "trekking",
+              "winter"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 5,
+            "url": "https://example-market-c.test/p/C-socks-014-1f773c",
+            "image_url": "",
+            "product_group_key": "1f773cb26bc20219",
+            "is_simulated": true
+          },
+          "quantity": 2,
+          "line_total": 1198,
+          "score": 0.7079,
+          "reasons": [
+            "Well suited to winter trek",
+            "Matches your must-haves: thermal",
+            "25% off, saving Rs 200"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "2ea75432-c771-4b2d-88ff-23abd4fe264a",
+            "kb_item_key": "trekking_pants",
+            "item_name": "Trekking Pants",
+            "category": "clothing",
+            "subcategory": "pants",
+            "priority": "essential",
+            "quantity": 2,
+            "reason": "Quick-drying, stretchable trousers; denim holds water and chafes on long walks.",
+            "est_price_min": 900,
+            "est_price_max": 3000,
+            "required_features": [],
+            "preferred_features": [
+              "quick_dry",
+              "water_resistant",
+              "lightweight",
+              "breathable"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "4a9833cc-aa36-1ce2-f7db-1433521346ff",
+            "source": "MARKET_B",
+            "source_name": "Marketplace B",
+            "external_product_id": "B-trekking-pants-039-562380",
+            "name": "BaseCamp Basics Convertible Trekking Pants Summit",
+            "brand": "BaseCamp Basics",
+            "category": "clothing",
+            "subcategory": "pants",
+            "description": "BaseCamp Basics Convertible Trekking Pants Summit designed for trekking, hiking, outdoor use. Features lightweight build, quick-drying material, water-resistant finish. Popular pick for first-time buyers.",
+            "price": 999,
+            "original_price": 1399,
+            "discount_pct": 29,
+            "rating": 3.9,
+            "review_count": 112,
+            "features": [
+              "lightweight",
+              "quick_dry",
+              "water_resistant"
+            ],
+            "specs": {},
+            "tags": [
+              "beginner",
+              "hiking",
+              "outdoor",
+              "trekking",
+              "value"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 3,
+            "url": "https://example-market-b.test/p/B-trekking-pants-039-562380",
+            "image_url": "",
+            "product_group_key": "5623801d8e2f3152",
+            "is_simulated": true
+          },
+          "quantity": 2,
+          "line_total": 1998,
+          "score": 0.6535,
+          "reasons": [
+            "29% off, saving Rs 400"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "7c882dd7-4dd0-439e-b484-4a0fcd48c16c",
+            "kb_item_key": "trekking_poles",
+            "item_name": "Trekking Poles",
+            "category": "equipment",
+            "subcategory": "trekking_poles",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Cuts knee load on descents by roughly a quarter and adds balance on loose ground.",
+            "est_price_min": 800,
+            "est_price_max": 2500,
+            "required_features": [
+              "adjustable"
+            ],
+            "preferred_features": [
+              "shock_absorbing",
+              "lightweight",
+              "foldable"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "10577ca9-4ebd-89fd-5eba-68a9a71059c2",
+            "source": "MARKET_A",
+            "source_name": "Marketplace A",
+            "external_product_id": "A-trekking-poles-025-9784c7",
+            "name": "Altura Gear Aluminium Trekking Poles (Pair) Lite",
+            "brand": "Altura Gear",
+            "category": "equipment",
+            "subcategory": "trekking_poles",
+            "description": "Altura Gear Aluminium Trekking Poles (Pair) Lite designed for trekking, hiking, beginner use. Features adjustable fit, anti-slip grip, lightweight build, shock-absorbing support. Specifications - material: Aluminium 7075; weight g: 260. A dependable everyday choice.",
+            "price": 1999,
+            "original_price": 3199,
+            "discount_pct": 38,
+            "rating": 4.3,
+            "review_count": 789,
+            "features": [
+              "adjustable",
+              "anti_slip",
+              "lightweight",
+              "shock_absorbing"
+            ],
+            "specs": {
+              "material": "Aluminium 7075",
+              "weight_g": 260
+            },
+            "tags": [
+              "beginner",
+              "highly_rated",
+              "hiking",
+              "knee_support",
+              "mid_range",
+              "trekking"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 2,
+            "url": "https://example-market-a.test/p/A-trekking-poles-025-9784c7",
+            "image_url": "",
+            "product_group_key": "9784c72a161a6fae",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 1999,
+          "score": 0.7284,
+          "reasons": [
+            "Matches your must-haves: adjustable",
+            "Rated 4.3 across 789 reviews",
+            "38% off, saving Rs 1,200",
+            "Priced comfortably within your budget for this item",
+            "Arrives in 2 day(s)"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "dc11b8a8-8975-4225-9a81-e9ef4cce94a2",
+            "kb_item_key": "winter_headwear",
+            "item_name": "Woolen Cap / Beanie",
+            "category": "accessories",
+            "subcategory": "headwear",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "A large share of body heat escapes through an uncovered head.",
+            "est_price_min": 300,
+            "est_price_max": 1200,
+            "required_features": [
+              "thermal"
+            ],
+            "preferred_features": [
+              "windproof",
+              "lightweight"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "f35b3dec-f67a-cdd3-ff0a-c6163de6750a",
+            "source": "MARKET_A",
+            "source_name": "Marketplace A",
+            "external_product_id": "A-beanie-019-a2d141",
+            "name": "Nordkapp Fleece-Lined Beanie",
+            "brand": "Nordkapp",
+            "category": "accessories",
+            "subcategory": "headwear",
+            "description": "Nordkapp Fleece-Lined Beanie designed for winter, trekking, cold weather use. Features lightweight build, thermal heat retention, windproof outer shell. Tested for regular outdoor and travel use.",
+            "price": 699,
+            "original_price": 899,
+            "discount_pct": 22,
+            "rating": 3.8,
+            "review_count": 281,
+            "features": [
+              "lightweight",
+              "thermal",
+              "windproof"
+            ],
+            "specs": {},
+            "tags": [
+              "cold_weather",
+              "mid_range",
+              "trekking",
+              "winter"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 1,
+            "url": "https://example-market-a.test/p/A-beanie-019-a2d141",
+            "image_url": "",
+            "product_group_key": "a2d141488f3030b0",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 699,
+          "score": 0.688,
+          "reasons": [
+            "Matches your must-haves: thermal",
+            "22% off, saving Rs 200",
+            "Priced comfortably within your budget for this item",
+            "Arrives in 1 day(s)"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "2b825911-4b3b-4fec-b0b6-de1b3c8d3413",
+            "kb_item_key": "emergency_blanket",
+            "item_name": "Emergency Thermal Blanket",
+            "category": "safety",
+            "subcategory": "emergency",
+            "priority": "recommended",
+            "quantity": 1,
+            "reason": "Weighs almost nothing and is the standard first response to hypothermia.",
+            "est_price_min": 150,
+            "est_price_max": 700,
+            "required_features": [],
+            "preferred_features": [
+              "thermal",
+              "lightweight",
+              "compact"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "1630aa0d-53d9-7726-3142-4a076caf8d62",
+            "source": "MARKET_B",
+            "source_name": "Marketplace B",
+            "external_product_id": "B-emergency-blanket-002-b35110",
+            "name": "BaseCamp Basics Bivy Emergency Sack X 350",
+            "brand": "BaseCamp Basics",
+            "category": "safety",
+            "subcategory": "emergency",
+            "description": "BaseCamp Basics Bivy Emergency Sack X 350 designed for safety, emergency, winter use. Features compact form factor, lightweight build, reflective detailing, thermal heat retention, fully waterproof construction. A dependable everyday choice.",
+            "price": 99,
+            "original_price": 119,
+            "discount_pct": 17,
+            "rating": 3.7,
+            "review_count": 3374,
+            "features": [
+              "compact",
+              "lightweight",
+              "reflective",
+              "thermal",
+              "waterproof"
+            ],
+            "specs": {},
+            "tags": [
+              "emergency",
+              "safety",
+              "trekking",
+              "value",
+              "winter"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 4,
+            "url": "https://example-market-b.test/p/B-emergency-blanket-002-b35110",
+            "image_url": "",
+            "product_group_key": "b35110196e8e9580",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 99,
+          "score": 0.6085,
+          "reasons": [
+            "17% off, saving Rs 20"
+          ]
+        }
+      ],
+      "excluded": [
+        {
+          "requirement_id": "4b9c5ef2-891b-4ad3-84ed-58fe9e1ebccf",
+          "item_name": "Fleece Mid-Layer",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "c24541ee-ffee-4a3a-b949-c285960b1238",
+          "item_name": "Neck Gaiter / Buff",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "20b70988-b6a8-4c14-8495-7254110fb286",
+          "item_name": "Power Bank",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "f27e3d95-7099-4854-b47e-362126436e57",
+          "item_name": "Rain Poncho / Jacket",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "947f4890-465d-4194-bcdc-9f4ec4f31166",
+          "item_name": "Sleeping Mat",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "430a1a16-9433-4830-8561-3ce743aee38d",
+          "item_name": "Sunscreen SPF 50+",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "d5db09e2-c441-4236-8fd5-ab023e50372c",
+          "item_name": "Thermos Flask",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "b802685e-059b-4c0c-be70-ed35ac73f683",
+          "item_name": "UV Sunglasses",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "8c2d6448-2a32-400d-986c-dc4a5309d399",
+          "item_name": "Dry Bag / Rain Cover",
+          "reason": "budget_prioritized",
+          "detail": "Optional item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "0be2c430-11c9-452d-be8d-c357c1cc1e00",
+          "item_name": "Multi-Tool",
+          "reason": "budget_prioritized",
+          "detail": "Optional item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "9fc1daf4-14df-43c5-8b0b-2339b93a5180",
+          "item_name": "Quick-Dry Towel",
+          "reason": "budget_prioritized",
+          "detail": "Optional item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "5cc7b0f1-d511-4c54-8e4f-55a5bb01caa1",
+          "item_name": "Snow Gaiters",
+          "reason": "budget_prioritized",
+          "detail": "Optional item left out so the budget covers essentials."
+        }
+      ]
+    },
+    {
+      "preset": "premium",
+      "total_cost": 18685,
+      "total_savings": 4420,
+      "remaining_budget": 0,
+      "over_budget": 3685,
+      "utility_score": 0.6991,
+      "requirement_coverage": 1.0,
+      "is_selected": false,
+      "items": [
+        {
+          "requirement": {
+            "id": "27545fc2-5f92-4773-8f4b-4d868aca8928",
+            "kb_item_key": "first_aid_kit",
+            "item_name": "First-Aid Kit",
+            "category": "safety",
+            "subcategory": "first_aid",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Blisters, sprains and cuts are routine; medical help on a trail is hours away.",
+            "est_price_min": 400,
+            "est_price_max": 1500,
+            "required_features": [
+              "portable"
+            ],
+            "preferred_features": [
+              "compact",
+              "lightweight"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "1b64ed5f-8f8e-56f6-06e3-524afc6db605",
+            "source": "MARKET_A",
+            "source_name": "Marketplace A",
+            "external_product_id": "A-first-aid-kit-008-561810",
+            "name": "Trekmate Trekking First-Aid Kit Plus",
+            "brand": "Trekmate",
+            "category": "safety",
+            "subcategory": "first_aid",
+            "description": "Trekmate Trekking First-Aid Kit Plus designed for safety, trekking, camping use. Features compact form factor, lightweight build, easy to carry, water-resistant finish. A dependable everyday choice.",
+            "price": 259,
+            "original_price": 309,
+            "discount_pct": 16,
+            "rating": 3.8,
+            "review_count": 97,
+            "features": [
+              "compact",
+              "lightweight",
+              "portable",
+              "water_resistant"
+            ],
+            "specs": {},
+            "tags": [
+              "camping",
+              "emergency",
+              "essentials",
+              "safety",
+              "trekking",
+              "value"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 2,
+            "url": "https://example-market-a.test/p/A-first-aid-kit-008-561810",
+            "image_url": "",
+            "product_group_key": "561810c0b0b3fdc1",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 259,
+          "score": 0.6761,
+          "reasons": [
+            "Matches your must-haves: portable",
+            "16% off, saving Rs 50",
+            "Arrives in 2 day(s)"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "93db6762-706d-4900-b8e5-a8d665481ce3",
+            "kb_item_key": "headlamp",
+            "item_name": "Headlamp",
+            "category": "navigation",
+            "subcategory": "headlamp",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Hands-free light for pre-dawn starts and camp after sunset.",
+            "est_price_min": 500,
+            "est_price_max": 2000,
+            "required_features": [],
+            "preferred_features": [
+              "rechargeable",
+              "waterproof",
+              "lightweight"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "52476c98-330e-8c9e-7bc1-5eac65a53aab",
+            "source": "MARKET_C",
+            "source_name": "Marketplace C",
+            "external_product_id": "C-headlamp-012-55c64b",
+            "name": "BaseCamp Basics Motion-Sensor Headlamp",
+            "brand": "BaseCamp Basics",
+            "category": "navigation",
+            "subcategory": "headlamp",
+            "description": "BaseCamp Basics Motion-Sensor Headlamp designed for trekking, camping, night use. Features built for durability, lightweight build, USB rechargeable. Specifications - lumens: 500; runtime h: 12. Suitable for beginners and regular users alike.",
+            "price": 319,
+            "original_price": 349,
+            "discount_pct": 9,
+            "rating": 3.4,
+            "review_count": 1315,
+            "features": [
+              "durable",
+              "lightweight",
+              "rechargeable"
+            ],
+            "specs": {
+              "lumens": 500,
+              "runtime_h": 12
+            },
+            "tags": [
+              "camping",
+              "essentials",
+              "night",
+              "safety",
+              "trekking",
+              "value"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 8,
+            "url": "https://example-market-c.test/p/C-headlamp-012-55c64b",
+            "image_url": "",
+            "product_group_key": "55c64bac1d8ed517",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 319,
+          "score": 0.6096,
+          "reasons": []
+        },
+        {
+          "requirement": {
+            "id": "44d8e732-dced-4362-9696-3a175fc1cb13",
+            "kb_item_key": "winter_gloves",
+            "item_name": "Insulated Gloves",
+            "category": "accessories",
+            "subcategory": "gloves",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Fingers lose heat first, and numb hands make everything from poles to zips difficult.",
+            "est_price_min": 500,
+            "est_price_max": 2000,
+            "required_features": [
+              "insulated"
+            ],
+            "preferred_features": [
+              "waterproof",
+              "windproof",
+              "high_grip"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "e7c967f7-d458-2305-66a8-2dc67e476a0d",
+            "source": "MARKET_B",
+            "source_name": "Marketplace B",
+            "external_product_id": "B-gloves-003-14a400",
+            "name": "Trailhawk Insulated Trekking Gloves Trail",
+            "brand": "Trailhawk",
+            "category": "accessories",
+            "subcategory": "gloves",
+            "description": "Trailhawk Insulated Trekking Gloves Trail designed for winter, trekking, snow use. Features adjustable fit, insulated for cold conditions, thermal heat retention, fully waterproof construction. Tested for regular outdoor and travel use.",
+            "price": 279,
+            "original_price": 459,
+            "discount_pct": 39,
+            "rating": 3.9,
+            "review_count": 4653,
+            "features": [
+              "adjustable",
+              "insulated",
+              "thermal",
+              "waterproof"
+            ],
+            "specs": {},
+            "tags": [
+              "cold_weather",
+              "mid_range",
+              "snow",
+              "trekking",
+              "winter"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 5,
+            "url": "https://example-market-b.test/p/B-gloves-003-14a400",
+            "image_url": "",
+            "product_group_key": "14a4004255fea18d",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 279,
+          "score": 0.6912,
+          "reasons": [
+            "Well suited to winter trek",
+            "Matches your must-haves: insulated",
+            "39% off, saving Rs 180"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "8c78bc1e-67da-4a17-8fff-c9bab7a5e047",
+            "kb_item_key": "insulated_jacket",
+            "item_name": "Insulated Trekking Jacket",
+            "category": "outerwear",
+            "subcategory": "jacket",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Your outer shell against wind and snow; the single largest warmth contributor you carry.",
+            "est_price_min": 2500,
+            "est_price_max": 7000,
+            "required_features": [
+              "insulated"
+            ],
+            "preferred_features": [
+              "windproof",
+              "waterproof",
+              "breathable",
+              "lightweight"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "bd1cf081-0293-bad9-12bc-402183e866d8",
+            "source": "MARKET_A",
+            "source_name": "Marketplace A",
+            "external_product_id": "A-trekking-jacket-012-6c71f1",
+            "name": "Summit & Co Insulated Trekking Jacket II 650",
+            "brand": "Summit & Co",
+            "category": "outerwear",
+            "subcategory": "jacket",
+            "description": "Summit & Co Insulated Trekking Jacket II 650 designed for winter, trekking, cold weather use. Features adjustable fit, breathable fabric, insulated for cold conditions, lightweight build, windproof outer shell. Specifications - fill: Synthetic 200g; temp rating c: -15. Suitable for beginners and regular users alike.",
+            "price": 1599,
+            "original_price": 2299,
+            "discount_pct": 30,
+            "rating": 4.0,
+            "review_count": 2315,
+            "features": [
+              "adjustable",
+              "breathable",
+              "insulated",
+              "lightweight",
+              "windproof"
+            ],
+            "specs": {
+              "fill": "Synthetic 200g",
+              "temp_rating_c": -15
+            },
+            "tags": [
+              "beginner",
+              "cold_weather",
+              "mid_range",
+              "snow",
+              "trekking",
+              "winter"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 2,
+            "url": "https://example-market-a.test/p/A-trekking-jacket-012-6c71f1",
+            "image_url": "",
+            "product_group_key": "6c71f19ecdc4304d",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 1599,
+          "score": 0.7626,
+          "reasons": [
+            "Well suited to winter trek",
+            "Matches your must-haves: insulated",
+            "Rated 4.0 by buyers",
+            "30% off, saving Rs 700",
+            "Arrives in 2 day(s)"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "6788e889-2120-4140-aa99-6fb8990f86f9",
+            "kb_item_key": "water_bottle",
+            "item_name": "Insulated Water Bottle",
+            "category": "hydration",
+            "subcategory": "bottle",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "An insulated bottle stops your water freezing solid on the trail.",
+            "est_price_min": 400,
+            "est_price_max": 1500,
+            "required_features": [
+              "leak_proof"
+            ],
+            "preferred_features": [
+              "insulating",
+              "durable"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "15c96cdb-33d9-09d7-3d8d-ef07de1c806c",
+            "source": "MARKET_B",
+            "source_name": "Marketplace B",
+            "external_product_id": "B-water-bottle-033-032d9a",
+            "name": "Nordkapp Insulated Steel Water Bottle Prime",
+            "brand": "Nordkapp",
+            "category": "hydration",
+            "subcategory": "bottle",
+            "description": "Nordkapp Insulated Steel Water Bottle Prime designed for trekking, hydration, essentials use. Features built for durability, leak-proof seal, easy to carry. Specifications - capacity ml: 750. Balanced option across price and performance.",
+            "price": 1999,
+            "original_price": 2799,
+            "discount_pct": 29,
+            "rating": 4.5,
+            "review_count": 715,
+            "features": [
+              "durable",
+              "leak_proof",
+              "portable"
+            ],
+            "specs": {
+              "capacity_ml": 750
+            },
+            "tags": [
+              "daily",
+              "essentials",
+              "highly_rated",
+              "hydration",
+              "mid_range",
+              "trekking"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 3,
+            "url": "https://example-market-b.test/p/B-water-bottle-033-032d9a",
+            "image_url": "",
+            "product_group_key": "032d9a34d07cfc7b",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 1999,
+          "score": 0.6985,
+          "reasons": [
+            "Matches your must-haves: leak proof",
+            "Rated 4.5 across 715 reviews",
+            "29% off, saving Rs 800"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "70442424-d192-4aaa-a217-db7872f5b485",
+            "kb_item_key": "sleeping_bag",
+            "item_name": "Sub-Zero Sleeping Bag",
+            "category": "camping",
+            "subcategory": "sleeping_bag",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Nights in the Himalayas drop well below freezing; a summer bag is genuinely dangerous.",
+            "est_price_min": 2500,
+            "est_price_max": 8000,
+            "required_features": [
+              "insulated"
+            ],
+            "preferred_features": [
+              "lightweight",
+              "compact",
+              "water_resistant"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "7e46cb3c-1fc2-4174-ea27-b167dc50494c",
+            "source": "MARKET_B",
+            "source_name": "Marketplace B",
+            "external_product_id": "B-sleeping-bag-002-5d4d29",
+            "name": "Trekmate Compact Trek Sleeping Bag Max",
+            "brand": "Trekmate",
+            "category": "camping",
+            "subcategory": "sleeping_bag",
+            "description": "Trekmate Compact Trek Sleeping Bag Max designed for camping, winter, trekking use. Features built for durability, insulated for cold conditions, lightweight build, water-resistant finish. Specifications - temp rating c: 0; fill: Synthetic. A dependable everyday choice.",
+            "price": 799,
+            "original_price": 1499,
+            "discount_pct": 47,
+            "rating": 3.3,
+            "review_count": 235,
+            "features": [
+              "durable",
+              "insulated",
+              "lightweight",
+              "water_resistant"
+            ],
+            "specs": {
+              "temp_rating_c": 0,
+              "fill": "Synthetic"
+            },
+            "tags": [
+              "camping",
+              "overnight",
+              "trekking",
+              "value",
+              "winter"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 3,
+            "url": "https://example-market-b.test/p/B-sleeping-bag-002-5d4d29",
+            "image_url": "",
+            "product_group_key": "5d4d298dc0c22f5f",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 799,
+          "score": 0.6474,
+          "reasons": [
+            "Well suited to winter trek",
+            "Matches your must-haves: insulated",
+            "47% off, saving Rs 700"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "8dccc2ea-6014-47f3-bf30-970d0c61dafa",
+            "kb_item_key": "tent",
+            "item_name": "Tent",
+            "category": "camping",
+            "subcategory": "tent",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Shelter for overnight stays where no huts or homestays are available.",
+            "est_price_min": 3000,
+            "est_price_max": 9000,
+            "required_features": [
+              "waterproof"
+            ],
+            "preferred_features": [
+              "windproof",
+              "lightweight",
+              "compact"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "2bc446a1-bc9c-a91f-64d8-320ab7fb59da",
+            "source": "MARKET_C",
+            "source_name": "Marketplace C",
+            "external_product_id": "C-tent-000-a71eea",
+            "name": "Voyagr 4-Person Camping Tent III 900",
+            "brand": "Voyagr",
+            "category": "camping",
+            "subcategory": "tent",
+            "description": "Voyagr 4-Person Camping Tent III 900 designed for camping, overnight, trekking use. Features compact form factor, built for durability, lightweight build, seam-sealed for weather protection, fully waterproof construction. Specifications - capacity persons: 3; season: 3-season. Popular pick for first-time buyers.",
+            "price": 7999,
+            "original_price": 8999,
+            "discount_pct": 11,
+            "rating": 4.0,
+            "review_count": 2249,
+            "features": [
+              "compact",
+              "durable",
+              "lightweight",
+              "seam_sealed",
+              "waterproof",
+              "windproof"
+            ],
+            "specs": {
+              "capacity_persons": 3,
+              "season": "3-season"
+            },
+            "tags": [
+              "camping",
+              "overnight",
+              "trekking",
+              "value"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 6,
+            "url": "https://example-market-c.test/p/C-tent-000-a71eea",
+            "image_url": "",
+            "product_group_key": "a71eeab7e024a058",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 7999,
+          "score": 0.7189,
+          "reasons": [
+            "Matches your must-haves: waterproof",
+            "Rated 4.0 by buyers"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "dfbca1ea-bdd6-4c6e-98ad-44b504d1ffe4",
+            "kb_item_key": "thermal_base_layer",
+            "item_name": "Thermal Base Layer",
+            "category": "clothing",
+            "subcategory": "thermals",
+            "priority": "essential",
+            "quantity": 2,
+            "reason": "The foundation of cold-weather layering: traps body heat and wicks sweat away from skin.",
+            "est_price_min": 800,
+            "est_price_max": 2500,
+            "required_features": [
+              "thermal"
+            ],
+            "preferred_features": [
+              "quick_dry",
+              "lightweight",
+              "moisture_wicking"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "8596f204-263b-ce9e-6312-9386e8e8c7e3",
+            "source": "MARKET_A",
+            "source_name": "Marketplace A",
+            "external_product_id": "A-thermals-006-601be8",
+            "name": "Rukmini Outdoors Heat-Retain Base Layer Ultra",
+            "brand": "Rukmini Outdoors",
+            "category": "clothing",
+            "subcategory": "thermals",
+            "description": "Rukmini Outdoors Heat-Retain Base Layer Ultra designed for winter, trekking, cold weather use. Features breathable fabric, lightweight build, machine washable, moisture-wicking, quick-drying material. Specifications - material: Merino blend; temp rating c: 5. Suitable for beginners and regular users alike.",
+            "price": 469,
+            "original_price": 699,
+            "discount_pct": 33,
+            "rating": 3.8,
+            "review_count": 2369,
+            "features": [
+              "breathable",
+              "lightweight",
+              "machine_washable",
+              "moisture_wicking",
+              "quick_dry",
+              "thermal"
+            ],
+            "specs": {
+              "material": "Merino blend",
+              "temp_rating_c": 5
+            },
+            "tags": [
+              "beginner",
+              "cold_weather",
+              "layering",
+              "trekking",
+              "value",
+              "winter"
+            ],
+            "availability": "low_stock",
+            "delivery_days": 2,
+            "url": "https://example-market-a.test/p/A-thermals-006-601be8",
+            "image_url": "",
+            "product_group_key": "601be8ddc76b1cb7",
+            "is_simulated": true
+          },
+          "quantity": 2,
+          "line_total": 938,
+          "score": 0.729,
+          "reasons": [
+            "Well suited to winter trek",
+            "Matches your must-haves: thermal",
+            "33% off, saving Rs 230",
+            "Arrives in 2 day(s)",
+            "Low stock at this price"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "6f6ae73c-9895-43cb-94d0-950f021668c7",
+            "kb_item_key": "trekking_socks",
+            "item_name": "Thermal Woolen Socks",
+            "category": "clothing",
+            "subcategory": "socks",
+            "priority": "essential",
+            "quantity": 2,
+            "reason": "Wool retains warmth even when damp; cotton socks in the cold are how you get frostnip.",
+            "est_price_min": 350,
+            "est_price_max": 1400,
+            "required_features": [
+              "thermal"
+            ],
+            "preferred_features": [
+              "moisture_wicking",
+              "quick_dry",
+              "anti_bacterial"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "4b881684-aac3-ec6d-5d41-d50d61663377",
+            "source": "MARKET_B",
+            "source_name": "Marketplace B",
+            "external_product_id": "B-socks-018-c79c6b",
+            "name": "Trekmate Thermal Woolen Socks (3 Pair) Classic",
+            "brand": "Trekmate",
+            "category": "clothing",
+            "subcategory": "socks",
+            "description": "Trekmate Thermal Woolen Socks (3 Pair) Classic designed for winter, trekking, cold weather use. Features anti-bacterial treatment, built for durability, moisture-wicking, quick-drying material, thermal heat retention. Suitable for beginners and regular users alike.",
+            "price": 999,
+            "original_price": 999,
+            "discount_pct": 0,
+            "rating": 4.3,
+            "review_count": 2552,
+            "features": [
+              "anti_bacterial",
+              "durable",
+              "moisture_wicking",
+              "quick_dry",
+              "thermal"
+            ],
+            "specs": {},
+            "tags": [
+              "cold_weather",
+              "essentials",
+              "highly_rated",
+              "trekking",
+              "value",
+              "winter"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 6,
+            "url": "https://example-market-b.test/p/B-socks-018-c79c6b",
+            "image_url": "",
+            "product_group_key": "c79c6ba3b363a7a3",
+            "is_simulated": true
+          },
+          "quantity": 2,
+          "line_total": 1998,
+          "score": 0.7859,
+          "reasons": [
+            "Well suited to winter trek",
+            "Matches your must-haves: thermal",
+            "Rated 4.3 across 2,552 reviews",
+            "Priced comfortably within your budget for this item"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "2ea75432-c771-4b2d-88ff-23abd4fe264a",
+            "kb_item_key": "trekking_pants",
+            "item_name": "Trekking Pants",
+            "category": "clothing",
+            "subcategory": "pants",
+            "priority": "essential",
+            "quantity": 2,
+            "reason": "Quick-drying, stretchable trousers; denim holds water and chafes on long walks.",
+            "est_price_min": 900,
+            "est_price_max": 3000,
+            "required_features": [],
+            "preferred_features": [
+              "quick_dry",
+              "water_resistant",
+              "lightweight",
+              "breathable"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "dec1d9a7-15b9-22af-3184-1717679bb154",
+            "source": "MARKET_C",
+            "source_name": "Marketplace C",
+            "external_product_id": "C-trekking-pants-020-ed82ee",
+            "name": "Rukmini Outdoors Water-Resistant Trek Pants X",
+            "brand": "Rukmini Outdoors",
+            "category": "clothing",
+            "subcategory": "pants",
+            "description": "Rukmini Outdoors Water-Resistant Trek Pants X designed for trekking, hiking, outdoor use. Features adjustable fit, breathable fabric, built for durability, quick-drying material, water-resistant finish. Suitable for beginners and regular users alike.",
+            "price": 599,
+            "original_price": 699,
+            "discount_pct": 14,
+            "rating": 3.9,
+            "review_count": 878,
+            "features": [
+              "adjustable",
+              "breathable",
+              "durable",
+              "quick_dry",
+              "water_resistant"
+            ],
+            "specs": {},
+            "tags": [
+              "beginner",
+              "hiking",
+              "outdoor",
+              "trekking",
+              "value"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 9,
+            "url": "https://example-market-c.test/p/C-trekking-pants-020-ed82ee",
+            "image_url": "",
+            "product_group_key": "ed82ee90ad71b3de",
+            "is_simulated": true
+          },
+          "quantity": 2,
+          "line_total": 1198,
+          "score": 0.6743,
+          "reasons": []
+        },
+        {
+          "requirement": {
+            "id": "7c882dd7-4dd0-439e-b484-4a0fcd48c16c",
+            "kb_item_key": "trekking_poles",
+            "item_name": "Trekking Poles",
+            "category": "equipment",
+            "subcategory": "trekking_poles",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "Cuts knee load on descents by roughly a quarter and adds balance on loose ground.",
+            "est_price_min": 800,
+            "est_price_max": 2500,
+            "required_features": [
+              "adjustable"
+            ],
+            "preferred_features": [
+              "shock_absorbing",
+              "lightweight",
+              "foldable"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "cecdfc2e-0ac0-8ab6-55d2-0b6b63955abb",
+            "source": "MARKET_A",
+            "source_name": "Marketplace A",
+            "external_product_id": "A-trekking-poles-030-b345a4",
+            "name": "Summit & Co Aluminium Trekking Poles (Pair) II",
+            "brand": "Summit & Co",
+            "category": "equipment",
+            "subcategory": "trekking_poles",
+            "description": "Summit & Co Aluminium Trekking Poles (Pair) II designed for trekking, hiking, beginner use. Features adjustable fit, built for durability, lightweight build. Specifications - material: Aluminium 7075; weight g: 260. Suitable for beginners and regular users alike.",
+            "price": 699,
+            "original_price": 999,
+            "discount_pct": 30,
+            "rating": 4.0,
+            "review_count": 2824,
+            "features": [
+              "adjustable",
+              "durable",
+              "lightweight"
+            ],
+            "specs": {
+              "material": "Aluminium 7075",
+              "weight_g": 260
+            },
+            "tags": [
+              "beginner",
+              "hiking",
+              "knee_support",
+              "mid_range",
+              "trekking"
+            ],
+            "availability": "in_stock",
+            "delivery_days": 4,
+            "url": "https://example-market-a.test/p/A-trekking-poles-030-b345a4",
+            "image_url": "",
+            "product_group_key": "b345a44fe17b1a72",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 699,
+          "score": 0.6735,
+          "reasons": [
+            "Matches your must-haves: adjustable",
+            "Rated 4.0 by buyers",
+            "30% off, saving Rs 300"
+          ]
+        },
+        {
+          "requirement": {
+            "id": "dc11b8a8-8975-4225-9a81-e9ef4cce94a2",
+            "kb_item_key": "winter_headwear",
+            "item_name": "Woolen Cap / Beanie",
+            "category": "accessories",
+            "subcategory": "headwear",
+            "priority": "essential",
+            "quantity": 1,
+            "reason": "A large share of body heat escapes through an uncovered head.",
+            "est_price_min": 300,
+            "est_price_max": 1200,
+            "required_features": [
+              "thermal"
+            ],
+            "preferred_features": [
+              "windproof",
+              "lightweight"
+            ],
+            "is_owned": false,
+            "fulfillment_status": "fulfilled",
+            "unfulfilled_reason": null
+          },
+          "product": {
+            "id": "44617abc-1c38-0c1c-d001-772b6ca02967",
+            "source": "MARKET_A",
+            "source_name": "Marketplace A",
+            "external_product_id": "A-beanie-005-cea8f5",
+            "name": "Nordkapp Balaclava Head Cover",
+            "brand": "Nordkapp",
+            "category": "accessories",
+            "subcategory": "headwear",
+            "description": "Nordkapp Balaclava Head Cover designed for winter, trekking, cold weather use. Features breathable fabric, lightweight build, thermal heat retention, windproof outer shell. Suitable for beginners and regular users alike.",
+            "price": 599,
+            "original_price": 599,
+            "discount_pct": 0,
+            "rating": 4.2,
+            "review_count": 407,
+            "features": [
+              "breathable",
+              "lightweight",
+              "thermal",
+              "windproof"
+            ],
+            "specs": {},
+            "tags": [
+              "cold_weather",
+              "mid_range",
+              "trekking",
+              "winter"
+            ],
+            "availability": "low_stock",
+            "delivery_days": 4,
+            "url": "https://example-market-a.test/p/A-beanie-005-cea8f5",
+            "image_url": "",
+            "product_group_key": "cea8f5095dcc9866",
+            "is_simulated": true
+          },
+          "quantity": 1,
+          "line_total": 599,
+          "score": 0.7227,
+          "reasons": [
+            "Matches your must-haves: thermal",
+            "Rated 4.2 across 407 reviews",
+            "Low stock at this price"
+          ]
+        }
+      ],
+      "excluded": [
+        {
+          "requirement_id": "2b825911-4b3b-4fec-b0b6-de1b3c8d3413",
+          "item_name": "Emergency Thermal Blanket",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "4b9c5ef2-891b-4ad3-84ed-58fe9e1ebccf",
+          "item_name": "Fleece Mid-Layer",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "c24541ee-ffee-4a3a-b949-c285960b1238",
+          "item_name": "Neck Gaiter / Buff",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "20b70988-b6a8-4c14-8495-7254110fb286",
+          "item_name": "Power Bank",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "f27e3d95-7099-4854-b47e-362126436e57",
+          "item_name": "Rain Poncho / Jacket",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "947f4890-465d-4194-bcdc-9f4ec4f31166",
+          "item_name": "Sleeping Mat",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "430a1a16-9433-4830-8561-3ce743aee38d",
+          "item_name": "Sunscreen SPF 50+",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "d5db09e2-c441-4236-8fd5-ab023e50372c",
+          "item_name": "Thermos Flask",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "b802685e-059b-4c0c-be70-ed35ac73f683",
+          "item_name": "UV Sunglasses",
+          "reason": "budget_prioritized",
+          "detail": "Recommended item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "8c2d6448-2a32-400d-986c-dc4a5309d399",
+          "item_name": "Dry Bag / Rain Cover",
+          "reason": "budget_prioritized",
+          "detail": "Optional item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "0be2c430-11c9-452d-be8d-c357c1cc1e00",
+          "item_name": "Multi-Tool",
+          "reason": "budget_prioritized",
+          "detail": "Optional item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "9fc1daf4-14df-43c5-8b0b-2339b93a5180",
+          "item_name": "Quick-Dry Towel",
+          "reason": "budget_prioritized",
+          "detail": "Optional item left out so the budget covers essentials."
+        },
+        {
+          "requirement_id": "5cc7b0f1-d511-4c54-8e4f-55a5bb01caa1",
+          "item_name": "Snow Gaiters",
+          "reason": "budget_prioritized",
+          "detail": "Optional item left out so the budget covers essentials."
+        }
+      ]
+    }
+  ],
+  "selected_preset": "best_overall",
+  "totals": {
+    "budget": 15000,
+    "estimated_total": 13404,
+    "savings": 7210,
+    "remaining": 1596,
+    "over_budget": 0
+  },
+  "substitutions": [
+    {
+      "requirement_id": "44d8e732-dced-4362-9696-3a175fc1cb13",
+      "item_name": "Insulated Gloves",
+      "from": {
+        "id": "bc6f559a-c31e-e411-f8a2-cc115b3eec8d",
+        "source": "MARKET_A",
+        "source_name": "Marketplace A",
+        "external_product_id": "A-gloves-033-c0bce1",
+        "name": "Altura Gear Insulated Trekking Gloves Lite",
+        "brand": "Altura Gear",
+        "category": "accessories",
+        "subcategory": "gloves",
+        "description": "Altura Gear Insulated Trekking Gloves Lite designed for winter, trekking, snow use. Features adjustable fit, high-grip surface, insulated for cold conditions, thermal heat retention, fully waterproof construction. Balanced option across price and performance.",
+        "price": 1699,
+        "original_price": 2499,
+        "discount_pct": 32,
+        "rating": 4.1,
+        "review_count": 1655,
+        "features": [
+          "adjustable",
+          "high_grip",
+          "insulated",
+          "thermal",
+          "waterproof",
+          "windproof"
+        ],
+        "specs": {},
+        "tags": [
+          "cold_weather",
+          "mid_range",
+          "snow",
+          "trekking",
+          "winter"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 3,
+        "url": "https://example-market-a.test/p/A-gloves-033-c0bce1",
+        "image_url": "",
+        "product_group_key": "c0bce1d70177a8ee",
+        "is_simulated": true
+      },
+      "to": {
+        "id": "94611a0e-65b3-b526-1651-59a1f1e68b0e",
+        "source": "MARKET_A",
+        "source_name": "Marketplace A",
+        "external_product_id": "A-gloves-007-408b83",
+        "name": "Altura Gear Insulated Trekking Gloves Prime",
+        "brand": "Altura Gear",
+        "category": "accessories",
+        "subcategory": "gloves",
+        "description": "Altura Gear Insulated Trekking Gloves Prime designed for winter, trekking, snow use. Features high-grip surface, insulated for cold conditions, thermal heat retention, windproof outer shell. Suitable for beginners and regular users alike.",
+        "price": 259,
+        "original_price": 409,
+        "discount_pct": 37,
+        "rating": 3.6,
+        "review_count": 1722,
+        "features": [
+          "high_grip",
+          "insulated",
+          "thermal",
+          "windproof"
+        ],
+        "specs": {},
+        "tags": [
+          "cold_weather",
+          "mid_range",
+          "snow",
+          "trekking",
+          "winter"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 1,
+        "url": "https://example-market-a.test/p/A-gloves-007-408b83",
+        "image_url": "",
+        "product_group_key": "408b83908eb26eef",
+        "is_simulated": true
+      },
+      "price_delta": -1440,
+      "score_delta": -0.0677,
+      "reason": "Swapped to Altura Gear Insulated Trekking Gloves Prime for Insulated Gloves: saves Rs 1,440, arrives 2 day(s) sooner, keeps 4 of the same key features."
+    },
+    {
+      "requirement_id": "8c78bc1e-67da-4a17-8fff-c9bab7a5e047",
+      "item_name": "Insulated Trekking Jacket",
+      "from": {
+        "id": "5869907c-815e-0aef-aa9e-adeebb7da687",
+        "source": "MARKET_A",
+        "source_name": "Marketplace A",
+        "external_product_id": "A-trekking-jacket-048-241476",
+        "name": "Trekmate Insulated Trekking Jacket Essential",
+        "brand": "Trekmate",
+        "category": "outerwear",
+        "subcategory": "jacket",
+        "description": "Trekmate Insulated Trekking Jacket Essential designed for winter, trekking, cold weather use. Features adjustable fit, breathable fabric, insulated for cold conditions, lightweight build, seam-sealed for weather protection. Specifications - fill: Down 600FP; temp rating c: -10. A dependable everyday choice.",
+        "price": 4699,
+        "original_price": 6999,
+        "discount_pct": 33,
+        "rating": 3.9,
+        "review_count": 246,
+        "features": [
+          "adjustable",
+          "breathable",
+          "insulated",
+          "lightweight",
+          "seam_sealed",
+          "windproof"
+        ],
+        "specs": {
+          "fill": "Down 600FP",
+          "temp_rating_c": -10
+        },
+        "tags": [
+          "beginner",
+          "cold_weather",
+          "snow",
+          "trekking",
+          "value",
+          "winter"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 1,
+        "url": "https://example-market-a.test/p/A-trekking-jacket-048-241476",
+        "image_url": "",
+        "product_group_key": "2414761373cf71ad",
+        "is_simulated": true
+      },
+      "to": {
+        "id": "bd1cf081-0293-bad9-12bc-402183e866d8",
+        "source": "MARKET_A",
+        "source_name": "Marketplace A",
+        "external_product_id": "A-trekking-jacket-012-6c71f1",
+        "name": "Summit & Co Insulated Trekking Jacket II 650",
+        "brand": "Summit & Co",
+        "category": "outerwear",
+        "subcategory": "jacket",
+        "description": "Summit & Co Insulated Trekking Jacket II 650 designed for winter, trekking, cold weather use. Features adjustable fit, breathable fabric, insulated for cold conditions, lightweight build, windproof outer shell. Specifications - fill: Synthetic 200g; temp rating c: -15. Suitable for beginners and regular users alike.",
+        "price": 1599,
+        "original_price": 2299,
+        "discount_pct": 30,
+        "rating": 4.0,
+        "review_count": 2315,
+        "features": [
+          "adjustable",
+          "breathable",
+          "insulated",
+          "lightweight",
+          "windproof"
+        ],
+        "specs": {
+          "fill": "Synthetic 200g",
+          "temp_rating_c": -15
+        },
+        "tags": [
+          "beginner",
+          "cold_weather",
+          "mid_range",
+          "snow",
+          "trekking",
+          "winter"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 2,
+        "url": "https://example-market-a.test/p/A-trekking-jacket-012-6c71f1",
+        "image_url": "",
+        "product_group_key": "6c71f19ecdc4304d",
+        "is_simulated": true
+      },
+      "price_delta": -3100,
+      "score_delta": -0.0211,
+      "reason": "Swapped to Summit & Co Insulated Trekking Jacket II 650 for Insulated Trekking Jacket: saves Rs 3,100, rated 4.0 vs 3.9, keeps 5 of the same key features."
+    },
+    {
+      "requirement_id": "70442424-d192-4aaa-a217-db7872f5b485",
+      "item_name": "Sub-Zero Sleeping Bag",
+      "from": {
+        "id": "e5643d6a-fe19-23dc-8729-89d295e8ba21",
+        "source": "MARKET_A",
+        "source_name": "Marketplace A",
+        "external_product_id": "A-sleeping-bag-000-cbdd37",
+        "name": "Vertex Alpine 3-Season Sleeping Bag",
+        "brand": "Vertex Alpine",
+        "category": "camping",
+        "subcategory": "sleeping_bag",
+        "description": "Vertex Alpine 3-Season Sleeping Bag designed for camping, winter, trekking use. Features compact form factor, built for durability, insulated for cold conditions, lightweight build, machine washable. Specifications - temp rating c: 5; fill: Synthetic. Suitable for beginners and regular users alike.",
+        "price": 3599,
+        "original_price": 5999,
+        "discount_pct": 40,
+        "rating": 4.0,
+        "review_count": 57,
+        "features": [
+          "compact",
+          "durable",
+          "insulated",
+          "lightweight",
+          "machine_washable",
+          "water_resistant"
+        ],
+        "specs": {
+          "temp_rating_c": 5,
+          "fill": "Synthetic"
+        },
+        "tags": [
+          "camping",
+          "overnight",
+          "premium",
+          "trekking",
+          "winter"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 1,
+        "url": "https://example-market-a.test/p/A-sleeping-bag-000-cbdd37",
+        "image_url": "",
+        "product_group_key": "cbdd37b0e822d797",
+        "is_simulated": true
+      },
+      "to": {
+        "id": "7e46cb3c-1fc2-4174-ea27-b167dc50494c",
+        "source": "MARKET_B",
+        "source_name": "Marketplace B",
+        "external_product_id": "B-sleeping-bag-002-5d4d29",
+        "name": "Trekmate Compact Trek Sleeping Bag Max",
+        "brand": "Trekmate",
+        "category": "camping",
+        "subcategory": "sleeping_bag",
+        "description": "Trekmate Compact Trek Sleeping Bag Max designed for camping, winter, trekking use. Features built for durability, insulated for cold conditions, lightweight build, water-resistant finish. Specifications - temp rating c: 0; fill: Synthetic. A dependable everyday choice.",
+        "price": 799,
+        "original_price": 1499,
+        "discount_pct": 47,
+        "rating": 3.3,
+        "review_count": 235,
+        "features": [
+          "durable",
+          "insulated",
+          "lightweight",
+          "water_resistant"
+        ],
+        "specs": {
+          "temp_rating_c": 0,
+          "fill": "Synthetic"
+        },
+        "tags": [
+          "camping",
+          "overnight",
+          "trekking",
+          "value",
+          "winter"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 3,
+        "url": "https://example-market-b.test/p/B-sleeping-bag-002-5d4d29",
+        "image_url": "",
+        "product_group_key": "5d4d298dc0c22f5f",
+        "is_simulated": true
+      },
+      "price_delta": -2800,
+      "score_delta": -0.059,
+      "reason": "Swapped to Trekmate Compact Trek Sleeping Bag Max for Sub-Zero Sleeping Bag: saves Rs 2,800, keeps 4 of the same key features."
+    },
+    {
+      "requirement_id": "8dccc2ea-6014-47f3-bf30-970d0c61dafa",
+      "item_name": "Tent",
+      "from": {
+        "id": "f1df5dcd-5237-de79-a81e-9c369dad62aa",
+        "source": "MARKET_C",
+        "source_name": "Marketplace C",
+        "external_product_id": "C-tent-019-1556d9",
+        "name": "Arcturus Outdoor 4-Person Camping Tent Essential 350",
+        "brand": "Arcturus Outdoor",
+        "category": "camping",
+        "subcategory": "tent",
+        "description": "Arcturus Outdoor 4-Person Camping Tent Essential 350 designed for camping, overnight, trekking use. Features lightweight build, fully waterproof construction, windproof outer shell. Specifications - capacity persons: 4; season: 3-season. Balanced option across price and performance.",
+        "price": 5999,
+        "original_price": 9999,
+        "discount_pct": 40,
+        "rating": 3.8,
+        "review_count": 2341,
+        "features": [
+          "lightweight",
+          "waterproof",
+          "windproof"
+        ],
+        "specs": {
+          "capacity_persons": 4,
+          "season": "3-season"
+        },
+        "tags": [
+          "camping",
+          "overnight",
+          "premium",
+          "trekking"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 5,
+        "url": "https://example-market-c.test/p/C-tent-019-1556d9",
+        "image_url": "",
+        "product_group_key": "1556d9dbfcb180f8",
+        "is_simulated": true
+      },
+      "to": {
+        "id": "eef4539d-f464-8ed6-e1a3-5bf743b9d5d0",
+        "source": "MARKET_C",
+        "source_name": "Marketplace C",
+        "external_product_id": "C-tent-020-adefbc",
+        "name": "BaseCamp Basics 4-Person Camping Tent Pro",
+        "brand": "BaseCamp Basics",
+        "category": "camping",
+        "subcategory": "tent",
+        "description": "BaseCamp Basics 4-Person Camping Tent Pro designed for camping, overnight, trekking use. Features seam-sealed for weather protection, fully waterproof construction, windproof outer shell. Specifications - capacity persons: 4; season: 4-season. Popular pick for first-time buyers.",
+        "price": 999,
+        "original_price": 1699,
+        "discount_pct": 41,
+        "rating": 3.3,
+        "review_count": 70,
+        "features": [
+          "seam_sealed",
+          "waterproof",
+          "windproof"
+        ],
+        "specs": {
+          "capacity_persons": 4,
+          "season": "4-season"
+        },
+        "tags": [
+          "camping",
+          "overnight",
+          "trekking",
+          "value"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 11,
+        "url": "https://example-market-c.test/p/C-tent-020-adefbc",
+        "image_url": "",
+        "product_group_key": "adefbc3d4adff828",
+        "is_simulated": true
+      },
+      "price_delta": -5000,
+      "score_delta": -0.1237,
+      "reason": "Swapped to BaseCamp Basics 4-Person Camping Tent Pro for Tent: saves Rs 5,000, keeps 2 of the same key features."
+    },
+    {
+      "requirement_id": "dfbca1ea-bdd6-4c6e-98ad-44b504d1ffe4",
+      "item_name": "Thermal Base Layer",
+      "from": {
+        "id": "e78f55ce-0ef8-c0f0-beaf-bb8bf8dbd3da",
+        "source": "MARKET_A",
+        "source_name": "Marketplace A",
+        "external_product_id": "A-thermals-041-da091b",
+        "name": "Summit & Co Heat-Retain Base Layer Ultra",
+        "brand": "Summit & Co",
+        "category": "clothing",
+        "subcategory": "thermals",
+        "description": "Summit & Co Heat-Retain Base Layer Ultra designed for winter, trekking, cold weather use. Features breathable fabric, lightweight build, moisture-wicking, quick-drying material, thermal heat retention. Specifications - material: Merino blend; temp rating c: -10. Popular pick for first-time buyers.",
+        "price": 1599,
+        "original_price": 2099,
+        "discount_pct": 24,
+        "rating": 3.7,
+        "review_count": 1382,
+        "features": [
+          "breathable",
+          "lightweight",
+          "moisture_wicking",
+          "quick_dry",
+          "thermal"
+        ],
+        "specs": {
+          "material": "Merino blend",
+          "temp_rating_c": -10
+        },
+        "tags": [
+          "beginner",
+          "cold_weather",
+          "layering",
+          "mid_range",
+          "trekking",
+          "winter"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 1,
+        "url": "https://example-market-a.test/p/A-thermals-041-da091b",
+        "image_url": "",
+        "product_group_key": "da091b97f76007d2",
+        "is_simulated": true
+      },
+      "to": {
+        "id": "8596f204-263b-ce9e-6312-9386e8e8c7e3",
+        "source": "MARKET_A",
+        "source_name": "Marketplace A",
+        "external_product_id": "A-thermals-006-601be8",
+        "name": "Rukmini Outdoors Heat-Retain Base Layer Ultra",
+        "brand": "Rukmini Outdoors",
+        "category": "clothing",
+        "subcategory": "thermals",
+        "description": "Rukmini Outdoors Heat-Retain Base Layer Ultra designed for winter, trekking, cold weather use. Features breathable fabric, lightweight build, machine washable, moisture-wicking, quick-drying material. Specifications - material: Merino blend; temp rating c: 5. Suitable for beginners and regular users alike.",
+        "price": 469,
+        "original_price": 699,
+        "discount_pct": 33,
+        "rating": 3.8,
+        "review_count": 2369,
+        "features": [
+          "breathable",
+          "lightweight",
+          "machine_washable",
+          "moisture_wicking",
+          "quick_dry",
+          "thermal"
+        ],
+        "specs": {
+          "material": "Merino blend",
+          "temp_rating_c": 5
+        },
+        "tags": [
+          "beginner",
+          "cold_weather",
+          "layering",
+          "trekking",
+          "value",
+          "winter"
+        ],
+        "availability": "low_stock",
+        "delivery_days": 2,
+        "url": "https://example-market-a.test/p/A-thermals-006-601be8",
+        "image_url": "",
+        "product_group_key": "601be8ddc76b1cb7",
+        "is_simulated": true
+      },
+      "price_delta": -1130,
+      "score_delta": -0.0207,
+      "reason": "Swapped to Rukmini Outdoors Heat-Retain Base Layer Ultra for Thermal Base Layer: saves Rs 1,130, rated 3.8 vs 3.7, keeps 5 of the same key features."
+    },
+    {
+      "requirement_id": "6f6ae73c-9895-43cb-94d0-950f021668c7",
+      "item_name": "Thermal Woolen Socks",
+      "from": {
+        "id": "6b053344-9a0e-e09e-beda-ad007615cc5a",
+        "source": "MARKET_A",
+        "source_name": "Marketplace A",
+        "external_product_id": "A-socks-005-ef29b4",
+        "name": "Summit & Co Cushioned Hiking Socks 450",
+        "brand": "Summit & Co",
+        "category": "clothing",
+        "subcategory": "socks",
+        "description": "Summit & Co Cushioned Hiking Socks 450 designed for winter, trekking, cold weather use. Features anti-bacterial treatment, built for durability, moisture-wicking, quick-drying material, thermal heat retention. Popular pick for first-time buyers.",
+        "price": 899,
+        "original_price": 1099,
+        "discount_pct": 18,
+        "rating": 4.0,
+        "review_count": 1796,
+        "features": [
+          "anti_bacterial",
+          "durable",
+          "moisture_wicking",
+          "quick_dry",
+          "thermal"
+        ],
+        "specs": {},
+        "tags": [
+          "cold_weather",
+          "essentials",
+          "mid_range",
+          "trekking",
+          "winter"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 1,
+        "url": "https://example-market-a.test/p/A-socks-005-ef29b4",
+        "image_url": "",
+        "product_group_key": "ef29b424bc6e3d4d",
+        "is_simulated": true
+      },
+      "to": {
+        "id": "101584f5-3333-9b5c-de64-92ee8254195b",
+        "source": "MARKET_C",
+        "source_name": "Marketplace C",
+        "external_product_id": "C-socks-014-1f773c",
+        "name": "Nordkapp Thermal Woolen Socks (3 Pair)",
+        "brand": "Nordkapp",
+        "category": "clothing",
+        "subcategory": "socks",
+        "description": "Nordkapp Thermal Woolen Socks (3 Pair) designed for winter, trekking, cold weather use. Features anti-bacterial treatment, built for durability, moisture-wicking, quick-drying material, thermal heat retention. A dependable everyday choice.",
+        "price": 599,
+        "original_price": 799,
+        "discount_pct": 25,
+        "rating": 3.9,
+        "review_count": 1971,
+        "features": [
+          "anti_bacterial",
+          "durable",
+          "moisture_wicking",
+          "quick_dry",
+          "thermal"
+        ],
+        "specs": {},
+        "tags": [
+          "cold_weather",
+          "essentials",
+          "mid_range",
+          "trekking",
+          "winter"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 5,
+        "url": "https://example-market-c.test/p/C-socks-014-1f773c",
+        "image_url": "",
+        "product_group_key": "1f773cb26bc20219",
+        "is_simulated": true
+      },
+      "price_delta": -300,
+      "score_delta": -0.0346,
+      "reason": "Swapped to Nordkapp Thermal Woolen Socks (3 Pair) for Thermal Woolen Socks: saves Rs 300, keeps 5 of the same key features."
+    },
+    {
+      "requirement_id": "2ea75432-c771-4b2d-88ff-23abd4fe264a",
+      "item_name": "Trekking Pants",
+      "from": {
+        "id": "94fc3166-4420-2ab8-49d1-9e11465281af",
+        "source": "MARKET_A",
+        "source_name": "Marketplace A",
+        "external_product_id": "A-trekking-pants-022-e33629",
+        "name": "Trekmate Convertible Trekking Pants Trail",
+        "brand": "Trekmate",
+        "category": "clothing",
+        "subcategory": "pants",
+        "description": "Trekmate Convertible Trekking Pants Trail designed for trekking, hiking, outdoor use. Features adjustable fit, breathable fabric, lightweight build, quick-drying material. Balanced option across price and performance.",
+        "price": 2099,
+        "original_price": 2999,
+        "discount_pct": 30,
+        "rating": 3.7,
+        "review_count": 486,
+        "features": [
+          "adjustable",
+          "breathable",
+          "lightweight",
+          "quick_dry"
+        ],
+        "specs": {},
+        "tags": [
+          "beginner",
+          "hiking",
+          "outdoor",
+          "trekking",
+          "value"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 2,
+        "url": "https://example-market-a.test/p/A-trekking-pants-022-e33629",
+        "image_url": "",
+        "product_group_key": "e33629770ee73e4e",
+        "is_simulated": true
+      },
+      "to": {
+        "id": "4a9833cc-aa36-1ce2-f7db-1433521346ff",
+        "source": "MARKET_B",
+        "source_name": "Marketplace B",
+        "external_product_id": "B-trekking-pants-039-562380",
+        "name": "BaseCamp Basics Convertible Trekking Pants Summit",
+        "brand": "BaseCamp Basics",
+        "category": "clothing",
+        "subcategory": "pants",
+        "description": "BaseCamp Basics Convertible Trekking Pants Summit designed for trekking, hiking, outdoor use. Features lightweight build, quick-drying material, water-resistant finish. Popular pick for first-time buyers.",
+        "price": 999,
+        "original_price": 1399,
+        "discount_pct": 29,
+        "rating": 3.9,
+        "review_count": 112,
+        "features": [
+          "lightweight",
+          "quick_dry",
+          "water_resistant"
+        ],
+        "specs": {},
+        "tags": [
+          "beginner",
+          "hiking",
+          "outdoor",
+          "trekking",
+          "value"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 3,
+        "url": "https://example-market-b.test/p/B-trekking-pants-039-562380",
+        "image_url": "",
+        "product_group_key": "5623801d8e2f3152",
+        "is_simulated": true
+      },
+      "price_delta": -1100,
+      "score_delta": -0.041,
+      "reason": "Swapped to BaseCamp Basics Convertible Trekking Pants Summit for Trekking Pants: saves Rs 1,100, rated 3.9 vs 3.7, keeps 2 of the same key features."
+    },
+    {
+      "requirement_id": "2b825911-4b3b-4fec-b0b6-de1b3c8d3413",
+      "item_name": "Emergency Thermal Blanket",
+      "from": {
+        "id": "1d3a7950-b7fb-1794-b1ad-bcfbec50ddf5",
+        "source": "MARKET_B",
+        "source_name": "Marketplace B",
+        "external_product_id": "B-emergency-blanket-015-3127bc",
+        "name": "Nordkapp Emergency Thermal Blanket Prime",
+        "brand": "Nordkapp",
+        "category": "safety",
+        "subcategory": "emergency",
+        "description": "Nordkapp Emergency Thermal Blanket Prime designed for safety, emergency, winter use. Features compact form factor, lightweight build, reflective detailing, fully waterproof construction. Suitable for beginners and regular users alike.",
+        "price": 599,
+        "original_price": 999,
+        "discount_pct": 40,
+        "rating": 4.4,
+        "review_count": 1091,
+        "features": [
+          "compact",
+          "lightweight",
+          "reflective",
+          "waterproof"
+        ],
+        "specs": {},
+        "tags": [
+          "emergency",
+          "highly_rated",
+          "mid_range",
+          "safety",
+          "trekking",
+          "winter"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 4,
+        "url": "https://example-market-b.test/p/B-emergency-blanket-015-3127bc",
+        "image_url": "",
+        "product_group_key": "3127bc4e0fdae8b6",
+        "is_simulated": true
+      },
+      "to": {
+        "id": "1630aa0d-53d9-7726-3142-4a076caf8d62",
+        "source": "MARKET_B",
+        "source_name": "Marketplace B",
+        "external_product_id": "B-emergency-blanket-002-b35110",
+        "name": "BaseCamp Basics Bivy Emergency Sack X 350",
+        "brand": "BaseCamp Basics",
+        "category": "safety",
+        "subcategory": "emergency",
+        "description": "BaseCamp Basics Bivy Emergency Sack X 350 designed for safety, emergency, winter use. Features compact form factor, lightweight build, reflective detailing, thermal heat retention, fully waterproof construction. A dependable everyday choice.",
+        "price": 99,
+        "original_price": 119,
+        "discount_pct": 17,
+        "rating": 3.7,
+        "review_count": 3374,
+        "features": [
+          "compact",
+          "lightweight",
+          "reflective",
+          "thermal",
+          "waterproof"
+        ],
+        "specs": {},
+        "tags": [
+          "emergency",
+          "safety",
+          "trekking",
+          "value",
+          "winter"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 4,
+        "url": "https://example-market-b.test/p/B-emergency-blanket-002-b35110",
+        "image_url": "",
+        "product_group_key": "b35110196e8e9580",
+        "is_simulated": true
+      },
+      "price_delta": -500,
+      "score_delta": -0.0767,
+      "reason": "Swapped to BaseCamp Basics Bivy Emergency Sack X 350 for Emergency Thermal Blanket: saves Rs 500, keeps 4 of the same key features."
+    }
+  ],
+  "unfulfilled": []
+}

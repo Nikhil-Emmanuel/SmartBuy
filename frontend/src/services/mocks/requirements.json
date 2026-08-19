@@ -1,0 +1,653 @@
+{
+  "plan_id": "14bc95ab-fe30-4e83-9783-453d76fa8c71",
+  "goal": "I'm going for a 4-day winter trek in Manali, budget Rs 15,000, I'm a beginner, I already have trekking shoes and a backpack",
+  "goal_summary": "",
+  "context": {
+    "region_type": "mountain",
+    "temp_min_c": -5,
+    "season": "winter",
+    "goal_text": "I'm going for a 4-day winter trek in Manali, budget Rs 15,000, I'm a beginner, I already have trekking shoes and a backpack",
+    "activity": "winter_trek",
+    "location": "Manali",
+    "duration_days": 4,
+    "experience_level": "beginner",
+    "budget_total": 15000,
+    "currency": "INR",
+    "camping": true,
+    "existing_items": [
+      "trekking shoes",
+      "backpack"
+    ],
+    "preferences": {
+      "brands": [],
+      "price_bias": "balanced",
+      "delivery_bias": "standard"
+    },
+    "constraints": {},
+    "people_count": 1
+  },
+  "requirements": {
+    "essential": [
+      {
+        "id": "27545fc2-5f92-4773-8f4b-4d868aca8928",
+        "kb_item_key": "first_aid_kit",
+        "item_name": "First-Aid Kit",
+        "category": "safety",
+        "subcategory": "first_aid",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "Blisters, sprains and cuts are routine; medical help on a trail is hours away.",
+        "est_price_min": 400,
+        "est_price_max": 1500,
+        "required_features": [
+          "portable"
+        ],
+        "preferred_features": [
+          "compact",
+          "lightweight"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "93db6762-706d-4900-b8e5-a8d665481ce3",
+        "kb_item_key": "headlamp",
+        "item_name": "Headlamp",
+        "category": "navigation",
+        "subcategory": "headlamp",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "Hands-free light for pre-dawn starts and camp after sunset.",
+        "est_price_min": 500,
+        "est_price_max": 2000,
+        "required_features": [],
+        "preferred_features": [
+          "rechargeable",
+          "waterproof",
+          "lightweight"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "44d8e732-dced-4362-9696-3a175fc1cb13",
+        "kb_item_key": "winter_gloves",
+        "item_name": "Insulated Gloves",
+        "category": "accessories",
+        "subcategory": "gloves",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "Fingers lose heat first, and numb hands make everything from poles to zips difficult.",
+        "est_price_min": 500,
+        "est_price_max": 2000,
+        "required_features": [
+          "insulated"
+        ],
+        "preferred_features": [
+          "waterproof",
+          "windproof",
+          "high_grip"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "8c78bc1e-67da-4a17-8fff-c9bab7a5e047",
+        "kb_item_key": "insulated_jacket",
+        "item_name": "Insulated Trekking Jacket",
+        "category": "outerwear",
+        "subcategory": "jacket",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "Your outer shell against wind and snow; the single largest warmth contributor you carry.",
+        "est_price_min": 2500,
+        "est_price_max": 7000,
+        "required_features": [
+          "insulated"
+        ],
+        "preferred_features": [
+          "windproof",
+          "waterproof",
+          "breathable",
+          "lightweight"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "6788e889-2120-4140-aa99-6fb8990f86f9",
+        "kb_item_key": "water_bottle",
+        "item_name": "Insulated Water Bottle",
+        "category": "hydration",
+        "subcategory": "bottle",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "An insulated bottle stops your water freezing solid on the trail.",
+        "est_price_min": 400,
+        "est_price_max": 1500,
+        "required_features": [
+          "leak_proof"
+        ],
+        "preferred_features": [
+          "insulating",
+          "durable"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "70442424-d192-4aaa-a217-db7872f5b485",
+        "kb_item_key": "sleeping_bag",
+        "item_name": "Sub-Zero Sleeping Bag",
+        "category": "camping",
+        "subcategory": "sleeping_bag",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "Nights in the Himalayas drop well below freezing; a summer bag is genuinely dangerous.",
+        "est_price_min": 2500,
+        "est_price_max": 8000,
+        "required_features": [
+          "insulated"
+        ],
+        "preferred_features": [
+          "lightweight",
+          "compact",
+          "water_resistant"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "8dccc2ea-6014-47f3-bf30-970d0c61dafa",
+        "kb_item_key": "tent",
+        "item_name": "Tent",
+        "category": "camping",
+        "subcategory": "tent",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "Shelter for overnight stays where no huts or homestays are available.",
+        "est_price_min": 3000,
+        "est_price_max": 9000,
+        "required_features": [
+          "waterproof"
+        ],
+        "preferred_features": [
+          "windproof",
+          "lightweight",
+          "compact"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "dfbca1ea-bdd6-4c6e-98ad-44b504d1ffe4",
+        "kb_item_key": "thermal_base_layer",
+        "item_name": "Thermal Base Layer",
+        "category": "clothing",
+        "subcategory": "thermals",
+        "priority": "essential",
+        "quantity": 2,
+        "reason": "The foundation of cold-weather layering: traps body heat and wicks sweat away from skin.",
+        "est_price_min": 800,
+        "est_price_max": 2500,
+        "required_features": [
+          "thermal"
+        ],
+        "preferred_features": [
+          "quick_dry",
+          "lightweight",
+          "moisture_wicking"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "6f6ae73c-9895-43cb-94d0-950f021668c7",
+        "kb_item_key": "trekking_socks",
+        "item_name": "Thermal Woolen Socks",
+        "category": "clothing",
+        "subcategory": "socks",
+        "priority": "essential",
+        "quantity": 2,
+        "reason": "Wool retains warmth even when damp; cotton socks in the cold are how you get frostnip.",
+        "est_price_min": 350,
+        "est_price_max": 1400,
+        "required_features": [
+          "thermal"
+        ],
+        "preferred_features": [
+          "moisture_wicking",
+          "quick_dry",
+          "anti_bacterial"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "935b2026-0bc6-4e21-bc15-ec02b286636f",
+        "kb_item_key": "backpack",
+        "item_name": "Trekking Backpack",
+        "category": "equipment",
+        "subcategory": "backpack",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "A padded, hip-supported rucksack sized to your trek length.",
+        "est_price_min": 1500,
+        "est_price_max": 5000,
+        "required_features": [],
+        "preferred_features": [
+          "water_resistant",
+          "ergonomic",
+          "adjustable",
+          "durable"
+        ],
+        "is_owned": true,
+        "fulfillment_status": "owned",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "2ea75432-c771-4b2d-88ff-23abd4fe264a",
+        "kb_item_key": "trekking_pants",
+        "item_name": "Trekking Pants",
+        "category": "clothing",
+        "subcategory": "pants",
+        "priority": "essential",
+        "quantity": 2,
+        "reason": "Quick-drying, stretchable trousers; denim holds water and chafes on long walks.",
+        "est_price_min": 900,
+        "est_price_max": 3000,
+        "required_features": [],
+        "preferred_features": [
+          "quick_dry",
+          "water_resistant",
+          "lightweight",
+          "breathable"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "7c882dd7-4dd0-439e-b484-4a0fcd48c16c",
+        "kb_item_key": "trekking_poles",
+        "item_name": "Trekking Poles",
+        "category": "equipment",
+        "subcategory": "trekking_poles",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "Cuts knee load on descents by roughly a quarter and adds balance on loose ground.",
+        "est_price_min": 800,
+        "est_price_max": 2500,
+        "required_features": [
+          "adjustable"
+        ],
+        "preferred_features": [
+          "shock_absorbing",
+          "lightweight",
+          "foldable"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "875d2de7-a767-4ca9-9b08-200d34dcac64",
+        "kb_item_key": "trekking_shoes",
+        "item_name": "Winter Trekking Shoes",
+        "category": "footwear",
+        "subcategory": "trekking_shoes",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "Waterproof, high-ankle boots with grip for snow and slush.",
+        "est_price_min": 2000,
+        "est_price_max": 7000,
+        "required_features": [
+          "anti_slip"
+        ],
+        "preferred_features": [
+          "waterproof",
+          "anti_slip",
+          "insulated",
+          "shock_absorbing"
+        ],
+        "is_owned": true,
+        "fulfillment_status": "owned",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "dc11b8a8-8975-4225-9a81-e9ef4cce94a2",
+        "kb_item_key": "winter_headwear",
+        "item_name": "Woolen Cap / Beanie",
+        "category": "accessories",
+        "subcategory": "headwear",
+        "priority": "essential",
+        "quantity": 1,
+        "reason": "A large share of body heat escapes through an uncovered head.",
+        "est_price_min": 300,
+        "est_price_max": 1200,
+        "required_features": [
+          "thermal"
+        ],
+        "preferred_features": [
+          "windproof",
+          "lightweight"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      }
+    ],
+    "recommended": [
+      {
+        "id": "2b825911-4b3b-4fec-b0b6-de1b3c8d3413",
+        "kb_item_key": "emergency_blanket",
+        "item_name": "Emergency Thermal Blanket",
+        "category": "safety",
+        "subcategory": "emergency",
+        "priority": "recommended",
+        "quantity": 1,
+        "reason": "Weighs almost nothing and is the standard first response to hypothermia.",
+        "est_price_min": 150,
+        "est_price_max": 700,
+        "required_features": [],
+        "preferred_features": [
+          "thermal",
+          "lightweight",
+          "compact"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "fulfilled",
+        "unfulfilled_reason": null
+      },
+      {
+        "id": "4b9c5ef2-891b-4ad3-84ed-58fe9e1ebccf",
+        "kb_item_key": "fleece_midlayer",
+        "item_name": "Fleece Mid-Layer",
+        "category": "clothing",
+        "subcategory": "fleece",
+        "priority": "recommended",
+        "quantity": 1,
+        "reason": "The middle layer that traps warm air between your base layer and shell.",
+        "est_price_min": 900,
+        "est_price_max": 2800,
+        "required_features": [
+          "insulated"
+        ],
+        "preferred_features": [
+          "lightweight",
+          "breathable",
+          "quick_dry"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "c24541ee-ffee-4a3a-b949-c285960b1238",
+        "kb_item_key": "neck_gaiter",
+        "item_name": "Neck Gaiter / Buff",
+        "category": "accessories",
+        "subcategory": "neckwear",
+        "priority": "recommended",
+        "quantity": 1,
+        "reason": "Seals the gap between jacket and cap, and filters cold dry air before you breathe it.",
+        "est_price_min": 250,
+        "est_price_max": 900,
+        "required_features": [],
+        "preferred_features": [
+          "thermal",
+          "windproof",
+          "quick_dry"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "20b70988-b6a8-4c14-8495-7254110fb286",
+        "kb_item_key": "power_bank",
+        "item_name": "Power Bank",
+        "category": "electronics",
+        "subcategory": "power_bank",
+        "priority": "recommended",
+        "quantity": 1,
+        "reason": "No charging points on the trail, and cold drains phone batteries fast.",
+        "est_price_min": 800,
+        "est_price_max": 2500,
+        "required_features": [
+          "rechargeable"
+        ],
+        "preferred_features": [
+          "portable",
+          "durable",
+          "compact"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "f27e3d95-7099-4854-b47e-362126436e57",
+        "kb_item_key": "rain_protection",
+        "item_name": "Rain Poncho / Jacket",
+        "category": "outerwear",
+        "subcategory": "rainwear",
+        "priority": "recommended",
+        "quantity": 1,
+        "reason": "Mountain weather turns without warning; wet clothing at altitude is a safety problem.",
+        "est_price_min": 300,
+        "est_price_max": 1500,
+        "required_features": [
+          "waterproof"
+        ],
+        "preferred_features": [
+          "lightweight",
+          "compact",
+          "foldable"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "947f4890-465d-4194-bcdc-9f4ec4f31166",
+        "kb_item_key": "sleeping_mat",
+        "item_name": "Sleeping Mat",
+        "category": "camping",
+        "subcategory": "sleeping_mat",
+        "priority": "recommended",
+        "quantity": 1,
+        "reason": "Insulates you from ground cold, which is what actually ruins sleep in a tent.",
+        "est_price_min": 700,
+        "est_price_max": 2500,
+        "required_features": [],
+        "preferred_features": [
+          "insulating",
+          "lightweight",
+          "compact"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "430a1a16-9433-4830-8561-3ce743aee38d",
+        "kb_item_key": "sunscreen",
+        "item_name": "Sunscreen SPF 50+",
+        "category": "personal_care",
+        "subcategory": "skincare",
+        "priority": "recommended",
+        "quantity": 1,
+        "reason": "UV intensity rises sharply with altitude, and snow reflects it back at you.",
+        "est_price_min": 250,
+        "est_price_max": 900,
+        "required_features": [
+          "uv_protection"
+        ],
+        "preferred_features": [
+          "water_resistant"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "d5db09e2-c441-4236-8fd5-ab023e50372c",
+        "kb_item_key": "thermos_flask",
+        "item_name": "Thermos Flask",
+        "category": "hydration",
+        "subcategory": "flask",
+        "priority": "recommended",
+        "quantity": 1,
+        "reason": "A hot drink at a break is a real morale and core-temperature tool in the cold.",
+        "est_price_min": 600,
+        "est_price_max": 2200,
+        "required_features": [
+          "insulating"
+        ],
+        "preferred_features": [
+          "leak_proof",
+          "durable"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "b802685e-059b-4c0c-be70-ed35ac73f683",
+        "kb_item_key": "sunglasses",
+        "item_name": "UV Sunglasses",
+        "category": "accessories",
+        "subcategory": "eyewear",
+        "priority": "recommended",
+        "quantity": 1,
+        "reason": "Protects against glare and, at altitude, genuine snow-blindness risk.",
+        "est_price_min": 500,
+        "est_price_max": 2500,
+        "required_features": [
+          "uv_protection"
+        ],
+        "preferred_features": [
+          "lightweight",
+          "durable"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      }
+    ],
+    "optional": [
+      {
+        "id": "8c2d6448-2a32-400d-986c-dc4a5309d399",
+        "kb_item_key": "dry_bag",
+        "item_name": "Dry Bag / Rain Cover",
+        "category": "storage",
+        "subcategory": "dry_bag",
+        "priority": "optional",
+        "quantity": 1,
+        "reason": "Keeps spare clothes and electronics dry when the pack gets soaked.",
+        "est_price_min": 300,
+        "est_price_max": 1200,
+        "required_features": [
+          "waterproof"
+        ],
+        "preferred_features": [
+          "lightweight",
+          "compact"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "0be2c430-11c9-452d-be8d-c357c1cc1e00",
+        "kb_item_key": "multi_tool",
+        "item_name": "Multi-Tool",
+        "category": "equipment",
+        "subcategory": "multi_tool",
+        "priority": "optional",
+        "quantity": 1,
+        "reason": "Handles gear repairs on the trail.",
+        "est_price_min": 400,
+        "est_price_max": 1800,
+        "required_features": [
+          "portable"
+        ],
+        "preferred_features": [
+          "compact",
+          "durable"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "9fc1daf4-14df-43c5-8b0b-2339b93a5180",
+        "kb_item_key": "quick_dry_towel",
+        "item_name": "Quick-Dry Towel",
+        "category": "personal_care",
+        "subcategory": "towel",
+        "priority": "optional",
+        "quantity": 1,
+        "reason": "Packs down small and dries between stops, unlike a cotton towel.",
+        "est_price_min": 250,
+        "est_price_max": 900,
+        "required_features": [
+          "quick_dry"
+        ],
+        "preferred_features": [
+          "lightweight",
+          "compact"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      },
+      {
+        "id": "5cc7b0f1-d511-4c54-8e4f-55a5bb01caa1",
+        "kb_item_key": "snow_gaiters",
+        "item_name": "Snow Gaiters",
+        "category": "accessories",
+        "subcategory": "gaiters",
+        "priority": "optional",
+        "quantity": 1,
+        "reason": "Stops snow entering the top of your boots on deep sections.",
+        "est_price_min": 500,
+        "est_price_max": 1800,
+        "required_features": [
+          "waterproof"
+        ],
+        "preferred_features": [
+          "durable",
+          "adjustable"
+        ],
+        "is_owned": false,
+        "fulfillment_status": "unfulfilled",
+        "unfulfilled_reason": "budget_prioritized"
+      }
+    ]
+  },
+  "already_owned": [
+    {
+      "item_name": "Trekking Backpack",
+      "matched_from": "backpack"
+    },
+    {
+      "item_name": "Winter Trekking Shoes",
+      "matched_from": "trekking shoes"
+    }
+  ],
+  "estimated_range": {
+    "min": 9955,
+    "max": 18685
+  }
+}

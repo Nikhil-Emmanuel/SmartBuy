@@ -1,0 +1,260 @@
+{
+  "columns": [
+    "price",
+    "rating",
+    "review_count",
+    "delivery_days",
+    "match_score",
+    "deal_value",
+    "availability"
+  ],
+  "rows": [
+    {
+      "product": {
+        "id": "337205e0-a4bb-0873-e3b7-9e33a0215448",
+        "source": "MARKET_B",
+        "source_name": "Marketplace B",
+        "external_product_id": "B-first-aid-kit-004-eea995",
+        "name": "Voyagr Adventure First-Aid Pouch Lite",
+        "brand": "Voyagr",
+        "category": "safety",
+        "subcategory": "first_aid",
+        "description": "Voyagr Adventure First-Aid Pouch Lite designed for safety, trekking, camping use. Features compact form factor, lightweight build, easy to carry, water-resistant finish. A dependable everyday choice.",
+        "price": 1199,
+        "original_price": 1999,
+        "discount_pct": 40,
+        "rating": 4.3,
+        "review_count": 890,
+        "features": [
+          "compact",
+          "lightweight",
+          "portable",
+          "water_resistant"
+        ],
+        "specs": {},
+        "tags": [
+          "camping",
+          "emergency",
+          "essentials",
+          "highly_rated",
+          "safety",
+          "trekking",
+          "value"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 3,
+        "url": "https://example-market-b.test/p/B-first-aid-kit-004-eea995",
+        "image_url": "",
+        "product_group_key": "eea995d7e11cc151",
+        "is_simulated": true
+      },
+      "match_score": 0.6047,
+      "deal_value": 0.8889,
+      "score_breakdown": {
+        "goal_suitability": 0.5455,
+        "preference_match": 0.5,
+        "quality": 0.6883,
+        "feature_match": 0.6,
+        "budget_fit": 0.5,
+        "review_strength": 0.7375,
+        "delivery": 0.875,
+        "deal_value": 0.8889,
+        "final": 0.6047
+      },
+      "is_best": {
+        "price": false,
+        "rating": true,
+        "review_count": false,
+        "delivery_days": true,
+        "match_score": true,
+        "deal_value": false
+      }
+    },
+    {
+      "product": {
+        "id": "7505eef5-5d46-91af-e8df-876737863043",
+        "source": "MARKET_B",
+        "source_name": "Marketplace B",
+        "external_product_id": "B-first-aid-kit-005-8f11dc",
+        "name": "Rukmini Outdoors Adventure First-Aid Pouch",
+        "brand": "Rukmini Outdoors",
+        "category": "safety",
+        "subcategory": "first_aid",
+        "description": "Rukmini Outdoors Adventure First-Aid Pouch designed for safety, trekking, camping use. Features compact form factor, lightweight build, easy to carry. Suitable for beginners and regular users alike.",
+        "price": 999,
+        "original_price": 1799,
+        "discount_pct": 44,
+        "rating": 3.8,
+        "review_count": 1609,
+        "features": [
+          "compact",
+          "lightweight",
+          "portable"
+        ],
+        "specs": {},
+        "tags": [
+          "camping",
+          "emergency",
+          "essentials",
+          "safety",
+          "trekking",
+          "value"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 5,
+        "url": "https://example-market-b.test/p/B-first-aid-kit-005-8f11dc",
+        "image_url": "",
+        "product_group_key": "8f11dc6c717b7af3",
+        "is_simulated": true
+      },
+      "match_score": 0.5743,
+      "deal_value": 0.9778,
+      "score_breakdown": {
+        "goal_suitability": 0.5455,
+        "preference_match": 0.5,
+        "quality": 0.5183,
+        "feature_match": 0.6,
+        "budget_fit": 0.5,
+        "review_strength": 0.8017,
+        "delivery": 0.625,
+        "deal_value": 0.9778,
+        "final": 0.5743
+      },
+      "is_best": {
+        "price": false,
+        "rating": false,
+        "review_count": true,
+        "delivery_days": false,
+        "match_score": false,
+        "deal_value": true
+      }
+    },
+    {
+      "product": {
+        "id": "8070f783-269c-8fa8-fe2e-9704db0644c4",
+        "source": "MARKET_A",
+        "source_name": "Marketplace A",
+        "external_product_id": "A-first-aid-kit-021-7da2b9",
+        "name": "Rukmini Outdoors Trekking First-Aid Kit 650",
+        "brand": "Rukmini Outdoors",
+        "category": "safety",
+        "subcategory": "first_aid",
+        "description": "Rukmini Outdoors Trekking First-Aid Kit 650 designed for safety, trekking, camping use. Features compact form factor, lightweight build, easy to carry, water-resistant finish. Tested for regular outdoor and travel use.",
+        "price": 799,
+        "original_price": 1199,
+        "discount_pct": 33,
+        "rating": 4.1,
+        "review_count": 1504,
+        "features": [
+          "compact",
+          "lightweight",
+          "portable",
+          "water_resistant"
+        ],
+        "specs": {},
+        "tags": [
+          "camping",
+          "emergency",
+          "essentials",
+          "safety",
+          "trekking",
+          "value"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 4,
+        "url": "https://example-market-a.test/p/A-first-aid-kit-021-7da2b9",
+        "image_url": "",
+        "product_group_key": "7da2b93532a30cd7",
+        "is_simulated": true
+      },
+      "match_score": 0.5843,
+      "deal_value": 0.7333,
+      "score_breakdown": {
+        "goal_suitability": 0.5455,
+        "preference_match": 0.5,
+        "quality": 0.6273,
+        "feature_match": 0.6,
+        "budget_fit": 0.5,
+        "review_strength": 0.7944,
+        "delivery": 0.75,
+        "deal_value": 0.7333,
+        "final": 0.5843
+      },
+      "is_best": {
+        "price": true,
+        "rating": false,
+        "review_count": false,
+        "delivery_days": false,
+        "match_score": false,
+        "deal_value": false
+      }
+    },
+    {
+      "product": {
+        "id": "f7b784a0-8a73-60ad-cbf0-2d892546de78",
+        "source": "MARKET_B",
+        "source_name": "Marketplace B",
+        "external_product_id": "B-first-aid-kit-020-9edb15",
+        "name": "Trailhawk Adventure First-Aid Pouch Lite 250",
+        "brand": "Trailhawk",
+        "category": "safety",
+        "subcategory": "first_aid",
+        "description": "Trailhawk Adventure First-Aid Pouch Lite 250 designed for safety, trekking, camping use. Features lightweight build, easy to carry, water-resistant finish. Tested for regular outdoor and travel use.",
+        "price": 1099,
+        "original_price": 1599,
+        "discount_pct": 31,
+        "rating": 4.3,
+        "review_count": 584,
+        "features": [
+          "lightweight",
+          "portable",
+          "water_resistant"
+        ],
+        "specs": {},
+        "tags": [
+          "camping",
+          "emergency",
+          "essentials",
+          "highly_rated",
+          "mid_range",
+          "safety",
+          "trekking"
+        ],
+        "availability": "low_stock",
+        "delivery_days": 4,
+        "url": "https://example-market-b.test/p/B-first-aid-kit-020-9edb15",
+        "image_url": "",
+        "product_group_key": "9edb1581aafffaa0",
+        "is_simulated": true
+      },
+      "match_score": 0.5842,
+      "deal_value": 0.6889,
+      "score_breakdown": {
+        "goal_suitability": 0.5455,
+        "preference_match": 0.5,
+        "quality": 0.675,
+        "feature_match": 0.6,
+        "budget_fit": 0.5,
+        "review_strength": 0.6918,
+        "delivery": 0.75,
+        "deal_value": 0.6889,
+        "final": 0.5842
+      },
+      "is_best": {
+        "price": false,
+        "rating": true,
+        "review_count": false,
+        "delivery_days": false,
+        "match_score": false,
+        "deal_value": false
+      }
+    }
+  ],
+  "winner": {
+    "best_overall": "337205e0-a4bb-0873-e3b7-9e33a0215448",
+    "best_budget": "8070f783-269c-8fa8-fe2e-9704db0644c4",
+    "best_rated": "337205e0-a4bb-0873-e3b7-9e33a0215448",
+    "best_premium": "337205e0-a4bb-0873-e3b7-9e33a0215448",
+    "best_deal": "7505eef5-5d46-91af-e8df-876737863043"
+  }
+}

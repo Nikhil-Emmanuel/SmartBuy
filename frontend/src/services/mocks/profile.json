@@ -1,0 +1,117 @@
+{
+  "user_id": "79b86f89-48e0-4fc3-a084-f3d8c396deea",
+  "is_anonymous": true,
+  "preferences": {
+    "preferred_categories": [
+      "safety"
+    ],
+    "preferred_brands": [
+      "Voyagr"
+    ],
+    "min_price": 719,
+    "max_price": 1918,
+    "price_bias": "balanced",
+    "delivery_bias": "standard",
+    "brand_affinity": {
+      "Voyagr": 0.3
+    },
+    "category_affinity": {
+      "safety": 0.2
+    },
+    "subcategory_affinity": {}
+  },
+  "saved_products": [
+    {
+      "id": "337205e0-a4bb-0873-e3b7-9e33a0215448",
+      "source": "MARKET_B",
+      "source_name": "Marketplace B",
+      "external_product_id": "B-first-aid-kit-004-eea995",
+      "name": "Voyagr Adventure First-Aid Pouch Lite",
+      "brand": "Voyagr",
+      "category": "safety",
+      "subcategory": "first_aid",
+      "description": "Voyagr Adventure First-Aid Pouch Lite designed for safety, trekking, camping use. Features compact form factor, lightweight build, easy to carry, water-resistant finish. A dependable everyday choice.",
+      "price": 1199,
+      "original_price": 1999,
+      "discount_pct": 40,
+      "rating": 4.3,
+      "review_count": 890,
+      "features": [
+        "compact",
+        "lightweight",
+        "portable",
+        "water_resistant"
+      ],
+      "specs": {},
+      "tags": [
+        "camping",
+        "emergency",
+        "essentials",
+        "highly_rated",
+        "safety",
+        "trekking",
+        "value"
+      ],
+      "availability": "in_stock",
+      "delivery_days": 3,
+      "url": "https://example-market-b.test/p/B-first-aid-kit-004-eea995",
+      "image_url": "",
+      "product_group_key": "eea995d7e11cc151",
+      "is_simulated": true
+    }
+  ],
+  "recent_plans": [
+    {
+      "plan_id": "14bc95ab-fe30-4e83-9783-453d76fa8c71",
+      "goal": "I'm going for a 4-day winter trek in Manali, budget Rs 15,000, I'm a beginner, I already have trekking shoes and a backpack",
+      "status": "complete",
+      "estimated_total": 13404,
+      "budget_total": 15000,
+      "created_at": "2026-08-18T16:38:00.295462"
+    }
+  ],
+  "feedback_history": [
+    {
+      "product": {
+        "id": "337205e0-a4bb-0873-e3b7-9e33a0215448",
+        "source": "MARKET_B",
+        "source_name": "Marketplace B",
+        "external_product_id": "B-first-aid-kit-004-eea995",
+        "name": "Voyagr Adventure First-Aid Pouch Lite",
+        "brand": "Voyagr",
+        "category": "safety",
+        "subcategory": "first_aid",
+        "description": "Voyagr Adventure First-Aid Pouch Lite designed for safety, trekking, camping use. Features compact form factor, lightweight build, easy to carry, water-resistant finish. A dependable everyday choice.",
+        "price": 1199,
+        "original_price": 1999,
+        "discount_pct": 40,
+        "rating": 4.3,
+        "review_count": 890,
+        "features": [
+          "compact",
+          "lightweight",
+          "portable",
+          "water_resistant"
+        ],
+        "specs": {},
+        "tags": [
+          "camping",
+          "emergency",
+          "essentials",
+          "highly_rated",
+          "safety",
+          "trekking",
+          "value"
+        ],
+        "availability": "in_stock",
+        "delivery_days": 3,
+        "url": "https://example-market-b.test/p/B-first-aid-kit-004-eea995",
+        "image_url": "",
+        "product_group_key": "eea995d7e11cc151",
+        "is_simulated": true
+      },
+      "feedback_type": "saved",
+      "created_at": "2026-08-18T16:38:01.645138"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "status": "ok",
+  "version": "1.0.0",
+  "db": "ok",
+  "llm": "degraded",
+  "llm_model": null,
+  "catalog_size": 3075
+}

@@ -1,0 +1,52 @@
+{
+  "session_id": "61e0234c-5718-4ac0-9489-498d537291bd",
+  "state": "SLOT_FILL",
+  "intent": "GOAL_BASED_SHOPPING",
+  "assistant_message": "Are you camping overnight, or staying in guesthouses?",
+  "chips": [
+    "Camping overnight",
+    "Guesthouses",
+    "Not sure yet"
+  ],
+  "slots": {
+    "goal_text": "I'm going for a 4-day winter trek in Manali, budget Rs 15,000, I'm a beginner, I already have trekking shoes and a backpack",
+    "activity": "winter_trek",
+    "location": "Manali",
+    "region_type": null,
+    "season": null,
+    "start_date": null,
+    "duration_days": 4,
+    "people_count": null,
+    "experience_level": "beginner",
+    "budget_total": 15000,
+    "currency": "INR",
+    "camping": null,
+    "temp_min_c": null,
+    "existing_items": [
+      "trekking shoes",
+      "backpack"
+    ],
+    "preferences": {
+      "brands": [],
+      "price_bias": "balanced",
+      "delivery_bias": "standard"
+    },
+    "constraints": {}
+  },
+  "collected": [
+    "activity",
+    "budget_total",
+    "duration_days",
+    "location",
+    "experience_level",
+    "existing_items"
+  ],
+  "missing": [
+    "camping"
+  ],
+  "assumptions": [],
+  "progress": 0.83,
+  "plan_id": null,
+  "next_action": "answer_question",
+  "degraded": true
+}

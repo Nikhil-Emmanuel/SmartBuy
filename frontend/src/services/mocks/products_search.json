@@ -1,0 +1,879 @@
+{
+  "items": [
+    {
+      "id": "c6a90fec-db1a-f712-63a5-538499b7cc5d",
+      "source": "MARKET_B",
+      "source_name": "Marketplace B",
+      "external_product_id": "B-trekking-jacket-050-4175d2",
+      "name": "Altura Gear Insulated Trekking Jacket Ultra",
+      "brand": "Altura Gear",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Altura Gear Insulated Trekking Jacket Ultra designed for winter, trekking, cold weather use. Features breathable fabric, insulated for cold conditions, fully waterproof construction. Specifications - fill: Down 600FP; temp rating c: -5. A dependable everyday choice.",
+      "price": 1599,
+      "original_price": 1999,
+      "discount_pct": 20,
+      "rating": 3.4,
+      "review_count": 2093,
+      "features": [
+        "breathable",
+        "insulated",
+        "waterproof"
+      ],
+      "specs": {
+        "fill": "Down 600FP",
+        "temp_rating_c": -5
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "mid_range",
+        "snow",
+        "trekking",
+        "winter"
+      ],
+      "availability": "in_stock",
+      "delivery_days": 6,
+      "url": "https://example-market-b.test/p/B-trekking-jacket-050-4175d2",
+      "image_url": "",
+      "product_group_key": "4175d2cd9dfa9933",
+      "is_simulated": true
+    },
+    {
+      "id": "28328664-3c07-b9e3-3e29-41c349423e7c",
+      "source": "MARKET_A",
+      "source_name": "Marketplace A",
+      "external_product_id": "A-trekking-jacket-050-4175d2",
+      "name": "Altura Gear Insulated Trekking Jacket Ultra",
+      "brand": "Altura Gear",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Altura Gear Insulated Trekking Jacket Ultra designed for winter, trekking, cold weather use. Features breathable fabric, insulated for cold conditions, fully waterproof construction. Specifications - fill: Down 600FP; temp rating c: -5. Suitable for beginners and regular users alike.",
+      "price": 1499,
+      "original_price": 2199,
+      "discount_pct": 32,
+      "rating": 3.4,
+      "review_count": 2093,
+      "features": [
+        "breathable",
+        "insulated",
+        "waterproof"
+      ],
+      "specs": {
+        "fill": "Down 600FP",
+        "temp_rating_c": -5
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "mid_range",
+        "snow",
+        "trekking",
+        "winter"
+      ],
+      "availability": "in_stock",
+      "delivery_days": 2,
+      "url": "https://example-market-a.test/p/A-trekking-jacket-050-4175d2",
+      "image_url": "",
+      "product_group_key": "4175d2cd9dfa9933",
+      "is_simulated": true
+    },
+    {
+      "id": "9c0ab892-2fd3-e3ba-f985-122fec6b6c85",
+      "source": "MARKET_C",
+      "source_name": "Marketplace C",
+      "external_product_id": "C-trekking-jacket-018-041bbc",
+      "name": "Trekmate Insulated Trekking Jacket Lite",
+      "brand": "Trekmate",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Trekmate Insulated Trekking Jacket Lite designed for winter, trekking, cold weather use. Features adjustable fit, breathable fabric, insulated for cold conditions, seam-sealed for weather protection. Specifications - fill: Synthetic 200g; temp rating c: 0. Suitable for beginners and regular users alike.",
+      "price": 4099,
+      "original_price": 4099,
+      "discount_pct": 0,
+      "rating": 4.1,
+      "review_count": 1238,
+      "features": [
+        "adjustable",
+        "breathable",
+        "insulated",
+        "seam_sealed"
+      ],
+      "specs": {
+        "fill": "Synthetic 200g",
+        "temp_rating_c": 0
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "snow",
+        "trekking",
+        "value",
+        "winter"
+      ],
+      "availability": "low_stock",
+      "delivery_days": 10,
+      "url": "https://example-market-c.test/p/C-trekking-jacket-018-041bbc",
+      "image_url": "",
+      "product_group_key": "041bbc24c894be14",
+      "is_simulated": true
+    },
+    {
+      "id": "1421647c-9e98-28c5-5d2a-9f11ab6295e6",
+      "source": "MARKET_A",
+      "source_name": "Marketplace A",
+      "external_product_id": "A-trekking-jacket-018-041bbc",
+      "name": "Trekmate Insulated Trekking Jacket Lite",
+      "brand": "Trekmate",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Trekmate Insulated Trekking Jacket Lite designed for winter, trekking, cold weather use. Features adjustable fit, breathable fabric, insulated for cold conditions, seam-sealed for weather protection. Specifications - fill: Synthetic 200g; temp rating c: 0. Suitable for beginners and regular users alike.",
+      "price": 4499,
+      "original_price": 4699,
+      "discount_pct": 4,
+      "rating": 4.1,
+      "review_count": 1238,
+      "features": [
+        "adjustable",
+        "breathable",
+        "insulated",
+        "seam_sealed"
+      ],
+      "specs": {
+        "fill": "Synthetic 200g",
+        "temp_rating_c": 0
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "snow",
+        "trekking",
+        "value",
+        "winter"
+      ],
+      "availability": "in_stock",
+      "delivery_days": 3,
+      "url": "https://example-market-a.test/p/A-trekking-jacket-018-041bbc",
+      "image_url": "",
+      "product_group_key": "041bbc24c894be14",
+      "is_simulated": true
+    },
+    {
+      "id": "1d8af068-d891-4bba-63cd-ea73a79b976f",
+      "source": "MARKET_A",
+      "source_name": "Marketplace A",
+      "external_product_id": "A-trekking-jacket-024-241476",
+      "name": "Trekmate Insulated Trekking Jacket Essential",
+      "brand": "Trekmate",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Trekmate Insulated Trekking Jacket Essential designed for winter, trekking, cold weather use. Features adjustable fit, breathable fabric, insulated for cold conditions, fully waterproof construction, windproof outer shell. Specifications - fill: Fleece-lined; temp rating c: -10. A dependable everyday choice.",
+      "price": 2699,
+      "original_price": 4399,
+      "discount_pct": 39,
+      "rating": 3.4,
+      "review_count": 58,
+      "features": [
+        "adjustable",
+        "breathable",
+        "insulated",
+        "waterproof",
+        "windproof"
+      ],
+      "specs": {
+        "fill": "Fleece-lined",
+        "temp_rating_c": -10
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "snow",
+        "trekking",
+        "value",
+        "winter"
+      ],
+      "availability": "in_stock",
+      "delivery_days": 4,
+      "url": "https://example-market-a.test/p/A-trekking-jacket-024-241476",
+      "image_url": "",
+      "product_group_key": "2414761373cf71ad",
+      "is_simulated": true
+    },
+    {
+      "id": "aad1d201-1aaf-a8f5-3169-4ef453803f4c",
+      "source": "MARKET_A",
+      "source_name": "Marketplace A",
+      "external_product_id": "A-trekking-jacket-006-0a0372",
+      "name": "Nordkapp Insulated Trekking Jacket Prime",
+      "brand": "Nordkapp",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Nordkapp Insulated Trekking Jacket Prime designed for winter, trekking, cold weather use. Features adjustable fit, breathable fabric, insulated for cold conditions, lightweight build, seam-sealed for weather protection. Specifications - fill: Fleece-lined; temp rating c: -10. Balanced option across price and performance.",
+      "price": 1699,
+      "original_price": 2599,
+      "discount_pct": 35,
+      "rating": 3.9,
+      "review_count": 164,
+      "features": [
+        "adjustable",
+        "breathable",
+        "insulated",
+        "lightweight",
+        "seam_sealed",
+        "waterproof"
+      ],
+      "specs": {
+        "fill": "Fleece-lined",
+        "temp_rating_c": -10
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "mid_range",
+        "snow",
+        "trekking",
+        "winter"
+      ],
+      "availability": "in_stock",
+      "delivery_days": 3,
+      "url": "https://example-market-a.test/p/A-trekking-jacket-006-0a0372",
+      "image_url": "",
+      "product_group_key": "0a03728f8b277b10",
+      "is_simulated": true
+    },
+    {
+      "id": "84e79414-2019-4a24-244c-736f93684b28",
+      "source": "MARKET_A",
+      "source_name": "Marketplace A",
+      "external_product_id": "A-trekking-jacket-037-ffc598",
+      "name": "Trailhawk Insulated Trekking Jacket Lite",
+      "brand": "Trailhawk",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Trailhawk Insulated Trekking Jacket Lite designed for winter, trekking, cold weather use. Features adjustable fit, insulated for cold conditions, lightweight build, seam-sealed for weather protection, fully waterproof construction. Specifications - fill: Fleece-lined; temp rating c: -5. A dependable everyday choice.",
+      "price": 5999,
+      "original_price": 6999,
+      "discount_pct": 14,
+      "rating": 4.2,
+      "review_count": 30,
+      "features": [
+        "adjustable",
+        "insulated",
+        "lightweight",
+        "seam_sealed",
+        "waterproof",
+        "windproof"
+      ],
+      "specs": {
+        "fill": "Fleece-lined",
+        "temp_rating_c": -5
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "mid_range",
+        "snow",
+        "trekking",
+        "winter"
+      ],
+      "availability": "in_stock",
+      "delivery_days": 2,
+      "url": "https://example-market-a.test/p/A-trekking-jacket-037-ffc598",
+      "image_url": "",
+      "product_group_key": "ffc598615054d412",
+      "is_simulated": true
+    },
+    {
+      "id": "93a185c4-b99f-aed4-e4bf-1411b6d1571d",
+      "source": "MARKET_C",
+      "source_name": "Marketplace C",
+      "external_product_id": "C-trekking-jacket-006-0a0372",
+      "name": "Nordkapp Insulated Trekking Jacket Prime",
+      "brand": "Nordkapp",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Nordkapp Insulated Trekking Jacket Prime designed for winter, trekking, cold weather use. Features adjustable fit, breathable fabric, insulated for cold conditions, lightweight build, seam-sealed for weather protection. Specifications - fill: Fleece-lined; temp rating c: -10. Suitable for beginners and regular users alike.",
+      "price": 2299,
+      "original_price": 2499,
+      "discount_pct": 8,
+      "rating": 3.9,
+      "review_count": 164,
+      "features": [
+        "adjustable",
+        "breathable",
+        "insulated",
+        "lightweight",
+        "seam_sealed",
+        "waterproof"
+      ],
+      "specs": {
+        "fill": "Fleece-lined",
+        "temp_rating_c": -10
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "mid_range",
+        "snow",
+        "trekking",
+        "winter"
+      ],
+      "availability": "low_stock",
+      "delivery_days": 8,
+      "url": "https://example-market-c.test/p/C-trekking-jacket-006-0a0372",
+      "image_url": "",
+      "product_group_key": "0a03728f8b277b10",
+      "is_simulated": true
+    },
+    {
+      "id": "5869907c-815e-0aef-aa9e-adeebb7da687",
+      "source": "MARKET_A",
+      "source_name": "Marketplace A",
+      "external_product_id": "A-trekking-jacket-048-241476",
+      "name": "Trekmate Insulated Trekking Jacket Essential",
+      "brand": "Trekmate",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Trekmate Insulated Trekking Jacket Essential designed for winter, trekking, cold weather use. Features adjustable fit, breathable fabric, insulated for cold conditions, lightweight build, seam-sealed for weather protection. Specifications - fill: Down 600FP; temp rating c: -10. A dependable everyday choice.",
+      "price": 4699,
+      "original_price": 6999,
+      "discount_pct": 33,
+      "rating": 3.9,
+      "review_count": 246,
+      "features": [
+        "adjustable",
+        "breathable",
+        "insulated",
+        "lightweight",
+        "seam_sealed",
+        "windproof"
+      ],
+      "specs": {
+        "fill": "Down 600FP",
+        "temp_rating_c": -10
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "snow",
+        "trekking",
+        "value",
+        "winter"
+      ],
+      "availability": "in_stock",
+      "delivery_days": 1,
+      "url": "https://example-market-a.test/p/A-trekking-jacket-048-241476",
+      "image_url": "",
+      "product_group_key": "2414761373cf71ad",
+      "is_simulated": true
+    },
+    {
+      "id": "7eeb1264-40bd-a9e0-331f-f4202d42b627",
+      "source": "MARKET_A",
+      "source_name": "Marketplace A",
+      "external_product_id": "A-trekking-jacket-014-4c217f",
+      "name": "Vertex Alpine Insulated Trekking Jacket",
+      "brand": "Vertex Alpine",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Vertex Alpine Insulated Trekking Jacket designed for winter, trekking, cold weather use. Features adjustable fit, breathable fabric, insulated for cold conditions, lightweight build, windproof outer shell. Specifications - fill: Fleece-lined; temp rating c: -15. Suitable for beginners and regular users alike.",
+      "price": 18999,
+      "original_price": 18999,
+      "discount_pct": 0,
+      "rating": 4.3,
+      "review_count": 416,
+      "features": [
+        "adjustable",
+        "breathable",
+        "insulated",
+        "lightweight",
+        "windproof"
+      ],
+      "specs": {
+        "fill": "Fleece-lined",
+        "temp_rating_c": -15
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "highly_rated",
+        "premium",
+        "snow",
+        "trekking",
+        "winter"
+      ],
+      "availability": "in_stock",
+      "delivery_days": 4,
+      "url": "https://example-market-a.test/p/A-trekking-jacket-014-4c217f",
+      "image_url": "",
+      "product_group_key": "4c217f44710de494",
+      "is_simulated": true
+    },
+    {
+      "id": "8f94440b-d331-f4a8-ee95-f3ee1faa0aac",
+      "source": "MARKET_A",
+      "source_name": "Marketplace A",
+      "external_product_id": "A-trekking-jacket-008-242928",
+      "name": "Rukmini Outdoors Insulated Trekking Jacket Max",
+      "brand": "Rukmini Outdoors",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Rukmini Outdoors Insulated Trekking Jacket Max designed for winter, trekking, cold weather use. Features adjustable fit, breathable fabric, insulated for cold conditions, lightweight build, fully waterproof construction. Specifications - fill: Synthetic 200g; temp rating c: -5. Popular pick for first-time buyers.",
+      "price": 8999,
+      "original_price": 8999,
+      "discount_pct": 0,
+      "rating": 3.8,
+      "review_count": 1044,
+      "features": [
+        "adjustable",
+        "breathable",
+        "insulated",
+        "lightweight",
+        "waterproof",
+        "windproof"
+      ],
+      "specs": {
+        "fill": "Synthetic 200g",
+        "temp_rating_c": -5
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "snow",
+        "trekking",
+        "value",
+        "winter"
+      ],
+      "availability": "out_of_stock",
+      "delivery_days": 3,
+      "url": "https://example-market-a.test/p/A-trekking-jacket-008-242928",
+      "image_url": "",
+      "product_group_key": "24292817efc4bc02",
+      "is_simulated": true
+    },
+    {
+      "id": "9d656330-4680-679f-f7a1-b897be5e9026",
+      "source": "MARKET_A",
+      "source_name": "Marketplace A",
+      "external_product_id": "A-trekking-jacket-047-10b55f",
+      "name": "Nordkapp Insulated Trekking Jacket Core 300",
+      "brand": "Nordkapp",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Nordkapp Insulated Trekking Jacket Core 300 designed for winter, trekking, cold weather use. Features insulated for cold conditions, lightweight build, seam-sealed for weather protection, fully waterproof construction, windproof outer shell. Specifications - fill: Fleece-lined; temp rating c: -5. Popular pick for first-time buyers.",
+      "price": 8999,
+      "original_price": 10999,
+      "discount_pct": 18,
+      "rating": 4.2,
+      "review_count": 126,
+      "features": [
+        "insulated",
+        "lightweight",
+        "seam_sealed",
+        "waterproof",
+        "windproof"
+      ],
+      "specs": {
+        "fill": "Fleece-lined",
+        "temp_rating_c": -5
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "mid_range",
+        "snow",
+        "trekking",
+        "winter"
+      ],
+      "availability": "in_stock",
+      "delivery_days": 3,
+      "url": "https://example-market-a.test/p/A-trekking-jacket-047-10b55f",
+      "image_url": "",
+      "product_group_key": "10b55f129b082ccb",
+      "is_simulated": true
+    },
+    {
+      "id": "bd1cf081-0293-bad9-12bc-402183e866d8",
+      "source": "MARKET_A",
+      "source_name": "Marketplace A",
+      "external_product_id": "A-trekking-jacket-012-6c71f1",
+      "name": "Summit & Co Insulated Trekking Jacket II 650",
+      "brand": "Summit & Co",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Summit & Co Insulated Trekking Jacket II 650 designed for winter, trekking, cold weather use. Features adjustable fit, breathable fabric, insulated for cold conditions, lightweight build, windproof outer shell. Specifications - fill: Synthetic 200g; temp rating c: -15. Suitable for beginners and regular users alike.",
+      "price": 1599,
+      "original_price": 2299,
+      "discount_pct": 30,
+      "rating": 4.0,
+      "review_count": 2315,
+      "features": [
+        "adjustable",
+        "breathable",
+        "insulated",
+        "lightweight",
+        "windproof"
+      ],
+      "specs": {
+        "fill": "Synthetic 200g",
+        "temp_rating_c": -15
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "mid_range",
+        "snow",
+        "trekking",
+        "winter"
+      ],
+      "availability": "in_stock",
+      "delivery_days": 2,
+      "url": "https://example-market-a.test/p/A-trekking-jacket-012-6c71f1",
+      "image_url": "",
+      "product_group_key": "6c71f19ecdc4304d",
+      "is_simulated": true
+    },
+    {
+      "id": "e413b544-76eb-c932-d4f2-0c1bcc1060ab",
+      "source": "MARKET_C",
+      "source_name": "Marketplace C",
+      "external_product_id": "C-trekking-jacket-046-0d51fd",
+      "name": "Trekmate Padded Winter Jacket Summit",
+      "brand": "Trekmate",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Trekmate Padded Winter Jacket Summit designed for winter, trekking, cold weather use. Features breathable fabric, insulated for cold conditions, lightweight build, fully waterproof construction. Specifications - fill: Down 600FP; temp rating c: -5. Balanced option across price and performance.",
+      "price": 1399,
+      "original_price": 1899,
+      "discount_pct": 26,
+      "rating": 3.8,
+      "review_count": 57,
+      "features": [
+        "breathable",
+        "insulated",
+        "lightweight",
+        "waterproof"
+      ],
+      "specs": {
+        "fill": "Down 600FP",
+        "temp_rating_c": -5
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "snow",
+        "trekking",
+        "value",
+        "winter"
+      ],
+      "availability": "in_stock",
+      "delivery_days": 10,
+      "url": "https://example-market-c.test/p/C-trekking-jacket-046-0d51fd",
+      "image_url": "",
+      "product_group_key": "0d51fd9ab3189fb8",
+      "is_simulated": true
+    },
+    {
+      "id": "cc4e25ed-aa5f-7599-14ab-1e56219219ca",
+      "source": "MARKET_B",
+      "source_name": "Marketplace B",
+      "external_product_id": "B-trekking-jacket-046-0d51fd",
+      "name": "Trekmate Padded Winter Jacket Summit",
+      "brand": "Trekmate",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Trekmate Padded Winter Jacket Summit designed for winter, trekking, cold weather use. Features breathable fabric, insulated for cold conditions, lightweight build, fully waterproof construction. Specifications - fill: Down 600FP; temp rating c: -5. Balanced option across price and performance.",
+      "price": 1499,
+      "original_price": 1899,
+      "discount_pct": 21,
+      "rating": 3.8,
+      "review_count": 57,
+      "features": [
+        "breathable",
+        "insulated",
+        "lightweight",
+        "waterproof"
+      ],
+      "specs": {
+        "fill": "Down 600FP",
+        "temp_rating_c": -5
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "snow",
+        "trekking",
+        "value",
+        "winter"
+      ],
+      "availability": "in_stock",
+      "delivery_days": 4,
+      "url": "https://example-market-b.test/p/B-trekking-jacket-046-0d51fd",
+      "image_url": "",
+      "product_group_key": "0d51fd9ab3189fb8",
+      "is_simulated": true
+    },
+    {
+      "id": "87d6392b-02df-7d6a-bd52-a8a7688d5edd",
+      "source": "MARKET_A",
+      "source_name": "Marketplace A",
+      "external_product_id": "A-trekking-jacket-046-0d51fd",
+      "name": "Trekmate Padded Winter Jacket Summit",
+      "brand": "Trekmate",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Trekmate Padded Winter Jacket Summit designed for winter, trekking, cold weather use. Features breathable fabric, insulated for cold conditions, lightweight build, fully waterproof construction. Specifications - fill: Down 600FP; temp rating c: -5. Balanced option across price and performance.",
+      "price": 2099,
+      "original_price": 2099,
+      "discount_pct": 0,
+      "rating": 3.8,
+      "review_count": 57,
+      "features": [
+        "breathable",
+        "insulated",
+        "lightweight",
+        "waterproof"
+      ],
+      "specs": {
+        "fill": "Down 600FP",
+        "temp_rating_c": -5
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "snow",
+        "trekking",
+        "value",
+        "winter"
+      ],
+      "availability": "in_stock",
+      "delivery_days": 3,
+      "url": "https://example-market-a.test/p/A-trekking-jacket-046-0d51fd",
+      "image_url": "",
+      "product_group_key": "0d51fd9ab3189fb8",
+      "is_simulated": true
+    },
+    {
+      "id": "cfa205da-fb97-e128-8213-121d645f92ac",
+      "source": "MARKET_B",
+      "source_name": "Marketplace B",
+      "external_product_id": "B-trekking-jacket-016-f6f7c6",
+      "name": "Trailhawk Padded Winter Jacket",
+      "brand": "Trailhawk",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Trailhawk Padded Winter Jacket designed for winter, trekking, cold weather use. Features breathable fabric, insulated for cold conditions, seam-sealed for weather protection, fully waterproof construction. Specifications - fill: Synthetic 200g; temp rating c: -5. Tested for regular outdoor and travel use.",
+      "price": 7999,
+      "original_price": 7999,
+      "discount_pct": 0,
+      "rating": 3.9,
+      "review_count": 2639,
+      "features": [
+        "breathable",
+        "insulated",
+        "seam_sealed",
+        "waterproof"
+      ],
+      "specs": {
+        "fill": "Synthetic 200g",
+        "temp_rating_c": -5
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "mid_range",
+        "snow",
+        "trekking",
+        "winter"
+      ],
+      "availability": "in_stock",
+      "delivery_days": 6,
+      "url": "https://example-market-b.test/p/B-trekking-jacket-016-f6f7c6",
+      "image_url": "",
+      "product_group_key": "f6f7c624af77edc5",
+      "is_simulated": true
+    },
+    {
+      "id": "6ad9e407-ae20-a9b3-9294-68331b398377",
+      "source": "MARKET_B",
+      "source_name": "Marketplace B",
+      "external_product_id": "B-trekking-jacket-045-2f7c9a",
+      "name": "Nordkapp Padded Winter Jacket Ultra",
+      "brand": "Nordkapp",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Nordkapp Padded Winter Jacket Ultra designed for winter, trekking, cold weather use. Features adjustable fit, breathable fabric, insulated for cold conditions, fully waterproof construction. Specifications - fill: Synthetic 200g; temp rating c: -5. Tested for regular outdoor and travel use.",
+      "price": 2799,
+      "original_price": 3299,
+      "discount_pct": 15,
+      "rating": 3.4,
+      "review_count": 379,
+      "features": [
+        "adjustable",
+        "breathable",
+        "insulated",
+        "waterproof"
+      ],
+      "specs": {
+        "fill": "Synthetic 200g",
+        "temp_rating_c": -5
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "mid_range",
+        "snow",
+        "trekking",
+        "winter"
+      ],
+      "availability": "in_stock",
+      "delivery_days": 5,
+      "url": "https://example-market-b.test/p/B-trekking-jacket-045-2f7c9a",
+      "image_url": "",
+      "product_group_key": "2f7c9ab5ed563778",
+      "is_simulated": true
+    },
+    {
+      "id": "466566f1-4da8-a3e2-c961-f88b56c127c9",
+      "source": "MARKET_B",
+      "source_name": "Marketplace B",
+      "external_product_id": "B-trekking-jacket-044-8acb70",
+      "name": "Nordkapp Padded Winter Jacket Lite",
+      "brand": "Nordkapp",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Nordkapp Padded Winter Jacket Lite designed for winter, trekking, cold weather use. Features insulated for cold conditions, lightweight build, seam-sealed for weather protection, windproof outer shell. Specifications - fill: Down 600FP; temp rating c: -10. Balanced option across price and performance.",
+      "price": 2899,
+      "original_price": 3699,
+      "discount_pct": 22,
+      "rating": 3.5,
+      "review_count": 2765,
+      "features": [
+        "insulated",
+        "lightweight",
+        "seam_sealed",
+        "windproof"
+      ],
+      "specs": {
+        "fill": "Down 600FP",
+        "temp_rating_c": -10
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "mid_range",
+        "snow",
+        "trekking",
+        "winter"
+      ],
+      "availability": "out_of_stock",
+      "delivery_days": 6,
+      "url": "https://example-market-b.test/p/B-trekking-jacket-044-8acb70",
+      "image_url": "",
+      "product_group_key": "8acb70f270a40228",
+      "is_simulated": true
+    },
+    {
+      "id": "90fcfe9d-30a0-e914-980e-0acda04cf561",
+      "source": "MARKET_A",
+      "source_name": "Marketplace A",
+      "external_product_id": "A-trekking-jacket-041-7a040d",
+      "name": "Altura Gear Padded Winter Jacket Pro",
+      "brand": "Altura Gear",
+      "category": "outerwear",
+      "subcategory": "jacket",
+      "description": "Altura Gear Padded Winter Jacket Pro designed for winter, trekking, cold weather use. Features adjustable fit, breathable fabric, insulated for cold conditions, lightweight build. Specifications - fill: Down 600FP; temp rating c: -10. Popular pick for first-time buyers.",
+      "price": 4199,
+      "original_price": 4799,
+      "discount_pct": 13,
+      "rating": 3.7,
+      "review_count": 37,
+      "features": [
+        "adjustable",
+        "breathable",
+        "insulated",
+        "lightweight"
+      ],
+      "specs": {
+        "fill": "Down 600FP",
+        "temp_rating_c": -10
+      },
+      "tags": [
+        "beginner",
+        "cold_weather",
+        "mid_range",
+        "snow",
+        "trekking",
+        "winter"
+      ],
+      "availability": "in_stock",
+      "delivery_days": 3,
+      "url": "https://example-market-a.test/p/A-trekking-jacket-041-7a040d",
+      "image_url": "",
+      "product_group_key": "7a040d837f3560cf",
+      "is_simulated": true
+    }
+  ],
+  "total": 200,
+  "page": 1,
+  "page_size": 20,
+  "facets": {
+    "brands": {
+      "Nordkapp": 34,
+      "Trailhawk": 32,
+      "Trekmate": 29,
+      "Voyagr": 19,
+      "Summit & Co": 17,
+      "BaseCamp Basics": 15,
+      "Vertex Alpine": 14,
+      "Altura Gear": 12,
+      "Rukmini Outdoors": 10,
+      "Arcturus Outdoor": 9,
+      "Kailash Pro": 9
+    },
+    "sources": {
+      "Marketplace B": 68,
+      "Marketplace A": 88,
+      "Marketplace C": 44
+    },
+    "categories": {
+      "outerwear": 82,
+      "clothing": 53,
+      "accessories": 47,
+      "hydration": 16,
+      "camping": 2
+    },
+    "price_buckets": [
+      {
+        "label": "Under Rs 500",
+        "min_price": 0,
+        "max_price": 499,
+        "count": 13
+      },
+      {
+        "label": "Rs 500 - 1,500",
+        "min_price": 500,
+        "max_price": 1499,
+        "count": 57
+      },
+      {
+        "label": "Rs 1,500 - 3,000",
+        "min_price": 1500,
+        "max_price": 2999,
+        "count": 63
+      },
+      {
+        "label": "Rs 3,000 - 7,500",
+        "min_price": 3000,
+        "max_price": 7499,
+        "count": 46
+      },
+      {
+        "label": "Rs 7,500 - 20,000",
+        "min_price": 7500,
+        "max_price": 19999,
+        "count": 21
+      }
+    ]
+  }
+}

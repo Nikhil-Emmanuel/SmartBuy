@@ -1,0 +1,80 @@
+{
+  "match_score": 0.7405,
+  "score_breakdown": {
+    "goal_suitability": 0.6818,
+    "preference_match": 0.5,
+    "quality": 0.6883,
+    "feature_match": 1.0,
+    "budget_fit": 0.9178,
+    "review_strength": 0.7375,
+    "delivery": 0.875,
+    "deal_value": 0.8889,
+    "final": 0.7405
+  },
+  "weighted_points": [
+    {
+      "label": "Goal suitability",
+      "earned": 17.0,
+      "max": 25.0
+    },
+    {
+      "label": "Preference match",
+      "earned": 10.0,
+      "max": 20.0
+    },
+    {
+      "label": "Product quality",
+      "earned": 10.3,
+      "max": 15.0
+    },
+    {
+      "label": "Feature match",
+      "earned": 15.0,
+      "max": 15.0
+    },
+    {
+      "label": "Budget fit",
+      "earned": 9.2,
+      "max": 10.0
+    },
+    {
+      "label": "Review strength",
+      "earned": 3.7,
+      "max": 5.0
+    },
+    {
+      "label": "Delivery",
+      "earned": 4.4,
+      "max": 5.0
+    },
+    {
+      "label": "Deal value",
+      "earned": 4.4,
+      "max": 5.0
+    }
+  ],
+  "summary": "Matches your must-haves: portable",
+  "reasons": [
+    "Matches your must-haves: portable",
+    "Rated 4.3 across 890 reviews",
+    "40% off, saving Rs 800",
+    "Priced comfortably within your budget for this item"
+  ],
+  "evidence": {
+    "price": 1199,
+    "original_price": 1999,
+    "discount_pct": 40,
+    "rating": 4.3,
+    "review_count": 890,
+    "delivery_days": 3,
+    "availability": "in_stock",
+    "features": [
+      "compact",
+      "lightweight",
+      "portable",
+      "water_resistant"
+    ],
+    "is_simulated": true
+  },
+  "llm_generated": false
+}
