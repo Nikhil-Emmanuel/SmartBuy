@@ -110,6 +110,7 @@ from app.api import (
     comparison,
     feedback,
     health,
+    personalization,
     products,
     recommendations,
     requirements,
@@ -125,6 +126,7 @@ app.include_router(recommendations.router)
 app.include_router(comparison.router)
 app.include_router(bundles.router)
 app.include_router(feedback.router)
+app.include_router(personalization.router)
 app.include_router(users.router)
 app.include_router(admin.router)
 

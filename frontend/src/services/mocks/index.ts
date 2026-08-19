@@ -17,6 +17,7 @@ import type {
   ChatResponse,
   CompareResponse,
   ExplainResponse,
+  PersonalizationResponse,
   Product,
   ProductDetail,
   ProductSearchParams,
@@ -164,6 +165,10 @@ export async function compare(
 
 export function getProfile(): Promise<ProfileResponse> {
   return fixture<ProfileResponse>(() => import("./profile.json"));
+}
+
+export function getPersonalization(): Promise<PersonalizationResponse> {
+  return fixture<PersonalizationResponse>(() => import("./personalization.json"));
 }
 
 export function getAdminMetrics(): Promise<AdminMetrics> {

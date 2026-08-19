@@ -310,12 +310,21 @@ class ProductSearchService:
         self.ensure_index(db)
         cfg = get_ranking_config()
 
-        base = SearchFilters(
-            subcategory=req.subcategory or None,
-            min_rating=float(cfg.filters.get("min_rating", 0.0)) or None,
-            sources=sources,
-        )
-        rows = self._filtered(db, base)
+        if req.subcategory or req.category:
+            rows = self._filtered(db, SearchFilters(
+                subcategory=req.subcategory or None,
+                min_rating=float(cfg.filters.get("min_rating", 0.0)) or None,
+                sources=sources,
+            ))
+        else:
+            # Nothing placed this requirement on a shelf. Filtering on no
+            # subcategory and no category does not narrow anything -- it
+            # returns the whole catalog, which the scorer then ranks into a
+            # confident answer to a question we cannot answer. Searching for
+            # "mobile", which this catalog has none of, came back as a thermal
+            # base layer. Leave it to the semantic pass below: if the index
+            # matches nothing either, the honest result is no result.
+            rows = []
 
         # Fall back to the broader category, then to pure semantic search, so a
         # KB item whose subcategory has thin coverage still returns something.

@@ -25,6 +25,20 @@ export function useMarketplaces() {
   });
 }
 
+/**
+ * Backend health. The landing page uses it for the live catalog figure --
+ * which is why it must come from here rather than a constant: a hard-coded
+ * "3,000+ products" is a claim that quietly goes stale.
+ */
+export function useHealth() {
+  return useQuery({
+    queryKey: qk.health,
+    queryFn: api.health,
+    staleTime: 60_000,
+    retry: false,
+  });
+}
+
 export function useProduct(id: string | null) {
   return useQuery({
     queryKey: qk.product(id ?? "none"),

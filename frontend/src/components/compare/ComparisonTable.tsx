@@ -1,5 +1,6 @@
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Check, ChevronDown, Star, X } from "lucide-react";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 
 import { ProductImage } from "@/components/shared/ProductImage";
 import { ScoreBreakdown } from "@/components/shared/ScoreBreakdown";
@@ -12,6 +13,7 @@ import {
   rupees,
   titleCase,
 } from "@/lib/format";
+import { FADE, SPRING } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import type { Badge as BadgeType, CompareResponse } from "@/types/api";
 
@@ -33,25 +35,30 @@ export function ComparisonTable({
   onRemove?: (productId: string) => void;
 }) {
   const [expanded, setExpanded] = useState<string | null>(null);
+  const reduced = useReducedMotion();
   const winnerEntries = Object.entries(data.winner) as [BadgeType, string][];
 
   return (
     <div className="space-y-4">
       {winnerEntries.length > 0 && (
         <div className="flex flex-wrap gap-2">
-          {winnerEntries.map(([badge, productId]) => {
+          {winnerEntries.map(([badge, productId], i) => {
             const row = data.rows.find((r) => r.product.id === productId);
             if (!row) return null;
             return (
-              <div
+              <motion.div
                 key={badge}
+                layout={!reduced}
+                initial={reduced ? false : { opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ ...SPRING, delay: reduced ? 0 : i * 0.05 }}
                 className="flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-xs"
               >
                 <Badge variant="accent">{badgeLabel(badge)}</Badge>
                 <span className="max-w-[10rem] truncate text-muted-foreground">
                   {row.product.name}
                 </span>
-              </div>
+              </motion.div>
             );
           })}
         </div>
@@ -76,9 +83,23 @@ export function ComparisonTable({
             </tr>
           </thead>
           <tbody>
-            {data.rows.map((row) => (
-              <Fragment key={row.product.id}>
-                <tr className="border-b border-border last:border-0">
+            {/*
+              Rows are returned as a flat array rather than wrapped in a
+              Fragment: AnimatePresence tracks its children by key and cannot
+              see inside a Fragment, so a Fragment here would silently disable
+              the removal animation.
+            */}
+            <AnimatePresence initial={false}>
+              {data.rows.flatMap((row, i) => [
+                <motion.tr
+                  key={row.product.id}
+                  layout={!reduced}
+                  initial={reduced ? false : { opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={reduced ? undefined : { opacity: 0, x: -24, transition: { duration: 0.18 } }}
+                  transition={{ ...FADE, delay: reduced ? 0 : i * 0.05 }}
+                  className="border-b border-border last:border-0"
+                >
                   <td className="sticky left-0 z-10 bg-card p-3">
                     <div className="flex items-center gap-2.5">
                       <ProductImage
@@ -122,28 +143,39 @@ export function ComparisonTable({
 
                   <td className="p-3 text-center">
                     {onRemove && (
-                      <button
+                      <motion.button
                         onClick={() => onRemove(row.product.id)}
+                        whileHover={reduced ? undefined : { scale: 1.2, rotate: 90 }}
+                        whileTap={reduced ? undefined : { scale: 0.9 }}
+                        transition={SPRING}
                         className="text-muted-foreground hover:text-danger"
                         aria-label="Remove from comparison"
                       >
                         <X className="size-3.5" />
-                      </button>
+                      </motion.button>
                     )}
                   </td>
-                </tr>
-                {expanded === row.product.id && (
-                  <tr className="border-b border-border bg-muted/30">
+                </motion.tr>,
+
+                expanded === row.product.id ? (
+                  <motion.tr
+                    key={`${row.product.id}-detail`}
+                    initial={reduced ? false : { opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={reduced ? undefined : { opacity: 0, transition: { duration: 0.12 } }}
+                    transition={FADE}
+                    className="border-b border-border bg-muted/30"
+                  >
                     <td colSpan={data.columns.length + 2} className="p-4">
                       <p className="mb-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
                         Score breakdown
                       </p>
                       <ScoreBreakdown breakdown={row.score_breakdown} compact />
                     </td>
-                  </tr>
-                )}
-              </Fragment>
-            ))}
+                  </motion.tr>
+                ) : null,
+              ])}
+            </AnimatePresence>
           </tbody>
         </table>
       </div>

@@ -1,3 +1,4 @@
+import { motion, useReducedMotion } from "framer-motion";
 import { Check, Scale, Star } from "lucide-react";
 import type { ReactNode } from "react";
 
@@ -7,6 +8,7 @@ import { SimulatedBadge } from "@/components/shared/SimulatedBadge";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { badgeLabel, deliveryLabel, percent, rating, rupees, sourceLabel } from "@/lib/format";
+import { listChild, SPRING } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import type { Product, ScoreBreakdown as ScoreBreakdownType } from "@/types/api";
 
@@ -42,21 +44,29 @@ export function ProductCard({
   className?: string;
 }) {
   const label = badgeLabel(badge);
+  const reduced = useReducedMotion();
 
   return (
-    <div
+    <motion.div
+      // `variants` are inherited from a parent list when there is one, so a
+      // grid staggers; a card rendered on its own still animates itself in.
+      variants={listChild}
+      initial={reduced ? false : "hidden"}
+      animate="visible"
+      whileHover={reduced ? undefined : { y: -4 }}
+      transition={SPRING}
       className={cn(
-        "group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-all hover:border-primary/40 hover:shadow-md",
+        "group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5",
         compared && "ring-2 ring-primary ring-offset-2 ring-offset-background",
         className,
       )}
     >
-      <div className="relative p-3 pb-0">
+      <div className="relative overflow-hidden p-3 pb-0">
         <ProductImage
           category={product.category}
           subcategory={product.subcategory}
           seed={product.id}
-          className="h-32 w-full"
+          className="h-32 w-full transition-transform duration-500 ease-out group-hover:scale-[1.06]"
         />
         {label && (
           <Badge
@@ -147,7 +157,7 @@ export function ProductCard({
         </div>
         {footer}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

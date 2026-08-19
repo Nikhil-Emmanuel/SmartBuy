@@ -1,14 +1,18 @@
+import { motion, useReducedMotion } from "framer-motion";
 import { Heart, History, Sparkles, ThumbsDown, ThumbsUp, User } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { ProductCard } from "@/components/product/ProductCard";
+import { PersonalizedOffer } from "@/components/profile/PersonalizedOffer";
 import { ProductImage } from "@/components/shared/ProductImage";
+import { Reveal } from "@/components/shared/Reveal";
 import { EmptyState, ErrorState } from "@/components/shared/States";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useProfile } from "@/hooks/useProfile";
 import { dateLabel, rupees, titleCase } from "@/lib/format";
+import { HOVER_LIFT, listChild, listParent } from "@/lib/motion";
 
 const FEEDBACK_ICON = {
   relevant: ThumbsUp,
@@ -19,6 +23,7 @@ const FEEDBACK_ICON = {
 
 export function ProfilePage() {
   const { data, isLoading, isError, refetch } = useProfile();
+  const reduced = useReducedMotion();
 
   if (isLoading) {
     return (
@@ -44,9 +49,14 @@ export function ProfilePage() {
   return (
     <div className="mx-auto max-w-4xl space-y-8 px-4 py-8 sm:px-6">
       <div className="flex items-center gap-3">
-        <div className="flex size-11 items-center justify-center rounded-full bg-primary-soft text-primary">
+        <motion.div
+          initial={reduced ? false : { scale: 0.7, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ type: "spring", stiffness: 320, damping: 24 }}
+          className="flex size-11 items-center justify-center rounded-full bg-primary-soft text-primary"
+        >
           <User className="size-5" />
-        </div>
+        </motion.div>
         <div>
           <h1 className="text-xl font-semibold text-foreground">Your profile</h1>
           <p className="text-sm text-muted-foreground">
@@ -55,6 +65,8 @@ export function ProfilePage() {
           </p>
         </div>
       </div>
+
+      <PersonalizedOffer />
 
       <Card>
         <CardHeader className="pb-2">
@@ -114,45 +126,53 @@ export function ProfilePage() {
         </CardContent>
       </Card>
 
-      <section>
+      <Reveal>
         <h2 className="mb-3 text-sm font-semibold text-foreground">Saved products</h2>
         {data.saved_products.length === 0 ? (
           <EmptyState icon={Heart} title="Nothing saved yet" className="py-8" />
         ) : (
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <motion.div
+            className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+            variants={listParent(data.saved_products.length)}
+            initial={reduced ? false : "hidden"}
+            animate="visible"
+          >
             {data.saved_products.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <motion.div key={product.id} variants={listChild}>
+                <ProductCard product={product} />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
-      </section>
+      </Reveal>
 
-      <section>
+      <Reveal>
         <h2 className="mb-3 text-sm font-semibold text-foreground">Recent plans</h2>
         {data.recent_plans.length === 0 ? (
           <EmptyState icon={History} title="No plans yet" className="py-8" />
         ) : (
           <div className="space-y-2">
             {data.recent_plans.map((plan) => (
-              <Link
-                key={plan.plan_id}
-                to={`/plan/${plan.plan_id}`}
-                className="flex items-center justify-between rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/40"
-              >
-                <div>
-                  <p className="text-sm font-medium text-foreground">{plan.goal}</p>
-                  <p className="text-xs text-muted-foreground">{dateLabel(plan.created_at)}</p>
-                </div>
-                <span className="tabular text-sm font-semibold text-foreground">
-                  {rupees(plan.estimated_total)}
-                </span>
-              </Link>
+              <motion.div key={plan.plan_id} whileHover={reduced ? undefined : HOVER_LIFT}>
+                <Link
+                  to={`/plan/${plan.plan_id}`}
+                  className="flex items-center justify-between rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/40"
+                >
+                  <div>
+                    <p className="text-sm font-medium text-foreground">{plan.goal}</p>
+                    <p className="text-xs text-muted-foreground">{dateLabel(plan.created_at)}</p>
+                  </div>
+                  <span className="tabular text-sm font-semibold text-foreground">
+                    {rupees(plan.estimated_total)}
+                  </span>
+                </Link>
+              </motion.div>
             ))}
           </div>
         )}
-      </section>
+      </Reveal>
 
-      <section>
+      <Reveal>
         <h2 className="mb-3 text-sm font-semibold text-foreground">Feedback history</h2>
         {data.feedback_history.length === 0 ? (
           <EmptyState icon={ThumbsUp} title="No feedback given yet" className="py-8" />
@@ -161,8 +181,12 @@ export function ProfilePage() {
             {data.feedback_history.map((entry, i) => {
               const Icon = FEEDBACK_ICON[entry.feedback_type];
               return (
-                <div
+                <motion.div
                   key={`${entry.product.id}-${i}`}
+                  initial={reduced ? false : { opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: reduced ? 0 : Math.min(i, 10) * 0.04 }}
                   className="flex items-center gap-3 rounded-xl border border-border bg-card p-3"
                 >
                   <ProductImage
@@ -179,12 +203,12 @@ export function ProfilePage() {
                     <Icon className="size-3" />
                     {entry.feedback_type.replace("_", " ")}
                   </Badge>
-                </div>
+                </motion.div>
               );
             })}
           </div>
         )}
-      </section>
+      </Reveal>
     </div>
   );
 }

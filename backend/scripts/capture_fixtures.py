@@ -24,10 +24,9 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from fastapi.testclient import TestClient
-
 from app.core.config import settings
 from app.main import app
+from fastapi.testclient import TestClient
 
 OUT = Path(__file__).resolve().parents[2] / "frontend" / "src" / "services" / "mocks"
 
@@ -55,6 +54,23 @@ def ok(response) -> Any:
             f"{response.status_code}: {response.text[:300]}"
         )
     return response.json()
+
+
+def _seeded_user_id() -> str:
+    """A synthetic user with enough interaction history to be classifiable."""
+    from app.db.database import SessionLocal
+    from app.models.user import UserPreference
+    from sqlalchemy import select
+
+    with SessionLocal() as db:
+        user_id = db.execute(
+            select(UserPreference.user_id).where(UserPreference.segment != "").limit(1)
+        ).scalar_one_or_none()
+    if not user_id:
+        raise AssertionError(
+            "No seeded users with a segment. Run: python backend/scripts/seed.py"
+        )
+    return str(user_id)
 
 
 def main() -> int:
@@ -142,6 +158,15 @@ def main() -> int:
                              "comment": None},
                        headers=HEADERS))
         dump("profile", ok(client.get("/api/profile", headers=HEADERS)))
+
+        # The demo session is minutes old, so /api/personalization would
+        # honestly answer "insufficient_history" for it -- correct, but it
+        # would leave mock mode unable to show the feature at all. Record a
+        # seeded user who does have a history instead. Still a real response.
+        dump("personalization", ok(client.get(
+            "/api/personalization",
+            headers={"X-Session-Id": _seeded_user_id()})))
+
         dump("admin_metrics", ok(client.get("/api/admin/metrics", headers={**HEADERS, **ADMIN})))
         dump("audit_logs", ok(client.get("/api/admin/audit-logs",
                                          params={"limit": 60},

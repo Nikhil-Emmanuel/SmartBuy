@@ -63,8 +63,13 @@ _PLANNING_PHRASES = (
 )
 
 
-def _looks_goal_shaped(message: str) -> bool:
-    """Does this describe a situation, rather than name a product?"""
+def looks_goal_shaped(message: str) -> bool:
+    """Does this describe a situation, rather than name a product?
+
+    Public because the orchestrator routes on the same distinction: whether a
+    turn builds a goal plan or a product search must not depend on which of the
+    two modules happened to decide it.
+    """
     lowered = f" {message.lower().strip()} "
     if any(p in lowered for p in _PLANNING_PHRASES) or _PURPOSE.search(lowered):
         return True
@@ -83,11 +88,11 @@ def detect_intent(message: str, has_active_plan: bool = False) -> Intent:
             # lookup -- the purpose clause outranks the product phrasing.
             if (intent == Intent.SPECIFIC_PRODUCT_SEARCH
                     and resolve_goal_from_text(lowered)
-                    and _looks_goal_shaped(message)):
+                    and looks_goal_shaped(message)):
                 return Intent.GOAL_BASED_SHOPPING
             return intent
 
-    if resolve_goal_from_text(lowered) and _looks_goal_shaped(message):
+    if resolve_goal_from_text(lowered) and looks_goal_shaped(message):
         return Intent.GOAL_BASED_SHOPPING
     if has_active_plan:
         return Intent.GENERAL_RECOMMENDATION

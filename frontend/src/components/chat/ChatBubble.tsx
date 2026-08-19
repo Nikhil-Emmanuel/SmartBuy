@@ -1,7 +1,9 @@
+import { motion, useReducedMotion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { DegradedBanner } from "@/components/shared/StatusBanners";
+import { EASE_OUT } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 /**
@@ -53,15 +55,35 @@ export function ChatBubble({
   onStreamEnd?: () => void;
 }) {
   const isUser = role === "user";
+  const reduced = useReducedMotion();
   const shown = useTypewriter(content, stream && !isUser, onStreamEnd);
   const typing = shown.length < content.length;
 
   return (
-    <div className={cn("animate-message-in flex gap-3", isUser && "flex-row-reverse")}>
+    /*
+      The entrance moved off the `animate-message-in` CSS keyframe and onto
+      Framer. The keyframe starts at `opacity: 0` and relies on the animation
+      actually running to get back to 1 -- so anywhere the animation is frozen
+      or skipped (a throttled background tab, a reduced-motion user whose
+      duration is clamped to 0.01ms), the message risks painting invisible.
+      With `initial={false}` under reduced motion the bubble is simply there.
+      A chat message must never depend on an animation to be readable.
+    */
+    <motion.div
+      initial={reduced ? false : { opacity: 0, y: 8, scale: 0.99 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.32, ease: EASE_OUT }}
+      className={cn("flex gap-3", isUser && "flex-row-reverse")}
+    >
       {!isUser && (
-        <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+        <motion.div
+          initial={reduced ? false : { scale: 0.6 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", stiffness: 400, damping: 22 }}
+          className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground"
+        >
           <Sparkles className="size-4" />
-        </div>
+        </motion.div>
       )}
       <div className={cn("flex max-w-[80%] flex-col gap-1.5", isUser && "items-end")}>
         <div
@@ -81,22 +103,35 @@ export function ChatBubble({
           <DegradedBanner className="w-full max-w-md py-2 text-xs" />
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 export function TypingIndicator() {
+  const reduced = useReducedMotion();
   return (
     <div className="flex gap-3">
       <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
         <Sparkles className="size-4" />
       </div>
-      <div className="flex items-center gap-1 rounded-2xl rounded-tl-sm border border-border bg-card px-4 py-3.5">
+      <div
+        className="flex items-center gap-1 rounded-2xl rounded-tl-sm border border-border bg-card px-4 py-3.5"
+        role="status"
+        aria-label="Assistant is thinking"
+      >
         {[0, 1, 2].map((i) => (
-          <span
+          <motion.span
             key={i}
-            className="animate-thinking size-1.5 rounded-full bg-muted-foreground"
-            style={{ animationDelay: `${i * 0.15}s` }}
+            className="size-1.5 rounded-full bg-muted-foreground"
+            // Under reduced motion the dots hold still rather than disappear:
+            // they are the only signal that a request is in flight, so they
+            // must stay visible even when nothing is allowed to move.
+            animate={reduced ? { opacity: 0.6 } : { opacity: [0.3, 1, 0.3], y: [0, -3, 0] }}
+            transition={
+              reduced
+                ? { duration: 0 }
+                : { duration: 1.2, repeat: Infinity, ease: "easeInOut", delay: i * 0.15 }
+            }
           />
         ))}
       </div>

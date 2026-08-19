@@ -56,6 +56,12 @@ class UserPreference(Base, IdMixin):
     category_affinity: Mapped[dict] = mapped_column(JSON, default=dict)
     subcategory_affinity: Mapped[dict] = mapped_column(JSON, default=dict)
 
+    # Shopper segment. On seeded synthetic users this is the generator's ground
+    # truth and is what the personalisation model trains against; on real users
+    # it is empty, because a real deployment has to predict it rather than be
+    # told. Never read it as a substitute for a prediction.
+    segment: Mapped[str] = mapped_column(String(24), default="")
+
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=utcnow, onupdate=utcnow, nullable=False
     )

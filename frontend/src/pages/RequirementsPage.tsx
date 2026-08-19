@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { ArrowRight, PackageCheck, Search } from "lucide-react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -9,6 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { usePatchRequirement, useRequirements } from "@/hooks/usePlan";
 import { rupees } from "@/lib/format";
+import { listParent } from "@/lib/motion";
 import type { Requirement, RequirementGroups } from "@/types/api";
 
 const GROUP_LABELS: Record<keyof RequirementGroups, string> = {
@@ -123,7 +125,12 @@ export function RequirementsPage() {
                 {GROUP_LABELS[group]}{" "}
                 <span className="font-normal text-muted-foreground">({items.length})</span>
               </h2>
-              <div className="space-y-2.5">
+              <motion.div
+                variants={listParent(items.length)}
+                initial="hidden"
+                animate="visible"
+                className="space-y-2.5"
+              >
                 {items.map((requirement) => (
                   <RequirementRow
                     key={requirement.id}
@@ -133,7 +140,7 @@ export function RequirementsPage() {
                     onQuantityChange={(q) => changeQuantity(requirement, q)}
                   />
                 ))}
-              </div>
+              </motion.div>
             </section>
           ) : null,
         )}

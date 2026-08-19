@@ -15,9 +15,10 @@ Owner: Member 5 (Agentic AI).
 from __future__ import annotations
 
 import logging
+import re
 import time
 
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from app.agent import fallback, slot_policy
@@ -37,10 +38,12 @@ from app.guardrails.recommendation_checks import check_question
 from app.kb.loader import get_goal, list_goals
 from app.logging import audit
 from app.models.plan import ShoppingPlan
+from app.models.product import Product
 from app.models.session import ChatSession, ConversationMessage
 from app.models.user import User
 from app.schemas.agent import Assumption, ChatResponse, Slots
 from app.services import plan_service
+from app.services.product_search import get_search_service
 
 log = logging.getLogger("smartbuy.agent")
 
@@ -57,7 +60,10 @@ REFINEMENT_INTENTS = frozenset({
 _SMALLTALK = frozenset({
     "hi", "hello", "hey", "yo", "hola", "namaste", "start", "help", "hi there",
     "good morning", "good afternoon", "good evening", "thanks", "thank you",
-    "ok", "okay", "cool", "nice",
+    "thanks a lot", "thank you so much", "ok", "okay", "k", "kk", "cool",
+    "nice", "great", "awesome", "sure", "yes", "yeah", "yep", "no", "nope",
+    "bye", "goodbye", "see you", "test", "testing", "who are you",
+    "what can you do", "what is this",
 })
 
 GREETING = (
@@ -77,18 +83,86 @@ def rs(amount: int | None) -> str:
     return f"Rs {int(amount):,}" if amount else "Rs 0"
 
 
-def _is_smalltalk(text: str, slots: Slots) -> bool:
+def _is_smalltalk(text: str) -> bool:
     """A greeting is not a shopping goal. Asking "what is your budget?" in
     reply to "hi" is the single most obviously robotic thing this agent could
-    do."""
-    stripped = text.strip().lower().strip("!.,?- ")
-    if stripped in _SMALLTALK:
-        return True
-    return (
-        len(stripped.split()) <= 2
-        and not slots.activity
-        and not slots.budget_total
+    do.
+
+    Membership in `_SMALLTALK` is the whole test. This used to also treat any
+    message of two words or fewer as chit-chat, which is how "mobile" -- the
+    most natural way there is to start a product search -- got answered with a
+    greeting. Short is not the same as empty. Anything we do not recognise as
+    conversational filler is a shopping query, and an honest "I could not find
+    anything matching mobile" beats a greeting that ignores what was typed.
+    """
+    return text.strip().lower().strip("!.,?- ") in _SMALLTALK
+
+
+# Words that constrain a search without naming anything new. "under 3,000"
+# narrows whatever we were already looking at; "mobile" changes the subject.
+# Telling the two apart is what stops a budget tweak from replacing the search
+# query with the word "under".
+_CONSTRAINT_WORDS = frozenset({
+    "under", "below", "above", "over", "less", "than", "more", "max", "maximum",
+    "min", "minimum", "budget", "rupees", "inr", "around", "about", "upto",
+    "within", "cheap", "cheaper", "cheapest", "costly", "price", "priced",
+    "cost", "only", "just", "and", "the", "for", "of", "with", "any", "some",
+    "something", "anything", "one", "options", "option", "alternatives",
+    "alternative", "please", "make", "keep", "that", "this", "them", "it",
+    "instead", "show", "give", "want", "need", "looking", "find", "buy",
+    "better", "best", "good", "other", "another", "same", "still", "also",
+})
+
+
+def _content_words(text: str) -> list[str]:
+    return [w for w in re.findall(r"[a-z]+", text.lower())
+            if len(w) > 2 and w not in _CONSTRAINT_WORDS]
+
+
+def _carries_new_subject(text: str) -> bool:
+    """Does this message name a thing, or only constrain the last one?"""
+    return bool(_content_words(text))
+
+
+def _nothing_stocked(db: Session, query: str) -> bool:
+    """True when this catalog demonstrably has nothing for the query.
+
+    Two independent misses: the query cannot be placed on any shelf, and the
+    text index matches no product at all. This is a claim about our catalog,
+    not about the market -- we sell no phones, which is not the same as saying
+    no phones exist (ADR-004: the catalog is curated, not the internet).
+    """
+    service = get_search_service()
+    category, subcategory = service.infer_taxonomy(db, query)
+    if category or subcategory:
+        return False
+    return not service.index.query(query, top_k=1)
+
+
+def _stocked_categories(db: Session, limit: int = 6) -> list[str]:
+    """The catalog's biggest shelves, read from the catalog rather than typed
+    into a constant that goes stale the next time we reseed."""
+    rows = db.execute(
+        select(Product.category, func.count())
+        .where(Product.category != "")
+        .group_by(Product.category)
+        .order_by(func.count().desc())
+    ).all()
+    return [category.replace("_", " ") for category, _ in rows[:limit]]
+
+
+def _nothing_stocked_message(db: Session, query: str) -> tuple[str, list[str]]:
+    subject = " ".join(_content_words(query)) or query.strip()
+    shelves = _stocked_categories(db)
+    text = f"I do not have any {subject} in this catalog."
+    if shelves:
+        listed = ", ".join(shelves[:-1]) + f" and {shelves[-1]}"
+        text += f" It covers {listed}."
+    text += (
+        " Name something from those, or describe what you are getting ready "
+        "for and I will work out the list."
     )
+    return text, STARTER_CHIPS
 
 
 # --------------------------------------------------------------------------
@@ -370,7 +444,38 @@ def handle_message(db: Session, session: ChatSession, message: str,
             intent = Intent.GOAL_BASED_SHOPPING
 
     slots = current.merge(extracted)
-    smalltalk = _is_smalltalk(clean, slots)
+    smalltalk = _is_smalltalk(clean)
+
+    # Has the user changed the subject? Deliberately decided from the message
+    # rather than from `intent`, because the label is not trustworthy here: the
+    # deterministic fallback tags anything it does not recognise while a plan
+    # is open as GENERAL_RECOMMENDATION, so with Gemini down "mobile" and
+    # "cheaper" arrive under the same name. What separates them is that one
+    # names a subject the open plan does not cover and the other does not.
+    new_subject = (
+        intent != Intent.GOAL_BASED_SHOPPING
+        and not smalltalk
+        and not answering
+        and not fallback.looks_goal_shaped(clean)
+        and _carries_new_subject(clean)
+        and _changes_subject(clean, plan, current)
+    )
+
+    # A new subject starts a clean slate. `Slots.merge` deliberately keeps the
+    # first goal_text it ever saw, which is right while one goal is being
+    # refined turn by turn and wrong the moment the user asks about something
+    # else: typing "mobile" into a trekking conversation was answered with the
+    # trekking plan, budget and all. The budget goes too -- Rs 20,000 was a
+    # ceiling for shoes, not a standing preference.
+    if new_subject:
+        slots.goal_text = clean
+        slots.activity = None
+        # Deliberately the regex, not the LLM's extraction: asked to fill slots
+        # for "mobile" with a trek in the history, Gemini helpfully carries the
+        # old budget forward, and "mobile under Rs 15,000" is the same leak in
+        # a smaller font. Only a figure typed in this message survives.
+        slots.budget_total = fallback.extract_budget(clean)
+
     if not slots.goal_text and not smalltalk:
         slots.goal_text = clean
 
@@ -387,8 +492,27 @@ def handle_message(db: Session, session: ChatSession, message: str,
                          asked=already_asked)
 
     # ---------------------------------------------------------------- refine
-    if has_plan and intent in REFINEMENT_INTENTS and not _is_new_goal(slots, plan):
+    if (has_plan and intent in REFINEMENT_INTENTS
+            and not new_subject and not _changed_activity(slots, plan)):
         return _refine(db, session, plan, slots, intent, degraded, user, already_asked)
+
+    # ------------------------------------------------------- nothing stocked
+    # Do not interrogate the user about something we cannot sell them. Asking
+    # "what is your budget for the mobile phone?" and then answering "I could
+    # not find anything matching mobile" spends their turn to reach a wall we
+    # could already see.
+    product_search = new_subject or (
+        intent == Intent.SPECIFIC_PRODUCT_SEARCH
+        and not fallback.looks_goal_shaped(clean)
+    )
+    if product_search and _nothing_stocked(db, slots.goal_text or clean):
+        text, chips = _nothing_stocked_message(db, slots.goal_text or clean)
+        session.state = AgentState.INTAKE
+        _persist(db, session, slots)
+        _save_message(db, session, MessageRole.ASSISTANT, text, {"chips": chips})
+        return _response(session, slots, intent, text, chips,
+                         next_action=NextAction.NONE, degraded=degraded,
+                         asked=already_asked)
 
     # ------------------------------------------------------------- slot fill
     if not slot_policy.ready_to_plan(slots, intent, session.question_count,
@@ -419,7 +543,12 @@ def handle_message(db: Session, session: ChatSession, message: str,
     session.state = AgentState.PLANNING
     _persist(db, session, slots)
 
-    if intent == Intent.SPECIFIC_PRODUCT_SEARCH and not slots.activity:
+    # An activity word inside a product name is not a goal. "Trekking shoes
+    # under Rs 20,000" extracts activity="trek", and testing `not slots.activity`
+    # sent it down the goal branch, which answered a request for one pair of
+    # shoes with a fifteen-item trek kit. The purpose clause decides, not the
+    # noun -- the same rule the deterministic intent detector already uses.
+    if product_search:
         creation = plan_service.create_search_plan(
             db, query=slots.goal_text or clean, price_max=slots.budget_total,
             user=user, session_id=session.id,
@@ -470,8 +599,35 @@ def handle_message(db: Session, session: ChatSession, message: str,
     )
 
 
-def _is_new_goal(slots: Slots, plan: ShoppingPlan) -> bool:
-    """True when the user has moved on to a different goal entirely."""
+def _plan_vocabulary(plan: ShoppingPlan) -> set[str]:
+    """Every word the current plan is about: item names and their shelves."""
+    words: set[str] = set()
+    for requirement in plan.requirements:
+        words.update(_content_words(requirement.item_name))
+        for term in (requirement.category, requirement.subcategory,
+                     *(requirement.search_terms or [])):
+            if term:
+                words.update(_content_words(str(term).replace("_", " ")))
+    return words
+
+
+def _changes_subject(text: str, plan: ShoppingPlan | None, current: Slots) -> bool:
+    """Is this message about something other than what we are already showing?
+
+    "a warmer jacket" against a trek plan refines it -- jacket is on the list.
+    "mobile" against the same plan matches nothing in it, so it is a new
+    subject rather than an adjustment to the old one. Comparing against the
+    plan's own vocabulary keeps this honest: we do not need a list of every
+    noun we sell, only the words this particular plan already covers.
+    """
+    if plan is None:
+        return True
+    vocabulary = _plan_vocabulary(plan) | set(_content_words(current.goal_text or ""))
+    return not any(word in vocabulary for word in _content_words(text))
+
+
+def _changed_activity(slots: Slots, plan: ShoppingPlan) -> bool:
+    """True when the user has named a different activity than the plan's."""
     return bool(slots.activity and plan.goal_key and slots.activity != plan.goal_key)
 
 

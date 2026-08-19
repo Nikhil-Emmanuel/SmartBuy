@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
-import { acquireImageSlot, productPhotoUrl } from "@/lib/productMedia";
+import { acquireImageSlot, markFetched, productPhotoUrl } from "@/lib/productMedia";
 import { cn, hueFrom } from "@/lib/utils";
 
 const CATEGORY_ICONS: Record<string, LucideIcon> = {
@@ -52,11 +52,12 @@ function useProductPhoto(url: string, enabled: boolean) {
     let cancelled = false;
     let release: (() => void) | undefined;
 
-    acquireImageSlot().then((done) => {
+    acquireImageSlot(url).then((done) => {
       release = done;
       if (cancelled) return done();
       const img = new Image();
       img.onload = () => {
+        markFetched(url);
         if (!cancelled) setSrc(url);
         done();
       };

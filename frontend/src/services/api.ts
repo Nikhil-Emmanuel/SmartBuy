@@ -25,6 +25,7 @@ import type {
   HealthResponse,
   MarketplacesResponse,
   Offer,
+  PersonalizationResponse,
   ProductDetail,
   ProductSearchParams,
   ProductSearchResponse,
@@ -176,6 +177,11 @@ export function getProfile() {
 
 export function updateProfile(body: ProfileUpdateRequest) {
   return http.put<ProfileResponse>("/api/profile", body);
+}
+
+export function getPersonalization() {
+  if (USE_MOCKS) return mocks.getPersonalization();
+  return http.get<PersonalizationResponse>("/api/personalization");
 }
 
 export function getAdminMetrics() {

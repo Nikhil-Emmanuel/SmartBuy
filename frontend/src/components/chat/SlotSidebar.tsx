@@ -1,12 +1,15 @@
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Check, Circle, Info, Pencil } from "lucide-react";
 import { useState } from "react";
 
+import { CountUp } from "@/components/shared/CountUp";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { percent, slotLabel, slotValue } from "@/lib/format";
+import { FADE, SPRING } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import type { Assumption, Slots } from "@/types/api";
 
@@ -40,6 +43,7 @@ export function SlotSidebar({
 }) {
   const [editingBudget, setEditingBudget] = useState(false);
   const [budgetInput, setBudgetInput] = useState(String(slots.budget_total ?? ""));
+  const reduced = useReducedMotion();
 
   const known = new Set(collected);
   const relevant = DISPLAY_ORDER.filter(
@@ -58,16 +62,25 @@ export function SlotSidebar({
         <CardTitle className="text-sm">Your goal so far</CardTitle>
         <div className="flex items-center gap-2 pt-1">
           <Progress value={Math.round(progress * 100)} className="h-1.5 flex-1" />
-          <span className="tabular text-xs font-medium text-muted-foreground">
-            {percent(progress)}
-          </span>
+          <CountUp
+            value={progress}
+            format={(v) => percent(v)}
+            duration={0.5}
+            className="text-xs font-medium text-muted-foreground"
+          />
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
         {slots.goal_text && (
-          <p className="rounded-lg bg-muted px-3 py-2 text-xs italic leading-relaxed text-muted-foreground">
+          <motion.p
+            key={slots.goal_text}
+            initial={reduced ? false : { opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={FADE}
+            className="rounded-lg bg-muted px-3 py-2 text-xs italic leading-relaxed text-muted-foreground"
+          >
             &ldquo;{slots.goal_text}&rdquo;
-          </p>
+          </motion.p>
         )}
 
         <ul className="space-y-2">
@@ -75,12 +88,37 @@ export function SlotSidebar({
             const isKnown = known.has(key) || slotHasValue(slots[key]);
             const isBudget = key === "budget_total";
             return (
-              <li key={key} className="flex items-start gap-2 text-sm">
-                {isKnown ? (
-                  <Check className="mt-0.5 size-3.5 shrink-0 text-savings" />
-                ) : (
-                  <Circle className="mt-0.5 size-3.5 shrink-0 text-muted-foreground/50" />
-                )}
+              <motion.li
+                key={key}
+                layout={!reduced}
+                initial={reduced ? false : { opacity: 0, x: -8 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={FADE}
+                className="flex items-start gap-2 text-sm"
+              >
+                {/*
+                  The tick pops when a slot flips from unknown to known. This is
+                  the one piece of motion on this panel that is doing real work:
+                  the sidebar sits beside the conversation, and without it the
+                  moment a sentence filled something in is easy to miss.
+                */}
+                <AnimatePresence mode="wait" initial={false}>
+                  {isKnown ? (
+                    <motion.span
+                      key="known"
+                      initial={reduced ? false : { scale: 0.4, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={SPRING}
+                      className="mt-0.5 shrink-0"
+                    >
+                      <Check className="size-3.5 text-savings" />
+                    </motion.span>
+                  ) : (
+                    <motion.span key="unknown" className="mt-0.5 shrink-0">
+                      <Circle className="size-3.5 text-muted-foreground/50" />
+                    </motion.span>
+                  )}
+                </AnimatePresence>
                 <span className="w-24 shrink-0 text-xs text-muted-foreground">
                   {slotLabel(key)}
                 </span>
@@ -120,7 +158,7 @@ export function SlotSidebar({
                     <Pencil className="size-3" />
                   </button>
                 )}
-              </li>
+              </motion.li>
             );
           })}
         </ul>
@@ -134,13 +172,19 @@ export function SlotSidebar({
                 Assumed for you
               </p>
               <ul className="space-y-1.5">
-                {assumptions.map((a) => (
-                  <li key={a.slot} className="rounded-lg bg-info-soft/60 px-2.5 py-1.5 text-xs">
+                {assumptions.map((a, i) => (
+                  <motion.li
+                    key={a.slot}
+                    initial={reduced ? false : { opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ ...FADE, delay: reduced ? 0 : i * 0.05 }}
+                    className="rounded-lg bg-info-soft/60 px-2.5 py-1.5 text-xs"
+                  >
                     <span className="font-medium text-info">
                       {slotLabel(a.slot)}: {a.value}
                     </span>
                     <p className="text-muted-foreground">{a.basis}</p>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </div>

@@ -97,10 +97,28 @@ const CATEGORY_FALLBACK_TERMS: Record<string, string> = {
 };
 
 /**
+ * How many distinct photos exist per subcategory.
+ *
+ * This number is the whole performance story. `lock` used to be
+ * `hash(id) % 100000`, which gave every product its own photograph -- so a
+ * 162-card discovery page made 162 cold cross-origin requests, none of which
+ * could ever be a cache hit for another card. Measured in the browser, the
+ * grid took 21 seconds to finish filling in.
+ *
+ * Drawing from a small pool per subcategory means that same page needs about
+ * `subcategories x POOL` unique images and every other card is served from the
+ * HTTP cache instantly. Eight is enough that no two adjacent cards in a
+ * subcategory repeat in practice, while cutting the cold-fetch count by
+ * roughly half on a large grid and much more on a small one.
+ */
+const POOL_PER_SUBCATEGORY = 8;
+
+/**
  * A real photograph illustrating this kind of product, from LoremFlickr (CC
- * Flickr images, no API key). `lock` is derived from the product id so a given
- * product always renders the same photo — a card that reshuffled its picture on
- * every re-render would look broken during a demo.
+ * Flickr images, no API key). The photo is stable for a given product -- a card
+ * that reshuffled its picture on every re-render would look broken during a
+ * demo -- but products sharing a subcategory share a pool of eight, so the
+ * browser can reuse what it has already downloaded.
  *
  * This is illustrative stock photography, NOT a picture of the actual listing:
  * the catalog is simulated and has no real images. Callers must keep the
@@ -110,29 +128,52 @@ export function productPhotoUrl(
   { id, category, subcategory }: { id: string; category: string; subcategory?: string | null },
   size: { w: number; h: number } = { w: 400, h: 300 },
 ): string {
+  const key = (subcategory && SUBCATEGORY_TERMS[subcategory] && subcategory) || category;
   const terms =
     (subcategory && SUBCATEGORY_TERMS[subcategory]) ||
     CATEGORY_FALLBACK_TERMS[category] ||
     "product";
-  const lock = (hashOf(id) % 100000) + 1;
+  // Offset the pool by the shelf so two subcategories never request the same
+  // lock, and pick within it by product id so each card stays put.
+  const base = (hashOf(key) % 90000) + 1;
+  const lock = base + (hashOf(id) % POOL_PER_SUBCATEGORY);
   return `https://loremflickr.com/${size.w}/${size.h}/${terms}?lock=${lock}`;
 }
 
 /**
  * Caps how many product photos are in flight at once.
  *
- * A discovery page renders ~100 cards. Pointing 100 <img> tags at one host makes
- * the browser queue them all behind its ~6-connections-per-host limit, so the
+ * A discovery page renders ~160 cards. Pointing 160 <img> tags at one host makes
+ * the browser queue them all behind its connections-per-host limit, so the
  * first card paints no sooner than the hundredth and the page looks hung for
- * many seconds. Admitting them in small batches in mount order means the cards
- * a user is actually looking at resolve first. `loading="lazy"` does not do this
- * on its own, and IntersectionObserver is not reliable in every host we run in.
+ * many seconds. Admitting them in batches in mount order means the cards a user
+ * is actually looking at resolve first. `loading="lazy"` does not do this on
+ * its own, and IntersectionObserver is not reliable in every host we run in.
+ *
+ * Twelve rather than six: measured against LoremFlickr, twelve concurrent
+ * requests all succeeded in under 3s, so the old limit of six was throttling us
+ * harder than the host was.
  */
-const MAX_IN_FLIGHT = 6;
+const MAX_IN_FLIGHT = 12;
 let inFlight = 0;
 const waiting: (() => void)[] = [];
 
-export function acquireImageSlot(): Promise<() => void> {
+/**
+ * URLs already fetched this session. A repeat is served from the HTTP cache in
+ * single-digit milliseconds, so making it wait behind eleven cold requests is
+ * pure added latency -- and with photos pooled per subcategory, repeats are now
+ * the common case rather than the exception.
+ */
+const fetched = new Set<string>();
+
+export function markFetched(url: string): void {
+  fetched.add(url);
+}
+
+export function acquireImageSlot(url?: string): Promise<() => void> {
+  const noop = () => {};
+  if (url && fetched.has(url)) return Promise.resolve(noop);
+
   let released = false;
   const release = () => {
     if (released) return;

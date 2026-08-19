@@ -8,6 +8,20 @@ export function useProfile() {
   return useQuery({ queryKey: qk.profile, queryFn: api.getProfile });
 }
 
+/**
+ * The trained segment model's read of this user. Never retried hard: the
+ * endpoint already degrades to a "no offer" answer instead of failing, so a
+ * retry storm would only be noise.
+ */
+export function usePersonalization() {
+  return useQuery({
+    queryKey: qk.personalization,
+    queryFn: api.getPersonalization,
+    staleTime: 5 * 60_000,
+    retry: false,
+  });
+}
+
 export function useUpdateProfile() {
   const queryClient = useQueryClient();
   return useMutation({

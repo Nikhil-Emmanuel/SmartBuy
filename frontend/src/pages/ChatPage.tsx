@@ -1,3 +1,4 @@
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, ListChecks, Wallet } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -8,6 +9,7 @@ import { ChipRow } from "@/components/chat/ChipRow";
 import { SlotSidebar } from "@/components/chat/SlotSidebar";
 import { Button } from "@/components/ui/button";
 import { useSendMessage, useSession, useUpdateSlots } from "@/hooks/useChat";
+import { FADE, SPRING } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { useAppStore } from "@/store/useAppStore";
 import type { ChatResponse, Slots } from "@/types/api";
@@ -50,6 +52,7 @@ const STARTER_CHIPS = [
 export function ChatPage() {
   const navigate = useNavigate();
   const location = useLocation();
+  const reduced = useReducedMotion();
 
   const chatSessionId = useAppStore((s) => s.chatSessionId);
   const chatTurnSeq = useAppStore((s) => s.chatTurnSeq);
@@ -148,12 +151,23 @@ export function ChatPage() {
     <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-4 py-6 sm:px-6 lg:grid-cols-[1fr_300px]">
       <div className="flex min-h-[calc(100vh-9rem)] flex-col rounded-2xl border border-border bg-card/40">
         <div ref={scrollRef} className="flex-1 space-y-4 overflow-y-auto p-5">
-          {showGreeting && (
-            <>
-              <ChatBubble role="assistant" content={GREETING} />
-              <ChipRow chips={STARTER_CHIPS} onSelect={handleSend} />
-            </>
-          )}
+          {/*
+            The greeting fades out as the first real turn arrives rather than
+            vanishing between frames -- an element that disappears instantly
+            reads as a glitch, and this one sits right where the user is looking.
+          */}
+          <AnimatePresence>
+            {showGreeting && (
+              <motion.div
+                key="greeting"
+                exit={reduced ? undefined : { opacity: 0, y: -8, transition: { duration: 0.16 } }}
+                className="space-y-4"
+              >
+                <ChatBubble role="assistant" content={GREETING} />
+                <ChipRow chips={STARTER_CHIPS} onSelect={handleSend} />
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {messages.map((m) => (
             <ChatBubble
@@ -166,14 +180,31 @@ export function ChatPage() {
             />
           ))}
 
-          {waiting && <TypingIndicator />}
+          <AnimatePresence>
+            {waiting && (
+              <motion.div
+                key="typing"
+                initial={reduced ? false : { opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={reduced ? undefined : { opacity: 0, transition: { duration: 0.12 } }}
+                transition={FADE}
+              >
+                <TypingIndicator />
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {settled && turn && turn.chips.length > 0 && (
             <ChipRow chips={turn.chips} onSelect={handleSend} />
           )}
 
           {settled && nextAction && nextAction !== "none" && nextAction !== "answer_question" && planId && (
-            <div className="animate-rise pl-11">
+            <motion.div
+              className="pl-11"
+              initial={reduced ? false : { opacity: 0, y: 10, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={SPRING}
+            >
               <Button
                 onClick={() =>
                   navigate(
@@ -195,7 +226,7 @@ export function ChatPage() {
                 )}
                 <ArrowRight className="size-4" />
               </Button>
-            </div>
+            </motion.div>
           )}
         </div>
 

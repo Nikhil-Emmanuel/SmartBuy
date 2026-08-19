@@ -2,7 +2,7 @@
   "status": "ok",
   "version": "1.0.0",
   "db": "ok",
-  "llm": "degraded",
-  "llm_model": null,
+  "llm": "ok",
+  "llm_model": "gemini-3.1-flash-lite",
   "catalog_size": 3075
 }

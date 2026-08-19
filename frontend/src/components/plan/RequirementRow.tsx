@@ -1,8 +1,10 @@
+import { motion, useReducedMotion } from "framer-motion";
 import { Minus, Plus } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { rupees, titleCase } from "@/lib/format";
+import { listChild, SPRING } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import type { Requirement } from "@/types/api";
 
@@ -24,12 +26,21 @@ export function RequirementRow({
   busy?: boolean;
 }) {
   const r = requirement;
+  const reduced = useReducedMotion();
 
   return (
-    <div
+    <motion.div
+      variants={listChild}
+      initial={reduced ? false : "hidden"}
+      animate="visible"
+      // Ticking "I already have this" is the moment the plan adapts to the
+      // user. Letting the row visibly recede confirms it landed, rather than
+      // leaving them to spot a changed opacity.
+      whileHover={reduced || r.is_owned ? undefined : { x: 2 }}
+      transition={SPRING}
       className={cn(
-        "flex items-start gap-3 rounded-xl border border-border bg-card p-4 transition-opacity",
-        r.is_owned && "opacity-60",
+        "flex items-start gap-3 rounded-xl border border-border bg-card p-4 transition-[opacity,border-color] duration-300",
+        r.is_owned ? "opacity-60" : "hover:border-primary/40",
       )}
     >
       <Checkbox
@@ -88,6 +99,6 @@ export function RequirementRow({
           </button>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }

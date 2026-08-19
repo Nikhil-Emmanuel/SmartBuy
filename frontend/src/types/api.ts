@@ -502,6 +502,27 @@ export interface ProfileResponse {
   feedback_history: FeedbackHistoryEntry[];
 }
 
+/**
+ * Output of the trained shopper-segment classifier.
+ *
+ * `status` is not decoration: anything other than `"ok"` means no offer was
+ * issued and the other fields are empty. The UI must show the reason rather
+ * than silently render a blank card -- "we don't know you well enough yet" is
+ * a true and useful thing to say; a phantom coupon is not.
+ */
+export interface PersonalizationResponse {
+  segment: string | null;
+  label: string | null;
+  confidence: number;
+  rationale: string | null;
+  discount_pct: number;
+  coupon_code: string | null;
+  perk: string | null;
+  events_considered: number;
+  status: "ok" | "insufficient_history" | "low_confidence" | "model_unavailable";
+  is_model_generated: boolean;
+}
+
 export interface ProfileUpdateRequest {
   preferred_categories?: string[];
   preferred_brands?: string[];

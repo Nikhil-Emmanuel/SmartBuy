@@ -37,6 +37,7 @@ export const qk = {
   productSearch: (params: Record<string, unknown>) => ["products", params] as const,
   product: (id: string) => ["product", id] as const,
   profile: ["profile"] as const,
+  personalization: ["personalization"] as const,
   adminMetrics: ["admin", "metrics"] as const,
   auditLogs: (params: Record<string, unknown>) => ["admin", "audit-logs", params] as const,
 };

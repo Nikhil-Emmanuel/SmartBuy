@@ -1,3 +1,4 @@
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowLeft, Scale } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -6,11 +7,13 @@ import { EmptyState, ErrorState } from "@/components/shared/States";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useCompare } from "@/hooks/useProducts";
+import { FADE } from "@/lib/motion";
 import { useAppStore } from "@/store/useAppStore";
 
 export function ComparePage() {
   const { planId = "" } = useParams();
   const navigate = useNavigate();
+  const reduced = useReducedMotion();
   const compareSelection = useAppStore((s) => s.compareSelection);
   const toggleCompare = useAppStore((s) => s.toggleCompare);
   const clearCompare = useAppStore((s) => s.clearCompare);
@@ -29,17 +32,33 @@ export function ComparePage() {
           >
             <ArrowLeft className="size-4" /> Back to discovery
           </Button>
-          <h1 className="text-2xl font-semibold text-foreground">Compare products</h1>
+          <motion.h1
+            initial={reduced ? false : { opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={FADE}
+            className="text-2xl font-semibold text-foreground"
+          >
+            Compare products
+          </motion.h1>
           <p className="mt-1 text-sm text-muted-foreground">
             Every column is a real computed value -- the highlighted cell in each row is the
             best option for that column.
           </p>
         </div>
-        {compareSelection.length > 0 && (
-          <Button variant="outline" size="sm" onClick={clearCompare}>
-            Clear all
-          </Button>
-        )}
+        <AnimatePresence>
+          {compareSelection.length > 0 && (
+            <motion.div
+              initial={reduced ? false : { opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={reduced ? undefined : { opacity: 0, scale: 0.9 }}
+              transition={FADE}
+            >
+              <Button variant="outline" size="sm" onClick={clearCompare}>
+                Clear all
+              </Button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       {compareSelection.length < 2 && (

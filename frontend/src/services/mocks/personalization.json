@@ -1,0 +1,12 @@
+{
+  "segment": "deal_seeker",
+  "label": "Deal seeker",
+  "confidence": 0.888,
+  "rationale": "Browses and buys heavily discounted items, and converts markedly more often when the discount is deep. A coupon moves this basket.",
+  "discount_pct": 10,
+  "coupon_code": "SMARTBUY10",
+  "perk": null,
+  "events_considered": 61,
+  "status": "ok",
+  "is_model_generated": true
+}

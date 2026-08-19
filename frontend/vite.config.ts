@@ -9,7 +9,9 @@ export default defineConfig({
     alias: { "@": path.resolve(__dirname, "./src") },
   },
   server: {
-    port: 5173,
+    // 5173 by default, but let the environment win: tooling that assigns a
+    // port (and CI runners sharing a machine) cannot use a hardcoded one.
+    port: Number(process.env.PORT) || 5173,
     // The backend runs on 8000. Proxying keeps dev same-origin, so CORS
     // misconfiguration on stage cannot silently break the demo.
     proxy: {
