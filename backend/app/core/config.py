@@ -45,10 +45,14 @@ class Settings(BaseSettings):
     LLM_MAX_RETRIES: int = 1
     LLM_TEMPERATURE: float = 0.2
 
-    # --- Feature flags ---
-    ENABLE_LLM_REQUIREMENT_AUGMENT: bool = False
-    ENABLE_COLLABORATIVE_FILTERING: bool = False
-    USE_DETERMINISTIC_FALLBACK: bool = True
+    # --- Feature flags: NOT WIRED UP ---
+    # Nothing in the codebase reads any of these three. They describe features
+    # that were designed and never built, and toggling them changes nothing.
+    # Documented as inert rather than deleted so that an existing .env that
+    # sets them keeps parsing -- but do not cite them as capabilities.
+    ENABLE_LLM_REQUIREMENT_AUGMENT: bool = False  # no augment_requirements() exists
+    ENABLE_COLLABORATIVE_FILTERING: bool = False  # no CF implementation exists
+    USE_DETERMINISTIC_FALLBACK: bool = True  # fallback is unconditional; cannot be turned off
 
     # --- Agent behaviour ---
     MAX_FOLLOWUP_QUESTIONS: int = 3

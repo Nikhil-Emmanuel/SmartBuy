@@ -1,8 +1,12 @@
 """Requirement planning engine: goal + context -> structured requirement list.
 
-Rules first, LLM second (ADR-002). Conditions and quantities come from the
-knowledge base and are evaluated by the restricted DSL; the LLM may only add
-items on top, and only when ENABLE_LLM_REQUIREMENT_AUGMENT is on.
+Rules only (ADR-002). Conditions and quantities come from the knowledge base and
+are evaluated by the restricted DSL. There is no LLM in this module and no code
+path by which one can add a requirement.
+
+ADR-002 left room for optional LLM augmentation behind
+ENABLE_LLM_REQUIREMENT_AUGMENT. It was never built: nothing reads that flag, and
+`augment_requirements()` does not exist. This docstring used to claim otherwise.
 
 Owner: Member 4 (Requirements/Optimization).
 """

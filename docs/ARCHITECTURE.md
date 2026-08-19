@@ -134,22 +134,28 @@ INTAKE ──► SLOT_FILL ──► PLANNING ──► DISCOVERY ──► OPTI
 |---|---|---|
 | `INTAKE` | Classify intent + extract every slot from the opening message in ONE call | Yes (call #1) |
 | `SLOT_FILL` | Compute missing **decision-critical** slots; ask at most one question per turn, hard cap 3 | Yes (call #2, phrasing only) |
-| `PLANNING` | Requirement KB resolution + rule engine → requirement list, minus existing items | Optional (call #4, augment only) |
+| `PLANNING` | Requirement KB resolution + rule engine → requirement list, minus existing items | No |
 | `DISCOVERY` | Candidate retrieval + filter + score + rank per requirement | No |
 | `OPTIMIZING` | Bundle optimization across three presets | No |
 | `PRESENTED` | Explanation generation, plan assembly | Yes (call #3) |
 | `REFINING` | Handle "why this?", "cheaper option", "swap X", feedback | Yes (call #1 re-run) |
 
-### 4.2 The only four LLM calls in the system
+### 4.2 The only three LLM calls in the system
 
 | # | Function | Input | Output schema | Fallback if it fails |
 |---|---|---|---|---|
 | 1 | `understand()` | user message + current slots | `{intent, slots{}, existing_items[], confidence}` | Regex/keyword intent classifier + numeric slot regex (₹ amounts, "N days", known locations) |
 | 2 | `ask()` | list of missing slot names + context | `{question, chips[]}` | Static question template per slot from `SLOT_POLICY` |
 | 3 | `explain()` | product + computed score breakdown + context | `{summary, reasons[]}` | Template: bullet per score component above threshold |
-| 4 | `augment_requirements()` | context + KB-resolved items | `{extra_items[]}` | Skip entirely — KB output is already complete |
 
-Calls 1–3 are required. Call 4 is a nice-to-have and is **disabled by default** (`ENABLE_LLM_REQUIREMENT_AUGMENT=false`) — the KB is authoritative for essentials, per master prompt §46.
+All three are required, and each has a deterministic fallback, so the journey completes with no
+`GEMINI_API_KEY` at all.
+
+> **A fourth call was designed and never built.** Earlier revisions of this document listed an
+> `augment_requirements()` call behind `ENABLE_LLM_REQUIREMENT_AUGMENT`, described as "disabled by
+> default". No such function exists in the codebase and no code reads that flag — it is an inert
+> config key. As built, the system is *stricter* than the design: the knowledge base is the sole
+> source of requirements and there is no path by which the LLM can add one. See ADR-002.
 
 ### 4.3 Slot schema (the requirement profile)
 
@@ -287,7 +293,7 @@ backend/app/
 
 **ADR-001 — Deterministic FSM over an autonomous agent loop.** An LLM choosing its own tools is unpredictable under demo pressure and makes latency unbounded. A fixed state machine gives us a reproducible demo, cheap debugging, and it still satisfies "agentic" because the agent maintains state, decides what it is missing, asks for it, and invokes tools to reach a goal. *Accepted.*
 
-**ADR-002 — Knowledge base is authoritative for requirements; LLM only augments.** Master prompt §46 is explicit. A pure-LLM checklist is non-reproducible across demo runs and can hallucinate items that have no catalog coverage — producing empty product sections on stage. *Accepted.*
+**ADR-002 — Knowledge base is authoritative for requirements; LLM only augments.** Master prompt §46 is explicit. A pure-LLM checklist is non-reproducible across demo runs and can hallucinate items that have no catalog coverage — producing empty product sections on stage. *Accepted.* **As built, we went further than the decision:** the augmentation path was never implemented, so the LLM contributes nothing to the requirement list — not even optionally. §4.2 has the detail.
 
 **ADR-003 — TF-IDF instead of FAISS.** At 3k SKUs the retrieval quality difference is not observable, and it removes a native-dependency risk. `SemanticIndex` keeps the door open. *Accepted, revisit above ~100k SKUs.*
 

@@ -45,7 +45,10 @@ as a fourth call site.
 - **The requirement checklist.** Authoritative source is the YAML knowledge base
   (`app/kb/goals/`). ADR-002: a pure-LLM checklist is non-reproducible between demo
   runs and invents items with zero catalog coverage, producing empty sections on stage.
-  LLM augmentation exists behind `ENABLE_LLM_REQUIREMENT_AUGMENT`, default **off**.
+  The LLM adds **nothing** to the checklist. An optional augmentation path was designed
+  behind `ENABLE_LLM_REQUIREMENT_AUGMENT` but never implemented; that config key is read
+  by no code. Earlier revisions of this file described it as a working feature that was
+  merely switched off, which was not accurate.
 - **Any database write.** The LLM's output is parsed into a Pydantic schema and applied
   by the planner. It never reaches the ORM directly.
 

@@ -3,10 +3,13 @@
 Loads every YAML goal from app/kb/goals, resolves `extends` inheritance and
 exposes goal lookup by key or by free text.
 
-ADR-002: the KB is authoritative for requirements. The LLM may augment, never
-replace. A pure-LLM checklist is non-reproducible across demo runs and can
-invent items with zero catalog coverage, producing empty product sections on
-stage.
+ADR-002: the KB is authoritative for requirements. A pure-LLM checklist is
+non-reproducible across demo runs and can invent items with zero catalog
+coverage, producing empty product sections on stage.
+
+The ADR permitted the LLM to augment the list but never to replace it. In
+practice the augmentation path was never implemented, so what ships is the
+stricter version: this loader is the only source of requirements.
 
 Owner: Member 4 (Requirements/Optimization).
 """
