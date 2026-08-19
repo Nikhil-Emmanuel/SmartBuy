@@ -9,10 +9,11 @@ from __future__ import annotations
 from typing import Annotated
 
 from fastapi import APIRouter, Query
-from sqlalchemy import select
+from sqlalchemy import func, select
 
 from app.api.deps import DbSession
 from app.api.serializers import product_out
+from app.core.constants import MARKETPLACES
 from app.core.errors import ProductNotFound
 from app.models.product import Offer, Product
 from app.schemas.product import (
@@ -30,6 +31,22 @@ offers_router = APIRouter(prefix="/api", tags=["products"])
 MAX_PAGE_SIZE = 50
 MAX_OFFER_LOOKUP = 50
 
+VALID_SOURCES = {m["key"] for m in MARKETPLACES}
+
+
+def parse_sources(raw: str | None) -> list[str] | None:
+    """Comma-separated marketplace keys -> validated list, or None for 'all'.
+
+    Unknown keys are dropped rather than 400'd: a stale toggle in someone's
+    localStorage should not break their session. An explicit selection that
+    survives validation as empty is preserved as an empty list, because "the
+    user turned everything off" is a real state and must not silently widen
+    back out to every marketplace.
+    """
+    if raw is None:
+        return None
+    return [key for key in (k.strip().upper() for k in raw.split(",")) if key in VALID_SOURCES]
+
 
 @router.get("/search", response_model=ProductSearchResponse)
 def search_products(
@@ -42,6 +59,10 @@ def search_products(
     max_price: Annotated[int | None, Query(ge=0)] = None,
     min_rating: Annotated[float | None, Query(ge=0, le=5)] = None,
     source: str | None = None,
+    sources: Annotated[
+        str | None,
+        Query(description="Comma-separated marketplace keys to restrict results to"),
+    ] = None,
     features: Annotated[str | None, Query(description="Comma-separated")] = None,
     in_stock_only: bool = False,
     sort: str = "relevance",
@@ -57,6 +78,7 @@ def search_products(
         max_price=max_price,
         min_rating=min_rating,
         source=source,
+        sources=parse_sources(sources),
         features=[f.strip() for f in features.split(",") if f.strip()] if features else None,
         exclude_out_of_stock=in_stock_only,
     )
@@ -95,6 +117,24 @@ def get_offers(
     for offer in rows:
         grouped[offer.product_id].append(OfferOut.model_validate(offer))
     return {"offers": grouped}
+
+
+@offers_router.get("/marketplaces")
+def list_marketplaces(db: DbSession) -> dict:
+    """Which marketplaces exist, which are switchable on, and how many SKUs each holds.
+
+    The frontend renders its toggle from this rather than hardcoding a list, so
+    turning on a real provider is a backend concern only. Counts come from the
+    catalog so an enabled-but-empty source is visible instead of mysterious.
+    """
+    counts = dict(
+        db.execute(select(Product.source, func.count(Product.id)).group_by(Product.source)).all()
+    )
+    return {
+        "marketplaces": [
+            {**market, "product_count": counts.get(market["key"], 0)} for market in MARKETPLACES
+        ]
+    }
 
 
 @router.get("/{product_id}", response_model=ProductDetailResponse)

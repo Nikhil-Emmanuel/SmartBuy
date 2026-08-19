@@ -1,5 +1,6 @@
 import { Heart, ThumbsDown, ThumbsUp } from "lucide-react";
 
+import { MarketplaceSearchMenu } from "@/components/shared/MarketplaceSearchMenu";
 import { ProductImage } from "@/components/shared/ProductImage";
 import { Button } from "@/components/ui/button";
 import { rupees } from "@/lib/format";
@@ -21,6 +22,7 @@ export function BundleItemRow({
     <div className="flex items-center gap-3 rounded-xl border border-border bg-card p-3">
       <ProductImage
         category={item.product.category}
+        subcategory={item.product.subcategory}
         seed={item.product.id}
         className="size-14 shrink-0"
         iconClassName="size-5"
@@ -70,6 +72,7 @@ export function BundleItemRow({
             Why?
           </Button>
         )}
+        <MarketplaceSearchMenu product={item.product} />
       </div>
     </div>
   );

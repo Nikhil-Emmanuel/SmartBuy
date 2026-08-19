@@ -35,11 +35,20 @@ def get_recommendations(payload: RecommendationsRequest,
     requirements = [r for r in plan.requirements
                     if not wanted or r.id in wanted]
 
-    rows = db.scalars(
+    # Recommendations were persisted when the plan was built, so the marketplace
+    # toggle is applied here as a filter rather than by re-ranking: flipping a
+    # marketplace off should hide its products immediately, without the user
+    # having to regenerate a plan they already have.
+    stmt = (
         select(Recommendation)
         .where(Recommendation.plan_id == plan.id)
         .order_by(Recommendation.rank)
-    ).all()
+    )
+    if payload.sources is not None:
+        stmt = stmt.join(Product, Product.id == Recommendation.product_id).where(
+            Product.source.in_(payload.sources)
+        )
+    rows = db.scalars(stmt).all()
 
     by_requirement: dict[str, list[Recommendation]] = {}
     for row in rows:

@@ -17,6 +17,8 @@ interface DisplayMessage {
   role: "user" | "assistant";
   content: string;
   degraded?: boolean;
+  /** Only a turn that just arrived types itself out; replayed history does not. */
+  stream?: boolean;
 }
 
 const EMPTY_SLOTS: Slots = {
@@ -59,6 +61,7 @@ export function ChatPage() {
   const [turn, setTurn] = useState<ChatResponse | null>(null);
   const [slots, setSlots] = useState<Slots>(EMPTY_SLOTS);
   const [waiting, setWaiting] = useState(false);
+  const [revealing, setRevealing] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const sentInitial = useRef(false);
   const hydrated = useRef(false);
@@ -88,15 +91,18 @@ export function ChatPage() {
 
     const { lastChatTurn, lastChatError } = useAppStore.getState();
     if (lastChatTurn) {
+      const id = crypto.randomUUID();
       setTurn(lastChatTurn);
       setSlots(lastChatTurn.slots);
+      setRevealing(id);
       setMessages((prev) => [
         ...prev,
         {
-          id: crypto.randomUUID(),
+          id,
           role: "assistant",
           content: lastChatTurn.assistant_message,
           degraded: lastChatTurn.degraded,
+          stream: true,
         },
       ]);
     } else if (lastChatError) {
@@ -118,8 +124,14 @@ export function ChatPage() {
   }, [location.state]);
 
   useEffect(() => {
-    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
-  }, [messages, waiting]);
+    const stick = () =>
+      scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+    stick();
+    // A streaming bubble grows after it mounts, so keep the view pinned to it.
+    if (!revealing) return;
+    const timer = setInterval(stick, 120);
+    return () => clearInterval(timer);
+  }, [messages, waiting, revealing]);
 
   function handleSend(message: string) {
     setWaiting(true);
@@ -127,6 +139,7 @@ export function ChatPage() {
     sendMessage.mutate(message);
   }
 
+  const settled = !waiting && !revealing;
   const showGreeting = messages.length === 0 && !waiting;
   const planId = turn?.plan_id ?? session?.plan_id ?? null;
   const nextAction = turn?.next_action;
@@ -143,16 +156,23 @@ export function ChatPage() {
           )}
 
           {messages.map((m) => (
-            <ChatBubble key={m.id} role={m.role} content={m.content} degraded={m.degraded} />
+            <ChatBubble
+              key={m.id}
+              role={m.role}
+              content={m.content}
+              degraded={m.degraded}
+              stream={m.stream}
+              onStreamEnd={() => setRevealing((id) => (id === m.id ? null : id))}
+            />
           ))}
 
           {waiting && <TypingIndicator />}
 
-          {!waiting && turn && turn.chips.length > 0 && (
+          {settled && turn && turn.chips.length > 0 && (
             <ChipRow chips={turn.chips} onSelect={handleSend} />
           )}
 
-          {!waiting && nextAction && nextAction !== "none" && nextAction !== "answer_question" && planId && (
+          {settled && nextAction && nextAction !== "none" && nextAction !== "answer_question" && planId && (
             <div className="animate-rise pl-11">
               <Button
                 onClick={() =>

@@ -2,6 +2,7 @@ import { LayoutGrid, MessageCircle, ShieldCheck, User } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 import { Logo } from "@/components/shared/Logo";
+import { MarketplaceToggle } from "@/components/shared/MarketplaceToggle";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useAppStore } from "@/store/useAppStore";
@@ -54,9 +55,12 @@ export function NavBar() {
           )}
         </nav>
 
-        <Button asChild size="sm" className="hidden sm:inline-flex">
-          <NavLink to="/chat">Start shopping</NavLink>
-        </Button>
+        <div className="flex items-center gap-1">
+          <MarketplaceToggle />
+          <Button asChild size="sm" className="hidden sm:inline-flex">
+            <NavLink to="/chat">Start shopping</NavLink>
+          </Button>
+        </div>
       </div>
     </header>
   );

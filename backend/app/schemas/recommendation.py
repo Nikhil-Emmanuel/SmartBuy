@@ -35,6 +35,8 @@ class RecommendationsRequest(BaseModel):
     plan_id: str
     requirement_ids: list[str] | None = None
     limit_per_requirement: int = Field(default=5, ge=1, le=20)
+    # Marketplaces the user has switched on. None means "no opinion, use all".
+    sources: list[str] | None = None
 
 
 class RecommendationsResponse(BaseModel):

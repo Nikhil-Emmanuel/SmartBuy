@@ -1,6 +1,7 @@
-import { Check, ExternalLink, Scale, Star } from "lucide-react";
+import { Check, Scale, Star } from "lucide-react";
 import type { ReactNode } from "react";
 
+import { MarketplaceSearchMenu } from "@/components/shared/MarketplaceSearchMenu";
 import { ProductImage } from "@/components/shared/ProductImage";
 import { SimulatedBadge } from "@/components/shared/SimulatedBadge";
 import { Badge } from "@/components/ui/badge";
@@ -51,7 +52,12 @@ export function ProductCard({
       )}
     >
       <div className="relative p-3 pb-0">
-        <ProductImage category={product.category} seed={product.id} className="h-32 w-full" />
+        <ProductImage
+          category={product.category}
+          subcategory={product.subcategory}
+          seed={product.id}
+          className="h-32 w-full"
+        />
         {label && (
           <Badge
             variant={BADGE_VARIANT[badge ?? ""] ?? "accent"}
@@ -136,13 +142,7 @@ export function ProductCard({
                 <Scale className="size-3.5" />
               </Button>
             )}
-            {product.url && (
-              <Button variant="outline" size="icon-sm" asChild>
-                <a href={product.url} target="_blank" rel="noreferrer">
-                  <ExternalLink className="size-3.5" />
-                </a>
-              </Button>
-            )}
+            <MarketplaceSearchMenu product={product} />
           </div>
         </div>
         {footer}

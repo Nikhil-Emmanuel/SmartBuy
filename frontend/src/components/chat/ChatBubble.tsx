@@ -1,18 +1,60 @@
 import { Sparkles } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 import { DegradedBanner } from "@/components/shared/StatusBanners";
 import { cn } from "@/lib/utils";
+
+/**
+ * Reveals text word by word. Purely cosmetic: the full string is already in
+ * hand (the API is not a streaming endpoint), so this only paces the paint --
+ * it must never gate anything the user needs, and `stream={false}` on replayed
+ * history keeps old turns from re-typing themselves on every mount.
+ */
+function useTypewriter(text: string, enabled: boolean, onDone?: () => void) {
+  const [shown, setShown] = useState(() => (enabled ? "" : text));
+  const doneFor = useRef<string | null>(enabled ? null : text);
+  const done = useRef(onDone);
+  done.current = onDone;
+
+  useEffect(() => {
+    if (!enabled || doneFor.current === text) {
+      setShown(text);
+      return;
+    }
+    const words = text.split(" ");
+    let i = 0;
+    setShown("");
+    const timer = setInterval(() => {
+      i += 1;
+      setShown(words.slice(0, i).join(" "));
+      if (i >= words.length) {
+        doneFor.current = text;
+        clearInterval(timer);
+        done.current?.();
+      }
+    }, 28);
+    return () => clearInterval(timer);
+  }, [text, enabled]);
+
+  return shown;
+}
 
 export function ChatBubble({
   role,
   content,
   degraded = false,
+  stream = false,
+  onStreamEnd,
 }: {
   role: "user" | "assistant";
   content: string;
   degraded?: boolean;
+  stream?: boolean;
+  onStreamEnd?: () => void;
 }) {
   const isUser = role === "user";
+  const shown = useTypewriter(content, stream && !isUser, onStreamEnd);
+  const typing = shown.length < content.length;
 
   return (
     <div className={cn("animate-message-in flex gap-3", isUser && "flex-row-reverse")}>
@@ -30,9 +72,14 @@ export function ChatBubble({
               : "rounded-tl-sm border border-border bg-card text-card-foreground",
           )}
         >
-          {content}
+          {shown}
+          {typing && (
+            <span className="ml-0.5 inline-block h-3.5 w-0.5 translate-y-0.5 animate-thinking bg-current" />
+          )}
         </div>
-        {!isUser && degraded && <DegradedBanner className="w-full max-w-md py-2 text-xs" />}
+        {!isUser && degraded && !typing && (
+          <DegradedBanner className="w-full max-w-md py-2 text-xs" />
+        )}
       </div>
     </div>
   );

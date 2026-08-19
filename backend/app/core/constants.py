@@ -66,6 +66,65 @@ SOURCE_DISPLAY_NAMES: dict[str, str] = {
 }
 
 
+# --------------------------------------------------------------------------
+# Marketplace registry
+# --------------------------------------------------------------------------
+# Which marketplaces the user may switch on, and what each one honestly is.
+#
+# `live` marks a source whose products come from a real marketplace API --
+# real listings, real prices, real images. Everything else is the generated
+# demo catalog and must keep saying so; the UI reads `live` to decide whether
+# to show a simulated-data badge, so getting this wrong would put a truthful
+# label on fabricated data.
+#
+# Amazon, Flipkart and Myntra are listed as unavailable rather than omitted,
+# because "we deliberately did not integrate this, and here is why" is more
+# useful to a reviewer than a silently missing option. Amazon's Creators API
+# (which replaced PA-API 5.0 in May 2026) needs an Associates account holding
+# ~10 qualifying sales in a rolling 30-day window; Flipkart's affiliate
+# programme is closed to new signups; Myntra publishes no product API at all.
+# None is reachable for a demo build, and scraping them is both blocked in
+# practice (Amazon 503, Flipkart 403) and against their terms.
+MARKETPLACES: list[dict] = [
+    {"key": "MARKET_A", "label": "Marketplace A", "live": False, "available": True},
+    {"key": "MARKET_B", "label": "Marketplace B", "live": False, "available": True},
+    {"key": "MARKET_C", "label": "Marketplace C", "live": False, "available": True},
+    {
+        "key": "EBAY",
+        "label": "eBay",
+        "live": True,
+        "available": False,
+        "note": "Live listings via eBay's Browse API. Set EBAY_CLIENT_ID and "
+                "EBAY_CLIENT_SECRET to switch this on.",
+    },
+    {
+        "key": "AMAZON",
+        "label": "Amazon",
+        "live": True,
+        "available": False,
+        "note": "Needs Amazon Creators API credentials, which require an "
+                "Associates account with ~10 qualifying sales in a rolling "
+                "30-day window.",
+    },
+    {
+        "key": "FLIPKART",
+        "label": "Flipkart",
+        "live": True,
+        "available": False,
+        "note": "Flipkart's affiliate API is closed to new signups.",
+    },
+    {
+        "key": "MYNTRA",
+        "label": "Myntra",
+        "live": True,
+        "available": False,
+        "note": "Myntra publishes no product API, affiliate or otherwise.",
+    },
+]
+
+DEFAULT_SOURCES: list[str] = [m["key"] for m in MARKETPLACES if m["available"]]
+
+
 class Availability(StrEnum):
     IN_STOCK = "in_stock"
     LOW_STOCK = "low_stock"

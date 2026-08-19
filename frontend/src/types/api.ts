@@ -132,6 +132,8 @@ export interface ProductSearchParams {
   max_price?: number;
   min_rating?: number;
   source?: string;
+  /** Comma-separated marketplace keys; omit for "all marketplaces". */
+  sources?: string;
   features?: string;
   sort?: SortOption;
   page?: number;
@@ -296,6 +298,8 @@ export interface RecommendationsRequest {
   plan_id: string;
   requirement_ids?: string[] | null;
   limit_per_requirement?: number;
+  /** Marketplace keys the user has switched on; omit for "all marketplaces". */
+  sources?: string[] | null;
 }
 
 export interface RequirementResults {
@@ -368,6 +372,21 @@ export interface BundleExclusion {
   requirement_id: string;
   item_name?: string;
   reason: string;
+}
+
+export interface Marketplace {
+  key: string;
+  label: string;
+  /** True only when products come from a real marketplace API, not the demo catalog. */
+  live: boolean;
+  /** False when the integration exists but has no credentials configured. */
+  available: boolean;
+  note?: string;
+  product_count: number;
+}
+
+export interface MarketplacesResponse {
+  marketplaces: Marketplace[];
 }
 
 export interface Bundle {

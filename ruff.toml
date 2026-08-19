@@ -1,0 +1,35 @@
+# Lint config for the parts of the repo outside backend/ -- ml/ and tests/.
+#
+# backend/pyproject.toml carries its own [tool.ruff] and keeps winning for
+# files under backend/, because ruff resolves the closest config to each file.
+# This file mirrors it so that `ruff check .` from the repo root reports the
+# same thing as `ruff check` from inside backend/. Without it, ml/ and tests/
+# fall back to ruff's defaults, which do not enable E402 -- and then every
+# `# noqa: E402` in the evaluation bootstrap is reported as an unused noqa.
+
+line-length = 100
+target-version = "py312"
+exclude = [".venv", "__pycache__", "backend/.venv"]
+
+[lint]
+select = [
+    "E", "W",    # pycodestyle
+    "F",         # pyflakes
+    "I",         # import sorting
+    "B",         # bugbear
+    "UP",        # pyupgrade
+    "SIM",       # simplify
+    "C4",        # comprehensions
+    "RUF",       # ruff-specific
+]
+ignore = [
+    "E501",      # line length is handled by the formatter, not enforced
+    "B008",      # FastAPI's Depends() in defaults is the documented idiom
+    "RUF012",    # ClassVar annotations on mutable defaults: noisy with Pydantic
+    "SIM108",    # ternaries are not always more readable
+]
+
+[lint.per-file-ignores]
+# run_eval.py imports after a sys.path bootstrap so it can be run directly as
+# `python ml/evaluation/run_eval.py` without installing the backend as a package.
+"ml/evaluation/run_eval.py" = ["E402"]

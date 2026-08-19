@@ -54,7 +54,7 @@ if settings.is_sqlite:
     _connect_args["check_same_thread"] = False
 
 engine = create_engine(
-    settings.DATABASE_URL,
+    settings.resolved_database_url,
     echo=settings.DB_ECHO,
     connect_args=_connect_args,
     pool_pre_ping=True,

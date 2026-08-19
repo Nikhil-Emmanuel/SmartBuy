@@ -54,29 +54,48 @@ Full detail: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
 | Document | Contents |
 |---|---|
 | [ARCHITECTURE.md](docs/ARCHITECTURE.md) | Stack, agent FSM, ranking, optimizer, Responsible AI, ADRs |
+| [diagrams/architecture.md](docs/diagrams/architecture.md) | System, sequence, pipeline, degradation and deployment diagrams |
 | [DATA_MODEL.md](docs/DATA_MODEL.md) | Normalized product schema, all tables, KB format, vocabularies |
 | [API_CONTRACT.md](docs/API_CONTRACT.md) | Every endpoint with exact request/response JSON |
+| [EVALUATION.md](docs/EVALUATION.md) | Measured ranking metrics, baselines, ablation — and what they do not prove |
+| [AI_USAGE.md](AI_USAGE.md) | Where Gemini is and isn't used, guardrails, and AI tooling disclosure |
+| [DEPLOYMENT.md](DEPLOYMENT.md) | Vercel + Render + Neon, Docker, pre-demo checklist |
 | [48H_PLAN.md](docs/48H_PLAN.md) | Hour-by-hour plan, 8-member split, cut lines |
 
 ---
 
 ## Quickstart
 
-*(Filled in as the modules land — see `docs/48H_PLAN.md` for current status.)*
-
 ```bash
-# Backend
+# Backend — http://localhost:8000/docs
 cd backend && python -m venv .venv && source .venv/Scripts/activate
 pip install -r requirements.txt
-cp ../.env.example .env        # add your GEMINI_API_KEY
-python -m scripts.seed         # loads the curated catalog
+cp ../.env.example .env        # add your GEMINI_API_KEY (optional, see below)
+python -m scripts.seed         # loads the curated catalog (~3,075 products)
 uvicorn app.main:app --reload
 ```
 
 ```bash
-# Frontend
+# Frontend — http://localhost:5173
 cd frontend && npm install && npm run dev
 ```
+
+The Vite dev server proxies `/api` to port 8000, so the two run same-origin and CORS
+cannot break the local demo.
+
+**`GEMINI_API_KEY` is optional.** Without it the whole journey still completes on the
+deterministic path, and every response is marked `degraded: true` so the UI can say so.
+That is a tested guarantee, not a hope — see `tests/backend/test_chaos.py`.
+
+### Verify
+
+```bash
+python -m pytest                       # 90 tests: contract, 8 scenarios, chaos, security
+python ml/evaluation/run_eval.py       # regenerates ml/evaluation/results/
+```
+
+Full stack in Docker with Postgres (mirrors production): `docker compose up --build`.
+Deploying: [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ---
 
@@ -89,9 +108,15 @@ This is a hackathon prototype and we are explicit about what is real:
 - We do **not** retrieve real-time marketplace prices, and we do **not** claim to.
 - We do **not** show price history or price-drop predictions, because we have no historical price
   data and inventing it would be dishonest.
-- Recommendation ranking weights are a documented, tunable prior — not an empirically optimized model.
-- Collaborative filtering and evaluation metrics run on a public reviews dataset; reported metrics
-  are actual measured results, never estimates.
+- Recommendation ranking weights are a documented, tunable prior — **not** an empirically optimized
+  model. We did not search the weight space, so we do not claim the weights are optimal.
+- Collaborative filtering is implemented but **off by default** (`ENABLE_COLLABORATIVE_FILTERING`).
+  There is no long-term learning across sessions and we make no claim that there is.
+- Reported metrics are actual measured results from `python ml/evaluation/run_eval.py`, never
+  estimates. Relevance is derived from the requirement specification, **not** from user behaviour —
+  we have no click or purchase logs, so nothing here measures user satisfaction. The evaluation
+  also documents where our own scorer *loses* to a plain TF-IDF baseline, and the label leakage
+  that makes our headline ranking number an upper bound. See [EVALUATION.md](docs/EVALUATION.md).
 
 ---
 

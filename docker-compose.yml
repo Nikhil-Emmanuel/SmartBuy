@@ -1,0 +1,62 @@
+# Local full-stack run: Postgres + backend + frontend.
+#
+#   docker compose up --build
+#   → frontend http://localhost:5173 · backend http://localhost:8000/docs
+#
+# This mirrors the production topology (Postgres rather than SQLite) so that
+# anything which only breaks on Postgres breaks here, not on Render at 3am.
+# For quick iteration you usually want the native workflow in README.md
+# instead -- it has hot reload and no image rebuild.
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: smartbuy
+      POSTGRES_PASSWORD: smartbuy
+      POSTGRES_DB: smartbuy
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      # The backend seeds on boot, so it must not start against a server that
+      # is still initialising -- it would create the tables and then lose them.
+      test: ["CMD-SHELL", "pg_isready -U smartbuy -d smartbuy"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  backend:
+    build: ./backend
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg://smartbuy:smartbuy@db:5432/smartbuy
+      # Passed through from your shell or a root .env file. Never hard-coded:
+      # an empty key is a working demo on the deterministic path, a committed
+      # key is a revoked key.
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.1-flash-lite}
+      ADMIN_TOKEN: ${ADMIN_TOKEN:-dev-admin-token}
+      SECRET_KEY: ${SECRET_KEY:-dev-secret-change-me}
+      CORS_ORIGINS: http://localhost:5173
+      LOG_LEVEL: INFO
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        # Baked in at build time: Vite inlines VITE_* into the bundle, so this
+        # cannot be changed by restarting the container.
+        VITE_API_BASE_URL: http://localhost:8000
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"
+
+volumes:
+  pgdata:

@@ -128,11 +128,12 @@ def rank_requirement(
     preset: str | None = None,
     limit: int = CANDIDATE_POOL_SIZE,
     budget_ceiling: int | None = None,
+    sources: list[str] | None = None,
 ) -> list[Candidate]:
     """Retrieve and score every candidate for one requirement, best first."""
     spec = to_spec(requirement)
     products = get_search_service().candidates_for_requirement(
-        db, spec, limit=limit, budget_ceiling=budget_ceiling
+        db, spec, limit=limit, budget_ceiling=budget_ceiling, sources=sources
     )
     if not products:
         return []
@@ -203,6 +204,7 @@ def build_requirement_candidates(
     scoring_ctx: ScoringContext,
     preset: str | None = None,
     limit: int = CANDIDATE_POOL_SIZE,
+    sources: list[str] | None = None,
 ) -> list[RequirementCandidates]:
     """Candidate sets for every requirement the user still needs to buy."""
     out: list[RequirementCandidates] = []
@@ -210,7 +212,7 @@ def build_requirement_candidates(
         if getattr(requirement, "is_owned", False):
             continue
         candidates = rank_requirement(
-            db, requirement, context, scoring_ctx, preset=preset, limit=limit
+            db, requirement, context, scoring_ctx, preset=preset, limit=limit, sources=sources
         )
         out.append(RequirementCandidates(requirement=requirement, candidates=candidates))
     return out
@@ -222,6 +224,7 @@ def candidate_builder(
     context: dict,
     scoring_ctx: ScoringContext,
     limit: int = CANDIDATE_POOL_SIZE,
+    sources: list[str] | None = None,
 ):
     """Return a callable for optimize_presets.
 
@@ -233,7 +236,8 @@ def candidate_builder(
     def build(preset: str) -> list[RequirementCandidates]:
         if preset not in cache:
             cache[preset] = build_requirement_candidates(
-                db, requirements, context, scoring_ctx, preset=preset, limit=limit
+                db, requirements, context, scoring_ctx,
+                preset=preset, limit=limit, sources=sources,
             )
         return cache[preset]
 

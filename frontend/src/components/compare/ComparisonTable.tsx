@@ -83,6 +83,7 @@ export function ComparisonTable({
                     <div className="flex items-center gap-2.5">
                       <ProductImage
                         category={row.product.category}
+                        subcategory={row.product.subcategory}
                         seed={row.product.id}
                         className="size-10 shrink-0"
                         iconClassName="size-4"

@@ -22,8 +22,14 @@ export const qk = {
   health: ["health"] as const,
   session: (id: string) => ["session", id] as const,
   requirements: (planId: string) => ["requirements", planId] as const,
-  recommendations: (planId: string, requirementIds?: string[] | null) =>
-    ["recommendations", planId, requirementIds ?? "all"] as const,
+  marketplaces: () => ["marketplaces"] as const,
+  // `sources` is part of the key: switching a marketplace off must refetch
+  // rather than serve the cached list that still contains its products.
+  recommendations: (
+    planId: string,
+    requirementIds?: string[] | null,
+    sources?: string[] | null,
+  ) => ["recommendations", planId, requirementIds ?? "all", sources ?? "all"] as const,
   plan: (planId: string) => ["plan", planId] as const,
   explain: (productId: string, requirementId: string) =>
     ["explain", productId, requirementId] as const,

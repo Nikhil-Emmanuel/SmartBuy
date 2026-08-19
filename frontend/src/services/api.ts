@@ -23,6 +23,7 @@ import type {
   FeedbackRequest,
   FeedbackResponse,
   HealthResponse,
+  MarketplacesResponse,
   Offer,
   ProductDetail,
   ProductSearchParams,
@@ -54,6 +55,10 @@ export function searchProducts(params: ProductSearchParams) {
 export function getProduct(id: string) {
   if (USE_MOCKS) return mocks.getProduct(id);
   return http.get<ProductDetail>(`/api/products/${id}`);
+}
+
+export function getMarketplaces() {
+  return http.get<MarketplacesResponse>("/api/marketplaces");
 }
 
 export function getOffers(productIds: string[]) {

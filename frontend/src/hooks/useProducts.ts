@@ -13,6 +13,18 @@ export function useProductSearch(params: ProductSearchParams, enabled = true) {
   });
 }
 
+/**
+ * The marketplace catalogue. Cached hard because it only changes when the
+ * backend gains or loses a provider integration, which cannot happen mid-session.
+ */
+export function useMarketplaces() {
+  return useQuery({
+    queryKey: qk.marketplaces(),
+    queryFn: api.getMarketplaces,
+    staleTime: Infinity,
+  });
+}
+
 export function useProduct(id: string | null) {
   return useQuery({
     queryKey: qk.product(id ?? "none"),

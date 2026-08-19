@@ -202,10 +202,25 @@ def main() -> int:
     ap.add_argument("--catalog", type=Path, default=Path(settings.CATALOG_PATH))
     ap.add_argument("--interactions", type=int, default=15000)
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument(
+        "--if-empty",
+        action="store_true",
+        help="do nothing when the catalog already has products (for container startup)",
+    )
     args = ap.parse_args()
 
     print(f"Seeding {settings.DATABASE_URL.split('://')[0]} database...")
     init_db()
+
+    if args.if_empty:
+        # Container entrypoints run this on every boot. Reseeding a live
+        # database on restart would rewrite product ids, and every plan and
+        # recommendation already persisted points at the old ones.
+        with SessionLocal() as db:
+            existing = db.scalar(select(func.count()).select_from(Product))
+        if existing:
+            print(f"  catalog already has {existing} products -- nothing to do.")
+            return 0
 
     payload = load_catalog(args.catalog)
     print(f"  catalog          {args.catalog.name} ({payload['count']} products)")

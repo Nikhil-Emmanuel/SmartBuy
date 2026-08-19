@@ -1,0 +1,330 @@
+{
+  "generated_at": "2026-08-19T04:46:47+00:00",
+  "catalog_size": 3075,
+  "n_goals": 5,
+  "n_kb_items": 82,
+  "k_values": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "weights": {
+    "goal_suitability": 0.25,
+    "preference_match": 0.2,
+    "quality": 0.15,
+    "feature_match": 0.15,
+    "budget_fit": 0.1,
+    "review_strength": 0.05,
+    "delivery": 0.05,
+    "deal_value": 0.05
+  },
+  "settings": {
+    "retrieval": {
+      "question": "Does the ranker surface products from the right shelf?",
+      "pool": "category",
+      "relevance_threshold": 1,
+      "n_queries": 82,
+      "n_skipped": 0,
+      "pool_size_min": 55,
+      "pool_size_max": 793,
+      "pool_size_mean": 252.3,
+      "rankers": {
+        "smartbuy": {
+          "mrr": 0.8092,
+          "precision@1": 0.7805,
+          "recall@1": 0.0193,
+          "ndcg@1": 0.7805,
+          "precision@3": 0.7764,
+          "recall@3": 0.0576,
+          "ndcg@3": 0.775,
+          "precision@5": 0.7634,
+          "recall@5": 0.0946,
+          "ndcg@5": 0.7667,
+          "precision@10": 0.7585,
+          "recall@10": 0.1877,
+          "ndcg@10": 0.7606
+        },
+        "semantic_tfidf": {
+          "mrr": 0.9817,
+          "precision@1": 0.9634,
+          "recall@1": 0.023,
+          "ndcg@1": 0.7602,
+          "precision@3": 0.9431,
+          "recall@3": 0.0677,
+          "ndcg@3": 0.7692,
+          "precision@5": 0.961,
+          "recall@5": 0.1157,
+          "ndcg@5": 0.779,
+          "precision@10": 0.9427,
+          "recall@10": 0.2275,
+          "ndcg@10": 0.7711
+        },
+        "popularity": {
+          "mrr": 0.3731,
+          "precision@1": 0.2073,
+          "recall@1": 0.0049,
+          "ndcg@1": 0.1992,
+          "precision@3": 0.252,
+          "recall@3": 0.0178,
+          "ndcg@3": 0.2356,
+          "precision@5": 0.2659,
+          "recall@5": 0.0304,
+          "ndcg@5": 0.2433,
+          "precision@10": 0.2573,
+          "recall@10": 0.0591,
+          "ndcg@10": 0.2376
+        },
+        "rating": {
+          "mrr": 0.4615,
+          "precision@1": 0.2927,
+          "recall@1": 0.0066,
+          "ndcg@1": 0.1138,
+          "precision@3": 0.2967,
+          "recall@3": 0.0211,
+          "ndcg@3": 0.1105,
+          "precision@5": 0.2805,
+          "recall@5": 0.033,
+          "ndcg@5": 0.1113,
+          "precision@10": 0.289,
+          "recall@10": 0.0663,
+          "ndcg@10": 0.129
+        },
+        "price_asc": {
+          "mrr": 0.3959,
+          "precision@1": 0.2805,
+          "recall@1": 0.0074,
+          "ndcg@1": 0.2805,
+          "precision@3": 0.2764,
+          "recall@3": 0.0219,
+          "ndcg@3": 0.2769,
+          "precision@5": 0.2878,
+          "recall@5": 0.0381,
+          "ndcg@5": 0.2839,
+          "precision@10": 0.278,
+          "recall@10": 0.0707,
+          "ndcg@10": 0.2782
+        },
+        "random": {
+          "mrr": 0.4518,
+          "precision@1": 0.2805,
+          "recall@1": 0.0066,
+          "ndcg@1": 0.2317,
+          "precision@3": 0.2602,
+          "recall@3": 0.0186,
+          "ndcg@3": 0.2036,
+          "precision@5": 0.2683,
+          "recall@5": 0.0312,
+          "ndcg@5": 0.2083,
+          "precision@10": 0.2659,
+          "recall@10": 0.0604,
+          "ndcg@10": 0.2188
+        }
+      },
+      "ablation": [
+        {
+          "component": "feature_match",
+          "weight": 0.15,
+          "ndcg@10_without": 0.545,
+          "delta": 0.2156
+        },
+        {
+          "component": "budget_fit",
+          "weight": 0.1,
+          "ndcg@10_without": 0.5451,
+          "delta": 0.2155
+        },
+        {
+          "component": "goal_suitability",
+          "weight": 0.25,
+          "ndcg@10_without": 0.7119,
+          "delta": 0.0487
+        },
+        {
+          "component": "review_strength",
+          "weight": 0.05,
+          "ndcg@10_without": 0.7225,
+          "delta": 0.0381
+        },
+        {
+          "component": "preference_match",
+          "weight": 0.2,
+          "ndcg@10_without": 0.7254,
+          "delta": 0.0352
+        },
+        {
+          "component": "quality",
+          "weight": 0.15,
+          "ndcg@10_without": 0.7291,
+          "delta": 0.0315
+        },
+        {
+          "component": "delivery",
+          "weight": 0.05,
+          "ndcg@10_without": 0.7341,
+          "delta": 0.0265
+        },
+        {
+          "component": "deal_value",
+          "weight": 0.05,
+          "ndcg@10_without": 0.7401,
+          "delta": 0.0205
+        }
+      ],
+      "skipped": []
+    },
+    "ranking": {
+      "question": "Within the right shelf, does it surface products that meet every required feature and the price band?",
+      "pool": "subcategory",
+      "relevance_threshold": 2,
+      "n_queries": 82,
+      "n_skipped": 0,
+      "pool_size_min": 22,
+      "pool_size_max": 103,
+      "pool_size_mean": 47.8,
+      "rankers": {
+        "smartbuy": {
+          "mrr": 1.0,
+          "precision@1": 1.0,
+          "recall@1": 0.0365,
+          "ndcg@1": 1.0,
+          "precision@3": 0.9959,
+          "recall@3": 0.1088,
+          "ndcg@3": 0.9981,
+          "precision@5": 0.9902,
+          "recall@5": 0.1799,
+          "ndcg@5": 0.9952,
+          "precision@10": 0.9902,
+          "recall@10": 0.3594,
+          "ndcg@10": 0.9947
+        },
+        "semantic_tfidf": {
+          "mrr": 0.7935,
+          "precision@1": 0.6585,
+          "recall@1": 0.0236,
+          "ndcg@1": 0.7602,
+          "precision@3": 0.6911,
+          "recall@3": 0.0725,
+          "ndcg@3": 0.7712,
+          "precision@5": 0.6976,
+          "recall@5": 0.1237,
+          "ndcg@5": 0.7803,
+          "precision@10": 0.6841,
+          "recall@10": 0.2411,
+          "ndcg@10": 0.772
+        },
+        "popularity": {
+          "mrr": 0.8612,
+          "precision@1": 0.7561,
+          "recall@1": 0.0267,
+          "ndcg@1": 0.8171,
+          "precision@3": 0.7602,
+          "recall@3": 0.0806,
+          "ndcg@3": 0.8183,
+          "precision@5": 0.7317,
+          "recall@5": 0.1297,
+          "ndcg@5": 0.8069,
+          "precision@10": 0.6805,
+          "recall@10": 0.2402,
+          "ndcg@10": 0.7817
+        },
+        "rating": {
+          "mrr": 0.3058,
+          "precision@1": 0.1098,
+          "recall@1": 0.004,
+          "ndcg@1": 0.3984,
+          "precision@3": 0.1545,
+          "recall@3": 0.017,
+          "ndcg@3": 0.4165,
+          "precision@5": 0.2195,
+          "recall@5": 0.0401,
+          "ndcg@5": 0.4434,
+          "precision@10": 0.3646,
+          "recall@10": 0.1316,
+          "ndcg@10": 0.5193
+        },
+        "price_asc": {
+          "mrr": 0.9756,
+          "precision@1": 0.9512,
+          "recall@1": 0.035,
+          "ndcg@1": 0.9512,
+          "precision@3": 0.9431,
+          "recall@3": 0.1042,
+          "ndcg@3": 0.9462,
+          "precision@5": 0.9366,
+          "recall@5": 0.1725,
+          "ndcg@5": 0.9405,
+          "precision@10": 0.9439,
+          "recall@10": 0.3449,
+          "ndcg@10": 0.9448
+        },
+        "random": {
+          "mrr": 0.873,
+          "precision@1": 0.7805,
+          "recall@1": 0.0282,
+          "ndcg@1": 0.8455,
+          "precision@3": 0.6179,
+          "recall@3": 0.0657,
+          "ndcg@3": 0.7566,
+          "precision@5": 0.639,
+          "recall@5": 0.1133,
+          "ndcg@5": 0.7577,
+          "precision@10": 0.6585,
+          "recall@10": 0.2354,
+          "ndcg@10": 0.7647
+        }
+      },
+      "ablation": [
+        {
+          "component": "budget_fit",
+          "weight": 0.1,
+          "ndcg@10_without": 0.7339,
+          "delta": 0.2608
+        },
+        {
+          "component": "feature_match",
+          "weight": 0.15,
+          "ndcg@10_without": 0.9412,
+          "delta": 0.0535
+        },
+        {
+          "component": "review_strength",
+          "weight": 0.05,
+          "ndcg@10_without": 0.944,
+          "delta": 0.0507
+        },
+        {
+          "component": "preference_match",
+          "weight": 0.2,
+          "ndcg@10_without": 0.9463,
+          "delta": 0.0484
+        },
+        {
+          "component": "goal_suitability",
+          "weight": 0.25,
+          "ndcg@10_without": 0.9488,
+          "delta": 0.0459
+        },
+        {
+          "component": "quality",
+          "weight": 0.15,
+          "ndcg@10_without": 0.9506,
+          "delta": 0.0441
+        },
+        {
+          "component": "delivery",
+          "weight": 0.05,
+          "ndcg@10_without": 0.9514,
+          "delta": 0.0433
+        },
+        {
+          "component": "deal_value",
+          "weight": 0.05,
+          "ndcg@10_without": 0.9539,
+          "delta": 0.0408
+        }
+      ],
+      "skipped": []
+    }
+  }
+}

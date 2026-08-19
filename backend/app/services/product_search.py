@@ -126,6 +126,10 @@ class SearchFilters:
     max_price: int | None = None
     min_rating: float | None = None
     source: str | None = None
+    # Multi-select marketplace filter. None means "no opinion, use everything";
+    # an empty list is a user who switched every marketplace off, and must stay
+    # distinct from None or we would silently show them what they excluded.
+    sources: list[str] | None = None
     features: list[str] | None = None
     exclude_out_of_stock: bool = False
 
@@ -173,6 +177,8 @@ class ProductSearchService:
             stmt = stmt.where(Product.brand == f.brand)
         if f.source:
             stmt = stmt.where(Product.source == f.source)
+        if f.sources is not None:
+            stmt = stmt.where(Product.source.in_(f.sources))
         if f.min_price is not None:
             stmt = stmt.where(Product.price >= f.min_price)
         if f.max_price is not None:
@@ -294,6 +300,7 @@ class ProductSearchService:
         req: RequirementSpec,
         limit: int = 40,
         budget_ceiling: int | None = None,
+        sources: list[str] | None = None,
     ) -> list[Product]:
         """Candidate set for one requirement, before scoring.
 
@@ -306,19 +313,25 @@ class ProductSearchService:
         base = SearchFilters(
             subcategory=req.subcategory or None,
             min_rating=float(cfg.filters.get("min_rating", 0.0)) or None,
+            sources=sources,
         )
         rows = self._filtered(db, base)
 
         # Fall back to the broader category, then to pure semantic search, so a
         # KB item whose subcategory has thin coverage still returns something.
+        # The marketplace filter rides along every fallback: a widening search
+        # must not quietly reintroduce a marketplace the user switched off.
         if len(rows) < 6 and req.category:
-            rows = self._filtered(db, SearchFilters(category=req.category))
+            rows = self._filtered(db, SearchFilters(category=req.category, sources=sources))
         if len(rows) < 6:
             query = " ".join(req.search_terms or [req.item_name])
             ranked = self.index.query(query, top_k=limit * 2)
             ids = [pid for pid, _ in ranked]
             if ids:
-                rows = list(db.scalars(select(Product).where(Product.id.in_(ids))))
+                stmt = select(Product).where(Product.id.in_(ids))
+                if sources is not None:
+                    stmt = stmt.where(Product.source.in_(sources))
+                rows = list(db.scalars(stmt))
 
         if not rows:
             return []

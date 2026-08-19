@@ -25,12 +25,17 @@ export function clamp(value: number, min: number, max: number) {
   return Math.min(max, Math.max(min, value));
 }
 
-/** Stable pastel hue from a string — used for placeholder product art. */
-export function hueFrom(seed: string): number {
+/** Stable 31-bit hash — the basis for anything that must look random but stay put. */
+export function hashOf(seed: string): number {
   let hash = 0;
   for (let i = 0; i < seed.length; i += 1) {
     hash = (hash << 5) - hash + seed.charCodeAt(i);
     hash |= 0;
   }
-  return Math.abs(hash) % 360;
+  return Math.abs(hash);
+}
+
+/** Stable pastel hue from a string — used for placeholder product art. */
+export function hueFrom(seed: string): number {
+  return hashOf(seed) % 360;
 }

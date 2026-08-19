@@ -2,6 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { qk } from "@/lib/queryClient";
 import * as api from "@/services/api";
+import { useAppStore } from "@/store/useAppStore";
 import type { BundlePreset, Priority, RequirementPatch, SubstituteReason } from "@/types/api";
 
 export function useRequirements(planId: string | null) {
@@ -26,13 +27,15 @@ export function usePatchRequirement(planId: string | null) {
 }
 
 export function useRecommendations(planId: string | null, requirementIds?: string[] | null) {
+  const sources = useAppStore((s) => s.enabledSources);
   return useQuery({
-    queryKey: qk.recommendations(planId ?? "none", requirementIds),
+    queryKey: qk.recommendations(planId ?? "none", requirementIds, sources),
     queryFn: () =>
       api.getRecommendations({
         plan_id: planId as string,
         requirement_ids: requirementIds ?? null,
         limit_per_requirement: 6,
+        sources,
       }),
     enabled: Boolean(planId),
   });

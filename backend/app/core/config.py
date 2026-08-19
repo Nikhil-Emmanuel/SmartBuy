@@ -64,6 +64,26 @@ class Settings(BaseSettings):
     CATALOG_PATH: str = str(PROJECT_ROOT / "data" / "products" / "catalog.json")
 
     @property
+    def resolved_database_url(self) -> str:
+        """DATABASE_URL with a relative SQLite path anchored to the backend dir.
+
+        `sqlite:///./smartbuy.db` means "relative to the process working
+        directory", so running a script from the repo root instead of from
+        backend/ points SQLAlchemy at a path with no database -- and SQLite
+        cheerfully creates an empty one rather than failing. The result is a
+        script that reports zero products instead of an error. Anchoring the
+        path here makes the URL mean the same thing from every directory.
+        """
+        url = self.DATABASE_URL
+        prefix = "sqlite:///"
+        if not url.startswith(prefix):
+            return url
+        path = url[len(prefix) :]
+        if not path or path == ":memory:" or Path(path).is_absolute():
+            return url
+        return f"{prefix}{(BACKEND_DIR / path).resolve()}"
+
+    @property
     def cors_origin_list(self) -> list[str]:
         return [o.strip() for o in self.CORS_ORIGINS.split(",") if o.strip()]
 

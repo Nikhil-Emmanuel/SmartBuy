@@ -36,8 +36,18 @@ interface AppState {
   lastChatTurn: ChatResponse | null;
   lastChatError: string | null;
   chatTurnSeq: number;
+  /**
+   * Marketplaces the user has switched on. `null` means "hasn't chosen", which
+   * the API layer sends as no filter at all -- distinct from `[]`, which is a
+   * user who deliberately switched everything off and should see nothing
+   * rather than silently getting all marketplaces back.
+   */
+  enabledSources: string[] | null;
 
   setChatSession: (chatSessionId: string) => void;
+  setEnabledSources: (keys: string[] | null) => void;
+  /** `allKeys` seeds the first toggle; the store cannot know the catalogue itself. */
+  toggleSource: (key: string, allKeys: string[]) => void;
   setPlan: (planId: string | null) => void;
   toggleCompare: (productId: string) => void;
   clearCompare: () => void;
@@ -58,8 +68,20 @@ export const useAppStore = create<AppState>()(
       lastChatTurn: null,
       lastChatError: null,
       chatTurnSeq: 0,
+      enabledSources: null,
 
       setChatSession: (chatSessionId) => set({ chatSessionId }),
+      setEnabledSources: (enabledSources) => set({ enabledSources }),
+      toggleSource: (key, allKeys) => {
+        // First interaction seeds from `all`, so switching one marketplace off
+        // leaves the rest on rather than leaving only the one just clicked.
+        const current = get().enabledSources ?? allKeys;
+        set({
+          enabledSources: current.includes(key)
+            ? current.filter((k) => k !== key)
+            : [...current, key],
+        });
+      },
       setPlan: (planId) => set({ planId }),
       reportChatTurn: (turn) =>
         set((s) => ({ lastChatTurn: turn, lastChatError: null, chatTurnSeq: s.chatTurnSeq + 1 })),
@@ -84,6 +106,7 @@ export const useAppStore = create<AppState>()(
         chatSessionId: state.chatSessionId,
         planId: state.planId,
         adminToken: state.adminToken,
+        enabledSources: state.enabledSources,
       }),
     },
   ),
