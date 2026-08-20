@@ -1,7 +1,6 @@
 import {
   AnimatePresence,
   motion,
-  useReducedMotion,
   useScroll,
   useSpring,
   useTransform,
@@ -28,7 +27,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useSuggestions } from "@/hooks/useChat";
 import { useHealth, useMarketplaces } from "@/hooks/useProducts";
-import { EASE_OUT, HOVER_LIFT, SPRING } from "@/lib/motion";
+import { EASE_OUT, HOVER_LIFT, SPRING, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 import "./landing.css";
@@ -157,7 +156,7 @@ export function LandingPage() {
 
       <motion.section
         variants={heroParent}
-        initial={reduced ? false : "hidden"}
+        initial={reduced ? true : "hidden"}
         animate="visible"
         className="mx-auto max-w-5xl px-6 pb-16 pt-20 text-center sm:pt-28"
       >
@@ -446,16 +445,32 @@ export function LandingPage() {
       <CategoryMarquee />
 
       <section className="mx-auto max-w-4xl px-6 pb-24 pt-16">
-        <Reveal>
-          <Card className="border-brass-soft glow-card-hero relative overflow-hidden rounded-3xl bg-accent/40 px-8 py-12 text-center backdrop-blur-xl">
-            <p className="mx-auto max-w-2xl text-sm leading-relaxed text-foreground/90 font-medium">
-              The catalog is a curated, generated dataset for this demo -- prices and stock are
-              simulated, and every screen says so where it matters. Nothing here claims to be a
-              live marketplace feed.
-            </p>
-          </Card>
-        </Reveal>
-      </section>
+  <Reveal>
+    <Card className="border-brass-soft glow-card-hero relative overflow-hidden rounded-3xl bg-accent/40 px-8 py-12 text-center backdrop-blur-xl">
+      <div className="space-y-6">
+        <p className="text-sm font-medium leading-relaxed text-foreground/90">
+          SmartBuy AI is a research project and not a commercial product.
+          <br />
+          It is not affiliated with any marketplace or brand.
+        </p>
+
+        <div>
+          <h3 className="mb-3 text-lg font-semibold">Created By</h3>
+
+          <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-foreground/90">
+            <li>Nikhil Emmanuel</li>
+            <li>Anantha Narayanan</li>
+            <li>Delna Liz Denny</li>
+            <li>Asin Treesa</li>
+            <li>Nandhitha</li>
+            <li>Siddharth</li>
+            <li>Giftson</li>
+          </ul>
+        </div>
+      </div>
+    </Card>
+  </Reveal>
+</section>
     </div>
   );
 }

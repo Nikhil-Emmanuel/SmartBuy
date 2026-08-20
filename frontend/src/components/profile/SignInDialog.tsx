@@ -14,7 +14,7 @@
  * seeker" would give away the answer the model exists to produce.
  */
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { LogIn, RefreshCw, UserRound } from "lucide-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
@@ -29,7 +29,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useDemoShoppers } from "@/hooks/useProfile";
-import { listChild, listParent, SPRING_BOUNCE } from "@/lib/motion";
+import { listChild, listParent, SPRING_BOUNCE, useReducedMotion } from "@/lib/motion";
 import { adoptSession, resetSession, sessionId } from "@/services/client";
 
 export function SignInDialog({

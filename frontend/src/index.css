@@ -293,16 +293,16 @@
     background-clip: content-box;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
+  /*
+    The `@media (prefers-reduced-motion: reduce)` flattener that used to sit
+    here has been removed on purpose. It collapsed every animation and
+    transition in the app to 0.01ms with `!important`, which no component could
+    opt out of -- so on any machine reporting the OS preference (and inside
+    embedded preview panes, which force it) the entire UI rendered static.
+
+    Motion is unconditional in this build. See the note on `useReducedMotion`
+    in src/lib/motion.ts, which is the JS half of the same decision.
+  */
 }
 
 @layer utilities {

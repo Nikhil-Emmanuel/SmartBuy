@@ -1,10 +1,10 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Minus, Plus } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { rupees, titleCase } from "@/lib/format";
-import { listChild, SPRING } from "@/lib/motion";
+import { listChild, SPRING, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import type { Requirement } from "@/types/api";
 

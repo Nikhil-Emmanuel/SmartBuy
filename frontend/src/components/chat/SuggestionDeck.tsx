@@ -15,12 +15,12 @@
  * stated scope.
  */
 
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Compass, Layers, Sparkles } from "lucide-react";
 import { useState } from "react";
 
 import { useSuggestions } from "@/hooks/useChat";
-import { EASE_OUT, listChild, listParent } from "@/lib/motion";
+import { EASE_OUT, listChild, listParent, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import type { Suggestion } from "@/types/api";
 

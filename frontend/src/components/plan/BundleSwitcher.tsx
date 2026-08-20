@@ -1,9 +1,9 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 import { CountUp } from "@/components/shared/CountUp";
 import { percent, presetLabel, rupees } from "@/lib/format";
-import { SPRING_BOUNCE } from "@/lib/motion";
+import { SPRING_BOUNCE, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import type { Bundle, BundlePreset } from "@/types/api";
 

@@ -18,13 +18,14 @@
  */
 
 import {
-  useReducedMotion,
   useScroll,
   useSpring,
   useTransform,
   useVelocity,
   type MotionValue,
 } from "framer-motion";
+
+import { useReducedMotion } from "@/lib/motion";
 
 /** Raw scroll velocity is jittery; this is what makes it feel like weight. */
 const VELOCITY_SPRING = { damping: 50, stiffness: 400, restDelta: 0.001 };

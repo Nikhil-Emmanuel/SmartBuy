@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Check, ChevronDown, Star, X } from "lucide-react";
 import { useState } from "react";
 
@@ -13,7 +13,7 @@ import {
   rupees,
   titleCase,
 } from "@/lib/format";
-import { FADE, SPRING } from "@/lib/motion";
+import { FADE, SPRING, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import type { Badge as BadgeType, CompareResponse } from "@/types/api";
 

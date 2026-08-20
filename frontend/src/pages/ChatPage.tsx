@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ListChecks, Wallet } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -9,7 +9,7 @@ import { SlotSidebar } from "@/components/chat/SlotSidebar";
 import { SuggestionDeck } from "@/components/chat/SuggestionDeck";
 import { Button } from "@/components/ui/button";
 import { useSendMessage, useSession, useUpdateSlots } from "@/hooks/useChat";
-import { FADE, SPRING } from "@/lib/motion";
+import { FADE, SPRING, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { useAppStore } from "@/store/useAppStore";
 import type { ChatResponse, Slots } from "@/types/api";

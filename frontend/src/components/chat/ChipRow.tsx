@@ -1,6 +1,6 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
-import { listChild, listParent, SPRING } from "@/lib/motion";
+import { listChild, listParent, SPRING, useReducedMotion } from "@/lib/motion";
 
 export function ChipRow({
   chips,

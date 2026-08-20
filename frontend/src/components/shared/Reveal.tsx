@@ -11,10 +11,10 @@
  * not something you wait on.
  */
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
-import { EASE_OUT } from "@/lib/motion";
+import { EASE_OUT, useReducedMotion } from "@/lib/motion";
 
 export function Reveal({
   children,

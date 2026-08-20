@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Check, Circle, Info, Pencil } from "lucide-react";
 import { useState } from "react";
 
@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { percent, slotLabel, slotValue } from "@/lib/format";
-import { FADE, SPRING } from "@/lib/motion";
+import { FADE, SPRING, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import type { Assumption, Slots } from "@/types/api";
 

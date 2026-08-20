@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Heart, History, Sparkles, ThumbsDown, ThumbsUp, User } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -12,7 +12,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useProfile } from "@/hooks/useProfile";
 import { dateLabel, rupees, titleCase } from "@/lib/format";
-import { HOVER_LIFT, listChild, listParent } from "@/lib/motion";
+import { HOVER_LIFT, listChild, listParent, useReducedMotion } from "@/lib/motion";
 
 const FEEDBACK_ICON = {
   relevant: ThumbsUp,

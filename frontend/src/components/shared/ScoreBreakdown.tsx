@@ -1,8 +1,8 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { CountUp } from "@/components/shared/CountUp";
 import { percent, scoreLabel } from "@/lib/format";
-import { EASE_OUT } from "@/lib/motion";
+import { EASE_OUT, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import type { ScoreBreakdown as ScoreBreakdownType } from "@/types/api";
 

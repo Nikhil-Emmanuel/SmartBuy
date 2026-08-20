@@ -7,9 +7,10 @@
  * animation is skipped the rendered figure is identical.
  */
 
-import { animate, useReducedMotion } from "framer-motion";
+import { animate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
+import { useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 export function CountUp({

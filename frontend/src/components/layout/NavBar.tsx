@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { LayoutGrid, LogIn, MessageCircle, ShieldCheck, User } from "lucide-react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
@@ -8,7 +8,7 @@ import { Logo } from "@/components/shared/Logo";
 import { MarketplaceToggle } from "@/components/shared/MarketplaceToggle";
 import { Button } from "@/components/ui/button";
 import { usePersonalization } from "@/hooks/useProfile";
-import { SPRING } from "@/lib/motion";
+import { SPRING, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { useAppStore } from "@/store/useAppStore";
 

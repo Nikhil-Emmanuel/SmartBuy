@@ -15,7 +15,6 @@ import {
   motion,
   useAnimationFrame,
   useMotionValue,
-  useReducedMotion,
   useTransform,
   wrap,
 } from "framer-motion";
@@ -23,6 +22,7 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useSuggestions } from "@/hooks/useChat";
+import { useReducedMotion } from "@/lib/motion";
 import { useScrollVelocityFactor } from "@/lib/scrollVelocity";
 import type { Suggestion } from "@/types/api";
 
@@ -54,8 +54,8 @@ export function CategoryMarquee() {
       </div>
 
       <div className="space-y-3">
-        <MarqueeRow items={categories} baseVelocity={26} onPick={pick} />
-        <MarqueeRow items={[...categories].reverse()} baseVelocity={-26} onPick={pick} />
+        <MarqueeRow items={categories} baseVelocity={0.8} onPick={pick} />
+        <MarqueeRow items={[...categories].reverse()} baseVelocity={-0.8} onPick={pick} />
       </div>
     </section>
   );

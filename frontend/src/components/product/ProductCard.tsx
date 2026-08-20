@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Check, Scale, Star } from "lucide-react";
 import type { ReactNode } from "react";
 
@@ -8,7 +8,7 @@ import { SimulatedBadge } from "@/components/shared/SimulatedBadge";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { badgeLabel, deliveryLabel, percent, rating, rupees, sourceLabel } from "@/lib/format";
-import { CARD_REVEAL, SPRING_BOUNCE } from "@/lib/motion";
+import { CARD_REVEAL, SPRING_BOUNCE, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import type { Product, ScoreBreakdown as ScoreBreakdownType } from "@/types/api";
 

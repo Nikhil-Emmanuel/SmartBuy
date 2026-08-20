@@ -1,9 +1,9 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Compass } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
-import { EASE_OUT, SPRING } from "@/lib/motion";
+import { EASE_OUT, SPRING, useReducedMotion } from "@/lib/motion";
 
 export function NotFoundPage() {
   const reduced = useReducedMotion();

@@ -1,9 +1,9 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { DegradedBanner } from "@/components/shared/StatusBanners";
-import { EASE_OUT } from "@/lib/motion";
+import { EASE_OUT, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 /**

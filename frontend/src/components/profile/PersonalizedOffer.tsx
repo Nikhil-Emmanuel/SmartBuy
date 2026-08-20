@@ -15,7 +15,7 @@
  *    cannot say how sure it is has no business being on the page.
  */
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Check, Copy, Sparkles, TrendingUp, Truck } from "lucide-react";
 import { useState } from "react";
 
@@ -23,7 +23,7 @@ import { CountUp } from "@/components/shared/CountUp";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { usePersonalization } from "@/hooks/useProfile";
-import { EASE_OUT, FADE, listChild, listParent } from "@/lib/motion";
+import { EASE_OUT, FADE, listChild, listParent, useReducedMotion } from "@/lib/motion";
 import type { PersonalizationResponse } from "@/types/api";
 
 const NOT_YET: Record<PersonalizationResponse["status"], string> = {

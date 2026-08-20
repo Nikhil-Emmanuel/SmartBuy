@@ -15,7 +15,7 @@
  *    the same build always looks the same in screenshots.
  */
 
-import { motion, useReducedMotion, type MotionValue } from "framer-motion";
+import { motion, type MotionValue } from "framer-motion";
 import {
   Gift,
   Package,
@@ -27,6 +27,8 @@ import {
   Truck,
 } from "lucide-react";
 import { useMemo } from "react";
+
+import { useReducedMotion } from "@/lib/motion";
 
 const ICONS = [ShoppingBag, Tag, ShoppingCart, Package, Percent, Gift, Truck, Sparkles] as const;
 

@@ -1,9 +1,9 @@
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Outlet, useLocation } from "react-router-dom";
 
 import { NavBar } from "@/components/layout/NavBar";
 import { MockModeBanner } from "@/components/shared/StatusBanners";
-import { pageEnter } from "@/lib/motion";
+import { pageEnter, useReducedMotion } from "@/lib/motion";
 
 export function AppShell() {
   const location = useLocation();

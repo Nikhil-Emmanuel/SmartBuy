@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, Scale } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -7,7 +7,7 @@ import { EmptyState, ErrorState } from "@/components/shared/States";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useCompare } from "@/hooks/useProducts";
-import { FADE } from "@/lib/motion";
+import { FADE, useReducedMotion } from "@/lib/motion";
 import { useAppStore } from "@/store/useAppStore";
 
 export function ComparePage() {

@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { AlertTriangle, PackageCheck, Sparkles, Wallet } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -18,7 +18,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useOptimizeBundle, useSelectBundle, useShoppingPlan } from "@/hooks/usePlan";
 import { useSendFeedback } from "@/hooks/useProfile";
 import { rupees, unfulfilledLabel } from "@/lib/format";
-import { listChild, listParent, SPRING } from "@/lib/motion";
+import { listChild, listParent, SPRING, useReducedMotion } from "@/lib/motion";
 import type { BundlePreset, Product, Requirement } from "@/types/api";
 
 type QuickFeedback = "relevant" | "not_relevant" | "saved";

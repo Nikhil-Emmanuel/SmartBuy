@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Activity,
   Bot,
@@ -22,7 +22,7 @@ import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useAdminMetrics, useAuditLogs } from "@/hooks/useAdmin";
 import { compactNumber, percent, timeLabel, titleCase } from "@/lib/format";
-import { EASE_OUT, HOVER_LIFT } from "@/lib/motion";
+import { EASE_OUT, HOVER_LIFT, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { useAppStore } from "@/store/useAppStore";
 

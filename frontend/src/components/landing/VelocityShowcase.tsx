@@ -10,12 +10,13 @@
  * `useTransform` -- hooks can't run in a loop inside the parent.
  */
 
-import { motion, useReducedMotion, type MotionValue } from "framer-motion";
+import { motion, type MotionValue } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 import { ProductImage } from "@/components/shared/ProductImage";
 import { useProductSearch } from "@/hooks/useProducts";
 import { rupees } from "@/lib/format";
+import { useReducedMotion } from "@/lib/motion";
 import {
   useScrollVelocityFactor,
   useVelocityOffset,

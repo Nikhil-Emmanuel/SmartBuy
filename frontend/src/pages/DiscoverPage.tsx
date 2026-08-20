@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { PackageSearch, Scale, Wallet } from "lucide-react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useRecommendations } from "@/hooks/usePlan";
 import { unfulfilledLabel } from "@/lib/format";
-import { listParent, SPRING_BOUNCE } from "@/lib/motion";
+import { listParent, SPRING_BOUNCE, useReducedMotion } from "@/lib/motion";
 import { MAX_COMPARE_ITEMS, useAppStore } from "@/store/useAppStore";
 import type { Product, Requirement } from "@/types/api";
 

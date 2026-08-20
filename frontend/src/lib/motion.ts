@@ -11,12 +11,35 @@
  * from, that a number is being counted, that a choice moved. Decoration that
  * costs the user time is the anti-pattern this file exists to avoid.
  *
- * Every consumer must honour `prefers-reduced-motion`. Framer Motion's
- * `useReducedMotion()` is the hook for that; `index.css` already flattens CSS
- * animations, but JS-driven motion has to opt in for itself.
+ * MOTION IS UNCONDITIONAL IN THIS BUILD -- see `useReducedMotion` below.
  */
 
 import type { Transition, Variants } from "framer-motion";
+
+/**
+ * Drop-in replacement for Framer Motion's `useReducedMotion()`, hard-wired to
+ * `false`.
+ *
+ * Every component in this app gates its entrances on this hook
+ * (`initial={reduced ? false : {...}}`), so returning `false` here is the single
+ * switch that makes the whole UI animate regardless of the OS setting. It is
+ * imported from `@/lib/motion` rather than from `framer-motion` deliberately:
+ * the import line is where a reader finds out the override exists.
+ *
+ * Why a shim and not `<MotionConfig reducedMotion="never">` alone: that config
+ * is read by `useReducedMotionConfig()`, which Framer's own `motion` components
+ * use internally. The *public* `useReducedMotion()` ignores MotionConfig
+ * entirely and reads `matchMedia("(prefers-reduced-motion)")` straight, so the
+ * provider alone would leave all 28 call sites still returning `true`. Both are
+ * in place; neither is sufficient by itself.
+ *
+ * This is a deliberate accessibility trade-off, not an oversight. Restoring the
+ * OS preference means re-exporting the real hook from here -- no call site
+ * changes.
+ */
+export function useReducedMotion(): boolean {
+  return false;
+}
 
 /** Decelerating ease, matched to the `--animate-*` curves in index.css. */
 export const EASE_OUT = [0.22, 1, 0.36, 1] as const;
