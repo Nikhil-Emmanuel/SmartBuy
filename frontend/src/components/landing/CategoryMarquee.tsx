@@ -103,15 +103,13 @@ function MarqueeRow({
               key={`${copy}-${item.label}`}
               type="button"
               onClick={() => onPick(item)}
-              // Only the first copy is real to assistive tech and to the tab
-              // order; the other three exist purely to fill the track.
               aria-hidden={copy > 0}
               tabIndex={copy > 0 ? -1 : 0}
-              className="inline-flex min-h-11 shrink-0 items-center gap-2 whitespace-nowrap rounded-full border border-border bg-card px-4 text-sm text-foreground shadow-sm transition-colors hover:border-primary/50 hover:bg-primary-soft"
+              className="inline-flex min-h-11 shrink-0 cursor-pointer items-center gap-2.5 whitespace-nowrap rounded-full border border-border/80 bg-card/90 px-4.5 text-sm font-medium text-foreground shadow-sm backdrop-blur-md transition-all duration-300 hover:border-primary/60 hover:bg-primary-soft/80 hover:shadow-floating"
             >
               {item.label}
               {item.detail && (
-                <span className="tabular text-xs text-muted-foreground">{item.detail}</span>
+                <span className="tabular text-xs font-semibold text-primary/80">{item.detail}</span>
               )}
             </button>
           )),

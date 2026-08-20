@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 
 import { CountUp } from "@/components/shared/CountUp";
 import { percent, presetLabel, rupees } from "@/lib/format";
-import { SPRING } from "@/lib/motion";
+import { SPRING_BOUNCE } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import type { Bundle, BundlePreset } from "@/types/api";
 
@@ -27,7 +27,7 @@ export function BundleSwitcher({
   const reduced = useReducedMotion();
 
   return (
-    <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+    <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-3">
       {bundles.map((bundle) => {
         const isActive = bundle.preset === active;
         const isSelected = bundle.preset === selected;
@@ -36,32 +36,29 @@ export function BundleSwitcher({
             key={bundle.preset}
             onClick={() => onSelect(bundle.preset)}
             aria-pressed={isActive}
-            whileHover={reduced ? undefined : { y: -3 }}
-            whileTap={reduced ? undefined : { scale: 0.985 }}
-            transition={SPRING}
+            whileHover={reduced ? undefined : { y: -4, scale: 1.01 }}
+            whileTap={reduced ? undefined : { scale: 0.97 }}
+            transition={SPRING_BOUNCE}
             className={cn(
-              "relative cursor-pointer rounded-xl border p-4 text-left transition-colors",
+              "relative cursor-pointer overflow-hidden rounded-2xl border p-4 text-left shadow-sm transition-all duration-300 backdrop-blur-md",
               isActive
-                ? "border-primary bg-primary-soft/60"
-                : "border-border bg-card hover:border-primary/40",
+                ? "border-primary bg-primary-soft/70 shadow-floating"
+                : "border-border bg-card/90 hover:border-primary/40 hover:shadow-floating",
             )}
           >
-            {/* One element shared across all three cards, so switching basket
-                slides the highlight from the old choice to the new one. A
-                highlight that teleports makes the user hunt for what changed. */}
             {isActive && (
               <motion.span
                 layoutId="bundle-active"
-                transition={SPRING}
-                className="pointer-events-none absolute inset-0 rounded-xl ring-2 ring-primary"
+                transition={SPRING_BOUNCE}
+                className="pointer-events-none absolute inset-0 rounded-2xl ring-2 ring-primary/80"
               />
             )}
             {isSelected && (
               <motion.span
                 initial={reduced ? false : { scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={SPRING}
-                className="absolute right-3 top-3 z-10 flex size-5 items-center justify-center rounded-full bg-primary text-primary-foreground"
+                transition={SPRING_BOUNCE}
+                className="absolute right-3 top-3 z-10 flex size-5 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-sm"
               >
                 <Check className="size-3" />
               </motion.span>

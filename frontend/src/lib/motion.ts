@@ -29,6 +29,21 @@ export const SPRING: Transition = {
   mass: 0.8,
 };
 
+/** High-energy spring physics for tactile micro-interactions and button feedback. */
+export const SPRING_BOUNCE: Transition = {
+  type: "spring",
+  stiffness: 420,
+  damping: 22,
+  mass: 0.6,
+};
+
+/** Quick snappy spring for modals, popups, and instant feedback. */
+export const SPRING_SNAPPY: Transition = {
+  type: "spring",
+  stiffness: 450,
+  damping: 32,
+};
+
 /** For things that simply appear. */
 export const FADE: Transition = { duration: 0.28, ease: EASE_OUT };
 
@@ -51,9 +66,25 @@ export function listParent(count: number): Variants {
 }
 
 export const listChild: Variants = {
-  hidden: { opacity: 0, y: 12, scale: 0.98 },
-  visible: { opacity: 1, y: 0, scale: 1, transition: FADE },
+  hidden: { opacity: 0, y: 16, scale: 0.96 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: SPRING },
 };
+
+/** Product Grid Card reveal variant with soft layout scale. */
+export const CARD_REVEAL: Variants = {
+  hidden: { opacity: 0, y: 20, scale: 0.95 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: SPRING },
+};
+
+/** Scale-in transition for popups and dialog overlays. */
+export const SCALE_IN: Variants = {
+  hidden: { opacity: 0, scale: 0.95, y: 8 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: SPRING_SNAPPY },
+  exit: { opacity: 0, scale: 0.96, y: 4, transition: { duration: 0.15, ease: "easeIn" } },
+};
+
+/** Standard tactile press feedback scale factor. */
+export const TAP_SCALE = { scale: 0.94 } as const;
 
 /** Panels and sheets that arrive from below. */
 export const rise: Variants = {
@@ -79,4 +110,4 @@ export const pageEnter: Variants = {
  * Hover lift shared by every card that is also a link. One value so a card
  * does not rise further on one page than another.
  */
-export const HOVER_LIFT = { y: -4, transition: SPRING } as const;
+export const HOVER_LIFT = { y: -5, transition: SPRING_BOUNCE } as const;

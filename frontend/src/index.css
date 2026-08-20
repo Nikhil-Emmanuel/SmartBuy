@@ -351,4 +351,61 @@
   .scrollbar-none::-webkit-scrollbar {
     display: none;
   }
+
+  /* Weightlessness & Soft Layered Shadows */
+  .shadow-floating {
+    box-shadow:
+      0 10px 30px -8px color-mix(in oklab, var(--foreground) 6%, transparent),
+      0 4px 12px -2px color-mix(in oklab, var(--foreground) 3%, transparent);
+  }
+
+  .shadow-floating-lg {
+    box-shadow:
+      0 20px 48px -12px color-mix(in oklab, var(--primary) 18%, transparent),
+      0 8px 24px -4px color-mix(in oklab, var(--foreground) 5%, transparent);
+  }
+
+  .shadow-glass {
+    box-shadow:
+      0 8px 32px 0 color-mix(in oklab, var(--foreground) 4%, transparent),
+      inset 0 1px 0 0 color-mix(in oklab, var(--card-foreground) 8%, transparent);
+  }
+
+  /* Glassmorphism Surface Primitives */
+  .glass-panel {
+    background: color-mix(in oklab, var(--card) 82%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in oklab, var(--border) 60%, transparent);
+  }
+
+  .glass-nav {
+    background: color-mix(in oklab, var(--background) 82%, transparent);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid color-mix(in oklab, var(--border) 50%, transparent);
+  }
+
+  /* Spatial Glow & Depth Highlights */
+  .glow-accent {
+    box-shadow: 0 0 24px -2px color-mix(in oklab, var(--primary) 35%, transparent);
+  }
+
+  .glow-savings {
+    box-shadow: 0 0 24px -2px color-mix(in oklab, var(--savings) 30%, transparent);
+  }
+
+  /* Smooth Weightless Float Motion */
+  @keyframes float-gentle {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .animate-float {
+    animation: float-gentle 4s ease-in-out infinite;
+  }
 }

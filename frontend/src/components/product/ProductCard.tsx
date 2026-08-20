@@ -8,7 +8,7 @@ import { SimulatedBadge } from "@/components/shared/SimulatedBadge";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { badgeLabel, deliveryLabel, percent, rating, rupees, sourceLabel } from "@/lib/format";
-import { listChild, SPRING } from "@/lib/motion";
+import { CARD_REVEAL, SPRING_BOUNCE } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import type { Product, ScoreBreakdown as ScoreBreakdownType } from "@/types/api";
 
@@ -45,18 +45,18 @@ export function ProductCard({
 }) {
   const label = badgeLabel(badge);
   const reduced = useReducedMotion();
+  const isTopFit = badge === "best_overall" || (score !== undefined && score !== null && score >= 0.85);
 
   return (
     <motion.div
-      // `variants` are inherited from a parent list when there is one, so a
-      // grid staggers; a card rendered on its own still animates itself in.
-      variants={listChild}
+      variants={CARD_REVEAL}
       initial={reduced ? false : "hidden"}
       animate="visible"
-      whileHover={reduced ? undefined : { y: -4 }}
-      transition={SPRING}
+      whileHover={reduced ? undefined : { y: -6, scale: 1.01 }}
+      transition={SPRING_BOUNCE}
       className={cn(
-        "group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5",
+        "group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:border-primary/50 hover:shadow-floating-lg",
+        isTopFit && "z-10 ring-1 ring-primary/30 shadow-glass",
         compared && "ring-2 ring-primary ring-offset-2 ring-offset-background",
         className,
       )}
@@ -66,18 +66,18 @@ export function ProductCard({
           category={product.category}
           subcategory={product.subcategory}
           seed={product.id}
-          className="h-32 w-full transition-transform duration-500 ease-out group-hover:scale-[1.06]"
+          className="h-32 w-full rounded-xl transition-transform duration-500 ease-out group-hover:scale-[1.08]"
         />
         {label && (
           <Badge
             variant={BADGE_VARIANT[badge ?? ""] ?? "accent"}
-            className="absolute left-5 top-5 shadow-sm"
+            className="absolute left-5 top-5 shadow-sm backdrop-blur-sm"
           >
             {label}
           </Badge>
         )}
         {typeof product.discount_pct === "number" && product.discount_pct > 0 && (
-          <Badge variant="danger" className="absolute right-5 top-5 shadow-sm">
+          <Badge variant="danger" className="absolute right-5 top-5 shadow-sm backdrop-blur-sm">
             {product.discount_pct}% off
           </Badge>
         )}
@@ -91,7 +91,7 @@ export function ProductCard({
           </span>
         </div>
 
-        <h3 className="line-clamp-2 text-sm font-medium leading-snug text-foreground">
+        <h3 className="line-clamp-2 text-sm font-medium leading-snug text-foreground transition-colors group-hover:text-primary">
           {product.name}
         </h3>
 
@@ -119,12 +119,12 @@ export function ProductCard({
 
         {score !== undefined && score !== null && (
           <div className="text-xs text-muted-foreground">
-            Match score <span className="font-medium text-foreground">{percent(score)}</span>
+            Match score <span className="font-semibold text-primary">{percent(score)}</span>
           </div>
         )}
 
         {reasons && reasons.length > 0 && (
-          <ul className="mt-1 space-y-1 border-t border-border pt-2">
+          <ul className="mt-1 space-y-1 border-t border-border/60 pt-2">
             {reasons.slice(0, 2).map((reason, i) => (
               <li key={i} className="flex items-start gap-1.5 text-xs text-muted-foreground">
                 <Check className="mt-0.5 size-3 shrink-0 text-savings" />
@@ -138,19 +138,23 @@ export function ProductCard({
           <SimulatedBadge />
           <div className="flex items-center gap-1">
             {onExplain && (
-              <Button variant="ghost" size="sm" className="h-7 px-2 text-xs" onClick={onExplain}>
-                Why this?
-              </Button>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.92 }}>
+                <Button variant="ghost" size="sm" className="h-7 px-2 text-xs" onClick={onExplain}>
+                  Why this?
+                </Button>
+              </motion.div>
             )}
             {comparable && (
-              <Button
-                variant={compared ? "default" : "outline"}
-                size="icon-sm"
-                onClick={onToggleCompare}
-                title={compared ? "Remove from comparison" : "Add to comparison"}
-              >
-                <Scale className="size-3.5" />
-              </Button>
+              <motion.div whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.90 }}>
+                <Button
+                  variant={compared ? "default" : "outline"}
+                  size="icon-sm"
+                  onClick={onToggleCompare}
+                  title={compared ? "Remove from comparison" : "Add to comparison"}
+                >
+                  <Scale className="size-3.5" />
+                </Button>
+              </motion.div>
             )}
             <MarketplaceSearchMenu product={product} />
           </div>

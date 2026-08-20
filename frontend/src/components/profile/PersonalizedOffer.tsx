@@ -76,12 +76,12 @@ export function PersonalizedOffer() {
       animate={{ opacity: 1, y: 0 }}
       transition={FADE}
     >
-      <Card className="relative overflow-hidden border-primary/30 bg-primary-soft/40">
+      <Card className="relative overflow-hidden rounded-2xl border-primary/30 bg-primary-soft/50 shadow-floating-lg backdrop-blur-md">
         {/* Slow sheen. Decorative, so it is the first thing reduced-motion drops. */}
         {!reduced && (
           <motion.div
             aria-hidden
-            className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/25 to-transparent"
+            className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/30 to-transparent"
             animate={{ x: ["0%", "400%"] }}
             transition={{ duration: 2.6, ease: EASE_OUT, repeat: Infinity, repeatDelay: 4 }}
           />
@@ -89,8 +89,8 @@ export function PersonalizedOffer() {
 
         <CardContent className="relative space-y-3 p-5">
           <div className="flex flex-wrap items-center gap-2">
-            <Badge variant="accent" className="gap-1">
-              <Sparkles className="size-3" />
+            <Badge variant="accent" className="gap-1 shadow-sm">
+              <Sparkles className="size-3 text-primary" />
               {data.label}
             </Badge>
             <span className="text-xs text-muted-foreground">
@@ -103,7 +103,7 @@ export function PersonalizedOffer() {
             </span>
           </div>
 
-          <p className="text-sm text-foreground">{data.rationale}</p>
+          <p className="text-sm font-medium text-foreground">{data.rationale}</p>
 
           {data.discount_pct > 0 && data.coupon_code ? (
             <div className="flex flex-wrap items-center gap-3">
@@ -111,14 +111,16 @@ export function PersonalizedOffer() {
                 initial={reduced ? false : { scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: reduced ? 0 : 0.14, ease: EASE_OUT, duration: 0.4 }}
-                className="text-3xl font-semibold text-primary"
+                className="text-3xl font-bold text-primary"
               >
                 <CountUp value={data.discount_pct} format={(v) => `${v.toFixed(0)}% off`} />
               </motion.div>
-              <button
+              <motion.button
                 type="button"
                 onClick={copy}
-                className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-dashed border-primary/50 bg-card px-3 text-sm font-semibold tracking-wider text-foreground transition-colors hover:border-primary hover:bg-primary-soft"
+                whileHover={reduced ? undefined : { scale: 1.03, y: -1 }}
+                whileTap={reduced ? undefined : { scale: 0.94 }}
+                className="inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xl border border-dashed border-primary/60 bg-card/90 px-3.5 text-sm font-semibold tracking-wider text-foreground shadow-sm transition-colors hover:border-primary hover:bg-primary-soft"
                 aria-label={`Copy coupon code ${data.coupon_code}`}
               >
                 {data.coupon_code}
@@ -127,7 +129,7 @@ export function PersonalizedOffer() {
                 ) : (
                   <Copy className="size-4 text-muted-foreground" />
                 )}
-              </button>
+              </motion.button>
               <span aria-live="polite" className="sr-only">
                 {copied ? "Coupon code copied" : ""}
               </span>

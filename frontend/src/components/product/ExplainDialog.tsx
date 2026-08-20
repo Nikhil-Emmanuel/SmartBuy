@@ -34,7 +34,7 @@ export function ExplainDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[85vh] max-w-lg overflow-y-auto">
+      <DialogContent className="max-h-[85vh] max-w-lg overflow-y-auto rounded-2xl glass-panel border-border/60 shadow-floating-lg">
         <DialogHeader>
           <DialogTitle>Why this recommendation?</DialogTitle>
           <DialogDescription className="line-clamp-1">{product?.name}</DialogDescription>

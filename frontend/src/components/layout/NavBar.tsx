@@ -71,17 +71,20 @@ export function NavBar() {
   const personalization = usePersonalization();
   const reduced = useReducedMotion();
 
-  // The nav shows the segment only once the model has actually committed to
-  // one. A pill that says "Deal seeker" next to a status of low_confidence
-  // would be the UI overstating what the model returned.
   const segmentLabel =
     personalization.data?.status === "ok" ? personalization.data.label : null;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-md">
+    <header className="sticky top-0 z-40 glass-nav shadow-glass">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         <NavLink to="/" className="shrink-0">
-          <Logo />
+          <motion.div
+            whileHover={reduced ? undefined : { scale: 1.03 }}
+            whileTap={reduced ? undefined : { scale: 0.97 }}
+            transition={SPRING}
+          >
+            <Logo />
+          </motion.div>
         </NavLink>
 
         <nav className="flex items-center gap-1">
@@ -91,24 +94,18 @@ export function NavBar() {
           {planId && <NavItem to={`/plan/${planId}`} label="My plan" icon={LayoutGrid} />}
         </nav>
 
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1.5">
           <MarketplaceToggle />
 
           <motion.button
             type="button"
             onClick={() => setSignInOpen(true)}
-            whileHover={{ y: -1 }}
-            whileTap={{ scale: 0.97 }}
-            className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-border px-2.5 text-xs font-medium text-muted-foreground transition-colors hover:border-primary/40 hover:text-foreground"
+            whileHover={reduced ? undefined : { y: -1, scale: 1.02 }}
+            whileTap={reduced ? undefined : { scale: 0.95 }}
+            transition={SPRING}
+            className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-border bg-card/60 px-3 text-xs font-medium text-muted-foreground shadow-sm backdrop-blur transition-colors hover:border-primary/40 hover:text-foreground"
           >
             <LogIn className="size-3.5" />
-            {/*
-              Keyed remount rather than AnimatePresence: an exit animation here
-              would hold the stale label on screen until it finished, and a tab
-              that never gets a frame (background, or a preview pane that pins
-              reduced motion) would leave "Sign in" showing forever. Remounting
-              swaps the text immediately and animates it in afterwards.
-            */}
             <motion.span
               key={segmentLabel ?? "signin"}
               initial={reduced ? false : { opacity: 0, y: 4 }}
@@ -120,9 +117,16 @@ export function NavBar() {
             </motion.span>
           </motion.button>
 
-          <Button asChild size="sm" className="hidden sm:inline-flex">
-            <NavLink to="/chat">Start shopping</NavLink>
-          </Button>
+          <motion.div
+            whileHover={reduced ? undefined : { scale: 1.03 }}
+            whileTap={reduced ? undefined : { scale: 0.96 }}
+            transition={SPRING}
+            className="hidden sm:inline-flex"
+          >
+            <Button asChild size="sm">
+              <NavLink to="/chat">Start shopping</NavLink>
+            </Button>
+          </motion.div>
         </div>
       </div>
 

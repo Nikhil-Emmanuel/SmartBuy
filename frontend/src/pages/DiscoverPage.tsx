@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { PackageSearch, Scale, Wallet } from "lucide-react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -11,13 +11,14 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useRecommendations } from "@/hooks/usePlan";
 import { unfulfilledLabel } from "@/lib/format";
-import { listParent } from "@/lib/motion";
+import { listParent, SPRING_BOUNCE } from "@/lib/motion";
 import { MAX_COMPARE_ITEMS, useAppStore } from "@/store/useAppStore";
 import type { Product, Requirement } from "@/types/api";
 
 export function DiscoverPage() {
   const { planId = "" } = useParams();
   const navigate = useNavigate();
+  const reduced = useReducedMotion();
   const { data, isLoading, isError, refetch } = useRecommendations(planId, null);
 
   const compareSelection = useAppStore((s) => s.compareSelection);
@@ -58,8 +59,12 @@ export function DiscoverPage() {
 
   return (
     <div className="mx-auto max-w-6xl space-y-10 px-4 pb-28 pt-8 sm:px-6">
-      <div>
-        <p className="text-xs font-medium uppercase tracking-wide text-primary">Discover</p>
+      <motion.div
+        initial={reduced ? false : { opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.35 }}
+      >
+        <p className="text-xs font-semibold uppercase tracking-wider text-primary">Discover</p>
         <h1 className="mt-1 text-2xl font-semibold text-foreground">
           The best options for each item
         </h1>
@@ -67,7 +72,7 @@ export function DiscoverPage() {
           Ranked on fit, quality, budget, reviews, delivery and deal value. Select up to{" "}
           {MAX_COMPARE_ITEMS} to compare side by side.
         </p>
-      </div>
+      </motion.div>
 
       {data.results.map(({ requirement, recommendations, unfulfilled_reason }) => (
         <section key={requirement.id}>
@@ -115,24 +120,33 @@ export function DiscoverPage() {
       ))}
 
       <div className="fixed inset-x-0 bottom-6 z-30 flex justify-center px-4">
-        <div className="flex items-center gap-3 rounded-full border border-border bg-card/95 px-4 py-2.5 shadow-xl backdrop-blur">
+        <motion.div
+          initial={reduced ? false : { y: 30, opacity: 0, scale: 0.95 }}
+          animate={{ y: 0, opacity: 1, scale: 1 }}
+          transition={SPRING_BOUNCE}
+          className="flex items-center gap-3 rounded-full border border-primary/20 bg-card/85 px-5 py-2.5 shadow-floating-lg backdrop-blur-xl"
+        >
           {compareSelection.length > 0 && (
-            <span className="text-xs text-muted-foreground">
+            <span className="text-xs font-medium text-foreground">
               {compareSelection.length} selected
             </span>
           )}
-          <Button
-            variant="outline"
-            size="sm"
-            disabled={compareSelection.length < 2}
-            onClick={() => navigate(`/plan/${planId}/compare`)}
-          >
-            <Scale className="size-4" /> Compare
-          </Button>
-          <Button size="sm" onClick={() => navigate(`/plan/${planId}`)}>
-            <Wallet className="size-4" /> View shopping plan
-          </Button>
-        </div>
+          <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              variant="outline"
+              size="sm"
+              disabled={compareSelection.length < 2}
+              onClick={() => navigate(`/plan/${planId}/compare`)}
+            >
+              <Scale className="size-4" /> Compare
+            </Button>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.95 }}>
+            <Button size="sm" onClick={() => navigate(`/plan/${planId}`)}>
+              <Wallet className="size-4" /> View shopping plan
+            </Button>
+          </motion.div>
+        </motion.div>
       </div>
 
       <ExplainDialog

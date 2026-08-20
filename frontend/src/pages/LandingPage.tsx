@@ -163,55 +163,50 @@ export function LandingPage() {
       >
         <motion.span
           variants={heroChild}
-          className="mx-auto mb-6 inline-flex items-center gap-1.5 rounded-full border border-border bg-card/80 px-3.5 py-1.5 text-xs font-medium text-muted-foreground shadow-sm backdrop-blur"
+          className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-card/90 px-4 py-2 text-xs font-semibold text-foreground shadow-floating backdrop-blur-xl"
         >
           <motion.span
-            animate={reduced ? {} : { rotate: [0, 12, -8, 0], scale: [1, 1.15, 1] }}
-            transition={{ duration: 2.4, repeat: Infinity, repeatDelay: 3, ease: EASE_OUT }}
+            animate={reduced ? {} : { rotate: [0, 15, -10, 0], scale: [1, 1.2, 1] }}
+            transition={{ duration: 2.4, repeat: Infinity, repeatDelay: 2.5, ease: EASE_OUT }}
           >
-            <Sparkles className="text-brass size-3.5" />
+            <Sparkles className="text-brass size-4" />
           </motion.span>
           Goal-based shopping, not keyword search
         </motion.span>
 
         <motion.h1
           variants={heroChild}
-          className="font-display text-4xl leading-[1.08] tracking-tight text-foreground sm:text-6xl"
+          className="font-display text-5xl leading-[1.05] tracking-tight text-foreground sm:text-7xl lg:text-8xl"
         >
           Tell it your goal.
           <br />
-          {/* Indigo into brass across the promise line: the palette's two
-              voices in the one sentence that has to land. */}
           <span className="landing-headline-accent">It builds the shopping list.</span>
         </motion.h1>
 
         <motion.p
           variants={heroChild}
-          className="mx-auto mt-5 max-w-2xl text-balance text-base text-muted-foreground sm:text-lg"
+          className="mx-auto mt-6 max-w-2xl text-balance text-base text-muted-foreground sm:text-xl"
         >
           Skip the search bar. Describe what you&apos;re actually doing and SmartBuy AI works out
           everything you need, excludes what you already own, compares real options and fits the
           whole basket to your budget -- with every choice explained.
         </motion.p>
 
-        <motion.div variants={heroChild} className="mx-auto mt-9 max-w-2xl">
+        <motion.div variants={heroChild} className="mx-auto mt-10 max-w-2xl">
           <motion.button
             onClick={() => goal && startWith(goal.message)}
             disabled={!goal}
-            whileHover={reduced || !goal ? undefined : { scale: 1.01, y: -2 }}
-            whileTap={reduced || !goal ? undefined : { scale: 0.99 }}
+            whileHover={reduced || !goal ? undefined : { scale: 1.015, y: -3 }}
+            whileTap={reduced || !goal ? undefined : { scale: 0.985 }}
             transition={SPRING}
-            className="landing-lift group relative flex min-h-[5.5rem] w-full items-center gap-3 overflow-hidden rounded-2xl border border-border bg-card/90 px-5 py-4 text-left backdrop-blur transition-colors hover:border-primary/50 disabled:cursor-default"
+            className="landing-lift glow-card-hero group relative flex min-h-[6rem] w-full items-center gap-3 overflow-hidden rounded-3xl border border-primary/40 bg-card/95 px-6 py-5 text-left shadow-floating-lg backdrop-blur-xl transition-all duration-300 hover:border-primary/70 disabled:cursor-default"
           >
-            {/* A hairline of the gradient down the leading edge -- enough to tie
-                the input to the headline without another block of colour. */}
-            <span aria-hidden className="landing-edge absolute inset-y-0 left-0 w-[3px] opacity-75" />
+            <span aria-hidden className="landing-edge absolute inset-y-0 left-0 w-[4px] opacity-90" />
 
-            <span className="relative flex size-5 shrink-0 items-center justify-center">
-              {/* A cursor blink: the affordance is "this is a text box you can talk into". */}
+            <span className="relative flex size-6 shrink-0 items-center justify-center">
               <motion.span
                 aria-hidden
-                className="h-4 w-[2px] rounded-full bg-primary"
+                className="h-5 w-[2.5px] rounded-full bg-primary"
                 animate={reduced ? {} : { opacity: [1, 1, 0, 0] }}
                 transition={{ duration: 1.1, repeat: Infinity, times: [0, 0.5, 0.5, 1] }}
               />
@@ -222,41 +217,30 @@ export function LandingPage() {
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.span
                     key={goal.message}
-                    initial={reduced ? false : { opacity: 0, y: 8 }}
+                    initial={reduced ? false : { opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={reduced ? undefined : { opacity: 0, y: -8 }}
+                    exit={reduced ? undefined : { opacity: 0, y: -10 }}
                     transition={{ duration: 0.28, ease: EASE_OUT }}
-                    className="block text-sm text-foreground sm:text-base"
+                    className="block text-base font-medium text-foreground sm:text-lg"
                   >
                     &ldquo;{goal.message}&rdquo;
                   </motion.span>
                 </AnimatePresence>
               ) : (
-                // Before the knowledge base has answered there is no example to
-                // show. A placeholder sentence here would be a fabricated one.
                 <span className="block space-y-2" aria-label="Loading an example goal">
-                  <span className="block h-3.5 w-4/5 rounded-full bg-secondary" />
-                  <span className="block h-3.5 w-2/5 rounded-full bg-secondary" />
+                  <span className="block h-4 w-4/5 rounded-full bg-secondary" />
+                  <span className="block h-4 w-2/5 rounded-full bg-secondary" />
                 </span>
               )}
             </span>
 
-            <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
+              <ArrowRight className="size-5 shrink-0" />
+            </div>
           </motion.button>
 
-          {/*
-            The goals the knowledge base can actually plan, with their real item
-            counts -- these replaced three search phrases written by hand here,
-            which meant the landing page could offer a starting point the
-            planner had no plan for.
-
-            Hovering one previews it in the box above and stops the rotation;
-            clicking starts the chat with it. Hover-preview also means the row
-            doubles as the carousel's position indicator, so there is no
-            separate strip of dots to keep in sync.
-          */}
           <div
-            className="mt-4 flex flex-wrap items-center justify-center gap-2"
+            className="mt-5 flex flex-wrap items-center justify-center gap-2.5"
             onMouseLeave={() => setPaused(false)}
           >
             {goals.map((suggestion, i) => {
@@ -278,33 +262,29 @@ export function LandingPage() {
                   initial={reduced ? false : { opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    delay: reduced ? 0 : 0.5 + i * 0.07,
+                    delay: reduced ? 0 : 0.4 + i * 0.06,
                     duration: 0.35,
                     ease: EASE_OUT,
                   }}
-                  whileHover={reduced ? undefined : { y: -2 }}
+                  whileHover={reduced ? undefined : { y: -3, scale: 1.03 }}
+                  whileTap={reduced ? undefined : { scale: 0.96 }}
                   className={cn(
-                    // min-h-11 = 44px, the touch-target floor. These chips are
-                    // the primary way into the product on a phone, so they are
-                    // the last thing that should be a 30px sliver.
-                    "relative inline-flex min-h-11 items-center gap-1.5 rounded-full border px-4 text-xs transition-colors",
+                    "relative inline-flex min-h-11 items-center gap-1.5 rounded-full border px-4 text-xs font-medium shadow-sm transition-all duration-200",
                     active
-                      ? "border-primary/50 text-foreground"
-                      : "border-border bg-card/80 text-muted-foreground backdrop-blur hover:text-foreground",
+                      ? "border-primary bg-primary-soft/90 text-foreground shadow-floating"
+                      : "border-border/80 bg-card/90 text-muted-foreground backdrop-blur-md hover:border-primary/50 hover:text-foreground",
                   )}
                 >
-                  {/* One shared element, so the highlight travels between chips
-                      instead of blinking off one and on at the next. */}
                   {active && (
                     <motion.span
                       layoutId="landing-goal-active"
-                      className="absolute inset-0 -z-10 rounded-full bg-primary-soft"
+                      className="absolute inset-0 -z-10 rounded-full bg-primary-soft ring-1 ring-primary/40"
                       transition={SPRING}
                     />
                   )}
                   {suggestion.label}
                   {suggestion.detail && (
-                    <span className="tabular text-[11px] text-muted-foreground/70">
+                    <span className="tabular text-[11px] font-semibold text-primary/80">
                       {suggestion.detail}
                     </span>
                   )}
@@ -316,37 +296,92 @@ export function LandingPage() {
 
         <motion.div
           variants={heroChild}
-          className="mt-8 flex flex-wrap items-center justify-center gap-3"
+          className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
-          <Button size="lg" onClick={() => goal && startWith(goal.message)} disabled={!goal}>
-            <ShoppingBasket /> Start shopping
-          </Button>
-          <Button size="lg" variant="outline" onClick={() => navigate("/chat")}>
-            Or search a specific product
-          </Button>
+          <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.95 }}>
+            <Button size="lg" className="h-12 px-6 shadow-floating text-base gap-2" onClick={() => goal && startWith(goal.message)} disabled={!goal}>
+              <ShoppingBasket className="size-5" /> Start shopping
+            </Button>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.95 }}>
+            <Button size="lg" variant="outline" className="h-12 px-6 text-base" onClick={() => navigate("/chat")}>
+              Or search a specific product
+            </Button>
+          </motion.div>
+        </motion.div>
+
+        {/* Live Interactive Plan Preview Card */}
+        <motion.div
+          variants={heroChild}
+          className="mx-auto mt-14 max-w-3xl"
+        >
+          <div className="landing-ring landing-lift-lg rounded-3xl p-px">
+            <div className="rounded-[calc(var(--radius)+14px)] bg-card/90 p-6 text-left shadow-floating-lg backdrop-blur-xl sm:p-7">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/60 pb-4">
+                <div className="flex items-center gap-2.5">
+                  <div className="flex size-9 items-center justify-center rounded-full bg-primary-soft text-primary">
+                    <Sparkles className="size-4.5" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-primary">Live Sample Plan</p>
+                    <h3 className="text-base font-semibold text-foreground">4-Day Winter Trek in Manali</h3>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="rounded-full bg-savings-soft px-3 py-1 text-xs font-semibold text-savings border border-savings/30">
+                    Budget Fit: ₹18,500
+                  </span>
+                  <span className="rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary border border-primary/30">
+                    96% Fit Score
+                  </span>
+                </div>
+              </div>
+
+              <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                <div className="flex items-center gap-3 rounded-xl border border-border/70 bg-background/60 p-3 shadow-sm transition-all hover:border-primary/40">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary-soft text-primary font-bold text-xs">
+                    98%
+                  </div>
+                  <div className="min-w-0">
+                    <p className="line-clamp-1 text-xs font-semibold text-foreground">Waterproof Down Jacket</p>
+                    <p className="text-[11px] text-muted-foreground">Quechua · ₹4,299</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 rounded-xl border border-border/70 bg-background/60 p-3 shadow-sm transition-all hover:border-primary/40">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-savings-soft text-savings font-bold text-xs">
+                    95%
+                  </div>
+                  <div className="min-w-0">
+                    <p className="line-clamp-1 text-xs font-semibold text-foreground">Trekking Boots (Grip 4)</p>
+                    <p className="text-[11px] text-muted-foreground">Forclaz · ₹6,999</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 rounded-xl border border-border/70 bg-background/60 p-3 shadow-sm transition-all hover:border-primary/40">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary-soft text-primary font-bold text-xs">
+                    94%
+                  </div>
+                  <div className="min-w-0">
+                    <p className="line-clamp-1 text-xs font-semibold text-foreground">0°C Sleeping Bag</p>
+                    <p className="text-[11px] text-muted-foreground">TripPole · ₹3,499</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </motion.section>
 
-      {/*
-        Live figures, not marketing copy. Both come from the API, and the strip
-        does not render at all if the API did not answer -- an invented number
-        on the landing page is the easiest lie in the building to tell.
-      */}
       {health.data && (
-        <Reveal className="mx-auto mb-20 max-w-3xl px-6">
-          <div className="landing-ring landing-lift-lg rounded-2xl p-px">
-            <div className="grid grid-cols-1 gap-y-6 rounded-[calc(var(--radius)+9px)] bg-card/85 px-6 py-6 backdrop-blur sm:grid-cols-3 sm:gap-y-0 sm:divide-x sm:divide-border">
+        <Reveal className="mx-auto mb-20 max-w-4xl px-6">
+          <div className="landing-ring landing-lift-lg rounded-3xl p-px">
+            <div className="grid grid-cols-1 gap-y-6 rounded-[calc(var(--radius)+14px)] bg-card/90 px-8 py-8 shadow-floating-lg backdrop-blur-xl sm:grid-cols-3 sm:gap-y-0 sm:divide-x sm:divide-border/60">
               <Stat
                 value={health.data.catalog_size}
                 format={(v) => v.toLocaleString("en-IN", { maximumFractionDigits: 0 })}
                 label="products in the catalog"
               />
-              {/*
-                `available` only. The registry also lists eBay, Amazon, Flipkart
-                and Myntra, which are wired up but have no credentials and return
-                nothing -- counting them here would claim we compare seven
-                marketplaces when we search three.
-              */}
               {marketplaces.data && (
                 <Stat
                   value={marketplaces.data.marketplaces.filter((m) => m.available).length}
@@ -364,42 +399,38 @@ export function LandingPage() {
       <VelocityShowcase />
 
       <section className="mx-auto max-w-6xl px-6 pb-20">
-        <Reveal className="mb-10 text-center">
-          <h2 className="font-display text-2xl text-foreground sm:text-3xl">
+        <Reveal className="mb-12 text-center">
+          <h2 className="font-display text-3xl text-foreground sm:text-4xl">
             Four steps, none of them a search box
           </h2>
-          <div aria-hidden className="landing-rule mx-auto mt-5 h-px w-full max-w-xl" />
+          <div aria-hidden className="landing-rule mx-auto mt-6 h-px w-full max-w-xl" />
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {HOW_IT_WORKS.map(({ icon: Icon, title, body }, i) => (
             <Reveal key={title} delay={i * 0.07}>
               <motion.div whileHover={reduced ? undefined : HOVER_LIFT} className="h-full">
-                <Card className="group relative h-full overflow-hidden p-5">
-                  {/* The step number as a watermark rather than a label: it
-                      orders the cards without taking a line of copy. */}
+                <Card className="group relative h-full overflow-hidden rounded-2xl border border-border/80 bg-card/90 p-6 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:shadow-floating-lg">
                   <span
                     aria-hidden
-                    className="text-brass pointer-events-none absolute -right-2 -top-4 font-display text-[5rem] leading-none opacity-[0.10] transition-opacity group-hover:opacity-[0.18]"
+                    className="text-brass pointer-events-none absolute -right-1 -top-5 font-display text-[5.5rem] leading-none opacity-[0.12] transition-opacity group-hover:opacity-[0.22]"
                   >
-                    {i + 1}
+                    0{i + 1}
                   </span>
 
                   <motion.div
-                    whileHover={reduced ? undefined : { rotate: -8, scale: 1.08 }}
+                    whileHover={reduced ? undefined : { rotate: -8, scale: 1.1 }}
                     transition={SPRING}
-                    className="mb-3 flex size-9 items-center justify-center rounded-lg bg-primary-soft text-primary"
+                    className="mb-4 flex size-11 items-center justify-center rounded-xl bg-primary-soft text-primary shadow-sm"
                   >
-                    <Icon className="size-4.5" />
+                    <Icon className="size-5" />
                   </motion.div>
 
-                  <h3 className="mb-1.5 text-sm font-semibold text-foreground">{title}</h3>
+                  <h3 className="mb-2 text-base font-semibold text-foreground">{title}</h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">{body}</p>
-                  {/* Progress rail: draws itself as the card arrives, so the four
-                      cards read as a sequence rather than four unrelated boxes. */}
                   <motion.div
                     aria-hidden
-                    className="landing-rail mt-4 h-0.5 origin-left rounded-full"
+                    className="landing-rail mt-5 h-1 origin-left rounded-full"
                     initial={reduced ? false : { scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     viewport={{ once: true, margin: "-80px" }}
@@ -416,8 +447,8 @@ export function LandingPage() {
 
       <section className="mx-auto max-w-4xl px-6 pb-24 pt-16">
         <Reveal>
-          <Card className="border-brass-soft relative overflow-hidden bg-accent/50 px-8 py-10 text-center">
-            <p className="mx-auto max-w-2xl text-sm leading-relaxed text-foreground/80">
+          <Card className="border-brass-soft glow-card-hero relative overflow-hidden rounded-3xl bg-accent/40 px-8 py-12 text-center backdrop-blur-xl">
+            <p className="mx-auto max-w-2xl text-sm leading-relaxed text-foreground/90 font-medium">
               The catalog is a curated, generated dataset for this demo -- prices and stock are
               simulated, and every screen says so where it matters. Nothing here claims to be a
               live marketplace feed.

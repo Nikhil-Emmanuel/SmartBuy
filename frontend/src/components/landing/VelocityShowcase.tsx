@@ -106,24 +106,24 @@ function VelocityTile({
   return (
     <motion.div
       style={reduced ? undefined : { y, rotateY, transformStyle: "preserve-3d" }}
-      whileHover={reduced ? undefined : { scale: 1.06, zIndex: 1 }}
-      transition={{ type: "spring", stiffness: 300, damping: 24 }}
-      className={cn("w-[128px] shrink-0 sm:w-[168px]", className)}
+      whileHover={reduced ? undefined : { scale: 1.08, zIndex: 20 }}
+      transition={{ type: "spring", stiffness: 320, damping: 22 }}
+      className={cn("w-[140px] shrink-0 sm:w-[180px]", className)}
     >
       <button
         type="button"
         onClick={onPick}
-        className="block w-full overflow-hidden rounded-xl border border-border bg-card text-left shadow-sm transition-colors hover:border-primary/50"
+        className="group block w-full overflow-hidden rounded-2xl border border-border/80 bg-card/90 text-left shadow-floating transition-all duration-300 hover:border-primary/60 hover:shadow-floating-lg backdrop-blur-md"
       >
         <ProductImage
           category={product.category}
           subcategory={product.subcategory}
           seed={product.id}
-          className="aspect-[4/3] w-full"
+          className="aspect-[4/3] w-full transition-transform duration-500 ease-out group-hover:scale-110"
         />
-        <div className="p-2.5">
-          <p className="line-clamp-2 text-xs leading-snug text-foreground">{product.name}</p>
-          <p className="tabular mt-1 text-xs font-semibold text-foreground">
+        <div className="p-3">
+          <p className="line-clamp-2 text-xs font-medium leading-snug text-foreground transition-colors group-hover:text-primary">{product.name}</p>
+          <p className="tabular mt-1.5 text-xs font-bold text-foreground">
             {rupees(product.price)}
           </p>
         </div>

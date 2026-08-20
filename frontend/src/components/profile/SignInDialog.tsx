@@ -29,7 +29,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useDemoShoppers } from "@/hooks/useProfile";
-import { EASE_OUT, listChild, listParent } from "@/lib/motion";
+import { listChild, listParent, SPRING_BOUNCE } from "@/lib/motion";
 import { adoptSession, resetSession, sessionId } from "@/services/client";
 
 export function SignInDialog({
@@ -54,7 +54,7 @@ export function SignInDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-lg">
+      <DialogContent className="max-w-lg rounded-2xl glass-panel border-border/60 shadow-floating-lg">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <LogIn className="size-4 text-primary" /> Choose a shopper
@@ -83,13 +83,14 @@ export function SignInDialog({
                     variants={listChild}
                     type="button"
                     onClick={() => switchTo(shopper.user_id)}
-                    whileHover={reduced ? undefined : { x: 3 }}
-                    transition={{ duration: 0.18, ease: EASE_OUT }}
+                    whileHover={reduced ? undefined : { x: 4, scale: 1.01 }}
+                    whileTap={reduced ? undefined : { scale: 0.98 }}
+                    transition={SPRING_BOUNCE}
                     className={
-                      "flex w-full items-center gap-3 rounded-xl border p-3 text-left transition-colors " +
+                      "flex w-full items-center gap-3 rounded-xl border p-3 text-left transition-colors shadow-sm " +
                       (active
-                        ? "border-primary bg-primary-soft"
-                        : "border-border bg-card hover:border-primary/40")
+                        ? "border-primary bg-primary-soft/80 shadow-floating"
+                        : "border-border/70 bg-card/80 hover:border-primary/40")
                     }
                   >
                     <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-secondary text-muted-foreground">

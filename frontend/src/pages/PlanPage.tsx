@@ -123,7 +123,7 @@ export function PlanPage() {
         onSelect={handleSelect}
       />
 
-      <Card>
+      <Card className="glass-panel shadow-floating rounded-2xl border-border/60">
         <CardContent className="grid grid-cols-2 gap-4 p-5 sm:grid-cols-4">
           <Stat label="Budget" value={data.totals.budget} />
           <Stat label="This bundle" value={bundle.total_cost} danger={overBudget} />

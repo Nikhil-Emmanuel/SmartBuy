@@ -49,10 +49,11 @@ export function ComparisonTable({
               <motion.div
                 key={badge}
                 layout={!reduced}
-                initial={reduced ? false : { opacity: 0, scale: 0.9 }}
+                initial={reduced ? false : { opacity: 0, scale: 0.88 }}
                 animate={{ opacity: 1, scale: 1 }}
+                whileHover={reduced ? undefined : { y: -2, scale: 1.02 }}
                 transition={{ ...SPRING, delay: reduced ? 0 : i * 0.05 }}
-                className="flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-xs"
+                className="flex items-center gap-1.5 rounded-full border border-border/80 bg-card/90 px-3 py-1.5 text-xs shadow-sm backdrop-blur-sm"
               >
                 <Badge variant="accent">{badgeLabel(badge)}</Badge>
                 <span className="max-w-[10rem] truncate text-muted-foreground">
@@ -64,7 +65,7 @@ export function ComparisonTable({
         </div>
       )}
 
-      <div className="overflow-x-auto rounded-xl border border-border">
+      <div className="overflow-x-auto rounded-2xl border border-border/70 bg-card/60 shadow-floating backdrop-blur-md">
         <table className="w-full min-w-[720px] border-collapse text-sm">
           <thead>
             <tr className="border-b border-border bg-muted/50">

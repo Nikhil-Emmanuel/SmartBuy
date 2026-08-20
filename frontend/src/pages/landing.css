@@ -102,85 +102,85 @@
 }
 
 /* --------------------------------------------------------------------------
-   Ambient art
+   Ambient art & Vibrant Overhauls
    -------------------------------------------------------------------------- */
 
-/*
-  Four overlapping radial washes rather than the two in `.aurora`. The extra
-  stops are what stop a gradient looking like a gradient: with brass low-right
-  against indigo top-left the eye reads depth instead of a colour ramp.
-*/
+/* Multi-stop vibrant radial aurora washes with animated depth */
 .landing-mesh {
   background-image:
     radial-gradient(
-      62rem 34rem at 8% -10%,
-      color-mix(in oklab, var(--primary) 26%, transparent),
-      transparent 60%
-    ),
-    radial-gradient(
-      44rem 30rem at 96% -2%,
-      color-mix(in oklab, var(--orchid) 20%, transparent),
+      64rem 36rem at 10% -12%,
+      color-mix(in oklab, var(--primary) 32%, transparent),
       transparent 62%
     ),
     radial-gradient(
-      50rem 26rem at 78% 34%,
-      color-mix(in oklab, var(--brass) 16%, transparent),
-      transparent 66%
+      48rem 32rem at 92% -4%,
+      color-mix(in oklab, var(--orchid) 28%, transparent),
+      transparent 64%
     ),
     radial-gradient(
-      40rem 24rem at 22% 46%,
-      color-mix(in oklab, var(--primary) 12%, transparent),
+      54rem 28rem at 75% 36%,
+      color-mix(in oklab, var(--brass) 22%, transparent),
       transparent 68%
+    ),
+    radial-gradient(
+      45rem 26rem at 20% 50%,
+      color-mix(in oklab, var(--primary) 18%, transparent),
+      transparent 70%
     );
 }
 
-/* Same idea as `.grid-faint` but keyed to the landing border tone and faded
-   out further down, so the hero has structure and the content below is clean. */
 .landing-grid {
   background-image:
-    linear-gradient(to right, color-mix(in oklab, var(--border) 70%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklab, var(--border) 70%, transparent) 1px, transparent 1px);
-  background-size: 52px 52px;
-  mask-image: radial-gradient(64% 54% at 50% 0%, #000 0%, transparent 100%);
+    linear-gradient(to right, color-mix(in oklab, var(--border) 80%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--border) 80%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(70% 60% at 50% 0%, #000 0%, transparent 100%);
 }
 
-/*
-  Film grain. Flat colour on a large surface reads as cheap on high-DPI
-  screens; a fraction of a percent of noise is the difference between "printed"
-  and "filled with a paint bucket". Fixed attachment so it does not swim while
-  the page scrolls.
-*/
 .landing-grain::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.45;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.32'/%3E%3C/svg%3E");
   mix-blend-mode: multiply;
 }
 
 .dark .landing-grain::after {
   mix-blend-mode: screen;
-  opacity: 0.28;
+  opacity: 0.25;
 }
 
-/* The headline. Brass on the second line rather than a flat primary, so the
-   promise ("it builds the list") is the warm half of the palette. */
+/* Metallic gradient shimmer headline text */
+@keyframes text-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .landing-headline-accent {
-  background-image: linear-gradient(
-    100deg,
+  background: linear-gradient(
+    110deg,
     var(--primary) 0%,
-    var(--orchid) 46%,
-    var(--brass) 100%
+    var(--orchid) 35%,
+    var(--brass) 70%,
+    var(--primary) 100%
   );
+  background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  animation: text-shimmer 6s ease infinite;
 }
 
-/* Fallback for the handful of engines that clip gradients badly: if the text
-   would end up invisible, keep it a solid readable colour. */
 @supports not (background-clip: text) {
   .landing-headline-accent {
     background-image: none;
@@ -188,7 +188,6 @@
   }
 }
 
-/* Section rules that fade at both ends instead of running wall to wall. */
 .landing-rule {
   background-image: linear-gradient(
     to right,
@@ -200,40 +199,31 @@
 }
 
 /* --------------------------------------------------------------------------
-   Gradient helpers
-   --------------------------------------------------------------------------
-   These live here rather than as Tailwind arbitrary values (`to-[var(--brass)]`)
-   for two reasons: the alpha variants need `color-mix`, which is awkward to
-   inline, and keeping them named means a component still never mentions a
-   colour it did not get from a token.
+   Gradient & Glow helpers
    -------------------------------------------------------------------------- */
 
-/* Scroll position. Left to right, indigo through to brass. */
 .landing-progress {
   background-image: linear-gradient(to right, var(--primary), var(--orchid), var(--brass));
 }
 
-/* The hairline down the leading edge of the prompt box. */
 .landing-edge {
   background-image: linear-gradient(to bottom, var(--primary), var(--orchid), var(--brass));
 }
 
-/* Gradient hairline border, drawn as a 1px padded wrapper around a solid card. */
 .landing-ring {
   background-image: linear-gradient(
     110deg,
-    color-mix(in oklab, var(--primary) 34%, transparent),
-    color-mix(in oklab, var(--orchid) 26%, transparent),
-    color-mix(in oklab, var(--brass) 34%, transparent)
+    color-mix(in oklab, var(--primary) 45%, transparent),
+    color-mix(in oklab, var(--orchid) 40%, transparent),
+    color-mix(in oklab, var(--brass) 45%, transparent)
   );
 }
 
-/* The rail under each "how it works" card. */
 .landing-rail {
   background-image: linear-gradient(
     to right,
-    color-mix(in oklab, var(--primary) 55%, transparent),
-    color-mix(in oklab, var(--brass) 55%, transparent)
+    color-mix(in oklab, var(--primary) 70%, transparent),
+    color-mix(in oklab, var(--brass) 70%, transparent)
   );
 }
 
@@ -242,17 +232,23 @@
 }
 
 .border-brass-soft {
-  border-color: color-mix(in oklab, var(--brass) 30%, transparent);
+  border-color: color-mix(in oklab, var(--brass) 40%, transparent);
 }
 
-/* Warm depth under the raised elements. A neutral grey drop shadow on a warm
-   page reads as dirt; tinting it toward the primary keeps it as light. */
 .landing-lift {
   box-shadow:
-    0 1px 2px color-mix(in oklab, var(--foreground) 5%, transparent),
-    0 14px 42px -18px color-mix(in oklab, var(--primary) 42%, transparent);
+    0 4px 16px color-mix(in oklab, var(--foreground) 6%, transparent),
+    0 18px 50px -16px color-mix(in oklab, var(--primary) 35%, transparent);
 }
 
 .landing-lift-lg {
-  box-shadow: 0 22px 56px -30px color-mix(in oklab, var(--primary) 55%, transparent);
+  box-shadow:
+    0 10px 30px color-mix(in oklab, var(--foreground) 8%, transparent),
+    0 28px 70px -25px color-mix(in oklab, var(--primary) 48%, transparent);
+}
+
+.glow-card-hero {
+  box-shadow:
+    0 0 40px -8px color-mix(in oklab, var(--primary) 30%, transparent),
+    inset 0 0 20px -5px color-mix(in oklab, var(--primary) 12%, transparent);
 }
