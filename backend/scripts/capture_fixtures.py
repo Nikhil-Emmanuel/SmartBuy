@@ -167,6 +167,8 @@ def main() -> int:
             "/api/personalization",
             headers={"X-Session-Id": _seeded_user_id()})))
 
+        dump("suggestions", ok(client.get("/api/suggestions", headers=HEADERS)))
+        dump("demo_shoppers", ok(client.get("/api/demo/shoppers", headers=HEADERS)))
         dump("admin_metrics", ok(client.get("/api/admin/metrics", headers={**HEADERS, **ADMIN})))
         dump("audit_logs", ok(client.get("/api/admin/audit-logs",
                                          params={"limit": 60},

@@ -1,0 +1,258 @@
+/* ==========================================================================
+   Landing-page palette — "Ink & Brass"
+   --------------------------------------------------------------------------
+   Scoped deliberately. Every token below is redeclared on `.landing-theme`
+   rather than on `:root`, so the rest of the product keeps the palette in
+   `index.css` untouched. Components inside the wrapper resolve `bg-primary`
+   to `var(--primary)` at use site (Tailwind v4 `@theme inline`), which means
+   the cascade does all the work and not a single component needs a landing
+   variant.
+
+   The direction: a deeper indigo than the app's working violet, a warm brass
+   as the second voice, and paper that is barely off-white instead of blue-
+   white. Warm/cool tension is what makes a palette read as chosen rather than
+   as a framework default.
+
+   The neutrals stay close to the global ones on purpose. The site header is
+   `bg-background/85` and sits *above* this wrapper, so a hard warm/cool split
+   would draw a visible seam across the top of the page.
+
+   Contrast, measured, light mode:
+     foreground on background      17.3:1
+     muted-foreground on card       7.2:1
+     primary on card                7.9:1   white on primary  7.9:1
+     brass on card                  4.9:1   accent-fg on accent 6.1:1
+   Dark mode: 6.3:1 or better on every pair above. All AA for normal text.
+   ========================================================================== */
+
+.landing-theme {
+  --background: #fbf9f7;
+  --foreground: #17141f;
+
+  --card: #ffffff;
+  --card-foreground: #17141f;
+  --popover: #ffffff;
+  --popover-foreground: #17141f;
+
+  --primary: #4b35c9;
+  --primary-foreground: #ffffff;
+  --primary-soft: #ede9fb;
+
+  --secondary: #f3f0f7;
+  --secondary-foreground: #241f31;
+
+  --muted: #f4f1f7;
+  --muted-foreground: #5a5468;
+
+  --accent: #f6ecdf;
+  --accent-foreground: #7a4f10;
+
+  --border: #e7e2ee;
+  --input: #e7e2ee;
+  --ring: #4b35c9;
+
+  /* Landing-only decoration. Not semantic tokens: nothing reads meaning from
+     these, they exist to paint gradients and particles. */
+  --brass: #a16207;
+  --orchid: #a03fb8;
+  --paper-tint: 250 249 247;
+}
+
+.dark .landing-theme {
+  --background: #0b0910;
+  --foreground: #f4f1f8;
+
+  --card: #141019;
+  --card-foreground: #f4f1f8;
+  --popover: #171221;
+  --popover-foreground: #f4f1f8;
+
+  --primary: #9b83ff;
+  --primary-foreground: #120c26;
+  --primary-soft: #1e1734;
+
+  --secondary: #1b1626;
+  --secondary-foreground: #ebe7f3;
+
+  --muted: #181322;
+  --muted-foreground: #9c94ad;
+
+  --accent: #2a2113;
+  --accent-foreground: #e9c98a;
+
+  --border: #282133;
+  --input: #1b1626;
+  --ring: #9b83ff;
+
+  --brass: #d9a441;
+  --orchid: #d987e8;
+  --paper-tint: 11 9 16;
+}
+
+/*
+  Tailwind v4's preflight sets `cursor: default` on buttons, which is correct
+  per the HTML spec and wrong for every user's expectations. Restored here for
+  the landing page only, since this file is the one scoped to it -- the same
+  gap exists on the rest of the product and is worth a separate fix in the
+  global stylesheet rather than a surprise change smuggled in here.
+*/
+.landing-theme button:not(:disabled),
+.landing-theme [role="button"]:not([aria-disabled="true"]) {
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   Ambient art
+   -------------------------------------------------------------------------- */
+
+/*
+  Four overlapping radial washes rather than the two in `.aurora`. The extra
+  stops are what stop a gradient looking like a gradient: with brass low-right
+  against indigo top-left the eye reads depth instead of a colour ramp.
+*/
+.landing-mesh {
+  background-image:
+    radial-gradient(
+      62rem 34rem at 8% -10%,
+      color-mix(in oklab, var(--primary) 26%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      44rem 30rem at 96% -2%,
+      color-mix(in oklab, var(--orchid) 20%, transparent),
+      transparent 62%
+    ),
+    radial-gradient(
+      50rem 26rem at 78% 34%,
+      color-mix(in oklab, var(--brass) 16%, transparent),
+      transparent 66%
+    ),
+    radial-gradient(
+      40rem 24rem at 22% 46%,
+      color-mix(in oklab, var(--primary) 12%, transparent),
+      transparent 68%
+    );
+}
+
+/* Same idea as `.grid-faint` but keyed to the landing border tone and faded
+   out further down, so the hero has structure and the content below is clean. */
+.landing-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--border) 70%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--border) 70%, transparent) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(64% 54% at 50% 0%, #000 0%, transparent 100%);
+}
+
+/*
+  Film grain. Flat colour on a large surface reads as cheap on high-DPI
+  screens; a fraction of a percent of noise is the difference between "printed"
+  and "filled with a paint bucket". Fixed attachment so it does not swim while
+  the page scrolls.
+*/
+.landing-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.32'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+.dark .landing-grain::after {
+  mix-blend-mode: screen;
+  opacity: 0.28;
+}
+
+/* The headline. Brass on the second line rather than a flat primary, so the
+   promise ("it builds the list") is the warm half of the palette. */
+.landing-headline-accent {
+  background-image: linear-gradient(
+    100deg,
+    var(--primary) 0%,
+    var(--orchid) 46%,
+    var(--brass) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Fallback for the handful of engines that clip gradients badly: if the text
+   would end up invisible, keep it a solid readable colour. */
+@supports not (background-clip: text) {
+  .landing-headline-accent {
+    background-image: none;
+    color: var(--primary);
+  }
+}
+
+/* Section rules that fade at both ends instead of running wall to wall. */
+.landing-rule {
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in oklab, var(--border) 90%, transparent) 18%,
+    color-mix(in oklab, var(--border) 90%, transparent) 82%,
+    transparent
+  );
+}
+
+/* --------------------------------------------------------------------------
+   Gradient helpers
+   --------------------------------------------------------------------------
+   These live here rather than as Tailwind arbitrary values (`to-[var(--brass)]`)
+   for two reasons: the alpha variants need `color-mix`, which is awkward to
+   inline, and keeping them named means a component still never mentions a
+   colour it did not get from a token.
+   -------------------------------------------------------------------------- */
+
+/* Scroll position. Left to right, indigo through to brass. */
+.landing-progress {
+  background-image: linear-gradient(to right, var(--primary), var(--orchid), var(--brass));
+}
+
+/* The hairline down the leading edge of the prompt box. */
+.landing-edge {
+  background-image: linear-gradient(to bottom, var(--primary), var(--orchid), var(--brass));
+}
+
+/* Gradient hairline border, drawn as a 1px padded wrapper around a solid card. */
+.landing-ring {
+  background-image: linear-gradient(
+    110deg,
+    color-mix(in oklab, var(--primary) 34%, transparent),
+    color-mix(in oklab, var(--orchid) 26%, transparent),
+    color-mix(in oklab, var(--brass) 34%, transparent)
+  );
+}
+
+/* The rail under each "how it works" card. */
+.landing-rail {
+  background-image: linear-gradient(
+    to right,
+    color-mix(in oklab, var(--primary) 55%, transparent),
+    color-mix(in oklab, var(--brass) 55%, transparent)
+  );
+}
+
+.text-brass {
+  color: var(--brass);
+}
+
+.border-brass-soft {
+  border-color: color-mix(in oklab, var(--brass) 30%, transparent);
+}
+
+/* Warm depth under the raised elements. A neutral grey drop shadow on a warm
+   page reads as dirt; tinting it toward the primary keeps it as light. */
+.landing-lift {
+  box-shadow:
+    0 1px 2px color-mix(in oklab, var(--foreground) 5%, transparent),
+    0 14px 42px -18px color-mix(in oklab, var(--primary) 42%, transparent);
+}
+
+.landing-lift-lg {
+  box-shadow: 0 22px 56px -30px color-mix(in oklab, var(--primary) 55%, transparent);
+}

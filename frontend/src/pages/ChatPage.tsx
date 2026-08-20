@@ -5,8 +5,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import { ChatBubble, TypingIndicator } from "@/components/chat/ChatBubble";
 import { ChatComposer } from "@/components/chat/ChatComposer";
-import { ChipRow } from "@/components/chat/ChipRow";
 import { SlotSidebar } from "@/components/chat/SlotSidebar";
+import { SuggestionDeck } from "@/components/chat/SuggestionDeck";
 import { Button } from "@/components/ui/button";
 import { useSendMessage, useSession, useUpdateSlots } from "@/hooks/useChat";
 import { FADE, SPRING } from "@/lib/motion";
@@ -40,14 +40,8 @@ const EMPTY_SLOTS: Slots = {
 };
 
 const GREETING =
-  "Tell me what you're shopping for -- a goal like a trip or move, or a specific product. " +
-  "I'll work out the details as we go.";
-
-const STARTER_CHIPS = [
-  "4-day trek in Manali",
-  "Setting up my first flat",
-  "Waterproof shoes under Rs 3,000",
-];
+  "Pick one of the options below to get started -- a goal like a trip or a move, or a category " +
+  "to browse. You can also type a specific product if you already know what you want.";
 
 export function ChatPage() {
   const navigate = useNavigate();
@@ -83,6 +77,15 @@ export function ChatPage() {
     );
     setSlots(session.slots);
   }, [session, messages.length]);
+
+  // Slots have two writers. A chat turn sets them from its own payload below;
+  // a manual edit in the sidebar comes back as a session, which `useUpdateSlots`
+  // writes into this query's cache -- so following the cache is what makes the
+  // corrected budget show up. Sending a message does not touch this query, so
+  // this cannot overwrite a fresher turn.
+  useEffect(() => {
+    if (session) setSlots(session.slots);
+  }, [session]);
 
   // React to the store rather than the mutation object -- see the note on
   // `lastChatTurn` in useAppStore for why the mutation's own callbacks and
@@ -164,7 +167,6 @@ export function ChatPage() {
                 className="space-y-4"
               >
                 <ChatBubble role="assistant" content={GREETING} />
-                <ChipRow chips={STARTER_CHIPS} onSelect={handleSend} />
               </motion.div>
             )}
           </AnimatePresence>
@@ -193,10 +195,6 @@ export function ChatPage() {
               </motion.div>
             )}
           </AnimatePresence>
-
-          {settled && turn && turn.chips.length > 0 && (
-            <ChipRow chips={turn.chips} onSelect={handleSend} />
-          )}
 
           {settled && nextAction && nextAction !== "none" && nextAction !== "answer_question" && planId && (
             <motion.div
@@ -230,7 +228,18 @@ export function ChatPage() {
           )}
         </div>
 
-        <div className="border-t border-border p-4">
+        {/*
+          The tray sits above the composer and is always mounted -- that is the
+          point. Agent chips ride on top of it when the assistant has asked
+          something specific, so the answer to the current question is never
+          buried under the general options.
+        */}
+        <div className="space-y-3 border-t border-border p-4">
+          <SuggestionDeck
+            onSelect={handleSend}
+            disabled={waiting}
+            agentChips={settled ? turn?.chips : undefined}
+          />
           <ChatComposer onSend={handleSend} disabled={waiting} />
         </div>
       </div>

@@ -1,5 +1,5 @@
 {
-  "plan_id": "d4eeafc1-8e9a-483f-9e14-5add95552138",
+  "plan_id": "05d0072a-c8e9-4a33-8155-304c76f46b83",
   "goal": "I'm going for a 4-day winter trek in Manali, budget Rs 15,000, I'm a beginner, I already have trekking shoes and a backpack",
   "goal_summary": "",
   "status": "complete",
@@ -31,7 +31,7 @@
   "requirements": {
     "essential": [
       {
-        "id": "0f871525-1fae-447f-9c6b-0e18b244475d",
+        "id": "0841b001-bd7a-4ece-ad82-f115ce82a570",
         "kb_item_key": "first_aid_kit",
         "item_name": "First-Aid Kit",
         "category": "safety",
@@ -53,7 +53,7 @@
         "unfulfilled_reason": null
       },
       {
-        "id": "0c61f7f0-8e66-4e15-b53f-18aaab279738",
+        "id": "4744c580-d092-461b-89a8-d52a747f5758",
         "kb_item_key": "headlamp",
         "item_name": "Headlamp",
         "category": "navigation",
@@ -74,7 +74,7 @@
         "unfulfilled_reason": null
       },
       {
-        "id": "d75656c0-b0af-4742-80ec-fd828025bcd7",
+        "id": "d0eefbc9-e9c1-418b-9544-09d801cd8b8a",
         "kb_item_key": "winter_gloves",
         "item_name": "Insulated Gloves",
         "category": "accessories",
@@ -97,7 +97,7 @@
         "unfulfilled_reason": null
       },
       {
-        "id": "1a930477-a01d-4786-a5a4-41ee63da0dc9",
+        "id": "8a41306a-1e1e-4fbd-a9ef-dbd895173642",
         "kb_item_key": "insulated_jacket",
         "item_name": "Insulated Trekking Jacket",
         "category": "outerwear",
@@ -121,7 +121,7 @@
         "unfulfilled_reason": null
       },
       {
-        "id": "e6f9f9c4-0ea9-4249-a489-9ca1441f690c",
+        "id": "bf2afca7-d96d-4761-8cde-e4973b62f662",
         "kb_item_key": "water_bottle",
         "item_name": "Insulated Water Bottle",
         "category": "hydration",
@@ -143,7 +143,7 @@
         "unfulfilled_reason": null
       },
       {
-        "id": "f359c5a1-3098-4217-ad76-21e6f18b476f",
+        "id": "dc5e9b4b-696c-42a8-9707-5f24149a7a43",
         "kb_item_key": "sleeping_bag",
         "item_name": "Sub-Zero Sleeping Bag",
         "category": "camping",
@@ -166,7 +166,7 @@
         "unfulfilled_reason": null
       },
       {
-        "id": "e27be9b4-d3f9-4eb7-902d-96545687f943",
+        "id": "a84b93fc-e7c6-43ca-9368-76c8cc04f369",
         "kb_item_key": "tent",
         "item_name": "Tent",
         "category": "camping",
@@ -189,7 +189,7 @@
         "unfulfilled_reason": null
       },
       {
-        "id": "5eb55745-ec76-471a-a556-044074e0b246",
+        "id": "1cd5dbec-4310-4d3f-9149-ebcb04620119",
         "kb_item_key": "thermal_base_layer",
         "item_name": "Thermal Base Layer",
         "category": "clothing",
@@ -212,7 +212,7 @@
         "unfulfilled_reason": null
       },
       {
-        "id": "f47ae8db-9061-4a8d-9313-24343bae2991",
+        "id": "42f68349-9331-4c3c-8a20-3d444b76f5e7",
         "kb_item_key": "trekking_socks",
         "item_name": "Thermal Woolen Socks",
         "category": "clothing",
@@ -235,7 +235,7 @@
         "unfulfilled_reason": null
       },
       {
-        "id": "0cf64097-1710-4f63-9907-7872a6c46539",
+        "id": "4a959280-f415-46ef-a784-9197d9b716fe",
         "kb_item_key": "backpack",
         "item_name": "Trekking Backpack",
         "category": "equipment",
@@ -257,7 +257,7 @@
         "unfulfilled_reason": null
       },
       {
-        "id": "1bf933b9-1ac6-4dc1-84c4-7285aaefb971",
+        "id": "f0b03b75-5eda-47e0-a874-0bf15cea37fa",
         "kb_item_key": "trekking_pants",
         "item_name": "Trekking Pants",
         "category": "clothing",
@@ -279,7 +279,7 @@
         "unfulfilled_reason": null
       },
       {
-        "id": "f0447a99-c731-4f91-ad75-6b81ce6b2fc2",
+        "id": "ebaf1ca6-b8ee-471a-8848-b36ca9e4f40f",
         "kb_item_key": "trekking_poles",
         "item_name": "Trekking Poles",
         "category": "equipment",
@@ -302,7 +302,7 @@
         "unfulfilled_reason": null
       },
       {
-        "id": "4e30c051-2827-42e7-b932-e7d200d13146",
+        "id": "107c525b-f8bb-46c1-a2af-8e00be733264",
         "kb_item_key": "trekking_shoes",
         "item_name": "Winter Trekking Shoes",
         "category": "footwear",
@@ -326,7 +326,7 @@
         "unfulfilled_reason": null
       },
       {
-        "id": "8aaf5e81-1c48-417e-a3f8-3ac453ca6ea8",
+        "id": "dbad0315-3dc6-4f3a-8423-dfcb76bc85e1",
         "kb_item_key": "winter_headwear",
         "item_name": "Woolen Cap / Beanie",
         "category": "accessories",
@@ -350,7 +350,7 @@
     ],
     "recommended": [
       {
-        "id": "0e8a9332-becf-4318-b262-0bc826ec9834",
+        "id": "30d1238e-7bb2-4718-9208-dc794693e85a",
         "kb_item_key": "emergency_blanket",
         "item_name": "Emergency Thermal Blanket",
         "category": "safety",
@@ -371,7 +371,7 @@
         "unfulfilled_reason": null
       },
       {
-        "id": "0263f46f-1f80-4723-b3b7-ccdd214a3b34",
+        "id": "1d4d2412-8e75-478f-95dc-b09ac8743c9d",
         "kb_item_key": "fleece_midlayer",
         "item_name": "Fleece Mid-Layer",
         "category": "clothing",
@@ -394,7 +394,7 @@
         "unfulfilled_reason": "budget_prioritized"
       },
       {
-        "id": "8775ba51-2ba8-458a-a036-8b3316d854d6",
+        "id": "8d408c19-af1e-463b-9c21-cc16c72c1849",
         "kb_item_key": "neck_gaiter",
         "item_name": "Neck Gaiter / Buff",
         "category": "accessories",
@@ -415,7 +415,7 @@
         "unfulfilled_reason": "budget_prioritized"
       },
       {
-        "id": "5f4315b2-3a64-4dc5-8bc0-8964dc94d4e2",
+        "id": "5e83a7c2-0255-44c6-843f-a259a650fbf1",
         "kb_item_key": "power_bank",
         "item_name": "Power Bank",
         "category": "electronics",
@@ -438,7 +438,7 @@
         "unfulfilled_reason": "budget_prioritized"
       },
       {
-        "id": "1d6a0f89-2081-499b-9147-28d2409af510",
+        "id": "80230cac-53fd-4c65-ac4e-705818b90ccc",
         "kb_item_key": "rain_protection",
         "item_name": "Rain Poncho / Jacket",
         "category": "outerwear",
@@ -461,7 +461,7 @@
         "unfulfilled_reason": "budget_prioritized"
       },
       {
-        "id": "4ac6802d-f37b-473c-8f36-b7649731b395",
+        "id": "3589e93b-d66a-40db-8d38-e0073cee6d2f",
         "kb_item_key": "sleeping_mat",
         "item_name": "Sleeping Mat",
         "category": "camping",
@@ -482,7 +482,7 @@
         "unfulfilled_reason": "budget_prioritized"
       },
       {
-        "id": "eefc9d68-7112-4d30-a5f1-9a6c22787fe5",
+        "id": "76651647-3b89-41a6-afbd-1fc045718248",
         "kb_item_key": "sunscreen",
         "item_name": "Sunscreen SPF 50+",
         "category": "personal_care",
@@ -503,7 +503,7 @@
         "unfulfilled_reason": "budget_prioritized"
       },
       {
-        "id": "804218af-7517-4ee7-a0f6-a377ad1c8d93",
+        "id": "291b1c53-4ae9-4021-a864-ae47eed49244",
         "kb_item_key": "thermos_flask",
         "item_name": "Thermos Flask",
         "category": "hydration",
@@ -525,7 +525,7 @@
         "unfulfilled_reason": "budget_prioritized"
       },
       {
-        "id": "d9a8cc2f-a965-4099-aa49-cde032b013bb",
+        "id": "032d6690-5cc5-4c48-9b24-dba91836e3cc",
         "kb_item_key": "sunglasses",
         "item_name": "UV Sunglasses",
         "category": "accessories",
@@ -549,7 +549,7 @@
     ],
     "optional": [
       {
-        "id": "da49a870-c32c-4363-ab52-69b35a82eb22",
+        "id": "330ed784-0bb3-4d93-8488-f8a1d5ac18b9",
         "kb_item_key": "dry_bag",
         "item_name": "Dry Bag / Rain Cover",
         "category": "storage",
@@ -571,7 +571,7 @@
         "unfulfilled_reason": "budget_prioritized"
       },
       {
-        "id": "a573ef8b-7e7a-4a84-860c-054a3f6f7d54",
+        "id": "d9a9f845-0bc0-4aed-a791-6d1a6bebcedb",
         "kb_item_key": "multi_tool",
         "item_name": "Multi-Tool",
         "category": "equipment",
@@ -593,7 +593,7 @@
         "unfulfilled_reason": "budget_prioritized"
       },
       {
-        "id": "beb984a2-47ad-4912-9502-22d842c7c7d6",
+        "id": "e2215787-2cc6-4234-8ceb-718d48d2076b",
         "kb_item_key": "quick_dry_towel",
         "item_name": "Quick-Dry Towel",
         "category": "personal_care",
@@ -615,7 +615,7 @@
         "unfulfilled_reason": "budget_prioritized"
       },
       {
-        "id": "6fc176bb-89bc-4d49-8293-197c85ca8f3a",
+        "id": "2600138a-e15d-49be-bf32-35552d480fae",
         "kb_item_key": "snow_gaiters",
         "item_name": "Snow Gaiters",
         "category": "accessories",
@@ -661,7 +661,7 @@
       "items": [
         {
           "requirement": {
-            "id": "0f871525-1fae-447f-9c6b-0e18b244475d",
+            "id": "0841b001-bd7a-4ece-ad82-f115ce82a570",
             "kb_item_key": "first_aid_kit",
             "item_name": "First-Aid Kit",
             "category": "safety",
@@ -729,7 +729,7 @@
         },
         {
           "requirement": {
-            "id": "0c61f7f0-8e66-4e15-b53f-18aaab279738",
+            "id": "4744c580-d092-461b-89a8-d52a747f5758",
             "kb_item_key": "headlamp",
             "item_name": "Headlamp",
             "category": "navigation",
@@ -801,7 +801,7 @@
         },
         {
           "requirement": {
-            "id": "d75656c0-b0af-4742-80ec-fd828025bcd7",
+            "id": "d0eefbc9-e9c1-418b-9544-09d801cd8b8a",
             "kb_item_key": "winter_gloves",
             "item_name": "Insulated Gloves",
             "category": "accessories",
@@ -871,7 +871,7 @@
         },
         {
           "requirement": {
-            "id": "1a930477-a01d-4786-a5a4-41ee63da0dc9",
+            "id": "8a41306a-1e1e-4fbd-a9ef-dbd895173642",
             "kb_item_key": "insulated_jacket",
             "item_name": "Insulated Trekking Jacket",
             "category": "outerwear",
@@ -948,7 +948,7 @@
         },
         {
           "requirement": {
-            "id": "e6f9f9c4-0ea9-4249-a489-9ca1441f690c",
+            "id": "bf2afca7-d96d-4761-8cde-e4973b62f662",
             "kb_item_key": "water_bottle",
             "item_name": "Insulated Water Bottle",
             "category": "hydration",
@@ -1018,7 +1018,7 @@
         },
         {
           "requirement": {
-            "id": "f359c5a1-3098-4217-ad76-21e6f18b476f",
+            "id": "dc5e9b4b-696c-42a8-9707-5f24149a7a43",
             "kb_item_key": "sleeping_bag",
             "item_name": "Sub-Zero Sleeping Bag",
             "category": "camping",
@@ -1090,7 +1090,7 @@
         },
         {
           "requirement": {
-            "id": "e27be9b4-d3f9-4eb7-902d-96545687f943",
+            "id": "a84b93fc-e7c6-43ca-9368-76c8cc04f369",
             "kb_item_key": "tent",
             "item_name": "Tent",
             "category": "camping",
@@ -1159,7 +1159,7 @@
         },
         {
           "requirement": {
-            "id": "5eb55745-ec76-471a-a556-044074e0b246",
+            "id": "1cd5dbec-4310-4d3f-9149-ebcb04620119",
             "kb_item_key": "thermal_base_layer",
             "item_name": "Thermal Base Layer",
             "category": "clothing",
@@ -1236,7 +1236,7 @@
         },
         {
           "requirement": {
-            "id": "f47ae8db-9061-4a8d-9313-24343bae2991",
+            "id": "42f68349-9331-4c3c-8a20-3d444b76f5e7",
             "kb_item_key": "trekking_socks",
             "item_name": "Thermal Woolen Socks",
             "category": "clothing",
@@ -1306,7 +1306,7 @@
         },
         {
           "requirement": {
-            "id": "1bf933b9-1ac6-4dc1-84c4-7285aaefb971",
+            "id": "f0b03b75-5eda-47e0-a874-0bf15cea37fa",
             "kb_item_key": "trekking_pants",
             "item_name": "Trekking Pants",
             "category": "clothing",
@@ -1371,7 +1371,7 @@
         },
         {
           "requirement": {
-            "id": "f0447a99-c731-4f91-ad75-6b81ce6b2fc2",
+            "id": "ebaf1ca6-b8ee-471a-8848-b36ca9e4f40f",
             "kb_item_key": "trekking_poles",
             "item_name": "Trekking Poles",
             "category": "equipment",
@@ -1442,7 +1442,7 @@
         },
         {
           "requirement": {
-            "id": "8aaf5e81-1c48-417e-a3f8-3ac453ca6ea8",
+            "id": "dbad0315-3dc6-4f3a-8423-dfcb76bc85e1",
             "kb_item_key": "winter_headwear",
             "item_name": "Woolen Cap / Beanie",
             "category": "accessories",
@@ -1509,79 +1509,79 @@
       ],
       "excluded": [
         {
-          "requirement_id": "0e8a9332-becf-4318-b262-0bc826ec9834",
+          "requirement_id": "30d1238e-7bb2-4718-9208-dc794693e85a",
           "item_name": "Emergency Thermal Blanket",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "0263f46f-1f80-4723-b3b7-ccdd214a3b34",
+          "requirement_id": "1d4d2412-8e75-478f-95dc-b09ac8743c9d",
           "item_name": "Fleece Mid-Layer",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "8775ba51-2ba8-458a-a036-8b3316d854d6",
+          "requirement_id": "8d408c19-af1e-463b-9c21-cc16c72c1849",
           "item_name": "Neck Gaiter / Buff",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "5f4315b2-3a64-4dc5-8bc0-8964dc94d4e2",
+          "requirement_id": "5e83a7c2-0255-44c6-843f-a259a650fbf1",
           "item_name": "Power Bank",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "1d6a0f89-2081-499b-9147-28d2409af510",
+          "requirement_id": "80230cac-53fd-4c65-ac4e-705818b90ccc",
           "item_name": "Rain Poncho / Jacket",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "4ac6802d-f37b-473c-8f36-b7649731b395",
+          "requirement_id": "3589e93b-d66a-40db-8d38-e0073cee6d2f",
           "item_name": "Sleeping Mat",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "eefc9d68-7112-4d30-a5f1-9a6c22787fe5",
+          "requirement_id": "76651647-3b89-41a6-afbd-1fc045718248",
           "item_name": "Sunscreen SPF 50+",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "804218af-7517-4ee7-a0f6-a377ad1c8d93",
+          "requirement_id": "291b1c53-4ae9-4021-a864-ae47eed49244",
           "item_name": "Thermos Flask",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "d9a8cc2f-a965-4099-aa49-cde032b013bb",
+          "requirement_id": "032d6690-5cc5-4c48-9b24-dba91836e3cc",
           "item_name": "UV Sunglasses",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "da49a870-c32c-4363-ab52-69b35a82eb22",
+          "requirement_id": "330ed784-0bb3-4d93-8488-f8a1d5ac18b9",
           "item_name": "Dry Bag / Rain Cover",
           "reason": "budget_prioritized",
           "detail": "Optional item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "a573ef8b-7e7a-4a84-860c-054a3f6f7d54",
+          "requirement_id": "d9a9f845-0bc0-4aed-a791-6d1a6bebcedb",
           "item_name": "Multi-Tool",
           "reason": "budget_prioritized",
           "detail": "Optional item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "beb984a2-47ad-4912-9502-22d842c7c7d6",
+          "requirement_id": "e2215787-2cc6-4234-8ceb-718d48d2076b",
           "item_name": "Quick-Dry Towel",
           "reason": "budget_prioritized",
           "detail": "Optional item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "6fc176bb-89bc-4d49-8293-197c85ca8f3a",
+          "requirement_id": "2600138a-e15d-49be-bf32-35552d480fae",
           "item_name": "Snow Gaiters",
           "reason": "budget_prioritized",
           "detail": "Optional item left out so the budget covers essentials."
@@ -1600,7 +1600,7 @@
       "items": [
         {
           "requirement": {
-            "id": "0f871525-1fae-447f-9c6b-0e18b244475d",
+            "id": "0841b001-bd7a-4ece-ad82-f115ce82a570",
             "kb_item_key": "first_aid_kit",
             "item_name": "First-Aid Kit",
             "category": "safety",
@@ -1671,7 +1671,7 @@
         },
         {
           "requirement": {
-            "id": "0c61f7f0-8e66-4e15-b53f-18aaab279738",
+            "id": "4744c580-d092-461b-89a8-d52a747f5758",
             "kb_item_key": "headlamp",
             "item_name": "Headlamp",
             "category": "navigation",
@@ -1743,7 +1743,7 @@
         },
         {
           "requirement": {
-            "id": "d75656c0-b0af-4742-80ec-fd828025bcd7",
+            "id": "d0eefbc9-e9c1-418b-9544-09d801cd8b8a",
             "kb_item_key": "winter_gloves",
             "item_name": "Insulated Gloves",
             "category": "accessories",
@@ -1813,7 +1813,7 @@
         },
         {
           "requirement": {
-            "id": "1a930477-a01d-4786-a5a4-41ee63da0dc9",
+            "id": "8a41306a-1e1e-4fbd-a9ef-dbd895173642",
             "kb_item_key": "insulated_jacket",
             "item_name": "Insulated Trekking Jacket",
             "category": "outerwear",
@@ -1890,7 +1890,7 @@
         },
         {
           "requirement": {
-            "id": "e6f9f9c4-0ea9-4249-a489-9ca1441f690c",
+            "id": "bf2afca7-d96d-4761-8cde-e4973b62f662",
             "kb_item_key": "water_bottle",
             "item_name": "Insulated Water Bottle",
             "category": "hydration",
@@ -1960,7 +1960,7 @@
         },
         {
           "requirement": {
-            "id": "f359c5a1-3098-4217-ad76-21e6f18b476f",
+            "id": "dc5e9b4b-696c-42a8-9707-5f24149a7a43",
             "kb_item_key": "sleeping_bag",
             "item_name": "Sub-Zero Sleeping Bag",
             "category": "camping",
@@ -2032,7 +2032,7 @@
         },
         {
           "requirement": {
-            "id": "e27be9b4-d3f9-4eb7-902d-96545687f943",
+            "id": "a84b93fc-e7c6-43ca-9368-76c8cc04f369",
             "kb_item_key": "tent",
             "item_name": "Tent",
             "category": "camping",
@@ -2101,7 +2101,7 @@
         },
         {
           "requirement": {
-            "id": "5eb55745-ec76-471a-a556-044074e0b246",
+            "id": "1cd5dbec-4310-4d3f-9149-ebcb04620119",
             "kb_item_key": "thermal_base_layer",
             "item_name": "Thermal Base Layer",
             "category": "clothing",
@@ -2178,7 +2178,7 @@
         },
         {
           "requirement": {
-            "id": "f47ae8db-9061-4a8d-9313-24343bae2991",
+            "id": "42f68349-9331-4c3c-8a20-3d444b76f5e7",
             "kb_item_key": "trekking_socks",
             "item_name": "Thermal Woolen Socks",
             "category": "clothing",
@@ -2248,7 +2248,7 @@
         },
         {
           "requirement": {
-            "id": "1bf933b9-1ac6-4dc1-84c4-7285aaefb971",
+            "id": "f0b03b75-5eda-47e0-a874-0bf15cea37fa",
             "kb_item_key": "trekking_pants",
             "item_name": "Trekking Pants",
             "category": "clothing",
@@ -2313,7 +2313,7 @@
         },
         {
           "requirement": {
-            "id": "f0447a99-c731-4f91-ad75-6b81ce6b2fc2",
+            "id": "ebaf1ca6-b8ee-471a-8848-b36ca9e4f40f",
             "kb_item_key": "trekking_poles",
             "item_name": "Trekking Poles",
             "category": "equipment",
@@ -2388,7 +2388,7 @@
         },
         {
           "requirement": {
-            "id": "8aaf5e81-1c48-417e-a3f8-3ac453ca6ea8",
+            "id": "dbad0315-3dc6-4f3a-8423-dfcb76bc85e1",
             "kb_item_key": "winter_headwear",
             "item_name": "Woolen Cap / Beanie",
             "category": "accessories",
@@ -2455,7 +2455,7 @@
         },
         {
           "requirement": {
-            "id": "0e8a9332-becf-4318-b262-0bc826ec9834",
+            "id": "30d1238e-7bb2-4718-9208-dc794693e85a",
             "kb_item_key": "emergency_blanket",
             "item_name": "Emergency Thermal Blanket",
             "category": "safety",
@@ -2522,73 +2522,73 @@
       ],
       "excluded": [
         {
-          "requirement_id": "0263f46f-1f80-4723-b3b7-ccdd214a3b34",
+          "requirement_id": "1d4d2412-8e75-478f-95dc-b09ac8743c9d",
           "item_name": "Fleece Mid-Layer",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "8775ba51-2ba8-458a-a036-8b3316d854d6",
+          "requirement_id": "8d408c19-af1e-463b-9c21-cc16c72c1849",
           "item_name": "Neck Gaiter / Buff",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "5f4315b2-3a64-4dc5-8bc0-8964dc94d4e2",
+          "requirement_id": "5e83a7c2-0255-44c6-843f-a259a650fbf1",
           "item_name": "Power Bank",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "1d6a0f89-2081-499b-9147-28d2409af510",
+          "requirement_id": "80230cac-53fd-4c65-ac4e-705818b90ccc",
           "item_name": "Rain Poncho / Jacket",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "4ac6802d-f37b-473c-8f36-b7649731b395",
+          "requirement_id": "3589e93b-d66a-40db-8d38-e0073cee6d2f",
           "item_name": "Sleeping Mat",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "eefc9d68-7112-4d30-a5f1-9a6c22787fe5",
+          "requirement_id": "76651647-3b89-41a6-afbd-1fc045718248",
           "item_name": "Sunscreen SPF 50+",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "804218af-7517-4ee7-a0f6-a377ad1c8d93",
+          "requirement_id": "291b1c53-4ae9-4021-a864-ae47eed49244",
           "item_name": "Thermos Flask",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "d9a8cc2f-a965-4099-aa49-cde032b013bb",
+          "requirement_id": "032d6690-5cc5-4c48-9b24-dba91836e3cc",
           "item_name": "UV Sunglasses",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "da49a870-c32c-4363-ab52-69b35a82eb22",
+          "requirement_id": "330ed784-0bb3-4d93-8488-f8a1d5ac18b9",
           "item_name": "Dry Bag / Rain Cover",
           "reason": "budget_prioritized",
           "detail": "Optional item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "a573ef8b-7e7a-4a84-860c-054a3f6f7d54",
+          "requirement_id": "d9a9f845-0bc0-4aed-a791-6d1a6bebcedb",
           "item_name": "Multi-Tool",
           "reason": "budget_prioritized",
           "detail": "Optional item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "beb984a2-47ad-4912-9502-22d842c7c7d6",
+          "requirement_id": "e2215787-2cc6-4234-8ceb-718d48d2076b",
           "item_name": "Quick-Dry Towel",
           "reason": "budget_prioritized",
           "detail": "Optional item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "6fc176bb-89bc-4d49-8293-197c85ca8f3a",
+          "requirement_id": "2600138a-e15d-49be-bf32-35552d480fae",
           "item_name": "Snow Gaiters",
           "reason": "budget_prioritized",
           "detail": "Optional item left out so the budget covers essentials."
@@ -2607,7 +2607,7 @@
       "items": [
         {
           "requirement": {
-            "id": "0f871525-1fae-447f-9c6b-0e18b244475d",
+            "id": "0841b001-bd7a-4ece-ad82-f115ce82a570",
             "kb_item_key": "first_aid_kit",
             "item_name": "First-Aid Kit",
             "category": "safety",
@@ -2676,7 +2676,7 @@
         },
         {
           "requirement": {
-            "id": "0c61f7f0-8e66-4e15-b53f-18aaab279738",
+            "id": "4744c580-d092-461b-89a8-d52a747f5758",
             "kb_item_key": "headlamp",
             "item_name": "Headlamp",
             "category": "navigation",
@@ -2742,7 +2742,7 @@
         },
         {
           "requirement": {
-            "id": "d75656c0-b0af-4742-80ec-fd828025bcd7",
+            "id": "d0eefbc9-e9c1-418b-9544-09d801cd8b8a",
             "kb_item_key": "winter_gloves",
             "item_name": "Insulated Gloves",
             "category": "accessories",
@@ -2811,7 +2811,7 @@
         },
         {
           "requirement": {
-            "id": "1a930477-a01d-4786-a5a4-41ee63da0dc9",
+            "id": "8a41306a-1e1e-4fbd-a9ef-dbd895173642",
             "kb_item_key": "insulated_jacket",
             "item_name": "Insulated Trekking Jacket",
             "category": "outerwear",
@@ -2888,7 +2888,7 @@
         },
         {
           "requirement": {
-            "id": "e6f9f9c4-0ea9-4249-a489-9ca1441f690c",
+            "id": "bf2afca7-d96d-4761-8cde-e4973b62f662",
             "kb_item_key": "water_bottle",
             "item_name": "Insulated Water Bottle",
             "category": "hydration",
@@ -2958,7 +2958,7 @@
         },
         {
           "requirement": {
-            "id": "f359c5a1-3098-4217-ad76-21e6f18b476f",
+            "id": "dc5e9b4b-696c-42a8-9707-5f24149a7a43",
             "kb_item_key": "sleeping_bag",
             "item_name": "Sub-Zero Sleeping Bag",
             "category": "camping",
@@ -3030,7 +3030,7 @@
         },
         {
           "requirement": {
-            "id": "e27be9b4-d3f9-4eb7-902d-96545687f943",
+            "id": "a84b93fc-e7c6-43ca-9368-76c8cc04f369",
             "kb_item_key": "tent",
             "item_name": "Tent",
             "category": "camping",
@@ -3102,7 +3102,7 @@
         },
         {
           "requirement": {
-            "id": "5eb55745-ec76-471a-a556-044074e0b246",
+            "id": "1cd5dbec-4310-4d3f-9149-ebcb04620119",
             "kb_item_key": "thermal_base_layer",
             "item_name": "Thermal Base Layer",
             "category": "clothing",
@@ -3179,7 +3179,7 @@
         },
         {
           "requirement": {
-            "id": "f47ae8db-9061-4a8d-9313-24343bae2991",
+            "id": "42f68349-9331-4c3c-8a20-3d444b76f5e7",
             "kb_item_key": "trekking_socks",
             "item_name": "Thermal Woolen Socks",
             "category": "clothing",
@@ -3251,7 +3251,7 @@
         },
         {
           "requirement": {
-            "id": "1bf933b9-1ac6-4dc1-84c4-7285aaefb971",
+            "id": "f0b03b75-5eda-47e0-a874-0bf15cea37fa",
             "kb_item_key": "trekking_pants",
             "item_name": "Trekking Pants",
             "category": "clothing",
@@ -3316,7 +3316,7 @@
         },
         {
           "requirement": {
-            "id": "f0447a99-c731-4f91-ad75-6b81ce6b2fc2",
+            "id": "ebaf1ca6-b8ee-471a-8848-b36ca9e4f40f",
             "kb_item_key": "trekking_poles",
             "item_name": "Trekking Poles",
             "category": "equipment",
@@ -3387,7 +3387,7 @@
         },
         {
           "requirement": {
-            "id": "8aaf5e81-1c48-417e-a3f8-3ac453ca6ea8",
+            "id": "dbad0315-3dc6-4f3a-8423-dfcb76bc85e1",
             "kb_item_key": "winter_headwear",
             "item_name": "Woolen Cap / Beanie",
             "category": "accessories",
@@ -3455,79 +3455,79 @@
       ],
       "excluded": [
         {
-          "requirement_id": "0e8a9332-becf-4318-b262-0bc826ec9834",
+          "requirement_id": "30d1238e-7bb2-4718-9208-dc794693e85a",
           "item_name": "Emergency Thermal Blanket",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "0263f46f-1f80-4723-b3b7-ccdd214a3b34",
+          "requirement_id": "1d4d2412-8e75-478f-95dc-b09ac8743c9d",
           "item_name": "Fleece Mid-Layer",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "8775ba51-2ba8-458a-a036-8b3316d854d6",
+          "requirement_id": "8d408c19-af1e-463b-9c21-cc16c72c1849",
           "item_name": "Neck Gaiter / Buff",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "5f4315b2-3a64-4dc5-8bc0-8964dc94d4e2",
+          "requirement_id": "5e83a7c2-0255-44c6-843f-a259a650fbf1",
           "item_name": "Power Bank",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "1d6a0f89-2081-499b-9147-28d2409af510",
+          "requirement_id": "80230cac-53fd-4c65-ac4e-705818b90ccc",
           "item_name": "Rain Poncho / Jacket",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "4ac6802d-f37b-473c-8f36-b7649731b395",
+          "requirement_id": "3589e93b-d66a-40db-8d38-e0073cee6d2f",
           "item_name": "Sleeping Mat",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "eefc9d68-7112-4d30-a5f1-9a6c22787fe5",
+          "requirement_id": "76651647-3b89-41a6-afbd-1fc045718248",
           "item_name": "Sunscreen SPF 50+",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "804218af-7517-4ee7-a0f6-a377ad1c8d93",
+          "requirement_id": "291b1c53-4ae9-4021-a864-ae47eed49244",
           "item_name": "Thermos Flask",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "d9a8cc2f-a965-4099-aa49-cde032b013bb",
+          "requirement_id": "032d6690-5cc5-4c48-9b24-dba91836e3cc",
           "item_name": "UV Sunglasses",
           "reason": "budget_prioritized",
           "detail": "Recommended item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "da49a870-c32c-4363-ab52-69b35a82eb22",
+          "requirement_id": "330ed784-0bb3-4d93-8488-f8a1d5ac18b9",
           "item_name": "Dry Bag / Rain Cover",
           "reason": "budget_prioritized",
           "detail": "Optional item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "a573ef8b-7e7a-4a84-860c-054a3f6f7d54",
+          "requirement_id": "d9a9f845-0bc0-4aed-a791-6d1a6bebcedb",
           "item_name": "Multi-Tool",
           "reason": "budget_prioritized",
           "detail": "Optional item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "beb984a2-47ad-4912-9502-22d842c7c7d6",
+          "requirement_id": "e2215787-2cc6-4234-8ceb-718d48d2076b",
           "item_name": "Quick-Dry Towel",
           "reason": "budget_prioritized",
           "detail": "Optional item left out so the budget covers essentials."
         },
         {
-          "requirement_id": "6fc176bb-89bc-4d49-8293-197c85ca8f3a",
+          "requirement_id": "2600138a-e15d-49be-bf32-35552d480fae",
           "item_name": "Snow Gaiters",
           "reason": "budget_prioritized",
           "detail": "Optional item left out so the budget covers essentials."
@@ -3545,7 +3545,7 @@
   },
   "substitutions": [
     {
-      "requirement_id": "d75656c0-b0af-4742-80ec-fd828025bcd7",
+      "requirement_id": "d0eefbc9-e9c1-418b-9544-09d801cd8b8a",
       "item_name": "Insulated Gloves",
       "from": {
         "id": "bc6f559a-c31e-e411-f8a2-cc115b3eec8d",
@@ -3626,7 +3626,7 @@
       "reason": "Swapped to Altura Gear Insulated Trekking Gloves Prime for Insulated Gloves: saves Rs 1,440, arrives 2 day(s) sooner, keeps 4 of the same key features."
     },
     {
-      "requirement_id": "1a930477-a01d-4786-a5a4-41ee63da0dc9",
+      "requirement_id": "8a41306a-1e1e-4fbd-a9ef-dbd895173642",
       "item_name": "Insulated Trekking Jacket",
       "from": {
         "id": "5869907c-815e-0aef-aa9e-adeebb7da687",
@@ -3716,7 +3716,7 @@
       "reason": "Swapped to Summit & Co Insulated Trekking Jacket II 650 for Insulated Trekking Jacket: saves Rs 3,100, rated 4.0 vs 3.9, keeps 5 of the same key features."
     },
     {
-      "requirement_id": "f359c5a1-3098-4217-ad76-21e6f18b476f",
+      "requirement_id": "dc5e9b4b-696c-42a8-9707-5f24149a7a43",
       "item_name": "Sub-Zero Sleeping Bag",
       "from": {
         "id": "e5643d6a-fe19-23dc-8729-89d295e8ba21",
@@ -3803,7 +3803,7 @@
       "reason": "Swapped to Trekmate Compact Trek Sleeping Bag Max for Sub-Zero Sleeping Bag: saves Rs 2,800, keeps 4 of the same key features."
     },
     {
-      "requirement_id": "e27be9b4-d3f9-4eb7-902d-96545687f943",
+      "requirement_id": "a84b93fc-e7c6-43ca-9368-76c8cc04f369",
       "item_name": "Tent",
       "from": {
         "id": "f1df5dcd-5237-de79-a81e-9c369dad62aa",
@@ -3884,7 +3884,7 @@
       "reason": "Swapped to BaseCamp Basics 4-Person Camping Tent Pro for Tent: saves Rs 5,000, keeps 2 of the same key features."
     },
     {
-      "requirement_id": "5eb55745-ec76-471a-a556-044074e0b246",
+      "requirement_id": "1cd5dbec-4310-4d3f-9149-ebcb04620119",
       "item_name": "Thermal Base Layer",
       "from": {
         "id": "e78f55ce-0ef8-c0f0-beaf-bb8bf8dbd3da",
@@ -3974,7 +3974,7 @@
       "reason": "Swapped to Rukmini Outdoors Heat-Retain Base Layer Ultra for Thermal Base Layer: saves Rs 1,130, rated 3.8 vs 3.7, keeps 5 of the same key features."
     },
     {
-      "requirement_id": "f47ae8db-9061-4a8d-9313-24343bae2991",
+      "requirement_id": "42f68349-9331-4c3c-8a20-3d444b76f5e7",
       "item_name": "Thermal Woolen Socks",
       "from": {
         "id": "6b053344-9a0e-e09e-beda-ad007615cc5a",
@@ -4055,7 +4055,7 @@
       "reason": "Swapped to Nordkapp Thermal Woolen Socks (3 Pair) for Thermal Woolen Socks: saves Rs 300, keeps 5 of the same key features."
     },
     {
-      "requirement_id": "1bf933b9-1ac6-4dc1-84c4-7285aaefb971",
+      "requirement_id": "f0b03b75-5eda-47e0-a874-0bf15cea37fa",
       "item_name": "Trekking Pants",
       "from": {
         "id": "94fc3166-4420-2ab8-49d1-9e11465281af",
@@ -4133,7 +4133,7 @@
       "reason": "Swapped to BaseCamp Basics Convertible Trekking Pants Summit for Trekking Pants: saves Rs 1,100, rated 3.9 vs 3.7, keeps 2 of the same key features."
     },
     {
-      "requirement_id": "0e8a9332-becf-4318-b262-0bc826ec9834",
+      "requirement_id": "30d1238e-7bb2-4718-9208-dc794693e85a",
       "item_name": "Emergency Thermal Blanket",
       "from": {
         "id": "1d3a7950-b7fb-1794-b1ad-bcfbec50ddf5",

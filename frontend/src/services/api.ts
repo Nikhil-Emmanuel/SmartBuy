@@ -24,6 +24,7 @@ import type {
   FeedbackResponse,
   HealthResponse,
   MarketplacesResponse,
+  DemoShoppersResponse,
   Offer,
   PersonalizationResponse,
   ProductDetail,
@@ -40,6 +41,7 @@ import type {
   SlotPatch,
   SubstituteReason,
   SubstituteResponse,
+  SuggestionsResponse,
 } from "@/types/api";
 
 // ----------------------------------------------------------------- wave 1
@@ -80,8 +82,17 @@ export function getSession(id: string) {
   return http.get<SessionResponse>(`/api/session/${id}`);
 }
 
+/**
+ * Manual slot correction from the sidebar.
+ *
+ * Returns a `SessionResponse`, NOT a `ChatResponse`: the backend route is
+ * declared `response_model=SessionResponse` and ends in `return get_session(...)`.
+ * It was typed as `ChatResponse` here, and since `http.post<T>` only casts,
+ * nothing checked it -- the caller then read `assistant_message` off a payload
+ * that has no such field and rendered `undefined` into a chat bubble.
+ */
 export function updateSlots(id: string, patch: SlotPatch) {
-  return http.post<ChatResponse>(`/api/session/${id}/slots`, patch);
+  return http.post<SessionResponse>(`/api/session/${id}/slots`, patch);
 }
 
 // ----------------------------------------------------------------- wave 3
@@ -182,6 +193,16 @@ export function updateProfile(body: ProfileUpdateRequest) {
 export function getPersonalization() {
   if (USE_MOCKS) return mocks.getPersonalization();
   return http.get<PersonalizationResponse>("/api/personalization");
+}
+
+export function getSuggestions() {
+  if (USE_MOCKS) return mocks.getSuggestions();
+  return http.get<SuggestionsResponse>("/api/suggestions");
+}
+
+export function getDemoShoppers() {
+  if (USE_MOCKS) return mocks.getDemoShoppers();
+  return http.get<DemoShoppersResponse>("/api/demo/shoppers");
 }
 
 export function getAdminMetrics() {

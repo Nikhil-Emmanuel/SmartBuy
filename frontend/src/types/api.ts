@@ -503,6 +503,45 @@ export interface ProfileResponse {
 }
 
 /**
+ * Clickable options for the chat, derived from data that actually exists:
+ * goals from the YAML knowledge base, categories from a live product count.
+ * If it renders as an option, the system can answer it.
+ */
+export interface Suggestion {
+  label: string;
+  message: string;
+  kind: "goal" | "category";
+  detail: string | null;
+}
+
+export interface SuggestionsResponse {
+  goals: Suggestion[];
+  categories: Suggestion[];
+  source: string;
+}
+
+export interface DemoShopper {
+  user_id: string;
+  label: string;
+  events: number;
+  interests: string[];
+  joined: string | null;
+}
+
+export interface DemoShoppersResponse {
+  shoppers: DemoShopper[];
+  /** Always true — these are generated shoppers, and the UI must say so. */
+  is_synthetic: boolean;
+}
+
+/** One readable fact about how someone shops, taken from the model's inputs. */
+export interface Habit {
+  label: string;
+  value: string;
+  hint: string;
+}
+
+/**
  * Output of the trained shopper-segment classifier.
  *
  * `status` is not decoration: anything other than `"ok"` means no offer was
@@ -520,6 +559,7 @@ export interface PersonalizationResponse {
   perk: string | null;
   events_considered: number;
   status: "ok" | "insufficient_history" | "low_confidence" | "model_unavailable";
+  habits: Habit[];
   is_model_generated: boolean;
 }
 

@@ -53,6 +53,20 @@ export function useSession(chatSessionId: string | null) {
   });
 }
 
+/**
+ * Editing a slot by hand is not a conversational turn, and must not be
+ * reported as one.
+ *
+ * This used to call `syncFromResponse`, which pushes the payload through
+ * `reportChatTurn` -- the channel ChatPage listens on to append the
+ * assistant's reply. A slot update returns a `SessionResponse`, which has no
+ * `assistant_message`, so ChatPage appended a bubble whose content was
+ * `undefined` and `ChatBubble` threw on `content.length`. With no error
+ * boundary above it, React unmounted the whole tree: the page went blank.
+ *
+ * The result is written to the session cache instead, which is where a
+ * session response belongs.
+ */
 export function useUpdateSlots() {
   const queryClient = useQueryClient();
   return useMutation({
@@ -62,11 +76,30 @@ export function useUpdateSlots() {
       return api.updateSlots(chatSessionId, patch);
     },
     onSuccess: (response) => {
-      syncFromResponse(response);
+      const { setChatSession, setPlan } = useAppStore.getState();
+      setChatSession(response.session_id);
+      if (response.plan_id) setPlan(response.plan_id);
+
+      queryClient.setQueryData(qk.session(response.session_id), response);
       if (response.plan_id) {
         queryClient.invalidateQueries({ queryKey: qk.requirements(response.plan_id) });
         queryClient.invalidateQueries({ queryKey: qk.plan(response.plan_id) });
       }
     },
+  });
+}
+
+/**
+ * The always-on option tray for the chat.
+ *
+ * Cached hard: goals come from YAML files and category counts from a catalog
+ * that only changes when someone reseeds. Refetching this on every mount would
+ * be pure noise.
+ */
+export function useSuggestions() {
+  return useQuery({
+    queryKey: qk.suggestions,
+    queryFn: api.getSuggestions,
+    staleTime: 30 * 60_000,
   });
 }

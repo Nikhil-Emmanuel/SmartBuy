@@ -22,6 +22,16 @@ export function usePersonalization() {
   });
 }
 
+/** The demo shopper roster. Only fetched when the picker is actually open. */
+export function useDemoShoppers(enabled = true) {
+  return useQuery({
+    queryKey: qk.demoShoppers,
+    queryFn: api.getDemoShoppers,
+    enabled,
+    staleTime: 10 * 60_000,
+  });
+}
+
 export function useUpdateProfile() {
   const queryClient = useQueryClient();
   return useMutation({

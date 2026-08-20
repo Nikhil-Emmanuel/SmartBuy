@@ -53,12 +53,12 @@
       "max": 5.0
     }
   ],
-  "summary": "Matches your must-haves: portable",
+  "summary": "The Voyagr Adventure First-Aid Pouch Lite is a compact, water-resistant choice for your winter trek, offering essential safety features at a significant discount.",
   "reasons": [
-    "Matches your must-haves: portable",
-    "Rated 4.3 across 890 reviews",
-    "40% off, saving Rs 800",
-    "Priced comfortably within your budget for this item"
+    "Portable design ideal for trekking and camping",
+    "Rated 4.3 stars from 890 reviews",
+    "Priced at Rs 1,199 with a 40% discount",
+    "Delivered within 3 days"
   ],
   "evidence": {
     "price": 1199,
@@ -76,5 +76,5 @@
     ],
     "is_simulated": true
   },
-  "llm_generated": false
+  "llm_generated": true
 }

@@ -108,12 +108,14 @@ from app.api import (
     bundles,
     chat,
     comparison,
+    demo,
     feedback,
     health,
     personalization,
     products,
     recommendations,
     requirements,
+    suggestions,
     users,
 )
 
@@ -127,6 +129,8 @@ app.include_router(comparison.router)
 app.include_router(bundles.router)
 app.include_router(feedback.router)
 app.include_router(personalization.router)
+app.include_router(suggestions.router)
+app.include_router(demo.router)
 app.include_router(users.router)
 app.include_router(admin.router)
 

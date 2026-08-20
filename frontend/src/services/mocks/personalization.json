@@ -8,5 +8,42 @@
   "perk": null,
   "events_considered": 61,
   "status": "ok",
+  "habits": [
+    {
+      "label": "Average discount browsed",
+      "value": "26%",
+      "hint": "How deep a markdown you tend to look at"
+    },
+    {
+      "label": "Buy rate",
+      "value": "5%",
+      "hint": "Share of your activity that ends in a purchase"
+    },
+    {
+      "label": "Typical price",
+      "value": "₹3,191",
+      "hint": "Average price of the products you engage with"
+    },
+    {
+      "label": "Average rating browsed",
+      "value": "3.9 / 5",
+      "hint": "How highly rated the products you look at are"
+    },
+    {
+      "label": "Brand focus",
+      "value": "11%",
+      "hint": "Share of your activity on your single most-viewed brand"
+    },
+    {
+      "label": "Products seen",
+      "value": "57",
+      "hint": "Distinct products you have interacted with"
+    },
+    {
+      "label": "Deal sensitivity",
+      "value": "-3% on purchases",
+      "hint": "How much deeper (or shallower) the discount is on what you actually buy versus what you merely browse"
+    }
+  ],
   "is_model_generated": true
 }

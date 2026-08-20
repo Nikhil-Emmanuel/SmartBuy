@@ -145,7 +145,7 @@ That is a tested guarantee, not a hope — see `tests/backend/test_chaos.py`.
 ### Verify
 
 ```bash
-python -m pytest                       # 91 tests: contract, 8 scenarios, chaos, security
+python -m pytest                       # 108 tests: contract, 8 scenarios, chaos, security
 python ml/evaluation/run_eval.py       # regenerates ml/evaluation/results/
 python ml/personalization/train.py     # retrains the shopper-segment model
 ```

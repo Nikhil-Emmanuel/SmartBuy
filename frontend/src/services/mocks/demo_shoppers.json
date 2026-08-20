@@ -1,0 +1,93 @@
+{
+  "shoppers": [
+    {
+      "user_id": "56743b29-9b62-41b0-a035-de28055538e2",
+      "label": "Shopper 1 · Navigation browser",
+      "events": 122,
+      "interests": [
+        "navigation",
+        "kitchen",
+        "electronics"
+      ],
+      "joined": "2026-06-10T12:38:35.166865"
+    },
+    {
+      "user_id": "a2725112-94bb-4f1d-a7ee-3eb25e4636c3",
+      "label": "Shopper 2 · Personal Care browser",
+      "events": 119,
+      "interests": [
+        "personal care",
+        "safety",
+        "footwear"
+      ],
+      "joined": "2026-07-14T12:38:35.166865"
+    },
+    {
+      "user_id": "8ee39956-3f90-47ca-87f7-3f1cc0fd0f55",
+      "label": "Shopper 3 · Kitchen browser",
+      "events": 118,
+      "interests": [
+        "kitchen",
+        "outerwear",
+        "electronics"
+      ],
+      "joined": "2026-06-12T12:38:35.166865"
+    },
+    {
+      "user_id": "c3199613-c902-4dd0-b2bf-32cf32957a8e",
+      "label": "Shopper 4 · Equipment browser",
+      "events": 116,
+      "interests": [
+        "equipment",
+        "clothing",
+        "camping"
+      ],
+      "joined": "2026-05-22T12:38:35.166865"
+    },
+    {
+      "user_id": "cc0cbf74-324e-4729-9dff-6b7e125a3a2e",
+      "label": "Shopper 5 · Kitchen browser",
+      "events": 116,
+      "interests": [
+        "kitchen",
+        "clothing",
+        "electronics"
+      ],
+      "joined": "2026-07-25T12:38:35.166865"
+    },
+    {
+      "user_id": "dc2f05cd-05da-4c75-ab40-bc522504f191",
+      "label": "Shopper 6 · Electronics browser",
+      "events": 116,
+      "interests": [
+        "electronics",
+        "storage",
+        "safety"
+      ],
+      "joined": "2026-05-21T12:38:35.166865"
+    },
+    {
+      "user_id": "6ecec49d-8223-4e6a-a7dc-09d5b5ff547d",
+      "label": "Shopper 7 · Furniture browser",
+      "events": 115,
+      "interests": [
+        "furniture",
+        "accessories",
+        "camping"
+      ],
+      "joined": "2026-06-07T12:38:35.166865"
+    },
+    {
+      "user_id": "da656b0a-f11e-4cd0-b0a5-db0e4d54236c",
+      "label": "Shopper 8 · Electronics browser",
+      "events": 115,
+      "interests": [
+        "electronics",
+        "storage",
+        "hydration"
+      ],
+      "joined": "2026-06-19T12:38:35.166865"
+    }
+  ],
+  "is_synthetic": true
+}

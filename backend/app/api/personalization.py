@@ -17,6 +17,12 @@ from app.services import personalization
 router = APIRouter(prefix="/api", tags=["personalization"])
 
 
+class HabitOut(BaseModel):
+    label: str
+    value: str
+    hint: str
+
+
 class PersonalizationOut(BaseModel):
     segment: str | None = Field(None, description="Predicted shopper segment.")
     label: str | None = Field(None, description="How the segment is shown to the user.")
@@ -38,6 +44,14 @@ class PersonalizationOut(BaseModel):
             "ok | insufficient_history | low_confidence | model_unavailable. "
             "Anything other than 'ok' means no personalised offer was issued, "
             "and the reason is stated rather than hidden."
+        ),
+    )
+    habits: list[HabitOut] = Field(
+        default_factory=list,
+        description=(
+            "The model's own inputs, restated in words. Present whenever the "
+            "user has history, including when confidence was too low to make "
+            "an offer."
         ),
     )
     is_model_generated: bool = Field(

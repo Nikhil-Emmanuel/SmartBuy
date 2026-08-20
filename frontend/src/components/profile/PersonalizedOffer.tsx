@@ -16,14 +16,14 @@
  */
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Check, Copy, Sparkles, Truck } from "lucide-react";
+import { Check, Copy, Sparkles, TrendingUp, Truck } from "lucide-react";
 import { useState } from "react";
 
 import { CountUp } from "@/components/shared/CountUp";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { usePersonalization } from "@/hooks/useProfile";
-import { EASE_OUT, FADE } from "@/lib/motion";
+import { EASE_OUT, FADE, listChild, listParent } from "@/lib/motion";
 import type { PersonalizationResponse } from "@/types/api";
 
 const NOT_YET: Record<PersonalizationResponse["status"], string> = {
@@ -46,15 +46,20 @@ export function PersonalizedOffer() {
 
   if (data.status !== "ok") {
     return (
-      <Card className="border-dashed">
-        <CardContent className="flex items-start gap-3 p-4">
-          <Sparkles className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
-          <div>
-            <p className="text-sm font-medium text-foreground">No personalised offer yet</p>
-            <p className="text-xs text-muted-foreground">{NOT_YET[data.status]}</p>
-          </div>
-        </CardContent>
-      </Card>
+      <div className="space-y-4">
+        <Card className="border-dashed">
+          <CardContent className="flex items-start gap-3 p-4">
+            <Sparkles className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
+            <div>
+              <p className="text-sm font-medium text-foreground">No personalised offer yet</p>
+              <p className="text-xs text-muted-foreground">{NOT_YET[data.status]}</p>
+            </div>
+          </CardContent>
+        </Card>
+        {/* Low confidence still means we know how they shop -- only the label
+            is missing, so the habits are worth showing on their own. */}
+        <HabitGrid habits={data.habits} />
+      </div>
     );
   }
 
@@ -142,6 +147,49 @@ export function PersonalizedOffer() {
           </p>
         </CardContent>
       </Card>
+
+      <div className="mt-4">
+        <HabitGrid habits={data.habits} />
+      </div>
     </motion.div>
+  );
+}
+
+/**
+ * How this shopper shops, in their own numbers.
+ *
+ * These are literally the model's input features rendered as words, so the
+ * explanation and the prediction cannot drift apart. Nothing here is computed
+ * in the browser.
+ */
+function HabitGrid({ habits }: { habits: PersonalizationResponse["habits"] }) {
+  const reduced = useReducedMotion();
+  if (!habits.length) return null;
+
+  return (
+    <div>
+      <p className="mb-2 flex items-center gap-1.5 text-xs font-semibold text-foreground">
+        <TrendingUp className="size-3.5 text-primary" /> Your shopping habits
+      </p>
+      <motion.div
+        variants={listParent(habits.length)}
+        initial={reduced ? false : "hidden"}
+        animate="visible"
+        className="grid grid-cols-2 gap-2 sm:grid-cols-3"
+      >
+        {habits.map((habit) => (
+          <motion.div
+            key={habit.label}
+            variants={listChild}
+            whileHover={reduced ? undefined : { y: -3 }}
+            className="rounded-xl border border-border bg-card p-3"
+            title={habit.hint}
+          >
+            <p className="tabular text-lg font-semibold text-foreground">{habit.value}</p>
+            <p className="text-[11px] leading-tight text-muted-foreground">{habit.label}</p>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
   );
 }

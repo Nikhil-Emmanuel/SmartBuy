@@ -16,6 +16,7 @@ import type {
   ChatRequest,
   ChatResponse,
   CompareResponse,
+  DemoShoppersResponse,
   ExplainResponse,
   PersonalizationResponse,
   Product,
@@ -28,6 +29,7 @@ import type {
   RequirementsResponse,
   SessionResponse,
   ShoppingPlanResponse,
+  SuggestionsResponse,
 } from "@/types/api";
 
 /** Fixtures answer instantly; a little latency keeps loading states honest. */
@@ -169,6 +171,14 @@ export function getProfile(): Promise<ProfileResponse> {
 
 export function getPersonalization(): Promise<PersonalizationResponse> {
   return fixture<PersonalizationResponse>(() => import("./personalization.json"));
+}
+
+export function getSuggestions(): Promise<SuggestionsResponse> {
+  return fixture<SuggestionsResponse>(() => import("./suggestions.json"));
+}
+
+export function getDemoShoppers(): Promise<DemoShoppersResponse> {
+  return fixture<DemoShoppersResponse>(() => import("./demo_shoppers.json"));
 }
 
 export function getAdminMetrics(): Promise<AdminMetrics> {

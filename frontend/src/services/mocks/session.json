@@ -1,5 +1,5 @@
 {
-  "session_id": "2eb28ee2-bff4-4554-a3a2-f280c07692b9",
+  "session_id": "a7f43b6e-43e5-4b9b-ab55-3b162940c597",
   "state": "PRESENTED",
   "intent": "GOAL_BASED_SHOPPING",
   "slots": {
@@ -35,11 +35,11 @@
       "meta": {
         "flagged": false
       },
-      "created_at": "2026-08-19T12:54:17.172870"
+      "created_at": "2026-08-20T13:53:36.520933"
     },
     {
       "role": "assistant",
-      "content": "Are you camping overnight, or staying in guesthouses?",
+      "content": "For your winter trek, will you be camping overnight or staying in guesthouses?",
       "meta": {
         "chips": [
           "Camping overnight",
@@ -48,7 +48,7 @@
         ],
         "asked_slot": "camping"
       },
-      "created_at": "2026-08-19T12:54:19.260610"
+      "created_at": "2026-08-20T13:53:53.100863"
     },
     {
       "role": "user",
@@ -56,17 +56,17 @@
       "meta": {
         "flagged": false
       },
-      "created_at": "2026-08-19T12:54:19.331772"
+      "created_at": "2026-08-20T13:53:53.242628"
     },
     {
       "role": "assistant",
       "content": "Here is what you need for winter trekking: 25 items, 12 of them essential. I have left out 2 item(s) you already have (trekking backpack, winter trekking shoes). The recommended basket comes to Rs 13,404, saving Rs 7,210 against list prices and leaving Rs 1,596 of your Rs 15,000 budget.",
       "meta": {
-        "plan_id": "d4eeafc1-8e9a-483f-9e14-5add95552138",
-        "degraded": true
+        "plan_id": "05d0072a-c8e9-4a33-8155-304c76f46b83",
+        "degraded": false
       },
-      "created_at": "2026-08-19T12:54:20.290190"
+      "created_at": "2026-08-20T13:53:55.595662"
     }
   ],
-  "plan_id": "d4eeafc1-8e9a-483f-9e14-5add95552138"
+  "plan_id": "05d0072a-c8e9-4a33-8155-304c76f46b83"
 }

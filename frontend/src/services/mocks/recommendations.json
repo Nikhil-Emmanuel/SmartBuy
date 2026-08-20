@@ -1,9 +1,9 @@
 {
-  "plan_id": "d4eeafc1-8e9a-483f-9e14-5add95552138",
+  "plan_id": "05d0072a-c8e9-4a33-8155-304c76f46b83",
   "results": [
     {
       "requirement": {
-        "id": "0f871525-1fae-447f-9c6b-0e18b244475d",
+        "id": "0841b001-bd7a-4ece-ad82-f115ce82a570",
         "kb_item_key": "first_aid_kit",
         "item_name": "First-Aid Kit",
         "category": "safety",
@@ -64,7 +64,7 @@
             "product_group_key": "eea995d7e11cc151",
             "is_simulated": true
           },
-          "requirement_id": "0f871525-1fae-447f-9c6b-0e18b244475d",
+          "requirement_id": "0841b001-bd7a-4ece-ad82-f115ce82a570",
           "score": 0.7405,
           "rank": 1,
           "badge": "best_overall",
@@ -124,7 +124,7 @@
             "product_group_key": "8f11dc6c717b7af3",
             "is_simulated": true
           },
-          "requirement_id": "0f871525-1fae-447f-9c6b-0e18b244475d",
+          "requirement_id": "0841b001-bd7a-4ece-ad82-f115ce82a570",
           "score": 0.7111,
           "rank": 2,
           "badge": "best_deal",
@@ -184,7 +184,7 @@
             "product_group_key": "7da2b93532a30cd7",
             "is_simulated": true
           },
-          "requirement_id": "0f871525-1fae-447f-9c6b-0e18b244475d",
+          "requirement_id": "0841b001-bd7a-4ece-ad82-f115ce82a570",
           "score": 0.7096,
           "rank": 3,
           "badge": "best_budget",
@@ -245,7 +245,7 @@
             "product_group_key": "9edb1581aafffaa0",
             "is_simulated": true
           },
-          "requirement_id": "0f871525-1fae-447f-9c6b-0e18b244475d",
+          "requirement_id": "0841b001-bd7a-4ece-ad82-f115ce82a570",
           "score": 0.7042,
           "rank": 4,
           "badge": null,
@@ -308,7 +308,7 @@
             "product_group_key": "a02e3fcdf0cb9dc0",
             "is_simulated": true
           },
-          "requirement_id": "0f871525-1fae-447f-9c6b-0e18b244475d",
+          "requirement_id": "0841b001-bd7a-4ece-ad82-f115ce82a570",
           "score": 0.7041,
           "rank": 5,
           "badge": null,
@@ -335,7 +335,7 @@
     },
     {
       "requirement": {
-        "id": "0c61f7f0-8e66-4e15-b53f-18aaab279738",
+        "id": "4744c580-d092-461b-89a8-d52a747f5758",
         "kb_item_key": "headlamp",
         "item_name": "Headlamp",
         "category": "navigation",
@@ -398,7 +398,7 @@
             "product_group_key": "cf6a22c03334beed",
             "is_simulated": true
           },
-          "requirement_id": "0c61f7f0-8e66-4e15-b53f-18aaab279738",
+          "requirement_id": "4744c580-d092-461b-89a8-d52a747f5758",
           "score": 0.7304,
           "rank": 1,
           "badge": "best_overall",
@@ -459,7 +459,7 @@
             "product_group_key": "ea5a961b33c11c2e",
             "is_simulated": true
           },
-          "requirement_id": "0c61f7f0-8e66-4e15-b53f-18aaab279738",
+          "requirement_id": "4744c580-d092-461b-89a8-d52a747f5758",
           "score": 0.7049,
           "rank": 2,
           "badge": "best_rated",
@@ -524,7 +524,7 @@
             "product_group_key": "dd7c8ec4c1c5fa80",
             "is_simulated": true
           },
-          "requirement_id": "0c61f7f0-8e66-4e15-b53f-18aaab279738",
+          "requirement_id": "4744c580-d092-461b-89a8-d52a747f5758",
           "score": 0.6914,
           "rank": 3,
           "badge": null,
@@ -588,7 +588,7 @@
             "product_group_key": "b6c08a73d8def064",
             "is_simulated": true
           },
-          "requirement_id": "0c61f7f0-8e66-4e15-b53f-18aaab279738",
+          "requirement_id": "4744c580-d092-461b-89a8-d52a747f5758",
           "score": 0.6777,
           "rank": 4,
           "badge": null,
@@ -659,7 +659,7 @@
             "product_group_key": "336c1192365b9ebf",
             "is_simulated": true
           },
-          "requirement_id": "0c61f7f0-8e66-4e15-b53f-18aaab279738",
+          "requirement_id": "4744c580-d092-461b-89a8-d52a747f5758",
           "score": 0.6773,
           "rank": 5,
           "badge": "best_budget",
@@ -684,7 +684,7 @@
     },
     {
       "requirement": {
-        "id": "d75656c0-b0af-4742-80ec-fd828025bcd7",
+        "id": "d0eefbc9-e9c1-418b-9544-09d801cd8b8a",
         "kb_item_key": "winter_gloves",
         "item_name": "Insulated Gloves",
         "category": "accessories",
@@ -746,7 +746,7 @@
             "product_group_key": "c0bce1d70177a8ee",
             "is_simulated": true
           },
-          "requirement_id": "d75656c0-b0af-4742-80ec-fd828025bcd7",
+          "requirement_id": "d0eefbc9-e9c1-418b-9544-09d801cd8b8a",
           "score": 0.7495,
           "rank": 1,
           "badge": "best_overall",
@@ -817,7 +817,7 @@
             "product_group_key": "69871f0cc3af4f82",
             "is_simulated": true
           },
-          "requirement_id": "d75656c0-b0af-4742-80ec-fd828025bcd7",
+          "requirement_id": "d0eefbc9-e9c1-418b-9544-09d801cd8b8a",
           "score": 0.7123,
           "rank": 2,
           "badge": null,
@@ -880,7 +880,7 @@
             "product_group_key": "027a44fe1767472d",
             "is_simulated": true
           },
-          "requirement_id": "d75656c0-b0af-4742-80ec-fd828025bcd7",
+          "requirement_id": "d0eefbc9-e9c1-418b-9544-09d801cd8b8a",
           "score": 0.7123,
           "rank": 3,
           "badge": null,
@@ -941,7 +941,7 @@
             "product_group_key": "40055bc95c3694e9",
             "is_simulated": true
           },
-          "requirement_id": "d75656c0-b0af-4742-80ec-fd828025bcd7",
+          "requirement_id": "d0eefbc9-e9c1-418b-9544-09d801cd8b8a",
           "score": 0.7038,
           "rank": 4,
           "badge": "best_budget",
@@ -1001,7 +1001,7 @@
             "product_group_key": "a83045861720217e",
             "is_simulated": true
           },
-          "requirement_id": "d75656c0-b0af-4742-80ec-fd828025bcd7",
+          "requirement_id": "d0eefbc9-e9c1-418b-9544-09d801cd8b8a",
           "score": 0.7016,
           "rank": 5,
           "badge": null,
@@ -1030,7 +1030,7 @@
     },
     {
       "requirement": {
-        "id": "1a930477-a01d-4786-a5a4-41ee63da0dc9",
+        "id": "8a41306a-1e1e-4fbd-a9ef-dbd895173642",
         "kb_item_key": "insulated_jacket",
         "item_name": "Insulated Trekking Jacket",
         "category": "outerwear",
@@ -1097,7 +1097,7 @@
             "product_group_key": "2414761373cf71ad",
             "is_simulated": true
           },
-          "requirement_id": "1a930477-a01d-4786-a5a4-41ee63da0dc9",
+          "requirement_id": "8a41306a-1e1e-4fbd-a9ef-dbd895173642",
           "score": 0.7632,
           "rank": 1,
           "badge": "best_overall",
@@ -1163,7 +1163,7 @@
             "product_group_key": "6c71f19ecdc4304d",
             "is_simulated": true
           },
-          "requirement_id": "1a930477-a01d-4786-a5a4-41ee63da0dc9",
+          "requirement_id": "8a41306a-1e1e-4fbd-a9ef-dbd895173642",
           "score": 0.7421,
           "rank": 2,
           "badge": "best_budget",
@@ -1238,7 +1238,7 @@
             "product_group_key": "719528b7bbe84d10",
             "is_simulated": true
           },
-          "requirement_id": "1a930477-a01d-4786-a5a4-41ee63da0dc9",
+          "requirement_id": "8a41306a-1e1e-4fbd-a9ef-dbd895173642",
           "score": 0.7252,
           "rank": 3,
           "badge": "best_deal",
@@ -1310,7 +1310,7 @@
             "product_group_key": "8555262f35765bc2",
             "is_simulated": true
           },
-          "requirement_id": "1a930477-a01d-4786-a5a4-41ee63da0dc9",
+          "requirement_id": "8a41306a-1e1e-4fbd-a9ef-dbd895173642",
           "score": 0.7247,
           "rank": 4,
           "badge": null,
@@ -1375,7 +1375,7 @@
             "product_group_key": "4f13dcdd4d7fccf3",
             "is_simulated": true
           },
-          "requirement_id": "1a930477-a01d-4786-a5a4-41ee63da0dc9",
+          "requirement_id": "8a41306a-1e1e-4fbd-a9ef-dbd895173642",
           "score": 0.7229,
           "rank": 5,
           "badge": null,
@@ -1403,7 +1403,7 @@
     },
     {
       "requirement": {
-        "id": "e6f9f9c4-0ea9-4249-a489-9ca1441f690c",
+        "id": "bf2afca7-d96d-4761-8cde-e4973b62f662",
         "kb_item_key": "water_bottle",
         "item_name": "Insulated Water Bottle",
         "category": "hydration",
@@ -1464,7 +1464,7 @@
             "product_group_key": "1c3fb9b31d3c4718",
             "is_simulated": true
           },
-          "requirement_id": "e6f9f9c4-0ea9-4249-a489-9ca1441f690c",
+          "requirement_id": "bf2afca7-d96d-4761-8cde-e4973b62f662",
           "score": 0.6661,
           "rank": 1,
           "badge": "best_overall",
@@ -1527,7 +1527,7 @@
             "product_group_key": "046cb78019a4ccaf",
             "is_simulated": true
           },
-          "requirement_id": "e6f9f9c4-0ea9-4249-a489-9ca1441f690c",
+          "requirement_id": "bf2afca7-d96d-4761-8cde-e4973b62f662",
           "score": 0.663,
           "rank": 2,
           "badge": null,
@@ -1595,7 +1595,7 @@
             "product_group_key": "e93f46ec52933d37",
             "is_simulated": true
           },
-          "requirement_id": "e6f9f9c4-0ea9-4249-a489-9ca1441f690c",
+          "requirement_id": "bf2afca7-d96d-4761-8cde-e4973b62f662",
           "score": 0.6565,
           "rank": 3,
           "badge": "best_budget",
@@ -1658,7 +1658,7 @@
             "product_group_key": "b3eaa9f1a5334e9b",
             "is_simulated": true
           },
-          "requirement_id": "e6f9f9c4-0ea9-4249-a489-9ca1441f690c",
+          "requirement_id": "bf2afca7-d96d-4761-8cde-e4973b62f662",
           "score": 0.6557,
           "rank": 4,
           "badge": null,
@@ -1719,7 +1719,7 @@
             "product_group_key": "5659956578e6321b",
             "is_simulated": true
           },
-          "requirement_id": "e6f9f9c4-0ea9-4249-a489-9ca1441f690c",
+          "requirement_id": "bf2afca7-d96d-4761-8cde-e4973b62f662",
           "score": 0.6457,
           "rank": 5,
           "badge": null,
@@ -1747,7 +1747,7 @@
     },
     {
       "requirement": {
-        "id": "f359c5a1-3098-4217-ad76-21e6f18b476f",
+        "id": "dc5e9b4b-696c-42a8-9707-5f24149a7a43",
         "kb_item_key": "sleeping_bag",
         "item_name": "Sub-Zero Sleeping Bag",
         "category": "camping",
@@ -1812,7 +1812,7 @@
             "product_group_key": "cbdd37b0e822d797",
             "is_simulated": true
           },
-          "requirement_id": "f359c5a1-3098-4217-ad76-21e6f18b476f",
+          "requirement_id": "dc5e9b4b-696c-42a8-9707-5f24149a7a43",
           "score": 0.7219,
           "rank": 1,
           "badge": "best_overall",
@@ -1877,7 +1877,7 @@
             "product_group_key": "d3f36c805ee96031",
             "is_simulated": true
           },
-          "requirement_id": "f359c5a1-3098-4217-ad76-21e6f18b476f",
+          "requirement_id": "dc5e9b4b-696c-42a8-9707-5f24149a7a43",
           "score": 0.7208,
           "rank": 2,
           "badge": null,
@@ -1948,7 +1948,7 @@
             "product_group_key": "d610ec3c72f9a128",
             "is_simulated": true
           },
-          "requirement_id": "f359c5a1-3098-4217-ad76-21e6f18b476f",
+          "requirement_id": "dc5e9b4b-696c-42a8-9707-5f24149a7a43",
           "score": 0.7204,
           "rank": 3,
           "badge": "best_premium",
@@ -2014,7 +2014,7 @@
             "product_group_key": "935f40e809fb0b79",
             "is_simulated": true
           },
-          "requirement_id": "f359c5a1-3098-4217-ad76-21e6f18b476f",
+          "requirement_id": "dc5e9b4b-696c-42a8-9707-5f24149a7a43",
           "score": 0.7163,
           "rank": 4,
           "badge": "best_budget",
@@ -2078,7 +2078,7 @@
             "product_group_key": "b793eb3c3e6a97bd",
             "is_simulated": true
           },
-          "requirement_id": "f359c5a1-3098-4217-ad76-21e6f18b476f",
+          "requirement_id": "dc5e9b4b-696c-42a8-9707-5f24149a7a43",
           "score": 0.7142,
           "rank": 5,
           "badge": "best_rated",
@@ -2106,7 +2106,7 @@
     },
     {
       "requirement": {
-        "id": "e27be9b4-d3f9-4eb7-902d-96545687f943",
+        "id": "a84b93fc-e7c6-43ca-9368-76c8cc04f369",
         "kb_item_key": "tent",
         "item_name": "Tent",
         "category": "camping",
@@ -2167,7 +2167,7 @@
             "product_group_key": "1556d9dbfcb180f8",
             "is_simulated": true
           },
-          "requirement_id": "e27be9b4-d3f9-4eb7-902d-96545687f943",
+          "requirement_id": "a84b93fc-e7c6-43ca-9368-76c8cc04f369",
           "score": 0.6939,
           "rank": 1,
           "badge": "best_overall",
@@ -2227,7 +2227,7 @@
             "product_group_key": "0a3d79bceda55ba2",
             "is_simulated": true
           },
-          "requirement_id": "e27be9b4-d3f9-4eb7-902d-96545687f943",
+          "requirement_id": "a84b93fc-e7c6-43ca-9368-76c8cc04f369",
           "score": 0.6847,
           "rank": 2,
           "badge": null,
@@ -2290,7 +2290,7 @@
             "product_group_key": "b38fb527969e5f7c",
             "is_simulated": true
           },
-          "requirement_id": "e27be9b4-d3f9-4eb7-902d-96545687f943",
+          "requirement_id": "a84b93fc-e7c6-43ca-9368-76c8cc04f369",
           "score": 0.6834,
           "rank": 3,
           "badge": "best_rated",
@@ -2353,7 +2353,7 @@
             "product_group_key": "b38fb527969e5f7c",
             "is_simulated": true
           },
-          "requirement_id": "e27be9b4-d3f9-4eb7-902d-96545687f943",
+          "requirement_id": "a84b93fc-e7c6-43ca-9368-76c8cc04f369",
           "score": 0.6807,
           "rank": 4,
           "badge": null,
@@ -2416,7 +2416,7 @@
             "product_group_key": "b38fb527969e5f7c",
             "is_simulated": true
           },
-          "requirement_id": "e27be9b4-d3f9-4eb7-902d-96545687f943",
+          "requirement_id": "a84b93fc-e7c6-43ca-9368-76c8cc04f369",
           "score": 0.6798,
           "rank": 5,
           "badge": null,
@@ -2451,7 +2451,7 @@
     },
     {
       "requirement": {
-        "id": "5eb55745-ec76-471a-a556-044074e0b246",
+        "id": "1cd5dbec-4310-4d3f-9149-ebcb04620119",
         "kb_item_key": "thermal_base_layer",
         "item_name": "Thermal Base Layer",
         "category": "clothing",
@@ -2516,7 +2516,7 @@
             "product_group_key": "da091b97f76007d2",
             "is_simulated": true
           },
-          "requirement_id": "5eb55745-ec76-471a-a556-044074e0b246",
+          "requirement_id": "1cd5dbec-4310-4d3f-9149-ebcb04620119",
           "score": 0.7309,
           "rank": 1,
           "badge": "best_overall",
@@ -2581,7 +2581,7 @@
             "product_group_key": "88230753db16f22c",
             "is_simulated": true
           },
-          "requirement_id": "5eb55745-ec76-471a-a556-044074e0b246",
+          "requirement_id": "1cd5dbec-4310-4d3f-9149-ebcb04620119",
           "score": 0.7151,
           "rank": 2,
           "badge": null,
@@ -2647,7 +2647,7 @@
             "product_group_key": "601be8ddc76b1cb7",
             "is_simulated": true
           },
-          "requirement_id": "5eb55745-ec76-471a-a556-044074e0b246",
+          "requirement_id": "1cd5dbec-4310-4d3f-9149-ebcb04620119",
           "score": 0.7102,
           "rank": 3,
           "badge": "best_budget",
@@ -2713,7 +2713,7 @@
             "product_group_key": "b44732246654fc1d",
             "is_simulated": true
           },
-          "requirement_id": "5eb55745-ec76-471a-a556-044074e0b246",
+          "requirement_id": "1cd5dbec-4310-4d3f-9149-ebcb04620119",
           "score": 0.7078,
           "rank": 4,
           "badge": "best_rated",
@@ -2788,7 +2788,7 @@
             "product_group_key": "3e1cad8b8c893c72",
             "is_simulated": true
           },
-          "requirement_id": "5eb55745-ec76-471a-a556-044074e0b246",
+          "requirement_id": "1cd5dbec-4310-4d3f-9149-ebcb04620119",
           "score": 0.707,
           "rank": 5,
           "badge": null,
@@ -2815,7 +2815,7 @@
     },
     {
       "requirement": {
-        "id": "f47ae8db-9061-4a8d-9313-24343bae2991",
+        "id": "42f68349-9331-4c3c-8a20-3d444b76f5e7",
         "kb_item_key": "trekking_socks",
         "item_name": "Thermal Woolen Socks",
         "category": "clothing",
@@ -2876,7 +2876,7 @@
             "product_group_key": "ef29b424bc6e3d4d",
             "is_simulated": true
           },
-          "requirement_id": "f47ae8db-9061-4a8d-9313-24343bae2991",
+          "requirement_id": "42f68349-9331-4c3c-8a20-3d444b76f5e7",
           "score": 0.7425,
           "rank": 1,
           "badge": "best_overall",
@@ -2939,7 +2939,7 @@
             "product_group_key": "c79c6ba3b363a7a3",
             "is_simulated": true
           },
-          "requirement_id": "f47ae8db-9061-4a8d-9313-24343bae2991",
+          "requirement_id": "42f68349-9331-4c3c-8a20-3d444b76f5e7",
           "score": 0.7229,
           "rank": 2,
           "badge": "best_rated",
@@ -2998,7 +2998,7 @@
             "product_group_key": "dcf43a1f34380a60",
             "is_simulated": true
           },
-          "requirement_id": "f47ae8db-9061-4a8d-9313-24343bae2991",
+          "requirement_id": "42f68349-9331-4c3c-8a20-3d444b76f5e7",
           "score": 0.7211,
           "rank": 3,
           "badge": "best_deal",
@@ -3059,7 +3059,7 @@
             "product_group_key": "0d8f9e0562e6b46e",
             "is_simulated": true
           },
-          "requirement_id": "f47ae8db-9061-4a8d-9313-24343bae2991",
+          "requirement_id": "42f68349-9331-4c3c-8a20-3d444b76f5e7",
           "score": 0.7089,
           "rank": 4,
           "badge": null,
@@ -3129,7 +3129,7 @@
             "product_group_key": "1f773cb26bc20219",
             "is_simulated": true
           },
-          "requirement_id": "f47ae8db-9061-4a8d-9313-24343bae2991",
+          "requirement_id": "42f68349-9331-4c3c-8a20-3d444b76f5e7",
           "score": 0.7079,
           "rank": 5,
           "badge": "best_budget",
@@ -3156,7 +3156,7 @@
     },
     {
       "requirement": {
-        "id": "1bf933b9-1ac6-4dc1-84c4-7285aaefb971",
+        "id": "f0b03b75-5eda-47e0-a874-0bf15cea37fa",
         "kb_item_key": "trekking_pants",
         "item_name": "Trekking Pants",
         "category": "clothing",
@@ -3215,7 +3215,7 @@
             "product_group_key": "e33629770ee73e4e",
             "is_simulated": true
           },
-          "requirement_id": "1bf933b9-1ac6-4dc1-84c4-7285aaefb971",
+          "requirement_id": "f0b03b75-5eda-47e0-a874-0bf15cea37fa",
           "score": 0.6945,
           "rank": 1,
           "badge": "best_overall",
@@ -3273,7 +3273,7 @@
             "product_group_key": "65d488f6b6bf933d",
             "is_simulated": true
           },
-          "requirement_id": "1bf933b9-1ac6-4dc1-84c4-7285aaefb971",
+          "requirement_id": "f0b03b75-5eda-47e0-a874-0bf15cea37fa",
           "score": 0.6895,
           "rank": 2,
           "badge": "best_rated",
@@ -3332,7 +3332,7 @@
             "product_group_key": "c56412b1212b45d8",
             "is_simulated": true
           },
-          "requirement_id": "1bf933b9-1ac6-4dc1-84c4-7285aaefb971",
+          "requirement_id": "f0b03b75-5eda-47e0-a874-0bf15cea37fa",
           "score": 0.6856,
           "rank": 3,
           "badge": null,
@@ -3392,7 +3392,7 @@
             "product_group_key": "6d438f37982730c3",
             "is_simulated": true
           },
-          "requirement_id": "1bf933b9-1ac6-4dc1-84c4-7285aaefb971",
+          "requirement_id": "f0b03b75-5eda-47e0-a874-0bf15cea37fa",
           "score": 0.6704,
           "rank": 4,
           "badge": "best_budget",
@@ -3457,7 +3457,7 @@
             "product_group_key": "bb53b55d4452f195",
             "is_simulated": true
           },
-          "requirement_id": "1bf933b9-1ac6-4dc1-84c4-7285aaefb971",
+          "requirement_id": "f0b03b75-5eda-47e0-a874-0bf15cea37fa",
           "score": 0.6678,
           "rank": 5,
           "badge": null,
@@ -3483,7 +3483,7 @@
     },
     {
       "requirement": {
-        "id": "f0447a99-c731-4f91-ad75-6b81ce6b2fc2",
+        "id": "ebaf1ca6-b8ee-471a-8848-b36ca9e4f40f",
         "kb_item_key": "trekking_poles",
         "item_name": "Trekking Poles",
         "category": "equipment",
@@ -3547,7 +3547,7 @@
             "product_group_key": "9784c72a161a6fae",
             "is_simulated": true
           },
-          "requirement_id": "f0447a99-c731-4f91-ad75-6b81ce6b2fc2",
+          "requirement_id": "ebaf1ca6-b8ee-471a-8848-b36ca9e4f40f",
           "score": 0.7284,
           "rank": 1,
           "badge": "best_overall",
@@ -3610,7 +3610,7 @@
             "product_group_key": "42c0a328133b2f1b",
             "is_simulated": true
           },
-          "requirement_id": "f0447a99-c731-4f91-ad75-6b81ce6b2fc2",
+          "requirement_id": "ebaf1ca6-b8ee-471a-8848-b36ca9e4f40f",
           "score": 0.7012,
           "rank": 2,
           "badge": null,
@@ -3675,7 +3675,7 @@
             "product_group_key": "db39ddffddd1f5f3",
             "is_simulated": true
           },
-          "requirement_id": "f0447a99-c731-4f91-ad75-6b81ce6b2fc2",
+          "requirement_id": "ebaf1ca6-b8ee-471a-8848-b36ca9e4f40f",
           "score": 0.6786,
           "rank": 3,
           "badge": null,
@@ -3737,7 +3737,7 @@
             "product_group_key": "d11a337942eee233",
             "is_simulated": true
           },
-          "requirement_id": "f0447a99-c731-4f91-ad75-6b81ce6b2fc2",
+          "requirement_id": "ebaf1ca6-b8ee-471a-8848-b36ca9e4f40f",
           "score": 0.6784,
           "rank": 4,
           "badge": null,
@@ -3801,7 +3801,7 @@
             "product_group_key": "fe392c6c8f288d9d",
             "is_simulated": true
           },
-          "requirement_id": "f0447a99-c731-4f91-ad75-6b81ce6b2fc2",
+          "requirement_id": "ebaf1ca6-b8ee-471a-8848-b36ca9e4f40f",
           "score": 0.6778,
           "rank": 5,
           "badge": "best_deal",
@@ -3836,7 +3836,7 @@
     },
     {
       "requirement": {
-        "id": "8aaf5e81-1c48-417e-a3f8-3ac453ca6ea8",
+        "id": "dbad0315-3dc6-4f3a-8423-dfcb76bc85e1",
         "kb_item_key": "winter_headwear",
         "item_name": "Woolen Cap / Beanie",
         "category": "accessories",
@@ -3894,7 +3894,7 @@
             "product_group_key": "1732c3a421efa3e0",
             "is_simulated": true
           },
-          "requirement_id": "8aaf5e81-1c48-417e-a3f8-3ac453ca6ea8",
+          "requirement_id": "dbad0315-3dc6-4f3a-8423-dfcb76bc85e1",
           "score": 0.6956,
           "rank": 1,
           "badge": "best_overall",
@@ -3953,7 +3953,7 @@
             "product_group_key": "cc17bbc0d3e5e3d5",
             "is_simulated": true
           },
-          "requirement_id": "8aaf5e81-1c48-417e-a3f8-3ac453ca6ea8",
+          "requirement_id": "dbad0315-3dc6-4f3a-8423-dfcb76bc85e1",
           "score": 0.6888,
           "rank": 2,
           "badge": null,
@@ -4011,7 +4011,7 @@
             "product_group_key": "a2d141488f3030b0",
             "is_simulated": true
           },
-          "requirement_id": "8aaf5e81-1c48-417e-a3f8-3ac453ca6ea8",
+          "requirement_id": "dbad0315-3dc6-4f3a-8423-dfcb76bc85e1",
           "score": 0.688,
           "rank": 3,
           "badge": null,
@@ -4069,7 +4069,7 @@
             "product_group_key": "9a7d1f7cfa69b4bf",
             "is_simulated": true
           },
-          "requirement_id": "8aaf5e81-1c48-417e-a3f8-3ac453ca6ea8",
+          "requirement_id": "dbad0315-3dc6-4f3a-8423-dfcb76bc85e1",
           "score": 0.6715,
           "rank": 4,
           "badge": "best_rated",
@@ -4135,7 +4135,7 @@
             "product_group_key": "f2c31afe88f2a5e7",
             "is_simulated": true
           },
-          "requirement_id": "8aaf5e81-1c48-417e-a3f8-3ac453ca6ea8",
+          "requirement_id": "dbad0315-3dc6-4f3a-8423-dfcb76bc85e1",
           "score": 0.6686,
           "rank": 5,
           "badge": null,
@@ -4171,7 +4171,7 @@
     },
     {
       "requirement": {
-        "id": "0e8a9332-becf-4318-b262-0bc826ec9834",
+        "id": "30d1238e-7bb2-4718-9208-dc794693e85a",
         "kb_item_key": "emergency_blanket",
         "item_name": "Emergency Thermal Blanket",
         "category": "safety",
@@ -4230,7 +4230,7 @@
             "product_group_key": "3127bc4e0fdae8b6",
             "is_simulated": true
           },
-          "requirement_id": "0e8a9332-becf-4318-b262-0bc826ec9834",
+          "requirement_id": "30d1238e-7bb2-4718-9208-dc794693e85a",
           "score": 0.6852,
           "rank": 1,
           "badge": "best_overall",
@@ -4290,7 +4290,7 @@
             "product_group_key": "727878b3280cd62b",
             "is_simulated": true
           },
-          "requirement_id": "0e8a9332-becf-4318-b262-0bc826ec9834",
+          "requirement_id": "30d1238e-7bb2-4718-9208-dc794693e85a",
           "score": 0.6819,
           "rank": 2,
           "badge": "best_rated",
@@ -4348,7 +4348,7 @@
             "product_group_key": "aafddfb890c81108",
             "is_simulated": true
           },
-          "requirement_id": "0e8a9332-becf-4318-b262-0bc826ec9834",
+          "requirement_id": "30d1238e-7bb2-4718-9208-dc794693e85a",
           "score": 0.6762,
           "rank": 3,
           "badge": null,
@@ -4407,7 +4407,7 @@
             "product_group_key": "356696697b18dabd",
             "is_simulated": true
           },
-          "requirement_id": "0e8a9332-becf-4318-b262-0bc826ec9834",
+          "requirement_id": "30d1238e-7bb2-4718-9208-dc794693e85a",
           "score": 0.6557,
           "rank": 4,
           "badge": null,
@@ -4466,7 +4466,7 @@
             "product_group_key": "97e76d04136061af",
             "is_simulated": true
           },
-          "requirement_id": "0e8a9332-becf-4318-b262-0bc826ec9834",
+          "requirement_id": "30d1238e-7bb2-4718-9208-dc794693e85a",
           "score": 0.6322,
           "rank": 5,
           "badge": "best_budget",
@@ -4491,7 +4491,7 @@
     },
     {
       "requirement": {
-        "id": "0263f46f-1f80-4723-b3b7-ccdd214a3b34",
+        "id": "1d4d2412-8e75-478f-95dc-b09ac8743c9d",
         "kb_item_key": "fleece_midlayer",
         "item_name": "Fleece Mid-Layer",
         "category": "clothing",
@@ -4552,7 +4552,7 @@
             "product_group_key": "7ac6623f96ddf1f6",
             "is_simulated": true
           },
-          "requirement_id": "0263f46f-1f80-4723-b3b7-ccdd214a3b34",
+          "requirement_id": "1d4d2412-8e75-478f-95dc-b09ac8743c9d",
           "score": 0.7273,
           "rank": 1,
           "badge": "best_overall",
@@ -4613,7 +4613,7 @@
             "product_group_key": "01b17e454bfd8e34",
             "is_simulated": true
           },
-          "requirement_id": "0263f46f-1f80-4723-b3b7-ccdd214a3b34",
+          "requirement_id": "1d4d2412-8e75-478f-95dc-b09ac8743c9d",
           "score": 0.6981,
           "rank": 2,
           "badge": "best_rated",
@@ -4681,7 +4681,7 @@
             "product_group_key": "4a67787632c6dda8",
             "is_simulated": true
           },
-          "requirement_id": "0263f46f-1f80-4723-b3b7-ccdd214a3b34",
+          "requirement_id": "1d4d2412-8e75-478f-95dc-b09ac8743c9d",
           "score": 0.6934,
           "rank": 3,
           "badge": "best_premium",
@@ -4741,7 +4741,7 @@
             "product_group_key": "9f8d7b7d01e2732c",
             "is_simulated": true
           },
-          "requirement_id": "0263f46f-1f80-4723-b3b7-ccdd214a3b34",
+          "requirement_id": "1d4d2412-8e75-478f-95dc-b09ac8743c9d",
           "score": 0.6856,
           "rank": 4,
           "badge": null,
@@ -4808,7 +4808,7 @@
             "product_group_key": "713c5c81f08a72f4",
             "is_simulated": true
           },
-          "requirement_id": "0263f46f-1f80-4723-b3b7-ccdd214a3b34",
+          "requirement_id": "1d4d2412-8e75-478f-95dc-b09ac8743c9d",
           "score": 0.6703,
           "rank": 5,
           "badge": null,
@@ -4844,7 +4844,7 @@
     },
     {
       "requirement": {
-        "id": "8775ba51-2ba8-458a-a036-8b3316d854d6",
+        "id": "8d408c19-af1e-463b-9c21-cc16c72c1849",
         "kb_item_key": "neck_gaiter",
         "item_name": "Neck Gaiter / Buff",
         "category": "accessories",
@@ -4903,7 +4903,7 @@
             "product_group_key": "bbeea006e94b4792",
             "is_simulated": true
           },
-          "requirement_id": "8775ba51-2ba8-458a-a036-8b3316d854d6",
+          "requirement_id": "8d408c19-af1e-463b-9c21-cc16c72c1849",
           "score": 0.7532,
           "rank": 1,
           "badge": "best_overall",
@@ -4962,7 +4962,7 @@
             "product_group_key": "93d25d10d02574a5",
             "is_simulated": true
           },
-          "requirement_id": "8775ba51-2ba8-458a-a036-8b3316d854d6",
+          "requirement_id": "8d408c19-af1e-463b-9c21-cc16c72c1849",
           "score": 0.7013,
           "rank": 2,
           "badge": "best_premium",
@@ -5021,7 +5021,7 @@
             "product_group_key": "2ed0336a0a22784e",
             "is_simulated": true
           },
-          "requirement_id": "8775ba51-2ba8-458a-a036-8b3316d854d6",
+          "requirement_id": "8d408c19-af1e-463b-9c21-cc16c72c1849",
           "score": 0.6763,
           "rank": 3,
           "badge": null,
@@ -5081,7 +5081,7 @@
             "product_group_key": "a3b119f165a12feb",
             "is_simulated": true
           },
-          "requirement_id": "8775ba51-2ba8-458a-a036-8b3316d854d6",
+          "requirement_id": "8d408c19-af1e-463b-9c21-cc16c72c1849",
           "score": 0.6751,
           "rank": 4,
           "badge": null,
@@ -5137,7 +5137,7 @@
             "product_group_key": "5bb7f67e19ecde35",
             "is_simulated": true
           },
-          "requirement_id": "8775ba51-2ba8-458a-a036-8b3316d854d6",
+          "requirement_id": "8d408c19-af1e-463b-9c21-cc16c72c1849",
           "score": 0.665,
           "rank": 5,
           "badge": null,
@@ -5163,7 +5163,7 @@
     },
     {
       "requirement": {
-        "id": "5f4315b2-3a64-4dc5-8bc0-8964dc94d4e2",
+        "id": "5e83a7c2-0255-44c6-843f-a259a650fbf1",
         "kb_item_key": "power_bank",
         "item_name": "Power Bank",
         "category": "electronics",
@@ -5225,7 +5225,7 @@
             "product_group_key": "cb0d60cc928a1aab",
             "is_simulated": true
           },
-          "requirement_id": "5f4315b2-3a64-4dc5-8bc0-8964dc94d4e2",
+          "requirement_id": "5e83a7c2-0255-44c6-843f-a259a650fbf1",
           "score": 0.6554,
           "rank": 1,
           "badge": "best_overall",
@@ -5295,7 +5295,7 @@
             "product_group_key": "cb0d60cc928a1aab",
             "is_simulated": true
           },
-          "requirement_id": "5f4315b2-3a64-4dc5-8bc0-8964dc94d4e2",
+          "requirement_id": "5e83a7c2-0255-44c6-843f-a259a650fbf1",
           "score": 0.6545,
           "rank": 2,
           "badge": "best_budget",
@@ -5357,7 +5357,7 @@
             "product_group_key": "e08e710fc77d35c3",
             "is_simulated": true
           },
-          "requirement_id": "5f4315b2-3a64-4dc5-8bc0-8964dc94d4e2",
+          "requirement_id": "5e83a7c2-0255-44c6-843f-a259a650fbf1",
           "score": 0.6327,
           "rank": 3,
           "badge": null,
@@ -5427,7 +5427,7 @@
             "product_group_key": "e177f1c0559c054a",
             "is_simulated": true
           },
-          "requirement_id": "5f4315b2-3a64-4dc5-8bc0-8964dc94d4e2",
+          "requirement_id": "5e83a7c2-0255-44c6-843f-a259a650fbf1",
           "score": 0.623,
           "rank": 4,
           "badge": "best_premium",
@@ -5487,7 +5487,7 @@
             "product_group_key": "47affc1f0526e50d",
             "is_simulated": true
           },
-          "requirement_id": "5f4315b2-3a64-4dc5-8bc0-8964dc94d4e2",
+          "requirement_id": "5e83a7c2-0255-44c6-843f-a259a650fbf1",
           "score": 0.6195,
           "rank": 5,
           "badge": null,
@@ -5514,7 +5514,7 @@
     },
     {
       "requirement": {
-        "id": "1d6a0f89-2081-499b-9147-28d2409af510",
+        "id": "80230cac-53fd-4c65-ac4e-705818b90ccc",
         "kb_item_key": "rain_protection",
         "item_name": "Rain Poncho / Jacket",
         "category": "outerwear",
@@ -5573,7 +5573,7 @@
             "product_group_key": "ca553caa7aff0a39",
             "is_simulated": true
           },
-          "requirement_id": "1d6a0f89-2081-499b-9147-28d2409af510",
+          "requirement_id": "80230cac-53fd-4c65-ac4e-705818b90ccc",
           "score": 0.6474,
           "rank": 1,
           "badge": "best_overall",
@@ -5633,7 +5633,7 @@
             "product_group_key": "f7bf702044a43bf0",
             "is_simulated": true
           },
-          "requirement_id": "1d6a0f89-2081-499b-9147-28d2409af510",
+          "requirement_id": "80230cac-53fd-4c65-ac4e-705818b90ccc",
           "score": 0.64,
           "rank": 2,
           "badge": null,
@@ -5693,7 +5693,7 @@
             "product_group_key": "1054ef201f4c9259",
             "is_simulated": true
           },
-          "requirement_id": "1d6a0f89-2081-499b-9147-28d2409af510",
+          "requirement_id": "80230cac-53fd-4c65-ac4e-705818b90ccc",
           "score": 0.6383,
           "rank": 3,
           "badge": null,
@@ -5754,7 +5754,7 @@
             "product_group_key": "a132df38d99c4d5f",
             "is_simulated": true
           },
-          "requirement_id": "1d6a0f89-2081-499b-9147-28d2409af510",
+          "requirement_id": "80230cac-53fd-4c65-ac4e-705818b90ccc",
           "score": 0.6329,
           "rank": 4,
           "badge": "best_budget",
@@ -5822,7 +5822,7 @@
             "product_group_key": "02fa1ab22235012e",
             "is_simulated": true
           },
-          "requirement_id": "1d6a0f89-2081-499b-9147-28d2409af510",
+          "requirement_id": "80230cac-53fd-4c65-ac4e-705818b90ccc",
           "score": 0.6229,
           "rank": 5,
           "badge": null,
@@ -5849,7 +5849,7 @@
     },
     {
       "requirement": {
-        "id": "4ac6802d-f37b-473c-8f36-b7649731b395",
+        "id": "3589e93b-d66a-40db-8d38-e0073cee6d2f",
         "kb_item_key": "sleeping_mat",
         "item_name": "Sleeping Mat",
         "category": "camping",
@@ -5907,7 +5907,7 @@
             "product_group_key": "4c9e94745e66c1b6",
             "is_simulated": true
           },
-          "requirement_id": "4ac6802d-f37b-473c-8f36-b7649731b395",
+          "requirement_id": "3589e93b-d66a-40db-8d38-e0073cee6d2f",
           "score": 0.7098,
           "rank": 1,
           "badge": "best_overall",
@@ -5965,7 +5965,7 @@
             "product_group_key": "4c9e94745e66c1b6",
             "is_simulated": true
           },
-          "requirement_id": "4ac6802d-f37b-473c-8f36-b7649731b395",
+          "requirement_id": "3589e93b-d66a-40db-8d38-e0073cee6d2f",
           "score": 0.6773,
           "rank": 2,
           "badge": "best_budget",
@@ -6020,7 +6020,7 @@
             "product_group_key": "28d8a48f606e6ec4",
             "is_simulated": true
           },
-          "requirement_id": "4ac6802d-f37b-473c-8f36-b7649731b395",
+          "requirement_id": "3589e93b-d66a-40db-8d38-e0073cee6d2f",
           "score": 0.671,
           "rank": 3,
           "badge": null,
@@ -6078,7 +6078,7 @@
             "product_group_key": "109b9092acb845e7",
             "is_simulated": true
           },
-          "requirement_id": "4ac6802d-f37b-473c-8f36-b7649731b395",
+          "requirement_id": "3589e93b-d66a-40db-8d38-e0073cee6d2f",
           "score": 0.6474,
           "rank": 4,
           "badge": null,
@@ -6134,7 +6134,7 @@
             "product_group_key": "cf71708a46f038d1",
             "is_simulated": true
           },
-          "requirement_id": "4ac6802d-f37b-473c-8f36-b7649731b395",
+          "requirement_id": "3589e93b-d66a-40db-8d38-e0073cee6d2f",
           "score": 0.6465,
           "rank": 5,
           "badge": null,
@@ -6159,7 +6159,7 @@
     },
     {
       "requirement": {
-        "id": "eefc9d68-7112-4d30-a5f1-9a6c22787fe5",
+        "id": "76651647-3b89-41a6-afbd-1fc045718248",
         "kb_item_key": "sunscreen",
         "item_name": "Sunscreen SPF 50+",
         "category": "personal_care",
@@ -6216,7 +6216,7 @@
             "product_group_key": "364c2866b5d64b41",
             "is_simulated": true
           },
-          "requirement_id": "eefc9d68-7112-4d30-a5f1-9a6c22787fe5",
+          "requirement_id": "76651647-3b89-41a6-afbd-1fc045718248",
           "score": 0.6816,
           "rank": 1,
           "badge": "best_overall",
@@ -6276,7 +6276,7 @@
             "product_group_key": "9cc1481c21b7cdd7",
             "is_simulated": true
           },
-          "requirement_id": "eefc9d68-7112-4d30-a5f1-9a6c22787fe5",
+          "requirement_id": "76651647-3b89-41a6-afbd-1fc045718248",
           "score": 0.6798,
           "rank": 2,
           "badge": "best_rated",
@@ -6334,7 +6334,7 @@
             "product_group_key": "f983e12a0aadfe7f",
             "is_simulated": true
           },
-          "requirement_id": "eefc9d68-7112-4d30-a5f1-9a6c22787fe5",
+          "requirement_id": "76651647-3b89-41a6-afbd-1fc045718248",
           "score": 0.6773,
           "rank": 3,
           "badge": null,
@@ -6393,7 +6393,7 @@
             "product_group_key": "13f8b37a2ce336e7",
             "is_simulated": true
           },
-          "requirement_id": "eefc9d68-7112-4d30-a5f1-9a6c22787fe5",
+          "requirement_id": "76651647-3b89-41a6-afbd-1fc045718248",
           "score": 0.6644,
           "rank": 4,
           "badge": "best_deal",
@@ -6451,7 +6451,7 @@
             "product_group_key": "1f2f81189ecfda76",
             "is_simulated": true
           },
-          "requirement_id": "eefc9d68-7112-4d30-a5f1-9a6c22787fe5",
+          "requirement_id": "76651647-3b89-41a6-afbd-1fc045718248",
           "score": 0.6557,
           "rank": 5,
           "badge": "best_budget",
@@ -6477,7 +6477,7 @@
     },
     {
       "requirement": {
-        "id": "804218af-7517-4ee7-a0f6-a377ad1c8d93",
+        "id": "291b1c53-4ae9-4021-a864-ae47eed49244",
         "kb_item_key": "thermos_flask",
         "item_name": "Thermos Flask",
         "category": "hydration",
@@ -6536,7 +6536,7 @@
             "product_group_key": "42e2ee36695a99eb",
             "is_simulated": true
           },
-          "requirement_id": "804218af-7517-4ee7-a0f6-a377ad1c8d93",
+          "requirement_id": "291b1c53-4ae9-4021-a864-ae47eed49244",
           "score": 0.6914,
           "rank": 1,
           "badge": "best_overall",
@@ -6595,7 +6595,7 @@
             "product_group_key": "748974254013612b",
             "is_simulated": true
           },
-          "requirement_id": "804218af-7517-4ee7-a0f6-a377ad1c8d93",
+          "requirement_id": "291b1c53-4ae9-4021-a864-ae47eed49244",
           "score": 0.6851,
           "rank": 2,
           "badge": "best_budget",
@@ -6661,7 +6661,7 @@
             "product_group_key": "748974254013612b",
             "is_simulated": true
           },
-          "requirement_id": "804218af-7517-4ee7-a0f6-a377ad1c8d93",
+          "requirement_id": "291b1c53-4ae9-4021-a864-ae47eed49244",
           "score": 0.6849,
           "rank": 3,
           "badge": null,
@@ -6720,7 +6720,7 @@
             "product_group_key": "f983dc48c8fd0162",
             "is_simulated": true
           },
-          "requirement_id": "804218af-7517-4ee7-a0f6-a377ad1c8d93",
+          "requirement_id": "291b1c53-4ae9-4021-a864-ae47eed49244",
           "score": 0.6815,
           "rank": 4,
           "badge": "best_premium",
@@ -6781,7 +6781,7 @@
             "product_group_key": "5075583526d44952",
             "is_simulated": true
           },
-          "requirement_id": "804218af-7517-4ee7-a0f6-a377ad1c8d93",
+          "requirement_id": "291b1c53-4ae9-4021-a864-ae47eed49244",
           "score": 0.6795,
           "rank": 5,
           "badge": "best_rated",
@@ -6817,7 +6817,7 @@
     },
     {
       "requirement": {
-        "id": "d9a8cc2f-a965-4099-aa49-cde032b013bb",
+        "id": "032d6690-5cc5-4c48-9b24-dba91836e3cc",
         "kb_item_key": "sunglasses",
         "item_name": "UV Sunglasses",
         "category": "accessories",
@@ -6877,7 +6877,7 @@
             "product_group_key": "525d9d3b5d391fa6",
             "is_simulated": true
           },
-          "requirement_id": "d9a8cc2f-a965-4099-aa49-cde032b013bb",
+          "requirement_id": "032d6690-5cc5-4c48-9b24-dba91836e3cc",
           "score": 0.7313,
           "rank": 1,
           "badge": "best_overall",
@@ -6937,7 +6937,7 @@
             "product_group_key": "dd4229d5c6576964",
             "is_simulated": true
           },
-          "requirement_id": "d9a8cc2f-a965-4099-aa49-cde032b013bb",
+          "requirement_id": "032d6690-5cc5-4c48-9b24-dba91836e3cc",
           "score": 0.7152,
           "rank": 2,
           "badge": null,
@@ -6999,7 +6999,7 @@
             "product_group_key": "525d9d3b5d391fa6",
             "is_simulated": true
           },
-          "requirement_id": "d9a8cc2f-a965-4099-aa49-cde032b013bb",
+          "requirement_id": "032d6690-5cc5-4c48-9b24-dba91836e3cc",
           "score": 0.7103,
           "rank": 3,
           "badge": "best_premium",
@@ -7059,7 +7059,7 @@
             "product_group_key": "826e92185e923177",
             "is_simulated": true
           },
-          "requirement_id": "d9a8cc2f-a965-4099-aa49-cde032b013bb",
+          "requirement_id": "032d6690-5cc5-4c48-9b24-dba91836e3cc",
           "score": 0.7012,
           "rank": 4,
           "badge": "best_budget",
@@ -7118,7 +7118,7 @@
             "product_group_key": "c94d8c92cad0e308",
             "is_simulated": true
           },
-          "requirement_id": "d9a8cc2f-a965-4099-aa49-cde032b013bb",
+          "requirement_id": "032d6690-5cc5-4c48-9b24-dba91836e3cc",
           "score": 0.6969,
           "rank": 5,
           "badge": null,
@@ -7147,7 +7147,7 @@
     },
     {
       "requirement": {
-        "id": "da49a870-c32c-4363-ab52-69b35a82eb22",
+        "id": "330ed784-0bb3-4d93-8488-f8a1d5ac18b9",
         "kb_item_key": "dry_bag",
         "item_name": "Dry Bag / Rain Cover",
         "category": "storage",
@@ -7206,7 +7206,7 @@
             "product_group_key": "857716b00c5df5f7",
             "is_simulated": true
           },
-          "requirement_id": "da49a870-c32c-4363-ab52-69b35a82eb22",
+          "requirement_id": "330ed784-0bb3-4d93-8488-f8a1d5ac18b9",
           "score": 0.6529,
           "rank": 1,
           "badge": "best_overall",
@@ -7267,7 +7267,7 @@
             "product_group_key": "57b5d01c0cc591e4",
             "is_simulated": true
           },
-          "requirement_id": "da49a870-c32c-4363-ab52-69b35a82eb22",
+          "requirement_id": "330ed784-0bb3-4d93-8488-f8a1d5ac18b9",
           "score": 0.6458,
           "rank": 2,
           "badge": null,
@@ -7327,7 +7327,7 @@
             "product_group_key": "41336d4ce1ac1a76",
             "is_simulated": true
           },
-          "requirement_id": "da49a870-c32c-4363-ab52-69b35a82eb22",
+          "requirement_id": "330ed784-0bb3-4d93-8488-f8a1d5ac18b9",
           "score": 0.6458,
           "rank": 3,
           "badge": "best_budget",
@@ -7386,7 +7386,7 @@
             "product_group_key": "41336d4ce1ac1a76",
             "is_simulated": true
           },
-          "requirement_id": "da49a870-c32c-4363-ab52-69b35a82eb22",
+          "requirement_id": "330ed784-0bb3-4d93-8488-f8a1d5ac18b9",
           "score": 0.6456,
           "rank": 4,
           "badge": null,
@@ -7454,7 +7454,7 @@
             "product_group_key": "d99a5fe741c9ec5c",
             "is_simulated": true
           },
-          "requirement_id": "da49a870-c32c-4363-ab52-69b35a82eb22",
+          "requirement_id": "330ed784-0bb3-4d93-8488-f8a1d5ac18b9",
           "score": 0.6369,
           "rank": 5,
           "badge": null,
@@ -7481,7 +7481,7 @@
     },
     {
       "requirement": {
-        "id": "a573ef8b-7e7a-4a84-860c-054a3f6f7d54",
+        "id": "d9a9f845-0bc0-4aed-a791-6d1a6bebcedb",
         "kb_item_key": "multi_tool",
         "item_name": "Multi-Tool",
         "category": "equipment",
@@ -7540,7 +7540,7 @@
             "product_group_key": "8d4eee300941f157",
             "is_simulated": true
           },
-          "requirement_id": "a573ef8b-7e7a-4a84-860c-054a3f6f7d54",
+          "requirement_id": "d9a9f845-0bc0-4aed-a791-6d1a6bebcedb",
           "score": 0.7138,
           "rank": 1,
           "badge": "best_overall",
@@ -7600,7 +7600,7 @@
             "product_group_key": "0eebfab7fc7fc525",
             "is_simulated": true
           },
-          "requirement_id": "a573ef8b-7e7a-4a84-860c-054a3f6f7d54",
+          "requirement_id": "d9a9f845-0bc0-4aed-a791-6d1a6bebcedb",
           "score": 0.6638,
           "rank": 2,
           "badge": "best_premium",
@@ -7660,7 +7660,7 @@
             "product_group_key": "8d4eee300941f157",
             "is_simulated": true
           },
-          "requirement_id": "a573ef8b-7e7a-4a84-860c-054a3f6f7d54",
+          "requirement_id": "d9a9f845-0bc0-4aed-a791-6d1a6bebcedb",
           "score": 0.6547,
           "rank": 3,
           "badge": null,
@@ -7718,7 +7718,7 @@
             "product_group_key": "91e634d471f6b042",
             "is_simulated": true
           },
-          "requirement_id": "a573ef8b-7e7a-4a84-860c-054a3f6f7d54",
+          "requirement_id": "d9a9f845-0bc0-4aed-a791-6d1a6bebcedb",
           "score": 0.6535,
           "rank": 4,
           "badge": null,
@@ -7785,7 +7785,7 @@
             "product_group_key": "bd8ae3991b44292b",
             "is_simulated": true
           },
-          "requirement_id": "a573ef8b-7e7a-4a84-860c-054a3f6f7d54",
+          "requirement_id": "d9a9f845-0bc0-4aed-a791-6d1a6bebcedb",
           "score": 0.6364,
           "rank": 5,
           "badge": "best_budget",
@@ -7812,7 +7812,7 @@
     },
     {
       "requirement": {
-        "id": "beb984a2-47ad-4912-9502-22d842c7c7d6",
+        "id": "e2215787-2cc6-4234-8ceb-718d48d2076b",
         "kb_item_key": "quick_dry_towel",
         "item_name": "Quick-Dry Towel",
         "category": "personal_care",
@@ -7871,7 +7871,7 @@
             "product_group_key": "2f7339a45736a515",
             "is_simulated": true
           },
-          "requirement_id": "beb984a2-47ad-4912-9502-22d842c7c7d6",
+          "requirement_id": "e2215787-2cc6-4234-8ceb-718d48d2076b",
           "score": 0.6604,
           "rank": 1,
           "badge": "best_overall",
@@ -7929,7 +7929,7 @@
             "product_group_key": "c24f9001fd9ac051",
             "is_simulated": true
           },
-          "requirement_id": "beb984a2-47ad-4912-9502-22d842c7c7d6",
+          "requirement_id": "e2215787-2cc6-4234-8ceb-718d48d2076b",
           "score": 0.6566,
           "rank": 2,
           "badge": null,
@@ -7986,7 +7986,7 @@
             "product_group_key": "bc21b876a4433a17",
             "is_simulated": true
           },
-          "requirement_id": "beb984a2-47ad-4912-9502-22d842c7c7d6",
+          "requirement_id": "e2215787-2cc6-4234-8ceb-718d48d2076b",
           "score": 0.656,
           "rank": 3,
           "badge": null,
@@ -8051,7 +8051,7 @@
             "product_group_key": "0bc23f50666968cb",
             "is_simulated": true
           },
-          "requirement_id": "beb984a2-47ad-4912-9502-22d842c7c7d6",
+          "requirement_id": "e2215787-2cc6-4234-8ceb-718d48d2076b",
           "score": 0.6544,
           "rank": 4,
           "badge": null,
@@ -8110,7 +8110,7 @@
             "product_group_key": "0d229004e1ec073e",
             "is_simulated": true
           },
-          "requirement_id": "beb984a2-47ad-4912-9502-22d842c7c7d6",
+          "requirement_id": "e2215787-2cc6-4234-8ceb-718d48d2076b",
           "score": 0.6377,
           "rank": 5,
           "badge": "best_budget",
@@ -8137,7 +8137,7 @@
     },
     {
       "requirement": {
-        "id": "6fc176bb-89bc-4d49-8293-197c85ca8f3a",
+        "id": "2600138a-e15d-49be-bf32-35552d480fae",
         "kb_item_key": "snow_gaiters",
         "item_name": "Snow Gaiters",
         "category": "accessories",
@@ -8196,7 +8196,7 @@
             "product_group_key": "32cf1d9598c322ea",
             "is_simulated": true
           },
-          "requirement_id": "6fc176bb-89bc-4d49-8293-197c85ca8f3a",
+          "requirement_id": "2600138a-e15d-49be-bf32-35552d480fae",
           "score": 0.7087,
           "rank": 1,
           "badge": "best_overall",
@@ -8263,7 +8263,7 @@
             "product_group_key": "ce056386ab214a39",
             "is_simulated": true
           },
-          "requirement_id": "6fc176bb-89bc-4d49-8293-197c85ca8f3a",
+          "requirement_id": "2600138a-e15d-49be-bf32-35552d480fae",
           "score": 0.6974,
           "rank": 2,
           "badge": "best_budget",
@@ -8321,7 +8321,7 @@
             "product_group_key": "187c2655afa769b0",
             "is_simulated": true
           },
-          "requirement_id": "6fc176bb-89bc-4d49-8293-197c85ca8f3a",
+          "requirement_id": "2600138a-e15d-49be-bf32-35552d480fae",
           "score": 0.6919,
           "rank": 3,
           "badge": null,
@@ -8380,7 +8380,7 @@
             "product_group_key": "10355cfaa8955a5f",
             "is_simulated": true
           },
-          "requirement_id": "6fc176bb-89bc-4d49-8293-197c85ca8f3a",
+          "requirement_id": "2600138a-e15d-49be-bf32-35552d480fae",
           "score": 0.6917,
           "rank": 4,
           "badge": null,
@@ -8438,7 +8438,7 @@
             "product_group_key": "e60f67af08062e45",
             "is_simulated": true
           },
-          "requirement_id": "6fc176bb-89bc-4d49-8293-197c85ca8f3a",
+          "requirement_id": "2600138a-e15d-49be-bf32-35552d480fae",
           "score": 0.6792,
           "rank": 5,
           "badge": null,

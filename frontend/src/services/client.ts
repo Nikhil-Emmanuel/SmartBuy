@@ -46,6 +46,23 @@ export function resetSession(): string {
   return minted;
 }
 
+/**
+ * Adopt an existing identity — how "signing in" works here.
+ *
+ * There is no authentication in this project (ADR-005): the session id *is*
+ * the user id, so switching it switches whose history and whose personalised
+ * offer you see. That is fine for a demo over synthetic shoppers and would be
+ * indefensible over real accounts, which is exactly why the roster endpoint
+ * only ever returns seeded rows.
+ */
+export function adoptSession(id: string): void {
+  try {
+    window.localStorage.setItem(SESSION_KEY, id);
+  } catch {
+    /* storage disabled: the switch simply will not survive a refresh */
+  }
+}
+
 export class ApiError extends Error {
   readonly code: ErrorCode;
   readonly status: number;

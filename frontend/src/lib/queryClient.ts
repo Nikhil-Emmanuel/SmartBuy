@@ -38,6 +38,8 @@ export const qk = {
   product: (id: string) => ["product", id] as const,
   profile: ["profile"] as const,
   personalization: ["personalization"] as const,
+  suggestions: ["suggestions"] as const,
+  demoShoppers: ["demo", "shoppers"] as const,
   adminMetrics: ["admin", "metrics"] as const,
   auditLogs: (params: Record<string, unknown>) => ["admin", "audit-logs", params] as const,
 };

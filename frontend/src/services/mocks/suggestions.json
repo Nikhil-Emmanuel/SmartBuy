@@ -1,0 +1,85 @@
+{
+  "goals": [
+    {
+      "label": "First Apartment Setup",
+      "message": "I'm moving into my first 1BHK apartment on a ₹40,000 budget and I have nothing except a mattress",
+      "kind": "goal",
+      "detail": "20 items planned for you"
+    },
+    {
+      "label": "Camping",
+      "message": "I'm going camping overnight with 2 people, budget ₹10,000",
+      "kind": "goal",
+      "detail": "11 items planned for you"
+    },
+    {
+      "label": "Laptop Purchase",
+      "message": "I need a laptop for college work, budget ₹60,000",
+      "kind": "goal",
+      "detail": "6 items planned for you"
+    },
+    {
+      "label": "Trekking",
+      "message": "I'm planning a 3-day trek next month, budget ₹12,000",
+      "kind": "goal",
+      "detail": "18 items planned for you"
+    },
+    {
+      "label": "Winter Trekking",
+      "message": "I'm going on a 4-day winter trek in Manali, budget ₹15,000, I'm a beginner and I already have trekking shoes and a backpack",
+      "kind": "goal",
+      "detail": "27 items planned for you"
+    }
+  ],
+  "categories": [
+    {
+      "label": "Electronics",
+      "message": "Show me electronics",
+      "kind": "category",
+      "detail": "793 products"
+    },
+    {
+      "label": "Accessories",
+      "message": "Show me accessories",
+      "kind": "category",
+      "detail": "277 products"
+    },
+    {
+      "label": "Furniture",
+      "message": "Show me furniture",
+      "kind": "category",
+      "detail": "229 products"
+    },
+    {
+      "label": "Clothing",
+      "message": "Show me clothing",
+      "kind": "category",
+      "detail": "228 products"
+    },
+    {
+      "label": "Storage",
+      "message": "Show me storage",
+      "kind": "category",
+      "detail": "221 products"
+    },
+    {
+      "label": "Kitchen",
+      "message": "Show me kitchen",
+      "kind": "category",
+      "detail": "209 products"
+    },
+    {
+      "label": "Equipment",
+      "message": "Show me equipment",
+      "kind": "category",
+      "detail": "194 products"
+    },
+    {
+      "label": "Bedding",
+      "message": "Show me bedding",
+      "kind": "category",
+      "detail": "192 products"
+    }
+  ],
+  "source": "catalog"
+}
