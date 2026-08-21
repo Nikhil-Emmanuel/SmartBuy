@@ -1,0 +1,35 @@
+# The build context is the repo root (see render.yaml), so without this file
+# Docker uploads the frontend's node_modules, the backend virtualenv and the
+# 64 MB local SQLite database to the daemon on every build -- none of which the
+# image copies.
+
+# Virtualenvs and caches
+**/.venv
+**/venv
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+**/.ruff_cache
+**/*.egg-info
+
+# Frontend: the API image never builds it
+frontend/node_modules
+frontend/dist
+**/.vite
+**/*.tsbuildinfo
+
+# Local databases. The container seeds its own from data/products/catalog.json.
+**/*.db
+**/*.db-shm
+**/*.db-wal
+
+# Local secrets. Never build these into an image.
+**/.env
+**/.env.*
+!**/.env.example
+
+# VCS, tooling and docs that add build-context weight but nothing to the image
+.git
+.github
+.claude
+**/.DS_Store

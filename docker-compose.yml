@@ -28,7 +28,11 @@ services:
       retries: 20
 
   backend:
-    build: ./backend
+    build:
+      # Repo root, matching render.yaml: the image needs data/ and ml/, which
+      # live above backend/. See the header comment in backend/Dockerfile.
+      context: .
+      dockerfile: backend/Dockerfile
     depends_on:
       db:
         condition: service_healthy
